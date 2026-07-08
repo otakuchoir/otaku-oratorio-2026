@@ -1,0 +1,20 @@
+#!/bin/bash
+cd "`dirname "$0"`/.."
+# avoid using "latest", for future-proofing
+V=8.5.3
+
+mkdir -p ./build
+
+docker run --rm \
+  -v "./game:/game" \
+  -v "./build:/build" \
+  -v "./assets:/assets" \
+  dinaki/renpy:$V \
+  sh renpy.sh launcher distribute --dest /build --no-update --package pc --package mac --package linux /game
+
+#docker run --rm \
+#  -v "./game:/game" \
+#  -v "./build:/build" \
+#  -v "./assets:/assets" \
+#  dinaki/renpy:$V-web \
+#  sh renpy.sh launcher set_project /game && sh renpy.sh launcher web_build /game --dest /build/web

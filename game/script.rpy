@@ -4,7 +4,7 @@ define sanders = Character("Sanders", color="#00ff00", image="sanders")
 define kelisha = Character("Kelisha", color="#0000ff", image="kelisha")
 
 label start:
-    scene bg room
+    # scene bg room
 
     show usagi-hello at center
     # show usagi-hello at center:
