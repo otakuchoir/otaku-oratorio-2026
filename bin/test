@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "`dirname "$0"`/.."
+# no other tests for now, just linting
+./bin/lint
