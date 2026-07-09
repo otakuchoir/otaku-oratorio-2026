@@ -16,7 +16,3 @@ for src in assets/"Character Sprites"/*; do
     dest="game/images/$base"
     ln -sf "../../$src" "$dest"
 done
-# symlinks break the build for presplash, for some reason.
-# also, this is just for desktop - web-presplash is a different file, see ./bin/build-web
-cp -f './assets/Logo/OO2 Logo V3.png' ./game/presplash.png
-#cp -f './assets/Logo/OO2 Logo V3.png' ./web-presplash.png
