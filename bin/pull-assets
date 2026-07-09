@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Copy art assets from OO2's google drive to git.
 #
 # To run this script, you must
@@ -13,7 +13,7 @@ cd "`dirname "$0"`/.."
 #rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 assets -v
 for src in assets/"Character Sprites"/*; do
     base="`basename "$src"`"
-    dest="game/images/$base"
+    dest="./game/images/${base/-/ }"
     ln -sf "../../$src" "$dest"
 done
 ln -sf ../../assets/Logo/'OO2 Logo V3.png' ./game/images/logo.png
