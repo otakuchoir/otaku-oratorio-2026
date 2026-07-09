@@ -37,15 +37,15 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: linux build
-          path: otakuoratorio2026-1.0-linux.tar.bz2
+          path: build/otakuoratorio2026-1.0-linux.tar.bz2
       - uses: actions/upload-artifact@v7
         with:
           name: mac build
-          path: otakuoratorio2026-1.0-mac.zip
+          path: build/otakuoratorio2026-1.0-mac.zip
       - uses: actions/upload-artifact@v7
         with:
           name: windows build
-          path: otakuoratorio2026-1.0-pc.zip
+          path: build/otakuoratorio2026-1.0-pc.zip
 
       ## web build and deploy to github pages
       ## oops - no free github-pages for private repositories!
