@@ -32,6 +32,19 @@ jobs:
           lfs: true
       - run: git lfs pull
 
+      ## desktop build and deploy to github releases
+      - run: ./bin/build-desktop
+      - uses: actions/upload-artifact@v7
+        with:
+          name: linux build
+          path: otakuoratorio2026-1.0-linux.tar.bz2
+        with:
+          name: mac build
+          path: otakuoratorio2026-1.0-mac.zip
+        with:
+          name: windows build
+          path: otakuoratorio2026-1.0-pc.zip
+
       ## web build and deploy to github pages
       ## oops - no free github-pages for private repositories!
       #- run: ./bin/build-web
@@ -40,10 +53,3 @@ jobs:
       #  with:
       #    path: ./build/web
       #- uses: actions/deploy-pages@v5
-
-      ## desktop build and deploy to github releases
-      - run: ./bin/build-desktop
-      - uses: actions/upload-artifact@v7
-        with:
-          name: desktop builds
-          path: ./build
