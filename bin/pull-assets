@@ -16,3 +16,4 @@ for src in assets/"Character Sprites"/*; do
     dest="game/images/$base"
     ln -sf "../../$src" "$dest"
 done
+ln -sf ../../assets/Logo/'OO2 Logo V3.png' ./game/images/logo.png
