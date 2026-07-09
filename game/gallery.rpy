@@ -1,4 +1,4 @@
-﻿screen gallery:
+﻿screen gallery():
     frame:
         xalign 0.5 yalign 0.5
         # xsize 600 ysize 800
