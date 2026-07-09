@@ -8,11 +8,13 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-# github pages permissions
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  # github pages permissions
+  #contents: read
+  #pages: write
+  #id-token: write
+  # github releases permissions
+  contents: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
@@ -32,10 +34,15 @@ jobs:
           lfs: true
       - run: git lfs pull
 
-      # web build and deploy to github pages
-      - run: ./bin/build-web
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./build/web
-      - uses: actions/deploy-pages@v5
+      ## web build and deploy to github pages
+      ## oops - no free github-pages for private repositories!
+      #- run: ./bin/build-web
+      #- uses: actions/configure-pages@v5
+      #- uses: actions/upload-pages-artifact@v3
+      #  with:
+      #    path: ./build/web
+      #- uses: actions/deploy-pages@v5
+
+      ## desktop build and deploy to github releases
+      - run: ./bin/build-desktop
+      - run: gh release upload latest *.zip *.bz2 --clobber
