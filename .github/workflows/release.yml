@@ -8,13 +8,11 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-permissions:
+#permissions:
   # github pages permissions
   #contents: read
   #pages: write
   #id-token: write
-  # github releases permissions
-  contents: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
@@ -45,6 +43,7 @@ jobs:
 
       ## desktop build and deploy to github releases
       - run: ./bin/build-desktop
-      - run: gh release upload latest build/*.zip build/*.bz2 --clobber
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - uses: actions/upload-artifact@v7
+        with:
+          name: desktop builds
+          path: ./build
