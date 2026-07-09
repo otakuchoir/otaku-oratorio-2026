@@ -25,18 +25,10 @@ jobs:
 
       ## desktop build and deploy to github releases
       - run: ./bin/build-desktop
-      - uses: actions/upload-artifact@v7
-        with:
-          name: linux build
-          path: build/otakuoratorio2026-1.0-linux.tar.bz2
-      - uses: actions/upload-artifact@v7
-        with:
-          name: mac build
-          path: build/otakuoratorio2026-1.0-mac.zip
-      - uses: actions/upload-artifact@v7
-        with:
-          name: windows build
-          path: build/otakuoratorio2026-1.0-pc.zip
+      - uses: remarkablegames/setup-butler@v3
+      - env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: ./bin/deploy-desktop
 
   build-and-deploy-web:
     runs-on: ubuntu-latest
@@ -56,4 +48,4 @@ jobs:
       - uses: remarkablegames/setup-butler@v3
       - env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        run: butler push ./build/web erosson/otaku-oratorio-2026:html
+        run: ./bin/deploy-web
