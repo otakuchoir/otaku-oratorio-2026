@@ -13,7 +13,15 @@ cd "`dirname "$0"`/.."
 #rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 assets -v
 for src in assets/"Character Sprites"/*; do
     base="`basename "$src"`"
-    dest="./game/images/${base/-/ }"
+    dest="./game/images/$base"
+    # rewrite some image names. this unfortunately adds some inconsistency
+    # between names in the gdrive vs. git, but I think it's worth it because
+    # good filenames unlock some cool renpy features.
+    #
+    # replace the first dash into a space, so renpy can recognize who's speaking.
+    dest="${dest/-/ }"
+    # replace all other dashes with nothing, so vscode can autocomplete them
+    dest="${dest//-/}"
     ln -sf "../../$src" "$dest"
 done
 ln -sf ../../assets/Logo/'OO2 Logo V3.png' ./game/images/logo.png
