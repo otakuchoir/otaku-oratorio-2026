@@ -45,6 +45,6 @@ jobs:
 
       ## desktop build and deploy to github releases
       - run: ./bin/build-desktop
-      - run: gh release upload latest *.zip *.bz2 --clobber
+      - run: gh release upload latest build/*.zip build/*.bz2 --clobber
         env:
           GH_TOKEN: ${{ github.token }}
