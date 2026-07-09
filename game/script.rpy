@@ -63,6 +63,7 @@ init python:
 
 # finally, dialogue
 label start:
+label test_scene:
     # scene bg room
 
     # this works for highlighting the speaker, but it's very tedious.

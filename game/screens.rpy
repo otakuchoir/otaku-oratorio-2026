@@ -301,6 +301,8 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
+            textbutton _("Test") action Start('test_scene')
+
         else:
 
             textbutton _("History") action ShowMenu("history")
