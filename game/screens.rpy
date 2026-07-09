@@ -303,6 +303,8 @@ screen navigation():
 
             textbutton _("Test") action Start('test_scene')
 
+            textbutton _("Gallery") action ShowMenu('gallery')
+
         else:
 
             textbutton _("History") action ShowMenu("history")
