@@ -3,6 +3,6 @@
 # `BUTLER_API_KEY` is required, and `butler` must be in your $PATH
 set -eu
 cd "`dirname "$0"`/.."
-#butler push ./build/otakuoratorio2026-1.0-pc.zip erosson/otaku-oratorio-2026:windows
+butler push ./build/otakuoratorio2026-1.0-pc.zip erosson/otaku-oratorio-2026:windows
 butler push ./build/otakuoratorio2026-1.0-mac.zip erosson/otaku-oratorio-2026:mac
 butler push ./build/otakuoratorio2026-1.0-linux.tar.bz2 erosson/otaku-oratorio-2026:linux
