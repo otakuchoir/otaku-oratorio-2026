@@ -40,6 +40,9 @@ jobs:
 
   build-and-deploy-web:
     runs-on: ubuntu-latest
+    environment:
+      name: itch.io web
+      url: "https://erosson.itch.io/otaku-oratorio-2026?secret=Ej4ArGlmXwr1HcR3SCoDkI4UyL8"
     steps:
       # checkout, including lfs files (our gdrive assets)
       - uses: actions/checkout@v4
@@ -54,5 +57,3 @@ jobs:
       - env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         run: butler push ./build/web erosson/otaku-oratorio-2026:html
-
- 
