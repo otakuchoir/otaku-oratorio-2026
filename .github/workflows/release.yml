@@ -14,11 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-desktop:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       # checkout, including lfs files (our gdrive assets)
       - uses: actions/checkout@v4
@@ -40,6 +37,15 @@ jobs:
         with:
           name: windows build
           path: build/otakuoratorio2026-1.0-pc.zip
+
+  build-and-deploy-web:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout, including lfs files (our gdrive assets)
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - run: git lfs pull
 
       # web build and deploy to itch.io
       # https://erosson.itch.io/otaku-oratorio-2026
