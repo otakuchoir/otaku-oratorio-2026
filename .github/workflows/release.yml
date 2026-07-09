@@ -1,0 +1,41 @@
+name: build and release
+
+on:
+  # for now, build and release on every change. 
+  # if our assets get very large, this might use up our (free) quotas quickly -
+  # but let's wait and worry about that when/if it happens.
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# github pages permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # checkout, including lfs files (our gdrive assets)
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - run: git lfs pull
+
+      # web build and deploy to github pages
+      - run: ./bin/build-web
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build/web
+      - uses: actions/deploy-pages@v5
