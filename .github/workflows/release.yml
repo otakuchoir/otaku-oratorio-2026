@@ -8,12 +8,6 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-#permissions:
-  # github pages permissions
-  #contents: read
-  #pages: write
-  #id-token: write
-
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
   group: build
@@ -47,11 +41,12 @@ jobs:
           name: windows build
           path: build/otakuoratorio2026-1.0-pc.zip
 
-      ## web build and deploy to github pages
-      ## oops - no free github-pages for private repositories!
-      #- run: ./bin/build-web
-      #- uses: actions/configure-pages@v5
-      #- uses: actions/upload-pages-artifact@v3
-      #  with:
-      #    path: ./build/web
-      #- uses: actions/deploy-pages@v5
+      # web build and deploy to itch.io
+      # https://erosson.itch.io/otaku-oratorio-2026
+      - run: ./bin/build-web
+      - uses: remarkablegames/setup-butler@v3
+      - env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push ./build/web erosson/otaku-oratorio-2026:html
+
+ 

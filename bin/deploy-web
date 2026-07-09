@@ -1,0 +1,6 @@
+#!/bin/bash
+# upload the web build to https://erosson.itch.io/otaku-oratorio-2026?secret=Ej4ArGlmXwr1HcR3SCoDkI4UyL8
+# `BUTLER_API_KEY` is required, and `butler` must be in your $PATH
+set -eu
+cd "`dirname "$0"`/.."
+butler push ./build/web erosson/otaku-oratorio-2026:html
