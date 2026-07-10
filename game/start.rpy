@@ -1,4 +1,5 @@
 ﻿label start:
     show usagi happy1 at center
-    usagi "we haven't yet started programming the show."
-    usagi happy2 "please check again later!"
+    usagi "We haven't yet started programming the show."
+    usagi "For now, this is just a placeholder."
+    usagi happy2 "Please check again later!"

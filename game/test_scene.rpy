@@ -25,10 +25,10 @@ label test_scene:
     usagi "at-transforms are one way to highlight the speaking character."
     show usagi at center, dim
     show takeshi at right, nodim
-    takeshi "it works, and it's pretty simple."
+    takeshi "it works well, and it's pretty simple."
     show takeshi at right, dim
     show sanders angry1 at left, nodim
-    sanders "tedious, though. very verbose. easy to mess up."
+    sanders "tedious code, though. very verbose. easy to mess up."
     show sanders at left, dim
     # narrator/no speaker
     "surely there's a better way?"
@@ -41,10 +41,14 @@ label test_scene:
     show usagi happy1 dim at center
     show takeshi happy1 dim at right
     show sanders happy dim at left
-    usagi "speaking_attribute is a lot shorter!"
-    takeshi "it takes a lot more setup. every sprite needs a \"dim\" attribute."
-    sanders "and I haven't yet got it working with layered images or arbitrary transforms."
+    usagi "speaking_attribute code is a lot shorter!"
+    takeshi "it needs some tricky setup, and every sprite needs a \"dim\" attribute."
+    sanders "and I haven't yet got it working with layered images, or transforms without an attribute."
     usagi hello dim "but once it's set up, it seems to work well"
+    takeshi worried1 dim "too magical though, don't you think? explicit code is usually better, even if it's a bit longer"
+    sanders prideful dim "maybe there's another way that I haven't found yet. I am still new at this"
+    usagi brainempty dim "or maybe we'd rather highlight the speaker some other way, and there's no need for this"
+
     "narrator speech doesn't highlight any characters"
 
     show kelisha stinkeye at offscreenleft, blink, slide_left
