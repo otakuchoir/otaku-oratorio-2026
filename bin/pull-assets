@@ -10,7 +10,7 @@
 set -eu
 cd "`dirname "$0"`/.."
 #rclone lsd --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2
-#rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 assets -v
+rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 assets -v
 for src in assets/"Character Sprites"/*; do
     base="`basename "$src"`"
     dest="./game/images/$base"
