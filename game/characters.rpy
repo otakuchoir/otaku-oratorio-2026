@@ -1,0 +1,5 @@
+define usagi = Character("Usagi", color="#fd7979", image="usagi")
+define takeshi = Character("Takeshi", color="#44bbff", image="takeshi")
+define sanders = Character("Sanders", color="#00ff00", image="sanders")
+define kelisha = Character("Kelisha", color="#0000ff", image="kelisha")
+define child = Character("Child", color="#dddddd", image="child")
