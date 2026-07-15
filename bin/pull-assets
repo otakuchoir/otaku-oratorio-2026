@@ -11,3 +11,12 @@ set -eu
 cd "`dirname "$0"`/.."
 #rclone lsd --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2
 rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 ./game/assets -v
+
+# yes, git logs track this information, but I don't trust that everyone knows how to git blame
+F=./game/assets/_updated.txt
+printf "" > $F
+echo "Do not edit this directory by hand! It's only updated automatically, using the \`./bin/pull-assets\` script to copy from the gdrive" >> $F
+echo "" >> $F
+echo "Updated at: `date`" >> $F
+echo "Updated by: `git config user.name`" >> $F
+echo "Updated using \`./bin/pull-assets\`" >> $F
