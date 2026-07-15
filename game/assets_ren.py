@@ -70,6 +70,9 @@ for f in fs:
 
 # Load a list of other assets with less predictible naming patterns.
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')
+load_image('scene16a', 'assets/Scene 16/Scene16A.png')
+load_image('scene16b', 'assets/Scene 16/Scene16B.png')
+load_image('scene16c', 'assets/Scene 16/Scene16C.png')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')

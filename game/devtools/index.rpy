@@ -9,5 +9,7 @@ screen devtools():
                 action Hide('devtools')
             textbutton "gallery":
                 action ShowMenu('gallery')
+            textbutton "jump to scene...":
+                action ShowMenu('jump_to')
             textbutton "test scene":
                 action Start('test_scene')
