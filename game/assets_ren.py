@@ -20,11 +20,18 @@ transform dim:
 transform nodim:
     matrixcolor BrightnessMatrix(0)
     zoom 1
+transform _usagi_offset:
+    # usagi's sprites are all 391x571, way taller than everyone else's
+    # I don't think that's deliberate, so crop the bottom a bit
+    # crop (x, y, w, h)
+    crop (0, 0, 391, 571-120)
 
 init python:
 """
 
 import re
+
+config.speaking_attribute = '-dim' # type: ignore
 
 def load_image(name: str, path: str):
     """Load an image if possible, or throw an error.
@@ -64,7 +71,13 @@ for f in fs:
         (tag, attr) = basename.split('-', 1)
         attr = attr.replace('-', '')
         name = ' '.join([tag, attr])
-        load_image(name, f)
+        if tag == 'usagi':
+            # usagi's sprite is taller than most of the others, but that's almost never how we actually want to display it
+            rawname = name+' raw'
+            load_image(rawname, f)
+            renpy.image(name, _usagi_offset(renpy.get_registered_image(rawname))) # type: ignore
+        else:
+            load_image(name, f)
         print('image:', name, '-', f)
         renpy.image(name+' dim', dim(renpy.get_registered_image(name))) # type: ignore
 

@@ -1,4 +1,221 @@
+# this is the first scene from the script we've written. took a little under 4 hours. of that:
+#
+# - entering text from the script was under half an hour. very fast - paste the script into the file and reformat things. vim macros helped a lot here
+# - usagi's fancy animation was around 1.5 hours. I already knew many (but not all) of the required functions, and copied some animation from an earlier demo of mine
+# - the rest of the scene's faces and movement took around 2 hours. A better renpy ide would help here: I spent lots of time looking at the list of sprites, choosing the best face for each moment
+# - highlighting the speaker (without tons of code in every scene) is surprisingly difficult, but I did most of that work earlier so it didn't add much time
+#
+# after that, not directly related to the scene:
+#
+# - 1.5 hours getting sprites to sit on top of the textbox, instead of partially hidden underneath it
+#
+# things to do next:
+#
+# - how's it look? get team review
+# - save my script entry vim macros. we'll be using them a lot!
+# - auto speaker highlighting worked well, but putting "dim" everywhere really sucks, I keep messing it up. can we remove that?
+# - get that vscode extension working (renpy magic)
+# - add background, when it's done
+#
+image bg scene2 default = Solid("#cccccc")
+image bg scene2 imhit = Solid("#cc0000")
 label scene02: 
-    scene # clear the screen
-    "PLACEHOLDER: scene 02"
+    scene bg scene2 default
+    show sanders smug dim at offscreenright
+    show takeshi neutral dim at offscreenright
+    pause 0
+    show sanders happy dim at right2
+    show takeshi neutral dim at right
+    with ease
+    sanders @ smug "They’re sitting ducks."
+    takeshi annoyed dim "Something’s not right. Performing field scan."
+    show sanders happy dim at center with ease
+    show sanders at center, flip
+    sanders "Takeshi, watch my six, I’m going in."
+    show sanders at center, noflip
+    takeshi "I don’t think that’s a good idea..."
+    takeshi "We lost sight of their third... their support-"
+    sanders eyeroll dim "The hell can a support do in this situation? I’m going in."
+    show takeshi worried1 dim
+    show sanders angry1 dim at left with ease
+    takeshi "NOT YET!"
+    show bg scene2 imhit behind takeshi, sanders
+    show takeshi worried2 dim
+    show sanders shock dim at yshake(30, 4, 0.025) with vpunch
+    pause 0.4
+    show bg scene2 default behind takeshi, sanders
+    sanders anxious dim "I’m hit!"
+    takeshi worried1 dim "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
+    show takeshi at center with ease
+    sanders angry1 dim "I didn’t need your help..."
+    takeshi worried1 dim "He’s right... I’m cooked"
+    show takeshi panic1 dim
+    takeshis_console "SCAN COMPLETE; ENEMY SUPPORT MARKED; DEFENSIVE MISSILES INBOUND."
+    takeshi "Dammit..."
+    
+    # > Usagi swoops in to save Takeshi, maneuvering to distract the
+    # > missiles and guide them away. She then counter attacks the
+    # > enemy team, taking them out herself one after the other.
+    #
+    # to show this, we make usagi's sprites fly around the screen. (ff6 esper tech)
+    call scene02_usagi_swoops_in
+
+    sanders prideful dim "That’s my duo!"
+    takeshi happy1 dim "Thanks Usagi..."
+    show usagi exasperated1 dim
+    show takeshi neutral dim at noflip
+    sanders angry1 dim "What were you THINKING Takeshi??"
+    takeshi angry1 dim "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
+    sanders angry2 dim "If you knew HOW to support, then you wouldn’t have gone IN..."
+    show takeshi behind usagi
+    show usagi exasperated2 dim at right2 with ease
+    show sanders shock dim
+    usagi "SANDERS, WHAT THE HELL WAS THAT?" with vpunch
+    usagi "IF YOU KNEW HOW TO ACE, THEN YOU WOULDN’T HAVE GONE IN WITH THE ENEMY SUPPORT MISSING..."
+    usagi "THE DEFENSIVE MISSILES WERE IN THE BATTLE BRIEF."
+
+    # > An aside, Usagi turns toward the audience, a complete 180 in
+    # > personality.
+    pause 0.5
+    show usagi happy1 at center
+    show sanders neutral dim at offscreenleft, flip
+    show takeshi neutral dim at offscreenleft, flip
+    with ease
+    pause 0.3
+    show usagi hello
+    usagi "My name is Usagi Kitadani and I’m a 4th year student at the Crown Military Academy."
+    usagi "Yeah, the one on the Moon..."
+    usagi "I love arts & crafts, small dogs, strawberries and parfaits."
+    show usagi happy1 at right
+    show sanders happy dim at left
+    with ease
+    usagi "That’s Sanders, another 4th year. He’s an asshole. He’s good, but he’s an asshole."
+    show takeshi at offscreenleft
+    pause 0
+    show sanders at offscreenleft
+    show takeshi happy1 dim at left
+    with ease
+    usagi "And that’s Takeshi, a 3rd year but he’s graduating early, super sweet, super kind... super innocent."
+    show usagi at center
+    show takeshi at offscreenleft
+    with ease
+    usagi "I’d love to stick around and chat, but we’re late for class, and as you can see..."
+    usagi weary dim "...we have a lot of work to do."
+    show usagi happy1 dim at offscreenright, flip
+    with ease
+    # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
+    # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
+    # > CLASSROOM FORMATION.
+
     jump scene03
+
+label scene02_usagi_swoops_in:
+    # pause after each animation for the length of that animation.
+    # renpy's default (without any dialogue) is to show them for an instant and move on
+    show sanders neutral dim at flip
+    show takeshi neutral dim at flip
+    show usagi shock at usagi_swoops_in_swoop1 behind takeshi, sanders
+    with vpunch
+    pause 0.8
+    show sanders at noflip
+    show takeshi at noflip
+    show usagi happy1 at usagi_swoops_in_swoop2
+    with hpunch
+    pause 0.8
+    show sanders at flip
+    show takeshi at flip
+    show usagi shock at usagi_swoops_in_swoop3
+    with vpunch
+    pause 0.8
+    show sanders happy dim at noflip
+    show takeshi neutral dim at noflip
+    show usagi happy2 at usagi_swoops_in_landing
+    # landing is 1.4 seconds total. sanders and takeshi both watch her land
+    pause 0.4
+    show sanders at flip
+    pause 0.4
+    show takeshi at flip
+    pause 0.6  # landing is done here, 1.4 seconds
+    pause 0.3  # a small delay after the animation feels nice
+    show usagi happy1 dim at right
+
+# renpy coordinates: x=0 is left, y=0 is top
+#
+#  ___________________
+# |        y=0        |
+# | x=0           x=1 |
+# |        y=1        |
+#  ___________________
+
+transform flip:
+    xzoom -1
+transform noflip:
+    xzoom 1
+
+transform usagi_swoops_in_swoop1:
+    parallel:
+        noflip
+        zoom 0.1 xalign 1.4 yalign 0.9
+        linear 0.7 zoom 1 xalign -0.8 yalign 0.0 knot 1 knot 0.4 knot 0
+    parallel:
+        pause 0.1
+        blink(n=2, dur=0.1)
+        pause 0.2
+    pause 0.1 
+
+transform usagi_swoops_in_swoop2:
+    parallel:
+        flip
+        zoom 1
+        xalign -0.4 yalign 0.5
+        easein 0.7 xalign 1.4 yalign 0.2 knot 0 knot 1.0
+    parallel:
+        pause 0.1
+        blink(n=3, dur=0.1)
+        pause 0.1
+    parallel:
+        pause 0.3
+        yshake(n=10, dur=0.01, size=40)
+    pause 0.1 
+
+transform usagi_swoops_in_swoop3:
+    parallel:
+        noflip
+        zoom 0.1 xalign 1.4 yalign 0.1 
+        easeout 0.7 zoom 1 xalign -0.4 yalign 0.1   knot 5 knot 0.5 knot 0.9
+    parallel:
+        pause 0.1
+        blink(n=1, dur=0.2)
+        pause 0.2
+    pause 0.1 
+
+transform usagi_swoops_in_landing:
+    parallel:
+        # easein 1.4 right  # nope, this breaks for some reason
+        yanchor 1.0
+        easein 1.4 xalign 1.0 ypos 880
+    parallel:
+        flip
+        pause 0.9
+        ease 0.3 noflip
+        pause 0.2
+
+transform yshake(size, n, dur):
+    yoffset 0
+    ease dur yoffset size
+    easeout dur yoffset 0
+    easein dur yoffset -size
+    ease dur yoffset 0
+    repeat n
+
+transform blinkon:
+    matrixcolor BrightnessMatrix(0.65)
+    # zoom 0.97
+transform blinkoff:
+    matrixcolor BrightnessMatrix(0)
+    # zoom 1
+transform blink(n, dur):
+    blinkoff
+    linear dur blinkon
+    linear dur blinkoff
+    repeat n
