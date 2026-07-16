@@ -21,35 +21,35 @@ image bg scene2 default = Solid("#cccccc")
 image bg scene2 imhit = Solid("#cc0000")
 label scene02: 
     scene bg scene2 default
-    show sanders smug dim at offscreenright
-    show takeshi neutral dim at offscreenright
+    show sanders smug at offscreenright
+    show takeshi neutral at offscreenright
     pause 0
-    show sanders happy dim at right2
-    show takeshi neutral dim at right
+    show sanders happy at right2
+    show takeshi neutral at right
     with ease
     sanders @ smug "They’re sitting ducks."
-    takeshi annoyed dim "Something’s not right. Performing field scan."
-    show sanders happy dim at center with ease
+    takeshi annoyed "Something’s not right. Performing field scan."
+    show sanders happy at center with ease
     show sanders at center, flip
     sanders "Takeshi, watch my six, I’m going in."
     show sanders at center, noflip
     takeshi "I don’t think that’s a good idea..."
     takeshi "We lost sight of their third... their support-"
-    sanders eyeroll dim "The hell can a support do in this situation? I’m going in."
-    show takeshi worried1 dim
-    show sanders angry1 dim at left with ease
+    sanders eyeroll "The hell can a support do in this situation? I’m going in."
+    show takeshi worried1 
+    show sanders angry1 at left with ease
     takeshi "NOT YET!"
     show bg scene2 imhit behind takeshi, sanders
-    show takeshi worried2 dim
-    show sanders shock dim at yshake(30, 4, 0.025) with vpunch
+    show takeshi worried2 
+    show sanders shock focus at yshake(30, 4, 0.025) with vpunch
     pause 0.4
     show bg scene2 default behind takeshi, sanders
-    sanders anxious dim "I’m hit!"
-    takeshi worried1 dim "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
+    sanders anxious "I’m hit!"
+    takeshi worried1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
     show takeshi at center with ease
-    sanders angry1 dim "I didn’t need your help..."
-    takeshi worried1 dim "He’s right... I’m cooked"
-    show takeshi panic1 dim
+    sanders angry1 "I didn’t need your help..."
+    takeshi worried1 "He’s right... I’m cooked"
+    show takeshi panic1 
     takeshis_console "SCAN COMPLETE; ENEMY SUPPORT MARKED; DEFENSIVE MISSILES INBOUND."
     takeshi "Dammit..."
     
@@ -60,16 +60,16 @@ label scene02:
     # to show this, we make usagi's sprites fly around the screen. (ff6 esper tech)
     call scene02_usagi_swoops_in
 
-    sanders prideful dim "That’s my duo!"
-    takeshi happy1 dim "Thanks Usagi..."
-    show usagi exasperated1 dim
-    show takeshi neutral dim at noflip
-    sanders angry1 dim "What were you THINKING Takeshi??"
-    takeshi angry1 dim "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
-    sanders angry2 dim "If you knew HOW to support, then you wouldn’t have gone IN..."
+    sanders prideful "That’s my duo!"
+    takeshi happy1 "Thanks Usagi..."
+    show usagi exasperated1
+    show takeshi neutral at noflip
+    sanders angry1 "What were you THINKING Takeshi??"
+    takeshi angry1 "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
+    sanders angry2 "If you knew HOW to support, then you wouldn’t have gone IN..."
     show takeshi behind usagi
-    show usagi exasperated2 dim at right2 with ease
-    show sanders shock dim
+    show usagi exasperated2 at right2 with ease
+    show sanders shock
     usagi "SANDERS, WHAT THE HELL WAS THAT?" with vpunch
     usagi "IF YOU KNEW HOW TO ACE, THEN YOU WOULDN’T HAVE GONE IN WITH THE ENEMY SUPPORT MISSING..."
     usagi "THE DEFENSIVE MISSILES WERE IN THE BATTLE BRIEF."
@@ -78,8 +78,8 @@ label scene02:
     # > personality.
     pause 0.5
     show usagi happy1 at center
-    show sanders neutral dim at offscreenleft, flip
-    show takeshi neutral dim at offscreenleft, flip
+    show sanders neutral at offscreenleft, flip
+    show takeshi neutral at offscreenleft, flip
     with ease
     pause 0.3
     show usagi hello
@@ -87,21 +87,21 @@ label scene02:
     usagi "Yeah, the one on the Moon..."
     usagi "I love arts & crafts, small dogs, strawberries and parfaits."
     show usagi happy1 at right
-    show sanders happy dim at left
+    show sanders happy at left
     with ease
     usagi "That’s Sanders, another 4th year. He’s an asshole. He’s good, but he’s an asshole."
     show takeshi at offscreenleft
     pause 0
     show sanders at offscreenleft
-    show takeshi happy1 dim at left
+    show takeshi happy1 at left
     with ease
     usagi "And that’s Takeshi, a 3rd year but he’s graduating early, super sweet, super kind... super innocent."
     show usagi at center
     show takeshi at offscreenleft
     with ease
     usagi "I’d love to stick around and chat, but we’re late for class, and as you can see..."
-    usagi weary dim "...we have a lot of work to do."
-    show usagi happy1 dim at offscreenright, flip
+    usagi weary "...we have a lot of work to do."
+    show usagi happy1 at offscreenright, flip
     with ease
     # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
     # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
@@ -112,24 +112,24 @@ label scene02:
 label scene02_usagi_swoops_in:
     # pause after each animation for the length of that animation.
     # renpy's default (without any dialogue) is to show them for an instant and move on
-    show sanders neutral dim at flip
-    show takeshi neutral dim at flip
-    show usagi shock at usagi_swoops_in_swoop1 behind takeshi, sanders
+    show sanders neutral at flip
+    show takeshi neutral at flip
+    show usagi shock focus at usagi_swoops_in_swoop1 behind takeshi, sanders
     with vpunch
     pause 0.8
     show sanders at noflip
     show takeshi at noflip
-    show usagi happy1 at usagi_swoops_in_swoop2
+    show usagi happy1 focus at usagi_swoops_in_swoop2
     with hpunch
     pause 0.8
     show sanders at flip
     show takeshi at flip
-    show usagi shock at usagi_swoops_in_swoop3
+    show usagi shock focus at usagi_swoops_in_swoop3
     with vpunch
     pause 0.8
-    show sanders happy dim at noflip
-    show takeshi neutral dim at noflip
-    show usagi happy2 at usagi_swoops_in_landing
+    show sanders happy at noflip
+    show takeshi neutral at noflip
+    show usagi happy2 focus at usagi_swoops_in_landing
     # landing is 1.4 seconds total. sanders and takeshi both watch her land
     pause 0.4
     show sanders at flip
@@ -137,7 +137,7 @@ label scene02_usagi_swoops_in:
     show takeshi at flip
     pause 0.6  # landing is done here, 1.4 seconds
     pause 0.3  # a small delay after the animation feels nice
-    show usagi happy1 dim at right
+    show usagi happy1 at right
 
 # renpy coordinates: x=0 is left, y=0 is top
 #
