@@ -1,6 +1,8 @@
 /2025
 /build
 /old-game
+__pycache__
+/game/oo2_scriptgen.rpy
 
 # Directories that Ren'Py changes files in.
 /game/saves
