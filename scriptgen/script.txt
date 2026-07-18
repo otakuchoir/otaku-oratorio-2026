@@ -1,4 +1,4 @@
-script source: 2026/07/15, https://drive.google.com/drive/folders/1HciTLUFy2edWAsWRuVrOp2ey3wVW-23h
+version: Otaku Oratorio 2 Script 7-15-2026.pdf
 
 PRE SHOW
 

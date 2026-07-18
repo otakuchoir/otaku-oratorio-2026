@@ -25,9 +25,14 @@ class Dialogue:
 class Label:
     tokens: list[token.Token]
     name: str
+    version: str
 
     def to_rpy(self) -> str:
-        return f'\nlabel {self.name}:\n    scene\n'
+        return f"""
+label {self.name}:
+    scene black
+    show text "{{color=#fff}}Scene \\"{self.name}\\" automatically generated from \\"{self.version}\\"\\nat \\"{datetime.datetime.now()}\\" by scriptgen.py (LLM-free)\\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{{/color}}" at top 
+"""
 
     def to_debug(self) -> list[str]:
         return [format_debug(t.type_, t.line) for t in self.tokens]

@@ -11,6 +11,7 @@ class Parser:
     last_speaker: token.Speaker | None = None
     scene: int | None = None
     page: int | None = None
+    version: str | None = None
 
     def replace(self, **kwargs) -> Parser:
         return dataclasses.replace(self, **kwargs)
@@ -36,8 +37,15 @@ class Parser:
         return (self, nodes)
 
     def parse(self, t: token.Token) -> tuple[Parser, list[ast.Node]]:
+        if self.version == None and t.type_ != 'version':
+            raise Exception('source text must start with "version: <source-file.pdf>"')
         call = f'_parse_{t.type_}'
         return getattr(self, call)(t)
+    
+    def _parse_version(self, t: token.Version) -> tuple[Parser, list[ast.Node]]:
+        if self.version is not None:
+            raise Exception(f"can't have two versions: {self.version}, {t.version}")
+        return (self.replace(version=t.version), [])
     
     def _parse_blank(self, _: token.Blank) -> tuple[Parser, list[ast.Node]]:
         if self.is_dialogue_buffered():
@@ -67,10 +75,10 @@ class Parser:
             nodes += ns
         # special case the pre-show section, which looks like a scene for some reason
         if 'THE DIMENNA CENTER FOR CLASSICAL MUSIC' in t.line and self.scene is None:
-            nodes += [ast.Label([], 'gen_preshow')]
+            nodes += [ast.Label([], 'gen_preshow', self.version)]
         else:
             label = f'gen_scene{t.scene:02d}'
-            nodes += [ast.Jump([], label), ast.Label([t], label)]
+            nodes += [ast.Jump([], label), ast.Label([t], label, self.version)]
         nodes += [ast.ScriptComment([], t.line)]
         return (self.replace(scene=t.scene), nodes)
 
