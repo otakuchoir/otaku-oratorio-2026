@@ -5,6 +5,7 @@ define kelisha = Character("Professor Kelisha", color="#0000ff", image="kelisha"
 define child = Character("Child", color="#dddddd", image="child")
 define bart = Character("Barthandelus", color="#6600dd", image="bart")
 define jojo = Character("Professor Jojo", color="#666666", image="jojo")
+define queen = Character("Queen Elizabeth Newark", color="#ffff00", image="queen")
 
 define takeshis_console = Character(name="Takeshi's console", color="#aaaaaa")
 

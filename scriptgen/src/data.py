@@ -81,6 +81,7 @@ _character_images = [
     'sanders neutral',
     'takeshi neutral',
     'usagi happy1',
+    'queen neutral',
 ]
 character_images = dict((i.split(' ')[0], i) for i in _character_images)
 
