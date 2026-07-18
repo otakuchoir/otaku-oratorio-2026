@@ -71,3 +71,19 @@ _characters: list[tuple[str, str]] = [(c, c) if isinstance(c, str) else c for c 
 characters = dict([(s.upper().replace("'", "’"), r) for s, r in _characters])
 # unique list values, preserving order
 character_list = list(dict.fromkeys(r for _,r in _characters))
+
+# Default images for each speaker
+_character_images = [
+    'bart neutral',
+    'child neutral',
+    'jojo neutral',
+    'kelisha neutral',
+    'sanders neutral',
+    'takeshi neutral',
+    'usagi happy1',
+]
+character_images = dict((i.split(' ')[0], i) for i in _character_images)
+
+# If we don't have sprites for a character, they probably don't have a character definition yet
+# - that is, an entry in `characters.rpy`.
+characters_without_images = [c for c in character_list if c not in character_images]

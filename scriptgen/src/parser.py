@@ -1,7 +1,8 @@
 import dataclasses
 import io
 from typing import Generator
-from . import ast, token
+
+from . import ast, token, data
 
 @dataclasses.dataclass(frozen=True)
 class Parser:
@@ -98,6 +99,32 @@ class Parser:
         else:
             # no one's speaking, this is a comment
             return (self, [ast.ScriptComment([t], t.line)])
+
+@dataclasses.dataclass(frozen=True)
+class SceneBufferParser:
+    """Buffer all ast nodes for a scene to build a list of its characters"""
+    buffer: list[ast.Node] = dataclasses.field(default_factory=list)
+
+    def flush(self) -> tuple[SceneBufferParser, list[ast.Node]]:
+        return (SceneBufferParser(), self.buffer)
+
+    def parse(self, node: ast.Node) -> tuple[SceneBufferParser, list[ast.Node]]:
+        if isinstance(node, ast.Label):
+            speakers = [n.speaker for n in self.buffer if isinstance(n, ast.Dialogue)]
+            # unique list, preserving order
+            speakers = list(dict.fromkeys(speakers))
+            speakers_ast = self.build_speakers_ast(speakers)
+            return (SceneBufferParser(), speakers_ast + self.buffer + [node])
+        else:
+            return (SceneBufferParser(buffer = self.buffer + [node]), [])
+    
+    def build_speakers_ast(self, speakers: list[str]) -> list[ast.Node]:
+        images = [data.character_images[s] for s in speakers if s in data.character_images]
+        ats = ['center', 'left2', 'right2', 'left', 'right', 'top', 'topleft', 'topright', 'truecenter']
+        if len(images) > len(ats):
+            raise Exception('too many speakers in one scene', images)
+        images_at = zip(images, ats)
+        return [ast.Show(img=img, at=at) for (img, at) in images_at]
     
 def parse_lines(lines: io.Reader[str]) -> Generator[ast.Node]:
     return parse_tokens(token.tokenize(lines))
@@ -106,10 +133,13 @@ def parse_tokens(tokens: Generator[token.Token]) -> Generator[ast.Node]:
     yield ast.GeneratedAt()
     yield ast.Characters()
     p = Parser()
+    p2 = SceneBufferParser()
     for t in tokens:
         p, nodes = p.parse(t)
         for n in nodes:
-            yield n
+            p2, nodes2 = p2.parse(n)
+            for n2 in nodes2:
+                yield n2
 
 def write_debug(ast: Generator[ast.Node], out: io.Writer[str]) -> None:
     for node in ast:

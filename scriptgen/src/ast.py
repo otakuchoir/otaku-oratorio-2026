@@ -27,7 +27,7 @@ class Label:
     name: str
 
     def to_rpy(self) -> str:
-        return f'\nlabel {self.name}:\n'
+        return f'\nlabel {self.name}:\n    scene\n'
 
     def to_debug(self) -> list[str]:
         return [format_debug(t.type_, t.line) for t in self.tokens]
@@ -68,7 +68,7 @@ class PageComment:
 @dataclasses.dataclass(frozen=True)
 class Characters:
     tokens: list[token.Token] = dataclasses.field(default_factory=list)
-    characters: list[str] = dataclasses.field(default_factory=lambda: list(set(data.characters.values())))
+    characters: list[str] = dataclasses.field(default_factory=lambda: data.characters_without_images)
 
     def to_rpy(self) -> str:
         return ''.join(f'define {c} = Character("{c.upper()}")\n' for c in self.characters)
@@ -87,6 +87,24 @@ class GeneratedAt:
     def to_debug(self) -> list[str]:
         return [format_debug(t.type_, t.line) for t in self.tokens]
 
+@dataclasses.dataclass(frozen=True)
+class Show:
+    img: str
+    at: str | None = None
+    behind: str | None = None
+
+    def to_rpy(self) -> str:
+        at = f" at {self.at}" if self.at else ""
+        behind = f" behind {self.behind}" if self.behind else ""
+        return f"    show {self.img}{at}{behind}\n"
+
+    @property
+    def tokens(self):
+        return []
+
+    def to_debug(self) -> list[str]:
+        return []
+
 # Not really a tree, more of a list, but that's fine here.
 # AST is still the technical parser term
-Node = Dialogue | Label | Jump | ScriptComment | PageComment | Characters | GeneratedAt
+Node = Dialogue | Label | Jump | ScriptComment | PageComment | Characters | GeneratedAt | Show
