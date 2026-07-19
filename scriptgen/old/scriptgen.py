@@ -17,7 +17,8 @@ from src import parser
 #
 txt_path = "./script.txt"
 # rpy_path = "./oo2_script.rpy"
-rpy_path = "../game/oo2_scriptgen.rpy"
+# rpy_path = "../game/oo2_scriptgen.rpy"
+rpy_path = "../game/generated_scenes/"
 debug_path = "./oo2_debug.txt"
 
 def main():

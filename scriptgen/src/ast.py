@@ -1,6 +1,7 @@
 import dataclasses
 import datetime
-from . import token, data
+
+from . import data, token2 as token
 
 def format_debug(t: str, line: str) -> str:
     return f'{t:>10}: {line}'
@@ -113,3 +114,10 @@ class Show:
 # Not really a tree, more of a list, but that's fine here.
 # AST is still the technical parser term
 Node = Dialogue | Label | Jump | ScriptComment | PageComment | Characters | GeneratedAt | Show
+
+@dataclasses.dataclass(frozen=True)
+class Scene:
+    label: str
+    nodes: list[Node]
+    def filename(self):
+        return f"{self.label}.rpy"

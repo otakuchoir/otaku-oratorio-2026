@@ -62,8 +62,7 @@ class More:
 
 Token = PageBreak | Speaker | Unknown | Blank | Song | Scene | PageNumber | More
 
-# each line happens to be exactly one token
-def tokenize_line(line: str) -> Token:
+def tokenize_line(line: str) -> list[Token]:
     song_prefix = 'SONG: '
     character_suffix = "(CONT’D)"
     nline = line.strip()  # removes whitespace including newlines
@@ -71,29 +70,52 @@ def tokenize_line(line: str) -> Token:
     mscene = re.match(r'^(?P<a>\d+) +.+ +(?P<b>\d+)$', nline)
     pscene = re.match(r'^(?P<p>\d+)\.$', nline)
     if nline == '':
-        return Blank(line=line)
+        return [Blank(line=line)]
     elif nline == '(MORE)':
-        return More(line=line)
+        return [More(line=line)]
     elif nline.startswith(song_prefix):
-        return Song(line=line, song=line[len(song_prefix):])
+        return [Song(line=line, song=line[len(song_prefix):])]
     elif cline in data.characters:
-        return Speaker(line=line, speaker=data.characters[cline])
+        return [Speaker(line=line, speaker=data.characters[cline])]
     elif mscene:
         a = int(mscene.group('a'))
         b = int(mscene.group('b'))
         if a == b:
-            return Scene(line=line, scene=a)
+            return [Scene(line=line, scene=a)]
         else:
-            return Unknown(line=line)
+            return [Unknown(line=line)]
     elif pscene:
         p = int(pscene.group('p'))
-        return PageNumber(line=line, page=p)
+        return [PageNumber(line=line, page=p)]
+    elif nline.endswith(character_suffix):
+        # our pdf parser seems to choke on page breaks with '(MORE)' and '(CONT'D)'.
+        # it keeps putting the speaker in the same line as their dialogue.
+        # easy enough to detect and fix though, since this only happens with (CONT'D)
+        #
+        # expected: 
+        #     (MORE)
+        #     <page-break>
+        #            SPEAKING CHARACTER (CONT'D)
+        #     dialogue dialogue dialogue dialogue
+        #     dialogue dialogue dialogue dialogue
+        # observed:
+        #     (MORE)
+        #     <page-break>
+        #     dialogue dialogue dialogue dialogue SPEAKING CHARACTER (CONT'D)
+        #     dialogue dialogue dialogue dialogue
+        for (scriptchar, renpychar) in data.characters.items():
+            speaker_line = f'{scriptchar} {character_suffix}'
+            if nline.endswith(speaker_line):
+                # found our speaker!
+                return [Speaker(speaker_line+'\\', renpychar), Unknown(line=line[:-len(speaker_line)])]
+        raise Exception(f"looks like this like has the pypdf (CONT'D) speaker bug, but I couldn't find the speaker", line)
     else:
-        return Unknown(line=line)
+        return [Unknown(line=line)]
 
 # what kind of line are we talking about? no context/state allowed
 def tokenize(pages: io.Reader[str]) -> Generator[Token]:
     for page in pages:
         for line in page.split('\n'):
-            yield tokenize_line(line)
+            for t in tokenize_line(line):
+                yield t
         yield PageBreak()

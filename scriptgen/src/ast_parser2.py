@@ -57,9 +57,9 @@ class ASTParser:
         nodes = self.flush_dialogue_list()
         # special case the pre-show section, which looks like a scene for some reason
         if 'THE DIMENNA CENTER FOR CLASSICAL MUSIC' in t.line and self.scene is None:
-            nodes += [ast.Label([], 'gen_preshow', self.version)]
+            nodes += [ast.Label([], 'preshow', self.version)]
         else:
-            label = f'gen_scene{t.scene:02d}'
+            label = f'scene{t.scene:02d}'
             nodes += [ast.Jump([], label), ast.Label([t], label, self.version)]
         nodes += [ast.ScriptComment([], t.line+'\n')]
         self.scene = t.scene
@@ -96,28 +96,27 @@ class ASTParser:
 
 @dataclasses.dataclass(frozen=False)
 class SceneBufferParser:
-    """Buffer all ast nodes for a scene to build a list of its characters"""
+    """Buffer all ast nodes for a scene to build a list of its characters, and split scenes by file"""
+    label: str = 'characters'  # filename before any scene starts
+    prebuffer: ast.Label | None = None
     buffer: list[ast.Node] = dataclasses.field(default_factory=list)
 
-    def flush(self) -> list[ast.Node]:
-        buf = self.buffer
+    def flush_buffers(self) -> tuple[list[ast.Node], list[ast.Node]]:
+        bufs = ([self.prebuffer] if self.prebuffer is not None else [], self.buffer)
+        self.prebuffer = None
         self.buffer = []
-        return buf
-
-    def parse(self, node: ast.Node) -> list[ast.Node]:
-        if isinstance(node, ast.Label):
-            # a new scene has started. build and output the buffered scene's speakers, and the buffered scene itself
-            speakers = [n.speaker for n in self.buffer if isinstance(n, ast.Dialogue)]
-            # unique list, preserving order
-            speakers = list(dict.fromkeys(speakers))
-            speakers_ast = self.build_speakers_ast(speakers)
-            buf = self.flush()
-            return speakers_ast + buf + [node]
-        else:
-            self.buffer += [node]
-            return []
+        return bufs
     
-    def build_speakers_ast(self, speakers: list[str]) -> list[ast.Node]:
+    def flush_scene(self) -> ast.Scene:
+        # a new scene has started. build and output the buffered scene's speakers, and the buffered scene itself
+        speakers = [n.speaker for n in self.buffer if isinstance(n, ast.Dialogue)]
+        # unique list, preserving order
+        speakers = list(dict.fromkeys(speakers))
+        speakers_ast = self.build_scene_ast(speakers)
+        prebuf, buf = self.flush_buffers()
+        return ast.Scene(self.label, prebuf + speakers_ast + buf)
+
+    def build_scene_ast(self, speakers: list[str]) -> list[ast.Node]:
         images = [data.character_images[s] for s in speakers if s in data.character_images]
         ats = ['center', 'left2', 'right2', 'left', 'right', 'top', 'topleft', 'topright', 'truecenter']
         if len(images) > len(ats):
@@ -125,17 +124,30 @@ class SceneBufferParser:
         images_at = zip(images, ats)
         return [ast.Show(img=img, at=at) for (img, at) in images_at]
 
-def parse_pagetokens(version: str, tokens: Generator[page_parser2.PageToken]) -> Generator[ast.Node]:
-    yield ast.GeneratedAt()
-    yield ast.Characters()
+    def parse(self, node: ast.Node) -> list[ast.Scene]:
+        if isinstance(node, ast.Label):
+            scene = self.flush_scene()
+            self.prebuffer = node
+            self.label = node.name
+            return [scene]
+        else:
+            self.buffer += [node]
+            return []
+
+def parse_pagetokens(version: str, tokens: Generator[page_parser2.PageToken]) -> Generator[ast.Scene]:
     p = ASTParser(version=version)
-    p2 = SceneBufferParser()
+    p2 = SceneBufferParser(buffer=[
+        # ast.GeneratedAt(),
+        ast.Characters(),
+    ])
     for t in tokens:
         nodes = p.parse(t)
         for n in nodes:
-            nodes2 = p2.parse(n)
-            for n2 in nodes2:
-                yield n2
+            scenes = p2.parse(n)
+            for s in scenes:
+                yield s
+    # finish up the last scene
+    yield p2.flush_scene()
 
 def write_debug(ast: Generator[ast.Node], out: io.Writer[str]) -> None:
     for node in ast:
