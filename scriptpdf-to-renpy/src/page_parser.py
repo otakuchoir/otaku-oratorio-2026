@@ -1,4 +1,4 @@
-from . import ast, token2
+from . import ast, token
 import dataclasses
 from typing import Generator
 
@@ -20,20 +20,20 @@ class Comment:
     def comment(self):
         return self.line.strip()
 
-PageToken = token2.Token | Quote | Comment
+PageToken = token.Token | Quote | Comment
 """A token, parsed with additional page-wide context
 
 This doesn't quite fit the parser model I learned in my compilers class, but it works well here
 """
 
-format = token2.format
+format = token.format
 
 @dataclasses.dataclass(frozen=False)
 class PageParser:
     num: int = 0
-    buf: list[token2.Token] = dataclasses.field(default_factory=list)
+    buf: list[token.Token] = dataclasses.field(default_factory=list)
 
-    def parse_token(self, t: token2.Token) -> list[PageToken]:
+    def parse_token(self, t: token.Token) -> list[PageToken]:
         self.buf.append(t)
         if t.type_ == 'pagebreak':
             return self.flush()
@@ -46,7 +46,7 @@ class PageParser:
         self.num += 1
         buf = self.buf
         self.buf = []
-        candidates: list[token2.Unknown] = [t for t in buf if t.type_ == 'unknown']
+        candidates: list[token.Unknown] = [t for t in buf if t.type_ == 'unknown']
         num_speakers = len([t for t in buf if t.type_ == 'speaker'])
         indents = sorted(list(set(t.indent() for t in candidates)))
         if num_speakers == 0:
@@ -65,14 +65,14 @@ class PageParser:
             q = indents[1]
             return [process_unknown(t, q) for t in buf]
 
-def process_unknown(t: token2.Token, quote_indent: int | None) -> PageToken:
+def process_unknown(t: token.Token, quote_indent: int | None) -> PageToken:
     if t.type_ != 'unknown':
         return t
     if t.indent() == quote_indent:
         return Quote(t.line)
     return Comment(t.line)
 
-def parse(tokens: Generator[token2.Token]) -> Generator[ast.Node]:
+def parse(tokens: Generator[token.Token]) -> Generator[ast.Node]:
     p = PageParser()
     for t in tokens:
         for node in p.parse_token(t):

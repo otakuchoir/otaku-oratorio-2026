@@ -1,7 +1,7 @@
 import dataclasses
 import datetime
 
-from . import data, token2 as token
+from . import data, token
 
 def format_debug(t: str, line: str) -> str:
     return f'{t:>10}: {line}'
@@ -32,7 +32,7 @@ class Label:
         return f"""
 label {self.name}:
     scene black
-    show text "{{color=#fff}}Scene \\"{self.name}\\" automatically generated from \\"{self.version}\\"\\nat \\"{datetime.datetime.now()}\\" by scriptgen.py (LLM-free)\\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{{/color}}" at top 
+    show text "{{color=#fff}}Scene \\"{self.name}\\" automatically generated from \\"{self.version}\\"\\nat \\"{datetime.datetime.now()}\\" by scriptpdf-to-renpy.py (LLM-free)\\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{{/color}}" at top 
 """
 
     def to_debug(self) -> list[str]:
