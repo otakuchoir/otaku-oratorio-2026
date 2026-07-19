@@ -1,12 +1,13 @@
 
 label scene25:
     scene black
-    show text "{color=#fff}Scene \"scene25\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 10:40:18.186149\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene25\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.765093\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
     show queen neutral at center
     show linda neutral at left2
     show huxtable neutral at right2
     show jojo neutral at left
     show bart neutral at right
+    show queen neutral at top
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
     wellington "Today’s training is a final lane push on the enemy base. Push team: Joseph Chen, you’re on auxillary. Bartholemew Barthandelus... Support. Kohei Kitadani Ace. Defenders: Elizabeth Newark-"
     ### page 47 ###

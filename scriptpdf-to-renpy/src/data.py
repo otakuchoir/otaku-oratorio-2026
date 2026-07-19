@@ -87,6 +87,9 @@ _character_images = [
     'linda neutral',
     'huxtable neutral',
     ('general', 'huxtable neutral'),
+    ('princess', 'queen neutral'),
+    ('noname', 'child neutral'),
+    ('kagu', 'child neutral'),
 ]
 character_images = dict((i.split(' ')[0], i) if isinstance(i, str) else i
                         for i in _character_images)

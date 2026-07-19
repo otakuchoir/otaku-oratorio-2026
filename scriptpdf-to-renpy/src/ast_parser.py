@@ -134,18 +134,22 @@ class SceneBufferParser:
             self.buffer += [node]
             return []
 
-def parse_pagetokens(version: str, tokens: Generator[page_parser.PageToken]) -> Generator[ast.Scene]:
+def parse_pagetokens_to_ast(version: str, tokens: Generator[page_parser.PageToken]) -> Generator[ast.Node]:
     p = ASTParser(version=version)
+    for t in tokens:
+        nodes = p.parse(t)
+        for n in nodes:
+            yield n
+
+def parse_ast_to_scenes(nodes: Generator[ast.Node]) -> Generator[ast.Scene]:
     p2 = SceneBufferParser(buffer=[
         # ast.GeneratedAt(),
         ast.Characters(),
     ])
-    for t in tokens:
-        nodes = p.parse(t)
-        for n in nodes:
-            scenes = p2.parse(n)
-            for s in scenes:
-                yield s
+    for n in nodes:
+        scenes = p2.parse(n)
+        for s in scenes:
+            yield s
     # finish up the last scene
     yield p2.flush_scene()
 

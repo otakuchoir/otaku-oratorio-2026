@@ -20,7 +20,4 @@ define student2 = Character("STUDENT2")
 define student3 = Character("STUDENT3")
 define kohei = Character("KOHEI")
 define wellington = Character("WELLINGTON")
-define princess = Character("PRINCESS")
-define noname = Character("NONAME")
-define kagu = Character("KAGU")
     # > PRE SHOW

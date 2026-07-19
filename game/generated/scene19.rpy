@@ -1,7 +1,7 @@
 
 label scene19:
     scene black
-    show text "{color=#fff}Scene \"scene19\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 10:40:18.185583\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene19\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.764489\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
     show usagi happy1 at center
     # > 19       INT. THE SPACESHIP EDEN MAIN DECK                                        19
     gunner "Captain, beam array at 60 percent and climbing; Firing window opens in 3 minutes and counting."
