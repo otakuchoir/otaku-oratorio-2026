@@ -1,0 +1,43 @@
+
+label scene11:
+    scene black
+    show text "{color=#fff}Scene \"scene11\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 10:40:18.184840\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show takeshi neutral at center
+    show kelisha neutral at left2
+    show sanders neutral at right2
+    show usagi happy1 at left
+    # > 11       INT. - SPACE SHUTTLE - KELISHA’S OFFICE THE ENVOY IS                     11
+    # > TRAVELING TO EARTH.
+    takeshi "You wanted to meet with us Professor Kelisha?"
+    kelisha "Ah yes, please, sit."
+    sanders "We’re not in trouble already are we? I can’t afford to lose ANY points on this midterm..."
+    usagi "She said she wanted to go over some intel, you literally never listen, do you? You don’t read battle briefs and you don’t listen."
+    sanders "Hey!"
+    takeshi "She’s not wrong."
+    # > THEY IMMEDIATELY SETTLE AND QUIET DOWN.
+    kelisha "If you’re ready, I’d like to begin."
+    kelisha "You three will have a front row seat at the negotiations."
+    # > (MORE)
+    ### page 18 ###
+    # > EVERYONE SITS IN SILENCE...
+    kelisha "You will see how The Crown and our leadership maintain order... Sanders, if the Kingdom of New Jersey refuses to return workers to the mines, what is your first path of escalation?"
+    sanders "Non compliance means corrective action."
+    usagi "I’d want to know why. Find the reason. Try to work toward a solution."
+    kelisha "I know that is what you would do, that is why I was asking Sanders. But, Kitadani, what if the reason were one of religion? What if the New Jersians had some doctrine that forbade them from mining Ultima?"
+    usagi "That’s highly unlikely... The New Jersians are a godless people."
+    kelisha "It is a hypothetical question."
+    takeshi "The more likely reason is not religious, but environmental... No need for hypotheticals... Professor, the reason they protest is because they remember what happened 16 years ago."
+    kelisha "You see... this is why I like the three of you. Straight to the point then -- the negotiations will fail today, and our government, while we would like for it to think like you Williamson, or you Kitadani... Is more like... Sanders."
+    ### page 19 ###
+    sanders "... I feel like I should be offended?"
+    kelisha "The negotiations will fail, and we will bear witness to the repercussions of defiance. Today’s test is not one skill or merit, but of compliance and obedience. I wanted you to know this so that you would be prepared for... whatever may come."
+    takeshi "Should you be doing that?"
+    kelisha "Sometimes, WE... fight from the inside."
+    sanders "I’m lost."
+    usagi "Come on guys, we have a lot of preparation to do... Professor Kelisha, thank you."
+    sanders "Who is “we” in this situation?"
+    # > USAGI DRAGS SANDERS OUT OF THE ROOM
+    usagi "SANDERS!"
+    # > SHUTTLE LANDS IN NEW JERSEY.
+    kelisha "Takeshi, whatever happens today, remember: the arc of the moral universe is long but it bends towards justice... Don’t be too loud and don’t move too fast. If you get caught, I will not be there to help you."
+    jump scene12
