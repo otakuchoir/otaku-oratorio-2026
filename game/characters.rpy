@@ -6,6 +6,10 @@ define child = Character("Child", color="#dddddd", image="child")
 define bart = Character("Barthandelus", color="#6600dd", image="bart")
 define jojo = Character("Professor Jojo", color="#666666", image="jojo")
 define queen = Character("Queen Elizabeth Newark", color="#ffff00", image="queen")
+define linda = Character("Linda Kitanagi", color="#d68e8e", image="linda")
+# same character, using different names/titles in different parts of the script
+define general = Character("Elite General", color="#c99e61", image="huxtable")
+define huxtable = Character("Robert Huxtable", color="#c99e61", image="huxtable")
 
 define takeshis_console = Character(name="Takeshi's console", color="#aaaaaa")
 

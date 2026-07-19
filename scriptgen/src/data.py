@@ -54,7 +54,7 @@ _characters = [
     # scene 25
     ('professor wellington', 'wellington'),
     ('linda hudson', 'linda'),
-    ('robert huxtable', 'robert'),
+    ('robert huxtable', 'huxtable'),
     # wait, she also has a few lines in this scene as queen?
     ('princess elizabeth newark', 'princess'),
     # scene 27
@@ -82,8 +82,12 @@ _character_images = [
     'takeshi neutral',
     'usagi happy1',
     'queen neutral',
+    'linda neutral',
+    'huxtable neutral',
+    ('general', 'huxtable neutral'),
 ]
-character_images = dict((i.split(' ')[0], i) for i in _character_images)
+character_images = dict((i.split(' ')[0], i) if isinstance(i, str) else i
+                        for i in _character_images)
 
 # If we don't have sprites for a character, they probably don't have a character definition yet
 # - that is, an entry in `characters.rpy`.
