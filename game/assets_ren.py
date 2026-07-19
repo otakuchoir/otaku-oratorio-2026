@@ -83,7 +83,7 @@ for f in fs:
         else:
             load_image(name_focus, f)
         renpy.image(name_unfocus, dim(renpy.get_registered_image(name_focus))) # type: ignore
-        print('image:', name, '-', f)
+        # print('image:', name, '-', f)
 
 # Load a list of other assets with less predictible naming patterns.
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')

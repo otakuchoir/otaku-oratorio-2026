@@ -22,6 +22,7 @@ jobs:
         with:
           lfs: true
       - run: git lfs pull
+      - run: ./bin/ci
 
       ## desktop build and deploy to github releases
       - run: ./bin/build-desktop
@@ -41,6 +42,7 @@ jobs:
         with:
           lfs: true
       - run: git lfs pull
+      - run: ./bin/ci
 
       # web build and deploy to itch.io
       # https://erosson.itch.io/otaku-oratorio-2026
