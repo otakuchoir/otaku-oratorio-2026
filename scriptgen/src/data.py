@@ -44,6 +44,8 @@ _characters = [
     ('navigation chief', 'navigator'),
     'navigator',
     ('planet destroyer adult', 'destroyer'),
+    # scene 20
+    ('office worker', 'worker'),
     # scene 23
     ('the child', 'child'),
     # scene 24

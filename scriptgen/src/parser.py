@@ -15,7 +15,7 @@ class Parser:
 
     def replace(self, **kwargs) -> Parser:
         return dataclasses.replace(self, **kwargs)
-    
+
     def is_speaking(self):
         """true if a speaker is present."""
         return self.dialogue_speaker is not None
@@ -41,12 +41,12 @@ class Parser:
             raise Exception('source text must start with "version: <source-file.pdf>"')
         call = f'_parse_{t.type_}'
         return getattr(self, call)(t)
-    
+
     def _parse_version(self, t: token.Version) -> tuple[Parser, list[ast.Node]]:
         if self.version is not None:
             raise Exception(f"can't have two versions: {self.version}, {t.version}")
         return (self.replace(version=t.version), [])
-    
+
     def _parse_blank(self, _: token.Blank) -> tuple[Parser, list[ast.Node]]:
         if self.is_dialogue_buffered():
             # blank line means the speaker is done speaking, but only if they've already said something
@@ -63,7 +63,7 @@ class Parser:
             return (self, dia + nodes)
         else:
             return (self, nodes)
-    
+
     def _parse_speaker(self, t: token.Speaker) -> tuple[Parser, list[ast.Node]]:
         # if there was a speaker, they're done speaking
         return self.flush_dialogue(next_speaker=t)
@@ -99,7 +99,7 @@ class Parser:
             self, _ = self.flush_dialogue(next_speaker=self.last_speaker)
         # return (self, nodes + [ast.ScriptComment([t], t.line)])
         return (self, nodes + [ast.ScriptComment([], '(MORE)\n')])
-            
+
     def _parse_unknown(self, t: token.Unknown) -> tuple[Parser, list[ast.Node]]:
         if self.is_speaking():
             # the speaker is still talking, this token is part of their dialogue
@@ -133,7 +133,7 @@ class SceneBufferParser:
             raise Exception('too many speakers in one scene', images)
         images_at = zip(images, ats)
         return [ast.Show(img=img, at=at) for (img, at) in images_at]
-    
+
 def parse_lines(lines: io.Reader[str]) -> Generator[ast.Node]:
     return parse_tokens(token.tokenize(lines))
 
