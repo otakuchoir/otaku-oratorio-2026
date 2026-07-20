@@ -5,8 +5,8 @@ define kelisha = Character("Professor Kelisha", color="#4444ff", image="kelisha"
 define takeshis_console = Character(name="Takeshi's console", color="#aaaaaa")
 define bart = Character("Barthandelus", color="#6600dd", image="bart")
 define jojo = Character("Professor Jojo", color="#666666", image="jojo")
-define linda = Character("Linda Kitanagi", color="#d68e8e", image="linda")
-define kohei = Character("Kohei Kitanagi", color="#00bb00", image="kohei")
+define linda = Character("Linda Kitadani", color="#d68e8e", image="linda")
+define kohei = Character("Kohei Kitadani", color="#00bb00", image="kohei")
 # same character, using different names/titles in different parts of the script
 define child = Character("Child", color="#dddddd", image="child")
 define noname = Character("NoName", color="#dddddd", image="child")
