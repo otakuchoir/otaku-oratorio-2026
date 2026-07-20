@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eu
+cd "`dirname "$0"`/../scriptpdf-to-renpy"
+.venv/bin/python ./scriptpdf-to-renpy.py

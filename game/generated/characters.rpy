@@ -18,6 +18,5 @@ define worker = Character("WORKER")
 define student1 = Character("STUDENT1")
 define student2 = Character("STUDENT2")
 define student3 = Character("STUDENT3")
-define kohei = Character("KOHEI")
 define wellington = Character("WELLINGTON")
     # > PRE SHOW

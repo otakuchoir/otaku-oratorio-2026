@@ -1,9 +1,9 @@
 
 label scene08:
     scene black
-    show text "{color=#fff}Scene \"scene08\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.763404\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene08\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252935\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
-    show usagi happy1 at left2
+    show usagi neutral at left2
     # > 8        EVERYONE TURNS TO LOOK AT USAGI                                           8
     jojo "Usagi, daughter of the hero Kitadani, would you like to answer? What happened during Eden?"
     usagi "Eden was a tragedy that was a containment action that prevented the collapse of humanity."

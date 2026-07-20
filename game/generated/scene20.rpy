@@ -1,8 +1,8 @@
 
 label scene20:
     scene black
-    show text "{color=#fff}Scene \"scene20\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.764583\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
-    show usagi happy1 at center
+    show text "{color=#fff}Scene \"scene20\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254155\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show usagi neutral at center
     show sanders neutral at left2
     # > 20       INT. DAY; CROWN MILITARY HQ OFFICES                                      20
     # > Usagi is sitting in her cubicle, quietly working. Her phone

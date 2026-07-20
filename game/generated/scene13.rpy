@@ -1,14 +1,14 @@
 
 label scene13:
     scene black
-    show text "{color=#fff}Scene \"scene13\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.763947\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene13\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253509\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show huxtable neutral at center
     show queen neutral at left2
     show takeshi neutral at right2
     show kelisha neutral at left
     show linda neutral at right
     show sanders neutral at top
-    show usagi happy1 at topleft
+    show usagi neutral at topleft
     # > 13       INT. KINGDOM OF NEW JERSEY GREAT HALL - DAY                              13
     general "There is not much more to discuss. Our terms are more than clear. Return the miners to work and start Ultima production again."
     queen "And my question remains the same General Huxtable. Why would I do that?"

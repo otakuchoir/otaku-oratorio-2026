@@ -1,15 +1,16 @@
 
 label scene29:
     scene black
-    show text "{color=#fff}Scene \"scene29\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.765719\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
-    show bart neutral at center
-    show jojo neutral at left2
-    show kelisha neutral at right2
-    show linda neutral at left
-    show takeshi neutral at right
-    show sanders neutral at top
-    show usagi happy1 at topleft
-    show child neutral at topright
+    show text "{color=#fff}Scene \"scene29\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.255355\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show kohei serious1 at center
+    show bart neutral at left2
+    show jojo neutral at right2
+    show kelisha neutral at left
+    show linda neutral at right
+    show takeshi neutral at top
+    show sanders neutral at topleft
+    show usagi neutral at topright
+    show child neutral at truecenter
     # > 29       INT. NIGHT; CROWN FACILITY                                               29
     # > Everyone is gathered to review footage captured of the Planet
     # > Destroyer from earlier in the evening:

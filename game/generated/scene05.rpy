@@ -1,10 +1,10 @@
 
 label scene05:
     scene black
-    show text "{color=#fff}Scene \"scene05\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.763274\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene05\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252788\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show takeshi neutral at left2
-    show usagi happy1 at right2
+    show usagi neutral at right2
     # > 5        EXT. TRAIN STATION - AFTERNOON                                            5
     sanders "Once again we’re late."
     takeshi "No, there’s still time. We’re gonna make it."

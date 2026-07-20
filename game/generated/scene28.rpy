@@ -1,12 +1,13 @@
 
 label scene28:
     scene black
-    show text "{color=#fff}Scene \"scene28\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.765482\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
-    show usagi happy1 at center
+    show text "{color=#fff}Scene \"scene28\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.255112\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show usagi neutral at center
     show linda neutral at left2
-    show jojo neutral at right2
-    show bart neutral at left
-    show kelisha neutral at right
+    show kohei serious1 at right2
+    show jojo neutral at left
+    show bart neutral at right
+    show kelisha neutral at top
     # > 28       INT. NIGHT; KITADANI RESIDENCE                                           28
     usagi "That’s my favorite story mom! Thanks! Good night!"
     linda "Good night little rabbit. Anytime you want to hear the story, let me know."

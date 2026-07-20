@@ -1,11 +1,11 @@
 
 label scene14:
     scene black
-    show text "{color=#fff}Scene \"scene14\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.764036\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene14\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253601\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show takeshi neutral at left2
     show sanders neutral at right2
-    show usagi happy1 at left
+    show usagi neutral at left
     # > 14       EXT. DAY; LUNAR ACADEMY ROSE GARDEN                                      14
     jojo "Today you take your first steps into the a society that now, more than ever, needs its guardians to stand watch over our democracy. A tradition that has spanned over a millennia since the great cataclysm. We swore to never forget the second fall of humanity."
     takeshi "(quietly) This is such BS..."

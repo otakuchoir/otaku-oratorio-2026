@@ -1,7 +1,7 @@
 
 label scene17:
     scene black
-    show text "{color=#fff}Scene \"scene17\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.764375\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene17\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253946\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 17       INT. TV SCREENS                                                          17
     # > You ready for this?
     # > I have a kid back home, let’s get

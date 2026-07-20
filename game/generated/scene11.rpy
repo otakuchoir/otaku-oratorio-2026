@@ -1,11 +1,11 @@
 
 label scene11:
     scene black
-    show text "{color=#fff}Scene \"scene11\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.763707\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"scene11\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253255\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show takeshi neutral at center
     show kelisha neutral at left2
     show sanders neutral at right2
-    show usagi happy1 at left
+    show usagi neutral at left
     # > 11       INT. - SPACE SHUTTLE - KELISHA’S OFFICE THE ENVOY IS                     11
     # > TRAVELING TO EARTH.
     takeshi "You wanted to meet with us Professor Kelisha?"

@@ -20,11 +20,6 @@ transform dim:
 transform nodim:
     matrixcolor BrightnessMatrix(0)
     zoom 1
-transform _usagi_offset(w, h):
-    # usagi's sprites are all 391x571, way taller than everyone else's
-    # I don't think that's deliberate, so crop the bottom a bit
-    # crop (x, y, w, h)
-    crop (0, 0, w, h-120)
 
 init python:
 """
@@ -73,15 +68,7 @@ for f in fs:
         name = ' '.join([tag, attr])
         name_unfocus = name
         name_focus = name+' focus'
-        if tag == 'usagi':
-            # usagi's sprite is taller than most of the others, but that's almost never how we actually want to display it
-            name_raw = name+' uncropped'
-            load_image(name_raw, f)
-            raw = renpy.get_registered_image(name_raw)
-            w, h = renpy.image_size(raw)
-            renpy.image(name_focus, _usagi_offset(w, h)(raw)) # type: ignore
-        else:
-            load_image(name_focus, f)
+        load_image(name_focus, f)
         renpy.image(name_unfocus, dim(renpy.get_registered_image(name_focus))) # type: ignore
         # print('image:', name, '-', f)
 

@@ -1,10 +1,11 @@
 
 label scene24:
     scene black
-    show text "{color=#fff}Scene \"scene24\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 15:34:35.764976\" by scriptpdf-to-renpy.py (LLM-free)\nThis is merely a starting point for human editing, not a final product. Expect dialogue mistakes.{/color}" at top 
-    show bart neutral at center
-    show jojo neutral at left2
-    show linda neutral at right2
+    show text "{color=#fff}Scene \"scene24\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254574\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show kohei serious1 at center
+    show bart neutral at left2
+    show jojo neutral at right2
+    show linda neutral at left
     # > 24       INT. AFTERNOON; CROWN ACADEMY DORMS.                                     24
     student1 "I heard Joseph Chen just got recognized for creating fast travel. Apparently it’s going to make flights between the earth and moon SUPER quick. Like hours, not days."
     student2 "I heard his two best friends are on completely opposite sides of this. Kohei Kitadani is supporting this discovery while Bartholemew Barthandelus says it’s against our religious teachings."

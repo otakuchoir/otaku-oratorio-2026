@@ -62,7 +62,7 @@ label scene02:
 
     sanders prideful "That’s my duo!"
     takeshi happy1 "Thanks Usagi..."
-    show usagi exasperated1
+    show usagi exasperated
     show takeshi neutral at noflip
     sanders angry1 "What were you THINKING Takeshi??"
     takeshi angry1 "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
@@ -155,8 +155,8 @@ transform noflip:
 transform usagi_swoops_in_swoop1:
     parallel:
         noflip
-        zoom 0.1 xalign 1.4 yalign 0.9
-        linear 0.7 zoom 1 xalign -0.8 yalign 0.0 knot 1 knot 0.4 knot 0
+        zoom 0.1 xalign 1.5 yalign 0.9
+        linear 0.7 zoom 1 xalign -0.5 yalign 0.0 knot 1 knot 0.4 knot 0
     parallel:
         pause 0.1
         blink(n=2, dur=0.1)
@@ -167,8 +167,8 @@ transform usagi_swoops_in_swoop2:
     parallel:
         flip
         zoom 1
-        xalign -0.4 yalign 0.5
-        easein 0.7 xalign 1.4 yalign 0.2 knot 0 knot 1.0
+        xalign -0.5 yalign 0.5
+        easein 0.7 xalign 1.5 yalign 0.2 knot 0 knot 1.0
     parallel:
         pause 0.1
         blink(n=3, dur=0.1)
@@ -181,8 +181,8 @@ transform usagi_swoops_in_swoop2:
 transform usagi_swoops_in_swoop3:
     parallel:
         noflip
-        zoom 0.1 xalign 1.4 yalign 0.1 
-        easeout 0.7 zoom 1 xalign -0.4 yalign 0.1   knot 5 knot 0.5 knot 0.9
+        zoom 0.1 xalign 1.5 yalign 0.1 
+        easeout 0.7 zoom 1 xalign -0.5 yalign 0.1   knot 5 knot 0.5 knot 0.9
     parallel:
         pause 0.1
         blink(n=1, dur=0.2)
@@ -193,7 +193,7 @@ transform usagi_swoops_in_landing:
     parallel:
         # easein 1.4 right  # nope, this breaks for some reason
         yanchor 1.0
-        easein 1.4 xalign 1.0 ypos 880
+        easein 1.5 xalign 1.0 ypos 880
     parallel:
         flip
         pause 0.9
