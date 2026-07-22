@@ -1,7 +1,7 @@
 
-label scene04:
+label gen_scene04:
     scene black
-    show text "{color=#fff}Scene \"scene04\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252647\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene04\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.769772\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show usagi neutral at left2
     show takeshi neutral at right2
@@ -42,4 +42,4 @@ label scene04:
     # > BARTHANDELUS WALKS OFF OPPOSITE SIDE OF STAGE WHERE PROFESSOR
     # > JOJO HAS BEEN WATCHING, THEY GREET EACH OTHER AND WALK OFF.
     bart "An interesting development... You may yet prove to be useful in righting your wrongs Kohei...."
-    jump scene05
+    return

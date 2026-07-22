@@ -1,7 +1,7 @@
 
-label scene05:
+label gen_scene05:
     scene black
-    show text "{color=#fff}Scene \"scene05\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252788\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene05\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.769899\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show takeshi neutral at left2
     show usagi neutral at right2
@@ -50,4 +50,4 @@ label scene05:
     # > SONG: HANA NI NATTE    # > 
     # > 2 WEEKS LATER
     ### page 12 ###
-    jump scene06
+    return

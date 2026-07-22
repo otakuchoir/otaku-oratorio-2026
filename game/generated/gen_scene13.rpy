@@ -1,7 +1,7 @@
 
-label scene13:
+label gen_scene13:
     scene black
-    show text "{color=#fff}Scene \"scene13\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253509\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene13\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770571\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show huxtable neutral at center
     show queen neutral at left2
     show takeshi neutral at right2
@@ -47,4 +47,4 @@ label scene13:
     takeshi "Some of knew it was wrong."
     usagi "And all of us stayed silent."
     usagi "After that mid term, none of us really spoke much. Finals came and went, and then graduation..."
-    jump scene14
+    return

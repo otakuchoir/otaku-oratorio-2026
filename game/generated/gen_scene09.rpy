@@ -1,7 +1,7 @@
 
-label scene09:
+label gen_scene09:
     scene black
-    show text "{color=#fff}Scene \"scene09\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253022\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene09\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770110\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show linda neutral at center
     show usagi neutral at left2
     # > 9        INT. NIGHT - USAGI’S DORM ROOM                                            9
@@ -31,4 +31,4 @@ label scene09:
     usagi "Love you too mom! Good night."
     # > 
     # >          SONG: MOONLIGHT DENSETSU    # > 
-    jump scene10
+    return

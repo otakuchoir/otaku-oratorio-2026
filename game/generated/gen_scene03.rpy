@@ -1,7 +1,7 @@
 
-label scene03:
+label gen_scene03:
     scene black
-    show text "{color=#fff}Scene \"scene03\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252527\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene03\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.769662\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show kelisha neutral at center
     show sanders neutral at left2
     show usagi neutral at right2
@@ -32,4 +32,4 @@ label scene03:
     reporter3 "While the Kingdom of New Jersey is responsible for a large part of the Ultima Ore supply chain, Our Crown Military King, is confident that an agreement will be reached before the situations impacts the economy."
     # > TRANSITION TO
     king "WE ARE FULLY CONFIDENT THAT THE PEOPLE OF THE KINGDOM OF NEW JERSEY WILL COMPLY WITH ORDERS AND ALL WILL BE WELL."
-    jump scene04
+    return

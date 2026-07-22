@@ -1,7 +1,7 @@
 
-label scene06:
+label gen_scene06:
     scene black
-    show text "{color=#fff}Scene \"scene06\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252876\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene06\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.769978\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show takeshi neutral at left2
     show sanders neutral at right2
@@ -16,4 +16,4 @@ label scene06:
     jojo "Excellent work, Sanders. Like biology, our institutions had to evolve to meet the needs of its environment."
     ### page 13 ###
     jojo "Today is the anniversary of the Eden Incident. Who could tell me what happened during the Eden Incident?"
-    jump scene08
+    return

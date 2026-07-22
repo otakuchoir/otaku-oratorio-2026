@@ -1,7 +1,7 @@
 
-label scene19:
+label gen_scene19:
     scene black
-    show text "{color=#fff}Scene \"scene19\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254064\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene19\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.771420\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show usagi neutral at center
     # > 19       INT. THE SPACESHIP EDEN MAIN DECK                                        19
     gunner "Captain, beam array at 60 percent and climbing; Firing window opens in 3 minutes and counting."
@@ -52,4 +52,4 @@ label scene19:
     # > BARTHANDELUS STOPS THE FOOTAGE. HE HAS BEEN WATCHING THIS OLD
     # > CLASSIFIED RECORDING FOR SOME REASON....
     reporter3 "But the Space shuttle Eden and its crew has been decimated in the blast fall out. Folks at home, I think now is a time for a moment of silence as we think about the Eden and their sacrifice..."
-    jump scene20
+    return

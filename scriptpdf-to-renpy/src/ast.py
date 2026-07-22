@@ -44,7 +44,8 @@ class Jump:
     name: str
 
     def to_rpy(self) -> str:
-        return f'    jump {self.name}\n'
+        # return f'    jump {self.name}\n'
+        return f'    return'
 
     def to_debug(self) -> list[str]:
         return [format_debug(t.type_, t.line) for t in self.tokens]

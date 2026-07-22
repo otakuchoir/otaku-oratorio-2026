@@ -26,9 +26,6 @@ debug_path = './oo2_debug.txt'
 # Careful, anything already there will be deleted!
 rpy_path = "../game/generated/"
 
-# Don't regenerate scenes that a human's already edited
-skipped_scenes = set(['scene02'])
-
 def main():
     with pypdf.PdfReader(pdf_path) as pdf:
         # Everything here uses generators. We're not parsing the whole script pdf into memory.
@@ -85,10 +82,9 @@ def main():
             pass
         os.mkdir(rpy_path)
         for scene in scenes:
-            if scene.label not in skipped_scenes:
-                rpy_file = pathlib.Path(rpy_path) / scene.filename()
-                with open(rpy_file, 'w') as rpy:
-                    ast_parser.write_rpy(scene.nodes, rpy)
+            rpy_file = pathlib.Path(rpy_path) / scene.filename()
+            with open(rpy_file, 'w') as rpy:
+                ast_parser.write_rpy(scene.nodes, rpy)
 
 def pdf_pages(pdf: pypdf.PdfReader) -> Generator[str]:
     """Output one plaintext page of the script at a time, parsed from a pdf using `pypdf`."""

@@ -1,3 +1,7 @@
+define jump_to_scene_n = 0
+label jump_to_scene:
+    call start(i=jump_to_scene_n)
+
 screen jump_to():
     frame:
         xalign 0.5 yalign 0.5
@@ -5,13 +9,10 @@ screen jump_to():
         vbox:
             text "Jump to Scene..."
             textbutton "exit":
-                action Hide('jump_to')
+                action Hide()
 
             vpgrid:
                 cols 2
-
-                $ num_scenes = 29
-                for n in range(1, 1+num_scenes):
-                    $ s = f"scene{n:02d}"
-                    textbutton s:
-                        action Start(s)
+                for i, scene in enumerate(scenes):
+                    textbutton scene:
+                        action [SetVariable('jump_to_scene_n', i), Start('jump_to_scene')]

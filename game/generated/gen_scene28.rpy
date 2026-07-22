@@ -1,7 +1,7 @@
 
-label scene28:
+label gen_scene28:
     scene black
-    show text "{color=#fff}Scene \"scene28\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.255112\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene28\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.773001\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show usagi neutral at center
     show linda neutral at left2
     show kohei serious1 at right2
@@ -39,4 +39,4 @@ label scene28:
     linda "I’ll get that."
     linda "Kelisha? What are you doing here?"
     kelisha "All of you, I need you to come with me right now. Linda, bring your daughter, we need to be moving in 60 seconds. There’s a transport outside."
-    jump scene29
+    return

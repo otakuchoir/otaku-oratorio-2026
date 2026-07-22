@@ -1,7 +1,7 @@
 
-label preshow:
+label gen_preshow:
     scene black
-    show text "{color=#fff}Scene \"preshow\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.252203\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_preshow\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.769316\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 1        INT. THE DIMENNA CENTER FOR CLASSICAL MUSIC                               1
     # > Johnathan and Danny welcome the audience to the annual
     # > memorial tribute to Kohei Kitadani, tells them to clap only
@@ -14,4 +14,4 @@ label preshow:
     # > enjoy the show.
     ### page 2 ###
     # > ACT 1
-    jump scene01
+    return

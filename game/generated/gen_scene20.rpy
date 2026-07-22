@@ -1,7 +1,7 @@
 
-label scene20:
+label gen_scene20:
     scene black
-    show text "{color=#fff}Scene \"scene20\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254155\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene20\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.771564\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show usagi neutral at center
     show sanders neutral at left2
     # > 20       INT. DAY; CROWN MILITARY HQ OFFICES                                      20
@@ -22,4 +22,4 @@ label scene20:
     usagi "Cut the crap Sanders. We both know I don’t have a choice, so let’s go."
     sanders "No, answer the question. Why do you act like you’re always being watched or that you can’t do what you want when you want?"
     usagi "George... Stop playing in my face."
-    jump scene21
+    return

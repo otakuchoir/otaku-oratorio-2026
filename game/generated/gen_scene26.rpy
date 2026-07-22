@@ -1,7 +1,7 @@
 
-label scene26:
+label gen_scene26:
     scene black
-    show text "{color=#fff}Scene \"scene26\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254806\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene26\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.772552\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show linda neutral at center
     show usagi neutral at left2
     show takeshi neutral at right2
@@ -35,4 +35,4 @@ label scene26:
     usagi "...."
     takeshi "Usagi, I’m sorry. I-"
     usagi "You need to be careful Takeshi. I know what you’re up to. I’m not joining the resistance. But I’m not going to report you either. Never call here again."
-    jump scene27
+    return

@@ -1,7 +1,7 @@
 
-label scene14:
+label gen_scene14:
     scene black
-    show text "{color=#fff}Scene \"scene14\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253601\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene14\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770655\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show takeshi neutral at left2
     show sanders neutral at right2
@@ -19,4 +19,4 @@ label scene14:
     # > The applause drowns her out.
     # > CUT TO
     usagi "No... that’s not what I .... Stop it... stop it... I am not my"
-    jump scene15
+    return

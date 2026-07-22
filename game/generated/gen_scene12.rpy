@@ -1,7 +1,7 @@
 
-label scene12:
+label gen_scene12:
     scene black
-    show text "{color=#fff}Scene \"scene12\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253369\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene12\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770438\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show usagi neutral at left2
     show takeshi neutral at right2
@@ -35,4 +35,4 @@ label scene12:
     ### page 22 ###
     reporter2 "That’s right, inside this building behind me, negotiations are unfolding as we speak."
     reporter3 "Both parties have decided to handle these talks privately, and so we wait outside for the outcome."
-    jump scene13
+    return

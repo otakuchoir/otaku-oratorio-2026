@@ -1,7 +1,7 @@
 
-label scene23:
+label gen_scene23:
     scene black
-    show text "{color=#fff}Scene \"scene23\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254431\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene23\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.772001\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show usagi neutral at left2
     show bart neutral at right2
@@ -84,4 +84,4 @@ label scene23:
     jojo "I have. But experience is the best teacher. We’re not children anymore Bart."
     # > 
     # >          SONG: SILHOUETTE    # > 
-    jump scene24
+    return

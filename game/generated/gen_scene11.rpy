@@ -1,7 +1,7 @@
 
-label scene11:
+label gen_scene11:
     scene black
-    show text "{color=#fff}Scene \"scene11\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253255\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene11\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770328\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show takeshi neutral at center
     show kelisha neutral at left2
     show sanders neutral at right2
@@ -40,4 +40,4 @@ label scene11:
     usagi "SANDERS!"
     # > SHUTTLE LANDS IN NEW JERSEY.
     kelisha "Takeshi, whatever happens today, remember: the arc of the moral universe is long but it bends towards justice... Don’t be too loud and don’t move too fast. If you get caught, I will not be there to help you."
-    jump scene12
+    return

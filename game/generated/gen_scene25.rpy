@@ -1,7 +1,7 @@
 
-label scene25:
+label gen_scene25:
     scene black
-    show text "{color=#fff}Scene \"scene25\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254695\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene25\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.772386\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show queen neutral at center
     show linda neutral at left2
     show huxtable neutral at right2
@@ -43,4 +43,4 @@ label scene25:
     jojo "Guys... I can’t move. I’ve been jammed. Nothing is working."
     bart "They’re debuffing our auxillary, Ace, you’re gonna have to fight two at one time, and I’m picking up nano tech on their ace, 35%% attack buff."
     kohei "Oh they’re gonna need more than 35%%. Support, help out Aux- The Phoenix is going in."
-    jump scene26
+    return

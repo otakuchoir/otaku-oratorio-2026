@@ -5,8 +5,7 @@ screen devtools():
         vbox:
             text "Developer Tools"
             textbutton "exit":
-                # action Return()
-                action Hide('devtools')
+                action Hide()
             textbutton "gallery":
                 action ShowMenu('gallery')
             textbutton "jump to scene...":

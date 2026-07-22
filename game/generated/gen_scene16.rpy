@@ -1,7 +1,7 @@
 
-label scene16:
+label gen_scene16:
     scene black
-    show text "{color=#fff}Scene \"scene16\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253851\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene16\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770973\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show takeshi neutral at left2
     show usagi neutral at right2
@@ -75,4 +75,4 @@ label scene16:
     ### page 33 ###
     # > ACT 2
     jojo "Move in and secure the specimen."
-    jump scene17
+    return

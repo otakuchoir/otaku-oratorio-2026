@@ -5,8 +5,7 @@
         vbox:
             text "All Registered Images"
             textbutton "exit":
-                # action Return()
-                action Hide('gallery')
+                action Hide()
             # viewport:
             vpgrid:
                 scrollbars "vertical"

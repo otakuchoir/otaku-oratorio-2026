@@ -106,8 +106,7 @@ label scene02:
     # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
     # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
     # > CLASSROOM FORMATION.
-
-    jump scene03
+    return
 
 label scene02_usagi_swoops_in:
     # pause after each animation for the length of that animation.
@@ -138,6 +137,7 @@ label scene02_usagi_swoops_in:
     pause 0.6  # landing is done here, 1.4 seconds
     pause 0.3  # a small delay after the animation feels nice
     show usagi happy1 at right
+    return
 
 # renpy coordinates: x=0 is left, y=0 is top
 #

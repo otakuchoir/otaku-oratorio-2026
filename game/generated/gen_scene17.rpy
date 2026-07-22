@@ -1,7 +1,7 @@
 
-label scene17:
+label gen_scene17:
     scene black
-    show text "{color=#fff}Scene \"scene17\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.253946\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene17\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.771224\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 17       INT. TV SCREENS                                                          17
     # > You ready for this?
     # > I have a kid back home, let’s get
@@ -29,4 +29,4 @@ label scene17:
     # > from this angelic terror...
     ### page 34 ###
     # > THE FINAL DAY - FINAL FANTASY XIV ENDWALKER
-    jump scene19
+    return

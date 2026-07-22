@@ -1,7 +1,7 @@
 
-label scene24:
+label gen_scene24:
     scene black
-    show text "{color=#fff}Scene \"scene24\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-19 18:46:16.254574\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene24\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.772206\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show kohei serious1 at center
     show bart neutral at left2
     show jojo neutral at right2
@@ -40,4 +40,4 @@ label scene24:
     # > Jojo looks uncomfortable at that suggestion. It’s clear that
     # > he has feelings for Linda too.
     bart "Guys... you two should just get married already."
-    jump scene25
+    return

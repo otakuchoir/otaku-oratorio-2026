@@ -57,9 +57,9 @@ class ASTParser:
         nodes = self.flush_dialogue_list()
         # special case the pre-show section, which looks like a scene for some reason
         if 'THE DIMENNA CENTER FOR CLASSICAL MUSIC' in t.line and self.scene is None:
-            nodes += [ast.Label([], 'preshow', self.version)]
+            nodes += [ast.Label([], 'gen_preshow', self.version)]
         else:
-            label = f'scene{t.scene:02d}'
+            label = f'gen_scene{t.scene:02d}'
             nodes += [ast.Jump([], label), ast.Label([t], label, self.version)]
         nodes += [ast.ScriptComment([], t.line+'\n')]
         self.scene = t.scene
