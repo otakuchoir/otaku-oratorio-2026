@@ -1,7 +1,7 @@
 
 label gen_scene01:
     scene black
-    show text "{color=#fff}Scene \"gen_scene01\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.769425\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene01\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.181663\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 1        EXT. CITY MONSTER ATTACK                                                  1
     # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
     # > THROUGH MODEL CITY, BURNING BUILDINGS WITH ATOMIC BREATH

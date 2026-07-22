@@ -1,7 +1,7 @@
 
 label gen_scene29:
     scene black
-    show text "{color=#fff}Scene \"gen_scene29\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.773336\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene29\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.184510\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show kohei serious1 at center
     show bart neutral at left2
     show jojo neutral at right2
@@ -87,11 +87,11 @@ label gen_scene29:
     # > A glitch
     kagu "THE PIRATE CATS! HAHA!"
     usagi "What was that?"
-    kagu "That was.... When a part of me evolves, that happens. Laughter... with... another person. Camaraderie. First... Wonder... when you read me the story, remember? And now... Camaraderie. Wow... Thank you Usagi."
+    kagu "That was.... When a part of me evolves, that happens. Laughter... with... another person. Camaraderie. First... Wonder... when you read me the story, remember? And now... Camaraderie. Wow... Thank you Mom."
     usagi "I see...."
     bart "No, Joseph this is not right-"
     jojo "Bart! How many times do I have to tell you!? Let-Her-Work!"
-    bart "But she’s doing it wrong, shes..."
+    bart "But she’s doing it wrong, she’s..."
     usagi ".... Kagu... what do you desire? What do you... want? What are your hopes, and dreams?"
     # > Glitch glitch glitch
     kagu "Hopes... and... dreams?"
@@ -100,8 +100,65 @@ label gen_scene29:
     kagu "Hopes.... And .... Dreams..... What do I want?"
     # > 
     # > SONG: SOTO    # > 
+    # > BLACKOUT
     ### page 65 ###
-    # > Bathandelus has had enough
+    # > EXT. - NOWHERE
+    bart "If you don’t do it, I will."
+    # > EXT. USAGI'S APARTMENT - ROOFTOP
+    kohei "I’m piloting the Eden. I always said it would be awesome to command that thing. Didn’t realize it’d be under these circumstances.... Linda... The love of my life... take good care of Usagi for me... for us. Jojo... you’re smart... like really smart. You’ll figure out a way forward, for all of us. Have confidence, stop at nothing to make that progress you’re always talking about. Bart... I know we’ve had our differences, but I want you to know that I respect you. What you stand for, is humanity. You always tried to warn us, and it IS our own fault that we didn’t listen... but look... I believe in second chances, and now that we know what’s going on I... Who am I kidding... I... I’m scared Bart. I’m not the best for this... everyone is counting on me... it’s impossible... they’re selling a lie. I... SIGH...  I will do my duty."
+    kagu "... And then they summoned a bus using the metro card, but insted of hitting him, it revealed the driver, and it was his DAD! Ahh I can’t wait for next week’s episode!"
+    usagi "Well, you don’t have to wait, Kagu. All of the episodes are online already."
+    kagu "Yes, I understand, but I want to experience it the way you all experienced during its first run, ahhh!"
+    usagi "Fair enough. So, Kagu... what are you going to do next?"
+    # > (MORE)
+    ### page 66 ###
+    usagi "You’ve been staying here at my place for like... 2 weeks now. What’s next?"
+    # > Holo-time rings
+    kagu "Oh, have I overstayed my welcome? Sorry about that. I should have seen this coming earlier but I just evolved to understand social cues."
+    usagi "Hey mom."
+    linda "Hey Usagi. And how is Kagu doing?"
+    kagu "It’s just like you told me to say: “same old, same old.”"
+    usagi "Same ol’ same ol’..."
+    linda "I see. You remembered!"
+    # > Kagu starts rehearsing the line over and over again.
+    kagu "Yes! Remember! Wait, why do you accept it when she said it like that, should I say it like that instead?"
+    linda "Usagi, listen... I wanted to let you know... I... this work you’re doing."
+    usagi "With Kagu, yeah? What about it?"
+    linda "You said Professor Jojo was behind it?"
+    ### page 67 ###
+    usagi "Yes, and the pope has a ‘vested interest’..."
+    linda "Jojo and Barthandelus? Just... Be careful. I don’t-"
+    usagi "Sorry mom, gotta go, I think Kagu froze up or something."
+    linda "Oh, Of course. I’ll talk with you later."
+    # > Kagu is standing still, looking up.
+    usagi "Love you mom, bye. KAGU!"
+    kagu "I just got my memories back..."
+    usagi "You evolved again? You remembered?"
+    kagu "Yes... I.... It was up there, I came to... destroy everyone?"
+    usagi "Um..."
+    kagu "I... what? What did I do? WHAT DID I DO?"
+    usagi "Kagu! Get a hold of yourself. You’re ok... you’re here with me. Listen. That’s the past. It’s-"
+    kagu "And you... You knew... Why didn’t you tell me.... Oh... your father he... So that’s it? I... Usagi I’m sorry I didn’t mean to I, I -"
+    usagi "Kagu, stop! I said, it’s O-K."
+    ### page 68 ###
+    kagu "Okay that I blew your dad up and doomed the entire human race to annihilation?? No! That’s NOT ok!"
+    usagi "That wasn’t you! It was a past life, remember? We are NOT our pasts. We can only focus on who we are now and what we can do for the future."
+    # > Kagu flies off into space, away from the moon, toward earth,
+    # > and finds the spot where the Eden’s wreckage remains.
+    # > EXT. SPACE
+    kagu "WAAAAAH!"
+    # > Kagu searches their memory and sees a crystal floating
+    # > through the cosmos, then various scenes of Kagu destroying
+    # > entire civilizations, including Earth with the Great Flood,
+    # > and then again Earth in 2100, the great cataclysm.
+    kagu "I’m responsible for this. I... What AM I really. Past lives? Regeneration..."
+    kagu "I’m a monster..."
+    # > She has followed Kagu in her own mech.
+    usagi "Kagu!"
+    kagu "Usagi, I-"
+    usagi "It’s like I said, you can always change who you were born to be. I have always believed that, trust me. I know how it feels to be labeled. DON’T label yourself. YOU are not a monster."
+    kagu "I only exist for one purpose."
+    ### page 69 ###
     # > Kagu is hanging out outside then realizes something tells
     # > Usagi to come with them.
     # > They confront Barthandelus asking what he has done.

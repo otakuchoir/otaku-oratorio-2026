@@ -16,7 +16,7 @@ import pathlib
 import itertools
 
 # Our input file, the OO2 script.
-pdf_path = './Otaku Oratorio 2 Script 7-15-2026.pdf'
+pdf_path = './Otaku Oratorio 2 Script 7-20-2026.pdf'
 # Name of the input file without directories. Used in some renpy output.
 # Answers the question "which version of the script generated this code? Is it up to date?"
 version = pathlib.Path(pdf_path).name

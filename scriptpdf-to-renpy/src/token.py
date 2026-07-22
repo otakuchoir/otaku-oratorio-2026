@@ -115,6 +115,11 @@ def tokenize_line(line: str) -> list[Token]:
 # what kind of line are we talking about? no context/state allowed
 def tokenize(pages: io.Reader[str]) -> Generator[Token]:
     for page in pages:
+        # quick hack for scene 18 because it is formatted differently
+        page = page.replace(
+            'VARIOUS SCREENS SHOWING THE NEWS OF THE SPACESHIP EDEN AS IT',
+            'VARIOUS SCREENS SHOWING THE NEWS OF THE SPACESHIP EDEN AS IT 18',
+        )
         for line in page.split('\n'):
             for t in tokenize_line(line):
                 yield t

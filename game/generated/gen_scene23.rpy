@@ -1,7 +1,7 @@
 
 label gen_scene23:
     scene black
-    show text "{color=#fff}Scene \"gen_scene23\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.772001\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene23\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.183706\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show usagi neutral at left2
     show bart neutral at right2

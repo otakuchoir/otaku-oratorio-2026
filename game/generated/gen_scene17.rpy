@@ -1,32 +1,10 @@
 
 label gen_scene17:
     scene black
-    show text "{color=#fff}Scene \"gen_scene17\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.771224\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene17\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.183291\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 17       INT. TV SCREENS                                                          17
-    # > You ready for this?
-    # > I have a kid back home, let’s get
-    # > this over with so I can go see her.
-    # > Aye Captain.
-    # > 18       VARIOUS SCREENS SHOWING THE NEWS OF THE SPACESHIP EDEN AS IT
-    officer "EMBARKS ON A MISSION TO DESTROY THE SPACE CRYSTAL."
-    # > Breaking news, The Earth Crown
-    # > Military is now moving on the
-    # > Crystal
-    # > Earth’s last defense against
-    # > absolute destruction at the hands
-    # > of a humanoid space alien who, six
-    # > months ago, doomed the planet
-    # > Leading this operation is none
-    # > other than decorated Earth Crown
-    # > Military Captain, Kohei Kitadani
-    # > Kitadani, a well respected
-    # > geological scientist with the ECM
-    # > is often credited as the father of
-    # > the ULTIMA CANON
-    # > The very same canon we use for
-    # > mining ULTIMA to power our homes
-    # > Now being repurposed to save us
-    # > from this angelic terror...
-    ### page 34 ###
-    # > THE FINAL DAY - FINAL FANTASY XIV ENDWALKER
+    # > CLASSIFIED FOOTAGE... EDEN BLACK BOX... THE TRUTH OF THAT DAY
+    gunner "You ready for this?"
+    kitadani "I have a kid back home, let’s get this over with so I can go see her."
+    officer "Aye Captain."
     return

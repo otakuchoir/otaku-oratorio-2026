@@ -1,7 +1,7 @@
 
 label gen_scene09:
     scene black
-    show text "{color=#fff}Scene \"gen_scene09\" automatically generated from \"Otaku Oratorio 2 Script 7-15-2026.pdf\"\nat \"2026-07-22 09:53:05.770110\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene09\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.182356\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show linda neutral at center
     show usagi neutral at left2
     # > 9        INT. NIGHT - USAGI’S DORM ROOM                                            9

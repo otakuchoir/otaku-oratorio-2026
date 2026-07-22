@@ -1,31 +1,39 @@
 ﻿init python:
     scenes = [
+        ### Act 1
         'gen_scene01',
         'scene02',
         'scene02a',
         'gen_scene03',
         'gen_scene04',
+        'scene04a',
         'gen_scene05',
-        'gen_scene06',
+        'scene05a',
+        'scene06', # IRL
         # no scene 7
-        'gen_scene08',
-        'gen_scene09',
+        # scene 8 IRL, same file as scene 6
+        'scene09', # IRL
+        'scene09a',
         'gen_scene10',
-        'gen_scene11',
+        'scene11', # IRL
         'gen_scene12',
-        'gen_scene13',
-        'gen_scene14',
-        'gen_scene15',
-        'gen_scene16',
+        'scene13', # IRL
+        'scene14', # IRL
+        'scene15', # IRL
+        'scene15a',
+        'scene16', # partial IRL
+
+        ### Act 2
         'gen_scene17',
-        # no scene 18
-        'gen_scene19',
+        'gen_scene18',
+        'scene18a',
+        'scene19', # IRL
         'gen_scene20',
         'gen_scene21',
         'gen_scene22',
         'gen_scene23',
         'gen_scene24',
-        'gen_scene25',
+        'scene25', # IRL
         'gen_scene26',
         'gen_scene27',
         'gen_scene28',

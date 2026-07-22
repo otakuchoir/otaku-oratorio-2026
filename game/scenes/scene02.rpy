@@ -33,7 +33,6 @@ label scene02:
     show sanders at center, flip
     sanders "Takeshi, watch my six, I’m going in."
     show sanders at center, noflip
-    takeshi "I don’t think that’s a good idea..."
     takeshi "We lost sight of their third... their support-"
     sanders eyeroll "The hell can a support do in this situation? I’m going in."
     show takeshi worried1 
@@ -57,7 +56,7 @@ label scene02:
     # > missiles and guide them away. She then counter attacks the
     # > enemy team, taking them out herself one after the other.
     #
-    # to show this, we make usagi's sprites fly around the screen. (ff6 esper tech)
+    # to show this, we make usagi's sprites fly around the screen. ff6 esper tech
     call scene02_usagi_swoops_in
 
     sanders prideful "That’s my duo!"
