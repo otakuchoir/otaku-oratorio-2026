@@ -5,14 +5,20 @@ label jump_to_scene:
 screen jump_to():
     frame:
         xalign 0.5 yalign 0.5
-        # xsize 600 ysize 800
+        xsize 1000 ysize 1000
         vbox:
             text "Jump to Scene..."
             textbutton "exit":
                 action Hide()
 
             vpgrid:
-                cols 2
+                scrollbars "vertical"
+                mousewheel True
+                draggable True
+                cols 1
+                # spacing 15
+
                 for i, scene in enumerate(scenes):
-                    textbutton scene:
+                    textbutton str(scene):
+                        xminimum 1000
                         action [SetVariable('jump_to_scene_n', i), Start('jump_to_scene')]

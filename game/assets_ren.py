@@ -25,6 +25,7 @@ init python:
 """
 
 import re
+import dataclasses
 
 config.speaking_attribute = 'focus' # type: ignore
 
@@ -88,3 +89,56 @@ load_image('bg scene19d', 'assets/Storyboards/storyboard-19-4.png')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')
+
+
+import dataclasses
+@dataclasses.dataclass(frozen=True)
+class S:
+    label: str
+    desc: str = ''
+
+    def __str__(self):
+        return f"{self.label}: {self.desc}"
+
+scenes = [
+    ### Act 1
+    S('gen_scene01', 'Memorial Monster Commercial'),
+    S('scene02', 'Initial Training Battle'),
+    S('scene02a', 'Opening Transition; SONG: Butter-Fly'),
+    S('gen_scene03', 'Academy Classroom'),
+    S('gen_scene04', 'School Grounds, Meet Barthandelus'),
+    S('scene04a', 'SONG: Ragnarok'),
+    S('gen_scene05', 'Train Station'),
+    S('scene05a', 'SONG: Hana Ni Natte'),
+    S('scene06', '(IRL) Classroom scenes 1 and 2'),
+    # no scene 7
+    # scene 8 IRL, same file as scene 6
+    S('scene09', '(IRL) Usagi and Linda'),
+    S('scene09a', 'SONG: Moonlight Densetsu'),
+    S('gen_scene10', 'Shuttle to Earth, Takeoff'),
+    S('scene11', "(IRL) Kelisha's Shuttle Office"),
+    S('gen_scene12', 'Arriving on Earth'),
+    S('scene13', '(IRL) New Jersey Negotiations; SONG: Lillium'),
+    S('scene14', '(IRL) Graduation Day'),
+    S('scene15', '(IRL) Mission Briefing'),
+    S('scene15a', 'SONG: Weight of the World'),
+    S('scene16', '(partial IRL) Dark Side of the Moon; SONG: Ragnarok'),
+    S('scene16a', 'End Act 1'),
+
+    ### Act 2
+    S('gen_scene17', 'Start Act 2'),
+    S('gen_scene18'),
+    S('scene18a', 'SONG: The Final Day'),
+    S('scene19', '(IRL)'),
+    S('gen_scene20'),
+    S('gen_scene21'),
+    S('gen_scene22'),
+    S('gen_scene23'),
+    S('gen_scene24'),
+    S('scene25', '(IRL)'),
+    S('gen_scene26'),
+    S('gen_scene27'),
+    S('gen_scene28'),
+    S('gen_scene29'),
+]
+len_scenes = len(scenes)

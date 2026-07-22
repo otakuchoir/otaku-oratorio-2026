@@ -301,6 +301,8 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
+            textbutton _("Jump to Scene...") action ShowMenu('jump_to')
+
             textbutton _("Dev Tools") action ShowMenu('devtools')
 
         else:
