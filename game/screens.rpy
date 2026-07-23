@@ -303,6 +303,8 @@ screen navigation():
 
             textbutton _("Jump to Scene...") action ShowMenu('jump_to')
 
+            textbutton _("Changelog") action ShowMenu('changelog')
+
             textbutton _("Dev Tools") action ShowMenu('devtools')
 
         else:
@@ -374,11 +376,12 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            #text "[config.name!t]":
+            #    style "main_menu_title"
 
-            text "[config.version]":
+            textbutton "[config.version]":
                 style "main_menu_version"
+                action ShowMenu('changelog')
 
 
 style main_menu_frame is empty

@@ -18,12 +18,18 @@ define config.name = _("Otaku Oratorio 2")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = False
+define gui.show_name = True
 
 
 ## The version of the game.
 
-define config.version = "1.0"
+# define config.version = "1.0"
+init python:
+    import re
+    changelog = renpy.file('CHANGELOG').read().decode('utf-8')
+    last_updated = re.match(r'^## (?P<u>.*)$', changelog.split('\n')[0]).group('u')
+    if not last_updated: raise Exception("couldn't find latest version number from changelog")
+    config.version = f"Updated {last_updated}"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
