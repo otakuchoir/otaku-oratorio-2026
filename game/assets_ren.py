@@ -90,6 +90,9 @@ load_image('bg scene19d', 'assets/Storyboards/storyboard-19-4.png')
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')
 
+changelog = renpy.file('CHANGELOG').read().decode('utf-8')
+last_updated = re.match(r'^## (?P<u>.*)$', changelog.split('\n')[0]).group('u')
+if not last_updated: raise Exception("couldn't find latest version number from changelog")
 
 import dataclasses
 @dataclasses.dataclass(frozen=True)

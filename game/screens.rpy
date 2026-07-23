@@ -378,8 +378,11 @@ screen main_menu():
 
             #text "[config.name!t]":
             #    style "main_menu_title"
+            #
+            #text "[config.version]":
+            #    style "main_menu_title"
 
-            textbutton "[config.version]":
+            textbutton "[last_updated]":
                 style "main_menu_version"
                 action ShowMenu('changelog')
 
