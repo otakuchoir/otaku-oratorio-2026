@@ -29,7 +29,7 @@ label scene13:
     sanders "Some of us saw nothing wrong."
     hide sanders with dissolve
     show takeshi neutral focus at center with dissolve
-    takeshi "Some of knew it was wrong."
+    takeshi "Some of us knew it was wrong."
     hide takeshi with dissolve
     show usagi neutral focus at center
     show takeshi neutral at left
