@@ -1,6 +1,6 @@
 label scene16a: 
     scene black
-    show text "{color=#fff}{size=160}End of Act I{/size}{/color}" at truecenter as end_act with dissolve
+    show text "{color=#fff}{size=160}End of Act I{/size}{/color}" at truecenter with dissolve
     pause
-    hide end_act with dissolve
+    hide text with dissolve
     return

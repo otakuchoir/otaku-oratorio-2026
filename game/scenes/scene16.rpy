@@ -16,7 +16,5 @@ label scene16:
     pause
     show bg scene16c with dissolve
     pause
-    show bg black behind act_end with dissolve
-    show text "{color=#fff}{size=160}End of Act I{/size}{/color}" at truecenter as act_end with dissolve
-    pause
+    show bg black with dissolve
     return
