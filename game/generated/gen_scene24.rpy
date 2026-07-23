@@ -1,7 +1,7 @@
 
 label gen_scene24:
     scene black
-    show text "{color=#fff}Scene \"gen_scene24\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.183824\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene24\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.721956\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show kohei serious1 at center
     show bart neutral at left2
     show jojo neutral at right2
@@ -27,7 +27,7 @@ label gen_scene24:
     kohei "And then the Angel from above blah blah blah I get it... but you see that part right there... that’s not an actual explanation Bart. The more realistic thing is war."
     # > (MORE)
     ### page 46 ###
-    kitadani "They fought each other, and blew KOHEI each other to smithereens."
+    kohei "They fought each other, and blew each other to smithereens."
     jojo "Nobody really knows."
     # > Holo-time ringtone
     kohei "Right, but if we’re thinking LOGICALLY, which one are you going with? Humans humaning or an angelic terror from on high? Come on now..."

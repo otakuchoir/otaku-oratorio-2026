@@ -1,7 +1,7 @@
 
 label gen_scene18:
     scene black
-    show text "{color=#fff}Scene \"gen_scene18\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.183331\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene18\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.721362\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 18       VARIOUS SCREENS SHOWING THE NEWS OF THE SPACESHIP EDEN AS IT 18
     # > EMBARKS ON A MISSION TO DESTROY THE SPACE CRYSTAL.
     reporter1 "Breaking news, The Earth Crown Military is now moving on the Crystal"

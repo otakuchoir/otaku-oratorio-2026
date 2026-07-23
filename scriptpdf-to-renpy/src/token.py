@@ -62,6 +62,9 @@ class More:
 
 Token = PageBreak | Speaker | Unknown | Blank | Song | Scene | PageNumber | More
 
+# characters with longest names first, so "Linda Kitadani" is not recognized as "Kitadani" after page breaks with "(MORE)".
+characters_by_len = sorted(data.characters.items(), key=lambda c: len(c[0]), reverse=True)
+
 def tokenize_line(line: str) -> list[Token]:
     song_prefix = 'SONG: '
     character_suffix = "(CONT’D)"
@@ -103,7 +106,7 @@ def tokenize_line(line: str) -> list[Token]:
         #     <page-break>
         #     dialogue dialogue dialogue dialogue SPEAKING CHARACTER (CONT'D)
         #     dialogue dialogue dialogue dialogue
-        for (scriptchar, renpychar) in data.characters.items():
+        for (scriptchar, renpychar) in characters_by_len:
             speaker_line = f'{scriptchar} {character_suffix}'
             if nline.endswith(speaker_line):
                 # found our speaker!

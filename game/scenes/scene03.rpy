@@ -17,10 +17,10 @@
 # - get that vscode extension working (renpy magic)
 # - add background, when it's done
 #
-image bg scene2 default = Solid("#cccccc")
-image bg scene2 imhit = Solid("#cc0000")
-label scene02: 
-    scene bg scene2 default
+image bg scene03 default = Solid("#cccccc")
+image bg scene03 imhit = Solid("#cc0000")
+label scene03: 
+    scene bg scene03 default
     show sanders smug at offscreenright
     show takeshi neutral at offscreenright
     pause 0
@@ -38,11 +38,11 @@ label scene02:
     show takeshi worried1 
     show sanders angry1 at left with ease
     takeshi "NOT YET!"
-    show bg scene2 imhit behind takeshi, sanders
+    show bg scene03 imhit behind takeshi, sanders
     show takeshi worried2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch
     pause 0.4
-    show bg scene2 default behind takeshi, sanders
+    show bg scene03 default behind takeshi, sanders
     sanders anxious "I’m hit!"
     takeshi worried1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
     show takeshi at center with ease

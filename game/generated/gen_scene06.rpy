@@ -1,19 +1,53 @@
 
 label gen_scene06:
     scene black
-    show text "{color=#fff}Scene \"gen_scene06\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.182217\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show jojo neutral at center
+    show text "{color=#fff}Scene \"gen_scene06\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.720214\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show sanders neutral at center
     show takeshi neutral at left2
-    show sanders neutral at right2
-    # > 6        INT. CROWN MILITARY ACADEMY, CLASSROOM                                    6
-    jojo "Listen up. I have 3 minutes left and we’re on the last chapter. This will be part of your midterm tomorrow. What do the Domes do?"
-    takeshi "They are walls regulate atmosphere and temperature, filtering out the toxins in the air released after the Cataclysm Era, Sir."
-    jojo "Good. But not walls, they are stabilizers. Language matters. And who can tell me about the Cataclysm Era? Sanders?"
-    sanders "During the Cataclysm Era, there was chaos with widespread scarcity, conflict, and volatility, Sir. Existing governments failed to respond effectively. The Emergency Mandate reorganized the system into the Stabilized Democracy that we have today."
-    # > PROJECTOR:
-    # > “THE CATACLYSM ERA -> EMERGENCY MANDATE -> STABILIZED
-    # > DEMOCRACY
-    jojo "Excellent work, Sanders. Like biology, our institutions had to evolve to meet the needs of its environment."
-    ### page 13 ###
-    jojo "Today is the anniversary of the Eden Incident. Who could tell me what happened during the Eden Incident?"
+    show usagi neutral at right2
+    # > 6        EXT. TRAIN STATION - AFTERNOON                                            6
+    sanders "Once again we’re late."
+    takeshi "No, there’s still time. We’re gonna make it."
+    usagi "I still don’t like the idea of going all the way to RUSH CRATER for some food. That’s nearly across the entire Moon’s surface."
+    sanders "I heard they have really good strawberry parfaits."
+    usagi "Ok, I might be convinced... but seriously, midterms are coming up. We need to be studying."
+    sanders "We can study on the train, if we make it that is..."
+    usagi "I hope we MISS our train and then we don’t have to GO."
+    sanders "YOU’RE SO EVIL!"
+    guard "Hey you! Stop!"
+    usagi "Us?"
+    guard "Did you hop the gate?"
+    ### page 10 ###
+    sanders "Everyone hops the gate."
+    usagi "I didn’t hop the gate."
+    takeshi "Me either."
+    # > THEY HAND OVER THEIR IDs. A TRAIN ANNOUNCEMENT OVER THE PA.
+    guard "Academy uniforms eh. Let me see some ID, the lot of yous."
+    sanders "We’re going to miss the train."
+    usagi "Good. I didn’t want to go in the first place."
+    sanders "Evil..."
+    # > USAGI IS NOT COMFORTABLE WITH THE FAME
+    guard "Reviewing IDs Kitadani... Usagi... oh you’re the captain’s daughter."
+    guard "You know, your father was an inspiration to us all-"
+    sanders "YO... we have somewhere to go, and yeah you’re harrassing Crown royalty so like can we go now?"
+    guard "Sanders, George. Earthborn... you’re good to go..."
+    guard "Williamson, Takeshi... Colony born... A lunar... Yup, it was definitely you who I saw jump the turnstile."
+    takeshi "What??"
+    ### page 11 ###
+    sanders "Hey old man, we don’t have TIME for this-"
+    guard "You’re gonna have to come with me."
+    usagi "Sir! Mr... (she looks at his badge) Officer Ruckus, we’re on our way to Rush Crater and we’re about to miss our train, we REALLY have to get going. Williamson here did not fare evade. I swiped him in because he forgot his transit card at the dorms."
+    # > TRAIN ANNOUNCEMENT, THEY HAVE MISSED THE TRAIN
+    guard "Well... If you say so."
+    # > TRAIN SECURITY GUARD EXITS
+    guard "As you were."
+    sanders "FAAAAHHHH (like the meme) we missed the train!"
+    usagi "The next one is in an hour. We can wait."
+    # > USAGI LOOKS SYMPATHETICALLY TO TAKESHI WITHOUT SAYING A WORD.
+    sanders "I thought you said you didn’t even want to GO. You CURSED us and now you have your wish, you’re a SORCERESS! AN EVIL SORCERESS!"
+    usagi "I said we can wait. I am craving that Pho, and they better have the best damned Strawberry parfaits on the moon or I’m coming for YOU Sanders..."
+    # > 
+    # > SONG: HANA NI NATTE    # > 
+    # > 2 WEEKS LATER
+    ### page 12 ###
     return

@@ -105,17 +105,16 @@ class S:
 
 scenes = [
     ### Act 1
-    S('gen_scene01', 'Memorial Monster Commercial'),
-    S('scene02', 'Initial Training Battle'),
-    S('scene02a', 'Opening Transition; SONG: Butter-Fly'),
-    S('gen_scene03', 'Academy Classroom'),
-    S('gen_scene04', 'School Grounds, Meet Barthandelus'),
-    S('scene04a', 'SONG: Ragnarok'),
-    S('gen_scene05', 'Train Station'),
-    S('scene05a', 'SONG: Hana Ni Natte'),
-    S('scene06', '(IRL) Classroom scenes 1 and 2'),
-    # no scene 7
-    # scene 8 IRL, same file as scene 6
+    S('gen_scene01', 'Preshow'),
+    S('gen_scene02', 'Memorial Monster Commercial'),
+    S('scene03', 'Initial Training Battle'),
+    S('scene03a', 'Opening Transition; SONG: Butter-Fly'),
+    S('gen_scene04', 'Academy Classroom'),
+    S('gen_scene05', 'School Grounds, Meet Barthandelus'),
+    S('scene05a', 'SONG: Ragnarok'),
+    S('gen_scene06', 'Train Station'),
+    S('scene06a', 'SONG: Hana Ni Natte'),
+    S('scene07_08', '(IRL) Classroom scenes 1 and 2'),
     S('scene09', '(IRL) Usagi and Linda'),
     S('scene09a', 'SONG: Moonlight Densetsu'),
     S('gen_scene10', 'Shuttle to Earth, Takeoff'),
@@ -143,5 +142,17 @@ scenes = [
     S('gen_scene27'),
     S('gen_scene28'),
     S('gen_scene29'),
+    S('gen_scene30'),
+    S('gen_scene31'),
+    S('gen_scene32'),
+    S('gen_scene33'),
+    S('gen_scene34'),
+    S('gen_scene35'),
+    S('gen_scene36'),
+    S('gen_scene37'),
+    S('gen_scene38'),
+    S('gen_scene39'),
+    S('gen_scene40'),
+    S('gen_scene41'),
 ]
 len_scenes = len(scenes)

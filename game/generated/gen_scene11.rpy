@@ -1,7 +1,7 @@
 
 label gen_scene11:
     scene black
-    show text "{color=#fff}Scene \"gen_scene11\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.182674\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene11\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.720677\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show takeshi neutral at center
     show kelisha neutral at left2
     show sanders neutral at right2

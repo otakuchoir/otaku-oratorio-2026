@@ -1,35 +1,43 @@
 
 label gen_scene03:
     scene black
-    show text "{color=#fff}Scene \"gen_scene03\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.181910\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show kelisha neutral at center
-    show sanders neutral at left2
+    show text "{color=#fff}Scene \"gen_scene03\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.719868\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show sanders neutral at center
+    show takeshi neutral at left2
     show usagi neutral at right2
-    show takeshi neutral at left
-    # > 3        INT. CROWN MILITARY ACADEMY, CLASSROOM                                    3
-    kelisha "Late again?"
-    trio "Sorry professor."
-    kelisha "No, that grade is gonna be sorry if you three don’t get it together before the midterm. Sanders, you most of all can’t afford to miss out on any points on account of lateness..."
-    sanders "Why you gotta bust me out like that?"
-    # > The classroom laughs, she got him good.
-    kelisha "Because I don’t want you in my classroom another year if you fail."
-    kelisha "And as for you, Kitadani... You think you can just come in here whenever you want? You should know better."
-    ### page 6 ###
-    usagi "Sorry, professor."
-    kelisha "And you Williamson (Takeshi)... you could fail everything from now until the end of the year and you’d be good, but you DON’T need to be late. Don’t let your little friends drag you down."
-    # > The classroom is annoyed with Takeshi’s apology...
-    takeshi "My apologies professor, we just ran over time in the training simulator."
-    classmate "It’s crazy he’s so smart... He’s a Lunar."
-    # > The classroom falls silent.
-    usagi "And what does that have to do with anything?"
-    # > On the screen a news story appears
-    kelisha "Take your seats your three. And for the rest of you, we prefer the term colony-born. Lunars sounds so... alien. And speaking of the colony- born Earth-born dichotomy, there are developments in the North American mining region, Northeast sector. Pay attention, this has to do with your midterms..."
-    reporter1 "Tensions flare in the North American region as we approach day 42 of the mine workers strike."
-    reporter2 "Residents and workers in the Kingdom of New Jersey continue to resist Crown Military orders to extract Ultima Ore."
-    reporter3 "But not to fear, this dispute won’t be affecting your vacation plans."
+    # > 3        INT. TRAINING ZONE, INSIDE MECH                                           3
+    sanders "They’re sitting ducks."
+    takeshi "Something’s not right. Performing field scan."
+    sanders "Takeshi, watch my six, I’m going in."
+    # > we lost sight of their third...
+    takeshi "their support-"
+    sanders "The hell can a support do in this situation? I’m going in."
+    takeshi "NOT YET!"
+    sanders "I’m hit!"
+    takeshi "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
+    ### page 4 ###
+    sanders "I didn’t need your help..."
+    takeshi "He’s right... I’m cooked"
+    console "SCAN COMPLETE; ENEMY SUPPORT MARKED; DEFENSIVE MISSILES INBOUND."
+    # > Usagi swoops in to save Takeshi, maneuvering to distract the
+    # > missiles and guide them away. She then counter attacks the
+    # > enemy team, taking them out herself one after the other.
+    takeshi "Dammit..."
+    sanders "That’s my duo!"
+    takeshi "Thanks Usagi..."
+    sanders "What were you THINKING Takeshi??"
+    takeshi "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
+    sanders "If you knew HOW to support, then you wouldn’t have gone IN..."
+    # > An aside, Usagi turns toward the audience, a complete 180 in
+    # > personality.
+    usagi "SANDERS, WHAT THE HELL WAS THAT? IF YOU KNEW HOW TO ACE, THEN YOU WOULDN’T HAVE GONE IN WITH THE ENEMY SUPPORT MISSING... THE DEFENSIVE MISSILES WERE IN THE BATTLE BRIEF."
+    usagi "My name is Usagi Kitadani and I’m a 4th year student at the Crown Military Academy; yeah the one on the Moon... I love arts & crafts, small dogs, strawberries and parfaits. That’s Sanders, another 4th year. He’s an asshole. He’s good, but he’s an asshole."
     # > (MORE)
-    ### page 7 ###
-    reporter3 "While the Kingdom of New Jersey is responsible for a large part of the Ultima Ore supply chain, Our Crown Military King, is confident that an agreement will be reached before the situations impacts the economy."
-    # > TRANSITION TO
-    king "WE ARE FULLY CONFIDENT THAT THE PEOPLE OF THE KINGDOM OF NEW JERSEY WILL COMPLY WITH ORDERS AND ALL WILL BE WELL."
+    ### page 5 ###
+    # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
+    # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
+    # > CLASSROOM FORMATION.
+    usagi "And that’s Takeshi, a 3rd year but he’s graduating early, super sweet, super kind... super innocent. I’d love to stick around and chat, but we’re late for class, and as you can see... we have a lot of work to do."
+    # > 
+    # >          SONG: Butter-fly    # > 
     return

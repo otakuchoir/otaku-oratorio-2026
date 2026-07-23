@@ -1,7 +1,7 @@
 
 label gen_scene09:
     scene black
-    show text "{color=#fff}Scene \"gen_scene09\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.182356\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene09\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.720431\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show linda neutral at center
     show usagi neutral at left2
     # > 9        INT. NIGHT - USAGI’S DORM ROOM                                            9
@@ -25,7 +25,7 @@ label gen_scene09:
     linda "A smart, kind and patient person finding her way through this world and helping people out along the way."
     # > (MORE)
     ### page 15 ###
-    kitadani "Remember what you told me about LINDA that train guard and Takeshi? You can’t teach that."
+    linda "Remember what you told me about that train guard and Takeshi? You can’t teach that."
     usagi "Mom you always know exactly what to say."
     linda "Love you little rabbit! Get some rest."
     usagi "Love you too mom! Good night."

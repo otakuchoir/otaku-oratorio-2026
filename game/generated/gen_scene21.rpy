@@ -1,7 +1,7 @@
 
 label gen_scene21:
     scene black
-    show text "{color=#fff}Scene \"gen_scene21\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.183547\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene21\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.721632\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show usagi neutral at left2
     # > 21       INT. DAY; GEORGE SANDERS’S CAR.                                          21

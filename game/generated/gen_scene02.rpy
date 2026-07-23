@@ -1,43 +1,31 @@
 
 label gen_scene02:
     scene black
-    show text "{color=#fff}Scene \"gen_scene02\" automatically generated from \"Otaku Oratorio 2 Script 7-20-2026.pdf\"\nat \"2026-07-22 11:35:53.181791\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show sanders neutral at center
-    show takeshi neutral at left2
-    show usagi neutral at right2
-    # > 2        INT. TRAINING ZONE, INSIDE MECH                                           2
-    sanders "They’re sitting ducks."
-    takeshi "Something’s not right. Performing field scan."
-    sanders "Takeshi, watch my six, I’m going in."
-    # > we lost sight of their third...
-    takeshi "their support-"
-    sanders "The hell can a support do in this situation? I’m going in."
-    takeshi "NOT YET!"
-    sanders "I’m hit!"
-    takeshi "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
-    ### page 4 ###
-    sanders "I didn’t need your help..."
-    takeshi "He’s right... I’m cooked"
-    console "SCAN COMPLETE; ENEMY SUPPORT MARKED; DEFENSIVE MISSILES INBOUND."
-    # > Usagi swoops in to save Takeshi, maneuvering to distract the
-    # > missiles and guide them away. She then counter attacks the
-    # > enemy team, taking them out herself one after the other.
-    takeshi "Dammit..."
-    sanders "That’s my duo!"
-    takeshi "Thanks Usagi..."
-    sanders "What were you THINKING Takeshi??"
-    takeshi "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
-    sanders "If you knew HOW to support, then you wouldn’t have gone IN..."
-    # > An aside, Usagi turns toward the audience, a complete 180 in
-    # > personality.
-    usagi "SANDERS, WHAT THE HELL WAS THAT? IF YOU KNEW HOW TO ACE, THEN YOU WOULDN’T HAVE GONE IN WITH THE ENEMY SUPPORT MISSING... THE DEFENSIVE MISSILES WERE IN THE BATTLE BRIEF."
-    usagi "My name is Usagi Kitadani and I’m a 4th year student at the Crown Military Academy; yeah the one on the Moon... I love arts & crafts, small dogs, strawberries and parfaits. That’s Sanders, another 4th year. He’s an asshole. He’s good, but he’s an asshole."
-    # > (MORE)
-    ### page 5 ###
-    # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
-    # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
-    # > CLASSROOM FORMATION.
-    usagi "And that’s Takeshi, a 3rd year but he’s graduating early, super sweet, super kind... super innocent. I’d love to stick around and chat, but we’re late for class, and as you can see... we have a lot of work to do."
+    show text "{color=#fff}Scene \"gen_scene02\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.719749\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    # > 2        EXT. CITY MONSTER ATTACK                                                  2
+    # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
+    # > THROUGH MODEL CITY, BURNING BUILDINGS WITH ATOMIC BREATH
+    # > A HERO DRESSED IN RED RUNS IN, DRAMATICALLY SKIDDING ON TO
+    # > THE SCENE AS THEIR SCARF BLOWS IN THE WIND DRAMATICALLY.
+    announcer "Oh no! The monster is destroying the city! Can anybody stop this?"
+    kitadani "Fear not, announcer! Courageous Kaito! Reporting for Duty!"
+    announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
     # > 
-    # >          SONG: Butter-fly    # > 
+    # >          SONG: Fumetsu no Hero    # > 
+    # > THE MONSTER DOES NOT FLINCH.
+    kitadani "LET’S GO! CROWN BLASTER!"
+    # > MONSTER EATS MINIATURE BUILDING COOKIE MONSTER STYLE
+    monster "Your precious Earth is mine to devour!"
+    kitadani "DAMN!"
+    # > KITADANI GLANCES AT THE FAMILY PHOTO ON HIS DASHBOARD
+    computer "Ultima Cannon ready to dispense justice. Survival rate… 1%%."
+    ### page 3 ###
+    kitadani "This is the only way. Justice requires swift action. Citizens of Earth: Lend me your strength! For every human, on this beautiful Earth!"
+    # > Monster reels back to charge it’s atomic breath
+    monster "WHAT!?"
+    kitadani "Ultima Cannon: fire!"
+    # > PROJECTOR: “THIS CROWN NETWORK MEMORIAL SEGMENT WAS BROUGHT
+    # > TO YOU BY THE FOLLOWING SPONSORS:”
+    # > PROJECTOR:; IN MEMORY OF KOHEI KITADANI
+    announcer "Kono bangumi wa, goran no suponsaa no teikyou de okurishimasu."
     return
