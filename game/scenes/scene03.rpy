@@ -42,6 +42,8 @@ label scene03:
     show takeshi worried2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch
     pause 0.4
+    # no looping BGM unless the track is loopable! for most of these the track is much longer than the show, anyway
+    play music "<from 1.6>bgm_scene03_01.opus" noloop
     show bg scene03 default behind takeshi, sanders
     sanders anxious "I’m hit!"
     takeshi worried1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
@@ -57,6 +59,7 @@ label scene03:
     # > enemy team, taking them out herself one after the other.
     #
     # to show this, we make usagi's sprites fly around the screen. ff6 esper tech
+    play music "bgm_scene03_02.opus" noloop
     call scene02_usagi_swoops_in
 
     sanders prideful "That’s my duo!"
@@ -75,12 +78,14 @@ label scene03:
 
     # > An aside, Usagi turns toward the audience, a complete 180 in
     # > personality.
+    stop music fadeout 0.8
     pause 0.5
     show usagi happy1 at center
     show sanders neutral at offscreenleft, flip
     show takeshi neutral at offscreenleft, flip
     with ease
     pause 0.3
+    play music "bgm_scene03_03.opus" noloop #fadein 1.5
     show usagi hello
     usagi "My name is Usagi Kitadani and I’m a 4th year student at the Crown Military Academy."
     usagi "Yeah, the one on the Moon..."
@@ -100,11 +105,12 @@ label scene03:
     with ease
     usagi "I’d love to stick around and chat, but we’re late for class, and as you can see..."
     usagi weary "...we have a lot of work to do."
-    show usagi happy1 at offscreenright, flip
+    show usagi weary at offscreenright, flip
     with ease
     # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
     # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
     # > CLASSROOM FORMATION.
+    stop music fadeout 2
     return
 
 label scene02_usagi_swoops_in:
@@ -135,6 +141,7 @@ label scene02_usagi_swoops_in:
     show takeshi at flip
     pause 0.6  # landing is done here, 1.4 seconds
     pause 0.3  # a small delay after the animation feels nice
+    hide usagi # reset animation transforms, in case we skipped the animation
     show usagi happy1 at right
     return
 
@@ -150,6 +157,8 @@ transform flip:
     xzoom -1
 transform noflip:
     xzoom 1
+transform nozoom:
+    zoom 1.0
 
 transform usagi_swoops_in_swoop1:
     parallel:

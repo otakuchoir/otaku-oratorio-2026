@@ -112,6 +112,7 @@ scenes = [
     ### Act 1
     S('gen_scene01', 'Preshow'),
     S('gen_scene02', 'Memorial Monster Commercial'),
+    S('scene02a', 'SONG: Fumetsu no Hero'),
     S('scene03', 'Initial Training Battle'),
     S('scene03a', 'Opening Transition; SONG: Butter-Fly'),
     # S('scene04', 'Academy Classroom'),
