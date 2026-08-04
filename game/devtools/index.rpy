@@ -8,5 +8,3 @@ screen devtools():
                 action Hide()
             textbutton "gallery":
                 action ShowMenu('gallery')
-            textbutton "test scene":
-                action Start('test_scene')
