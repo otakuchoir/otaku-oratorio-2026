@@ -1,9 +1,9 @@
 ## 2026/08/04
 - Update to latest sprites
 - Add choir placeholder for scene 2
-- Add scene 3 audio
-- Scene 3 works correctly if the player skips animations
+- Add scene 3, 7, 11, 13, 14, 15 audio
 - Added scene 4 sprites and audio
+- Scene 3 works correctly if the player skips animations
 
 ## 2026/07/23
 - Update to finished script
