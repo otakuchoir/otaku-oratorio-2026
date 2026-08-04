@@ -1,8 +1,11 @@
 
 label gen_scene19:
     scene black
-    show text "{color=#fff}Scene \"gen_scene19\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.721484\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene19\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.306190\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show usagi neutral at center
+    show reporter1 at left2
+    show reporter2 at right2
+    show reporter3 at left
     # > 19       INT. THE SPACESHIP EDEN MAIN DECK                                        19
     gunner "Captain, beam array at 60 percent and climbing; Firing window opens in 3 minutes and counting."
     kitadani "Copy that, thank you Gunner Chief, Navigation, a read on the firing zone."

@@ -17,6 +17,9 @@ define princess = Character("Princess Elizabeth Newark", color="#ffff00", image=
 # same character, using different names/titles in different parts of the script
 define general = Character("Elite General", color="#c99e61", image="huxtable")
 define huxtable = Character("Robert Huxtable", color="#c99e61", image="huxtable")
+define reporter1 = Character("News Reporter 1", color="#aaaaaa", image="reporter1")
+define reporter2 = Character("News Reporter 2", color="#aaaaaa", image="reporter2")
+define reporter3 = Character("News Reporter 3", color="#aaaaaa", image="reporter3")
 
 # the background is not a character, but pretending it is is the easiest way to change backgrounds mid-scene
 define bg = Character(image="bg")

@@ -1,7 +1,10 @@
 
 label gen_scene39:
     scene black
-    show text "{color=#fff}Scene \"gen_scene39\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.723340\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene39\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.308153\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show reporter1 at center
+    show reporter2 at left2
+    show reporter3 at right2
     # > 39       INT. NEWS STUDIO                                                         39
     ### page 75 ###
     reporter1 "Breaking news... the Moon is on a collision course for Earth. We’re getting reports that someone has high jacked and reverse engineered the Ultima Cannon... now instead of blowing things to smithereens with the power of Ultima... it’s bending gravity to send the moon hurtling into the earth, like a giant meteor that would spell absolute doom for everyone."

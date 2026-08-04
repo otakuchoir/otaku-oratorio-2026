@@ -65,6 +65,11 @@ for f in fs:
     if m:
         basename = m.group('basename')
         (tag, attr) = basename.split('-', 1)
+        if tag == 'reporter':
+            # exception for the reporters, which have only one image each with no attributes.
+            # dashes in the tag break it for some reason, so remove them.
+            tag = basename.replace('-', '')
+            attr = ''
         attr = attr.replace('-', '')
         name = ' '.join([tag, attr])
         name_unfocus = name
@@ -109,6 +114,7 @@ scenes = [
     S('gen_scene02', 'Memorial Monster Commercial'),
     S('scene03', 'Initial Training Battle'),
     S('scene03a', 'Opening Transition; SONG: Butter-Fly'),
+    # S('scene04', 'Academy Classroom'),
     S('gen_scene04', 'Academy Classroom'),
     S('gen_scene05', 'School Grounds, Meet Barthandelus'),
     S('scene05a', 'SONG: Ragnarok'),

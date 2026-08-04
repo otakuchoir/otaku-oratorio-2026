@@ -1,10 +1,13 @@
 
 label gen_scene12:
     scene black
-    show text "{color=#fff}Scene \"gen_scene12\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-07-23 13:19:42.720785\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene12\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.305463\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show sanders neutral at center
     show usagi neutral at left2
     show takeshi neutral at right2
+    show reporter1 at left
+    show reporter2 at right
+    show reporter3 at top
     # > 12       EXT. DAY; EARTH, KINGDOM OF NEW JERSEY SPACE PORT                        12
     # > USAGI, TAKESHI AND SANDERS ARE DE-SHUTTLING
     ### page 20 ###
