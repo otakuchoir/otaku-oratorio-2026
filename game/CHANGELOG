@@ -3,6 +3,7 @@
 - Add scene 3, 7, 11, 13, 14, 15 audio
 - Added scene 4 sprites and audio
 - Scene 3 works correctly if the player skips animations
+- Add a sound test to the devtools
 - Update to latest sprites
 
 ## 2026/07/23

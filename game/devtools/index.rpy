@@ -6,5 +6,7 @@ screen devtools():
             text "Developer Tools"
             textbutton "exit":
                 action Hide()
-            textbutton "gallery":
+            textbutton "image gallery":
                 action ShowMenu('gallery')
+            textbutton "sound test":
+                action ShowMenu('sound_test')
