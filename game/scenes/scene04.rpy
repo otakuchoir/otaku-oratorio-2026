@@ -1,5 +1,6 @@
+image bg scene04 default = Solid("#cccccc")
 label scene04:
-    scene black
+    scene bg scene04 default
     play music bgm_scene04_01
     show kelisha serious at left, flip
     show sanders neutral at offscreenright
@@ -23,8 +24,12 @@ label scene04:
     kelisha "Sanders, you most of all can’t afford to miss out on any points on account of lateness..."
     sanders angry1 "Why you gotta bust me out like that?"
     kelisha stinkeye "Because I don’t want you in my classroom another year if you fail."
+    show usagi excited
+    show takeshi happy2
     show sanders eyeroll
     "The classroom laughs, she got him good."
+    show usagi neutral
+    show takeshi neutral
     show sanders deadpan
     kelisha serious "And as for you, Kitadani... You think you can just come in here whenever you want? You should know better."
     ### page 6 ###
