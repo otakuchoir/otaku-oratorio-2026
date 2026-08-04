@@ -24,6 +24,8 @@ define reporter3 = Character("News Reporter 3", color="#aaaaaa", image="reporter
 # the background is not a character, but pretending it is is the easiest way to change backgrounds mid-scene
 define bg = Character(image="bg")
 
+image bg default = Solid("#cccccc")
+
 # redefine builtin positions so the bottom edge of our sprites is sitting on top of the textbox.
 transform ytextbox:
     ypos 880

@@ -1,6 +1,5 @@
-image bg scene04 default = Solid("#cccccc")
 label scene04:
-    scene bg scene04 default
+    scene bg default
     play music bgm_scene04_01
     show kelisha serious at left, flip
     show sanders neutral at offscreenright

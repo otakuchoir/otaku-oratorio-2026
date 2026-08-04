@@ -17,10 +17,9 @@
 # - get that vscode extension working (renpy magic)
 # - add background, when it's done
 #
-image bg scene03 default = Solid("#cccccc")
 image bg scene03 imhit = Solid("#cc0000")
 label scene03: 
-    scene bg scene03 default
+    scene bg default
     show sanders smug at offscreenright
     show takeshi neutral at offscreenright
     pause 0
@@ -44,7 +43,7 @@ label scene03:
     pause 0.4
     # no looping BGM unless the track is loopable! for most of these the track is much longer than the show, anyway
     play music "<from 1.6>bgm_scene03_01.opus" noloop
-    show bg scene03 default behind takeshi, sanders
+    show bg default behind takeshi, sanders
     sanders anxious "I’m hit!"
     takeshi worried1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
     show takeshi at center with ease
@@ -60,7 +59,7 @@ label scene03:
     #
     # to show this, we make usagi's sprites fly around the screen. ff6 esper tech
     play music "bgm_scene03_02.opus" noloop
-    call scene02_usagi_swoops_in
+    call scene03_usagi_swoops_in
 
     sanders prideful "That’s my duo!"
     takeshi happy1 "Thanks Usagi..."
@@ -113,7 +112,7 @@ label scene03:
     stop music fadeout 2
     return
 
-label scene02_usagi_swoops_in:
+label scene03_usagi_swoops_in:
     # pause after each animation for the length of that animation.
     # renpy's default (without any dialogue) is to show them for an instant and move on
     show sanders neutral at flip

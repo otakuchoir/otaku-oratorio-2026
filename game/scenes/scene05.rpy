@@ -1,6 +1,5 @@
-
 label scene05:
-    scene black
+    scene bg default
     show sanders neutral at center
     show usagi neutral at left2
     show takeshi neutral at right2
