@@ -27,8 +27,9 @@ define bg = Character(image="bg")
 image bg default = Solid("#cccccc")
 
 # redefine builtin positions so the bottom edge of our sprites is sitting on top of the textbox.
+define ypos_textbox = 880
 transform ytextbox:
-    ypos 880
+    ypos ypos_textbox
     yanchor 1.0
 
 transform offscreenleft:

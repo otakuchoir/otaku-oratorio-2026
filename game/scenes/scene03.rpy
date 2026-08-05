@@ -235,7 +235,7 @@ transform usagi_swoops_in_landing:
     parallel:
         # easein 1.4 right  # nope, this breaks for some reason
         yanchor 1.0
-        easein 1.5 xalign 1.0 ypos 880
+        easein 1.5 xalign 1.0 ypos ypos_textbox
     parallel:
         flip
         pause 0.9

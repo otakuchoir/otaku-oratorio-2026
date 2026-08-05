@@ -1,7 +1,7 @@
 ## 2026/08/04
 - Add choir placeholder for scene 2
 - Add scene 3, 7, 11, 13, 14, 15 audio
-- Added scene 4, 5 sprites and audio
+- Add scene 4, 5 sprites and audio
 - Scene 3 works correctly if the player skips animations
 - Add a sound test to the devtools
 - Update to latest sprites

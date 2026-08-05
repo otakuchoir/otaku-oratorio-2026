@@ -71,9 +71,9 @@ label scene05:
     show sanders shock
     usagi "Oh, I’m so sorry."
 
-    # takeshi/sanders collect themselves. TODO: add a bow here by rotating their sprites?
-    show takeshi neutral
-    show sanders deadpan
+    # takeshi/sanders collect themselves.
+    show takeshi neutral at bowdown
+    show sanders deadpan at bowdown
     takeshi "Your Holiness."
 
     # usagi's still clueless, why are her friends reacting?
@@ -98,6 +98,8 @@ label scene05:
     # I'm interpreting this as bart exiting the stage instead.
     show bart at offscreenleft, noflip
     with ease
+    show takeshi at bowup
+    show sanders at bowup
     sanders shock "How does the POPE know who you are??"
     takeshi "Well she is kind of famous."
 
@@ -138,6 +140,17 @@ label scene05:
     return
 
 transform hop:
-    ypos 880
-    easein 0.15 ypos 830
-    easeout 0.15 ypos 880
+    ypos ypos_textbox
+    easein 0.15 ypos (ypos_textbox - 50)
+    easeout 0.15 ypos ypos_textbox
+
+define ypos_bow = ypos_textbox + 20
+define angle_bow = -15
+transform bowdown:
+    transform_anchor True
+    ypos ypos_textbox rotate 0
+    linear 0.3 ypos ypos_bow rotate angle_bow
+transform bowup:
+    transform_anchor True
+    ypos ypos_bow rotate angle_bow
+    linear 0.2 ypos ypos_textbox rotate 0
