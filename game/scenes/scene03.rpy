@@ -20,23 +20,34 @@
 image bg scene03 imhit = Solid("#cc0000")
 label scene03: 
     scene bg default
+
+    # they walk in from the right
     show sanders smug at offscreenright
     show takeshi neutral at offscreenright
     pause 0
     show sanders happy at right2
     show takeshi neutral at right
     with ease
+
     sanders @ smug "They’re sitting ducks."
     takeshi annoyed "Something’s not right. Performing field scan."
+
+    # sanders steps forward, ready to engage...
     show sanders happy at center with ease
+    # ...then turns around for a moment to talk to takeshi
     show sanders at center, flip
     sanders "Takeshi, watch my six, I’m going in."
+
     show sanders at center, noflip
     takeshi "We lost sight of their third... their support-"
     sanders eyeroll "The hell can a support do in this situation? I’m going in."
+
+    # sanders steps all the way forward
     show takeshi worried1 
     show sanders angry1 at left with ease
     takeshi "NOT YET!"
+
+    # sanders is hit! show this with background, screen shake, and tense music
     show bg scene03 imhit behind takeshi, sanders
     show takeshi worried2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch
@@ -46,9 +57,12 @@ label scene03:
     show bg default behind takeshi, sanders
     sanders anxious "I’m hit!"
     takeshi worried1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
+
+    # takeshi steps forward to (try to) rescue sanders
     show takeshi at center with ease
     sanders angry1 "I didn’t need your help..."
     takeshi worried1 "He’s right... I’m cooked"
+
     show takeshi panic1 
     takeshis_console "SCAN COMPLETE; ENEMY SUPPORT MARKED; DEFENSIVE MISSILES INBOUND."
     takeshi "Dammit..."
@@ -57,17 +71,21 @@ label scene03:
     # > missiles and guide them away. She then counter attacks the
     # > enemy team, taking them out herself one after the other.
     #
-    # to show this, we make usagi's sprites fly around the screen. ff6 esper tech
+    # to show this, usagi's sprites fly around the screen. ff6 esper tech
     play music "bgm_scene03_02.opus" noloop
     call scene03_usagi_swoops_in
 
     sanders prideful "That’s my duo!"
     takeshi happy1 "Thanks Usagi..."
+
+    # takeshi faces sanders to argue, while usagi's slowly getting pissed
     show usagi exasperated
     show takeshi neutral at noflip
     sanders angry1 "What were you THINKING Takeshi??"
     takeshi angry1 "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
     sanders angry2 "If you knew HOW to support, then you wouldn’t have gone IN..."
+
+    # usagi steps forward to scold sanders
     show takeshi behind usagi
     show usagi exasperated2 at right2 with ease
     show sanders shock
@@ -77,6 +95,7 @@ label scene03:
 
     # > An aside, Usagi turns toward the audience, a complete 180 in
     # > personality.
+    # music swaps, scroll takeshi/sanders off screen, spotlight's on usagi
     stop music fadeout 0.8
     pause 0.5
     show usagi happy1 at center
@@ -89,23 +108,32 @@ label scene03:
     usagi "My name is Usagi Kitadani and I’m a 4th year student at the Crown Military Academy."
     usagi "Yeah, the one on the Moon..."
     usagi "I love arts & crafts, small dogs, strawberries and parfaits."
+
+    # introduce her friends: pan the camera towards them (scroll both usagi and her friends to the right)
     show usagi happy1 at right
     show sanders happy at left
     with ease
     usagi "That’s Sanders, another 4th year. He’s an asshole. He’s good, but he’s an asshole."
+
+    # scroll sanders offscreen, scroll takeshi onscreen
     show takeshi at offscreenleft
     pause 0
     show sanders at offscreenleft
     show takeshi happy1 at left
     with ease
     usagi "And that’s Takeshi, a 3rd year but he’s graduating early, super sweet, super kind... super innocent."
+
+    # usagi's back in the spotlight, at the center. friends leave the screen
     show usagi at center
     show takeshi at offscreenleft
     with ease
     usagi "I’d love to stick around and chat, but we’re late for class, and as you can see..."
     usagi weary "...we have a lot of work to do."
+
+    # usagi walks off stage, making sure to face where she's walking
     show usagi weary at offscreenright, flip
     with ease
+
     # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
     # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A
     # > CLASSROOM FORMATION.
@@ -120,16 +148,19 @@ label scene03_usagi_swoops_in:
     show usagi shock focus at usagi_swoops_in_swoop1 behind takeshi, sanders
     with vpunch
     pause 0.8
+
     show sanders at noflip
     show takeshi at noflip
     show usagi happy1 focus at usagi_swoops_in_swoop2
     with hpunch
     pause 0.8
+
     show sanders at flip
     show takeshi at flip
     show usagi shock focus at usagi_swoops_in_swoop3
     with vpunch
     pause 0.8
+
     show sanders happy at noflip
     show takeshi neutral at noflip
     show usagi happy2 focus at usagi_swoops_in_landing
@@ -139,8 +170,12 @@ label scene03_usagi_swoops_in:
     pause 0.4
     show takeshi at flip
     pause 0.6  # landing is done here, 1.4 seconds
-    pause 0.3  # a small delay after the animation feels nice
-    hide usagi # reset animation transforms, in case we skipped the animation
+
+    # a small delay after the animation feels nice
+    pause 0.3
+
+    # reset animation transforms, in case we skipped the animation
+    hide usagi 
     show usagi happy1 at right
     return
 
