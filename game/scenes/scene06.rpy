@@ -105,7 +105,7 @@ label scene06:
     guard "You know, your father was an inspiration to us all-"
     sanders @ angry 2 "YO... we have somewhere to go, and yeah you’re harrassing Crown royalty so like can we go now?"
 
-    show usagi neutral
+    show usagi annoyed
     show sanders eyeroll
     guard "Sanders, George. Earthborn... you’re good to go..."
 
@@ -121,17 +121,12 @@ label scene06:
     sanders @ angry 3 "Hey old man, we don’t have TIME for this-"
     guard "You’re gonna have to come with me."
     # usagi steps to the front to defend her friend
-    show usagi at center
-    show takeshi at left
-    show sanders at left2
+    show usagi at right2
     with ease
     usagi "Sir! Mr... Officer Ruckus, we’re on our way to Rush Crater and we’re about to miss our train, we REALLY have to get going."
     usagi "Williamson here did not fare evade. I swiped him in because he forgot his transit card at the dorms."
 
     # > TRAIN ANNOUNCEMENT, THEY HAVE MISSED THE TRAIN
-    # train sign shows it, but I bet we add some sfx later too
-    show scene06_train_sign "\n1. Rush Crater     59 min" as sign_line1 at top, scene06_sign_noblink
-    show scene06_train_sign "\n\n2. Rush Crater   119 min" as sign_line2 at top
     guard "Well... If you say so."
 
     # it worked, we're safe, everyone's a little relieved...
@@ -141,9 +136,29 @@ label scene06:
     # > TRAIN SECURITY GUARD EXITS
     guard "As you were."
 
-    # ...until they see they've missed the train
+    # ...they stay relieved while running for the train...
+    # (running for the train is mostly to rearrange the characters, so usagi can look toward takeshi below, instead of the other way round)
     show usagi at noflip
     show takeshi at noflip
+    show sanders at noflip
+    show usagi at offscreenleft
+    show takeshi at offscreenleft
+    show sanders at offscreenleft
+    with ease
+    show usagi at offscreenright
+    show takeshi at offscreenright
+    show sanders at offscreenright
+    # they've just missed the train, change the sign
+    show scene06_train_sign "\n1. Rush Crater     59 min" as sign_line1 at top, scene06_sign_noblink
+    show scene06_train_sign "\n\n2. Rush Crater   119 min" as sign_line2 at top
+    pause 0
+    show sanders at left2
+    show usagi at center
+    show takeshi at right
+    with ease
+    # ...until they see they've missed the train
+    show usagi at noflip
+    show takeshi angry 1 at noflip
     show sanders angry 2 at noflip
     # sanders "FAAAAHHHH (like the meme) we missed the train!"
     # "like the meme"? google says this, sounds like another f-word
@@ -151,11 +166,22 @@ label scene06:
     # no sound effects, let the voice actor handle it
     sanders @ angry 3 "FAAAAHHHH we missed the train!"
     usagi "The next one is in an hour. We can wait."
+
     # > USAGI LOOKS SYMPATHETICALLY TO TAKESHI WITHOUT SAYING A WORD.
+    # not quite sure what to do with takeshi's expression here...
+    # also, usagi should be the one to turn, not takeshi. but how do we arrange people on stage for that?
+    show usagi worried at flip
+    show takeshi annoyed
+    pause 1.5
+    show usagi neutral at noflip
+    show takeshi neutral
+    show sanders at flip
     sanders "I thought you said you didn’t even want to GO."
     sanders "You CURSED us and now you have your wish, you’re a SORCERESS! AN EVIL SORCERESS!"
-    usagi "I said we can wait. I am craving that Pho..."
-    usagi "And they better have the best damned Strawberry parfaits on the moon, or I’m coming for YOU Sanders..."
+    show sanders angry 1
+    usagi "I said we can wait."
+    usagi happy 1 "I am craving that Pho..."
+    usagi annoyed "And they better have the best damned Strawberry parfaits on the moon, or I’m coming for YOU Sanders..."
     # > 
     # > SONG: HANA NI NATTE    # > 
     # > 2 WEEKS LATER
