@@ -8,6 +8,8 @@ Tickets for the show: https://www.otakuchoir.org/upcoming-concerts
 
 Our artwork in google drive: https://drive.google.com/drive/folders/1z-uWiRzeMPX7-zC9o1mTezrn6EUNmGcA
 
+Sprite image gallery: https://otaku-oratorio-2026-gallery.netlify.app/
+
 The 2025 show's code: https://github.com/mienaikoe/otaku-oratorio
 
 (This year's project was started from scratch, but we'll inevitably want to copy things from last year's)
@@ -30,6 +32,8 @@ To build and run the project on your machine, for development:
 - `git clone` this repository to the Ren'py project directory
 - `git lfs pull` this repository to download large art files
 - Optional: open it in [vscode](https://code.visualstudio.com/) if you'll be programming a lot
+
+If you're writing sprite code, this gallery might help: https://otaku-oratorio-2026-gallery.netlify.app/
 
 Talk to Evan (@erosson on discord) if you get stuck.
 
