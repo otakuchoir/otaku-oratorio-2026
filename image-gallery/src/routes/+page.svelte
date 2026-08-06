@@ -17,11 +17,15 @@
 	const byTag = byKey(images, (i) => i.tag);
 	const tags = Object.keys(byTag);
 
-	const qs = $derived(new URLSearchParams(page.url.searchParams));
+	let qs = $state(new URLSearchParams());
 	const qtags = $derived(qs.getAll('t'));
 	const visibleByTag = $derived(
 		Object.entries(byTag).filter(([k]) => qtags.length === 0 || qtags.includes(k))
 	);
+
+	$effect(() => {
+		qs = new URLSearchParams(page.url.searchParams)
+	})
 
 	function byKey<K extends string | number | symbol, V>(
 		list: readonly V[],
