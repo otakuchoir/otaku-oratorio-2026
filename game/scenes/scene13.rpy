@@ -24,7 +24,7 @@ label scene13:
     # post-destruction
     #show usagi neutral at topleft
     #show takeshi neutral at right2
-    show linda neutralholo focus at center with dissolve
+    show linda neutral holo focus at center with dissolve
     linda "Usagi... there’s something I need to tell you. Call me back."
     hide linda with dissolve
     show takeshi neutral focus at center with dissolve

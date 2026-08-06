@@ -3,8 +3,8 @@ label scene05:
     play music bgm_scene05_01
 
     # slide onto the screen from the right
-    show usagi happy1 at offscreenright
-    show takeshi happy1 at offscreenright behind usagi
+    show usagi happy 1 at offscreenright
+    show takeshi happy 1 at offscreenright behind usagi
     show sanders happy at offscreenright
     pause 0
     show usagi at left2
@@ -40,7 +40,7 @@ label scene05:
 
     # bart enters the screen as usagi walks toward him
     # both are walking backwards - a little weird, but signals to the audience neither is paying attention
-    show takeshi happy2
+    show takeshi happy 2
     show sanders
     show bart peaceful at offscreenleft
     pause 0
@@ -67,7 +67,7 @@ label scene05:
     # usagi hops later when she recognizes bart, to show surprise.
     # takeshi/sanders do not, because the hop looks too much like the
     # bump that happened just a moment ago
-    show takeshi worried1
+    show takeshi worried 1
     show sanders shock
     usagi "Oh, I’m so sorry."
 
@@ -85,7 +85,7 @@ label scene05:
     # > words.
     # > RAGNAROK
     # TODO: pending for ragnarok clip
-    sanders @ angry1 "Usagi!"
+    sanders @ angry 1 "Usagi!"
 
     # usagi recognizes bart now!
     show usagi at noflip
@@ -103,7 +103,7 @@ label scene05:
     sanders shock "How does the POPE know who you are??"
     takeshi "Well she is kind of famous."
 
-    show usagi cry2
+    show usagi cry 2
     usagi "Guys shut UP I want to die so baaad right now....."
     sanders "No but seriously, why is he HERE?"
     takeshi "Doesn’t he need, like... a security detail?"
@@ -123,7 +123,7 @@ label scene05:
     with ease
 
     ### page 9 ###
-    bart @ grin1 "An interesting development..."
+    bart @ grin 1 "An interesting development..."
     bart @ scheming "You may yet prove to be useful in righting your wrongs, Kohei...."
 
     # > RAGNAROK ENDS
@@ -132,7 +132,7 @@ label scene05:
     # > BARTHANDELUS WALKS OFF OPPOSITE SIDE OF STAGE WHERE PROFESSOR
     # > JOJO HAS BEEN WATCHING, THEY GREET EACH OTHER AND WALK OFF.
     # "they greet each other" - i'm interpreting this as "they walk offstage together"
-    show bart grin1 at right2, flip
+    show bart grin 1 at right2, flip
     with ease
     show bart at offscreenright, flip
     show jojo at offscreenright, flip

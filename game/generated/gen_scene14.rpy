@@ -1,7 +1,7 @@
 
 label gen_scene14:
     scene black
-    show text "{color=#fff}Scene \"gen_scene14\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.305690\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene14\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.681580\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show takeshi neutral at left2
     show sanders neutral at right2

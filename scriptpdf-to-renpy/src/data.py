@@ -86,7 +86,7 @@ _character_images = [
     'queen neutral',
     'linda neutral',
     'huxtable neutral',
-    'kohei serious1',
+    'kohei serious 1',
     'reporter1',
     'reporter2',
     'reporter3',

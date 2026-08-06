@@ -43,22 +43,22 @@ def load_image(name: str, path: str):
 
 # Load all sprites.
 #
-# For example, the file `usagi-happy-1.png` is loaded in renpy as `usagi happy1`.
-# Use it like `show usagi happy1`.
+# For example, the file `usagi-happy-1.png` is loaded in renpy as `usagi happy 1`.
+# Use it like `show usagi happy 1`.
 #
 # The image tag `usagi` is very important. In the following example:
-#     show usagi happy1
-#     show usagi happy2
-#     show takeshi happy1
+#     show usagi happy 1
+#     show usagi happy 2
+#     show takeshi happy 1
 # Renpy knows the second `show` replaces the first, instead of showing a new
 # image, because they have the same tag. It knows the third `show` is for a
 # different character because its tag is different.
 #
-# The image attribute `happy1` is less important, but I chose to remove dashes
+# The image attribute `happy 1` is less important, but I chose to remove dashes
 # because the renpy vscode extension can't autocomplete them.
 #
 # Also adds a dimmed version of each sprite, for when that character isn't speaking.
-# For example, `show usagi happy1 dim`
+# For example, `show usagi happy 1 dim`
 fs: list[str] = renpy.list_files()
 for f in fs:
     m = re.match(r"^assets\/Character Sprites\/(?P<basename>.*).(png|jpg|gif)$", f)
@@ -70,7 +70,7 @@ for f in fs:
             # dashes in the tag break it for some reason, so remove them.
             tag = basename.replace('-', '')
             attr = ''
-        attr = attr.replace('-', '')
+        attr = attr.replace('-', ' ')
         name = ' '.join([tag, attr])
         name_unfocus = name
         name_focus = name+' focus'

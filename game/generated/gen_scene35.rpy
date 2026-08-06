@@ -1,7 +1,7 @@
 
 label gen_scene35:
     scene black
-    show text "{color=#fff}Scene \"gen_scene35\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.307921\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene35\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.683456\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show child neutral at center
     show bart neutral at left2
     show usagi neutral at right2

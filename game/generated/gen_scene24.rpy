@@ -1,8 +1,8 @@
 
 label gen_scene24:
     scene black
-    show text "{color=#fff}Scene \"gen_scene24\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.306698\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show kohei serious1 at center
+    show text "{color=#fff}Scene \"gen_scene24\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.682425\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show kohei serious 1 at center
     show bart neutral at left2
     show jojo neutral at right2
     show linda neutral at left

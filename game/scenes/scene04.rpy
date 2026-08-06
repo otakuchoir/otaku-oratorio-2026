@@ -28,13 +28,13 @@ label scene04:
 
     kelisha "No, that grade is gonna be sorry if you three don’t get it together before the midterm."
     kelisha "Sanders, you most of all can’t afford to miss out on any points on account of lateness..."
-    sanders angry1 "Why you gotta bust me out like that?"
+    sanders angry 1 "Why you gotta bust me out like that?"
     kelisha stinkeye "Because I don’t want you in my classroom another year if you fail."
 
     # I think it's okay for usagi/takeshi to laugh at sanders with the class here.
     # later, their reactions don't match the class reactions which isn't ideal, but I don't think that causes much confusion.
     show usagi excited
-    show takeshi happy2
+    show takeshi happy 2
     # a few other sanders emotes could work here, I think this one's most in character but I could be wrong
     show sanders eyeroll
     "The classroom laughs, she got him good."
@@ -51,7 +51,7 @@ label scene04:
     show sanders neutral
     show kelisha neutral
     kelisha "And you, Williamson... you could fail everything from now until the end of the year and you’d be good, but you DON’T need to be late. Don’t let your little friends drag you down."
-    takeshi @ happy1 "My apologies professor, we just ran over time in the training simulator."
+    takeshi @ happy 1 "My apologies professor, we just ran over time in the training simulator."
     "The classroom is annoyed with Takeshi’s apology..."
     classmate "It’s crazy he’s so smart... He’s a Lunar."
 

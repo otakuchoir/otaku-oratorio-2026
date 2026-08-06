@@ -27,7 +27,7 @@ scenes = [
     S('scene04', 'Academy Classroom'),
     S('scene05', 'School Grounds, Meet Barthandelus'),
     S('scene05a', 'SONG: Ragnarok'),
-    S('gen_scene06', 'Train Station'),
+    S('scene06', 'Train Station'),
     S('scene06a', 'SONG: Hana Ni Natte'),
     S('scene07', '(IRL) Classroom scene 1'),
     S('scene08', '(IRL) Classroom scene 2'),

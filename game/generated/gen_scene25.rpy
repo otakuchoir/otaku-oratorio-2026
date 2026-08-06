@@ -1,11 +1,11 @@
 
 label gen_scene25:
     scene black
-    show text "{color=#fff}Scene \"gen_scene25\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.306818\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene25\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.682526\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show queen neutral at center
     show linda neutral at left2
     show huxtable neutral at right2
-    show kohei serious1 at left
+    show kohei serious 1 at left
     show jojo neutral at right
     show bart neutral at top
     show queen neutral at topleft

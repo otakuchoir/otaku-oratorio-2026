@@ -1,7 +1,7 @@
 
 label gen_scene01:
     scene black
-    show text "{color=#fff}Scene \"gen_scene01\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-04 04:38:06.304309\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene01\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.680337\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     # > 1        INT. THE DIMENNA CENTER FOR CLASSICAL MUSIC                               1
     # > Johnathan welcomes the audience to the annual memorial
     # > tribute to Kohei Kitadani, tells them to clap only when the

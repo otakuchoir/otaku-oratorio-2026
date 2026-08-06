@@ -43,27 +43,27 @@ label scene03:
     sanders eyeroll "The hell can a support do in this situation? I’m going in."
 
     # sanders steps all the way forward
-    show takeshi worried1 
-    show sanders angry1 at left with ease
+    show takeshi worried 1 
+    show sanders angry 1 at left with ease
     takeshi "NOT YET!"
 
     # sanders is hit! show this with background, screen shake, and tense music
     show bg scene03 imhit behind takeshi, sanders
-    show takeshi worried2 
+    show takeshi worried 2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch
     pause 0.4
     # no looping BGM unless the track is loopable! for most of these the track is much longer than the show, anyway
     play music "<from 1.6>bgm_scene03_01.opus" noloop
     show bg default behind takeshi, sanders
     sanders anxious "I’m hit!"
-    takeshi worried1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
+    takeshi worried 1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
 
     # takeshi steps forward to (try to) rescue sanders
     show takeshi at center with ease
-    sanders angry1 "I didn’t need your help..."
-    takeshi worried1 "He’s right... I’m cooked"
+    sanders angry 1 "I didn’t need your help..."
+    takeshi worried 1 "He’s right... I’m cooked"
 
-    show takeshi panic1 
+    show takeshi panic 1 
     takeshis_console "SCAN COMPLETE; ENEMY SUPPORT MARKED; DEFENSIVE MISSILES INBOUND."
     takeshi "Dammit..."
     
@@ -76,18 +76,18 @@ label scene03:
     call scene03_usagi_swoops_in
 
     sanders prideful "That’s my duo!"
-    takeshi happy1 "Thanks Usagi..."
+    takeshi happy 1 "Thanks Usagi..."
 
     # takeshi faces sanders to argue, while usagi's slowly getting pissed
     show usagi exasperated
     show takeshi neutral at noflip
-    sanders angry1 "What were you THINKING Takeshi??"
-    takeshi angry1 "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
-    sanders angry2 "If you knew HOW to support, then you wouldn’t have gone IN..."
+    sanders angry 1 "What were you THINKING Takeshi??"
+    takeshi angry 1 "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
+    sanders angry 2 "If you knew HOW to support, then you wouldn’t have gone IN..."
 
     # usagi steps forward to scold sanders
     show takeshi behind usagi
-    show usagi exasperated2 at right2 with ease
+    show usagi exasperated 2 at right2 with ease
     show sanders shock
     usagi "SANDERS, WHAT THE HELL WAS THAT?" with vpunch
     usagi "IF YOU KNEW HOW TO ACE, THEN YOU WOULDN’T HAVE GONE IN WITH THE ENEMY SUPPORT MISSING..."
@@ -98,7 +98,7 @@ label scene03:
     # music swaps, scroll takeshi/sanders off screen, spotlight's on usagi
     stop music fadeout 0.8
     pause 0.5
-    show usagi happy1 at center
+    show usagi happy 1 at center
     show sanders neutral at offscreenleft, flip
     show takeshi neutral at offscreenleft, flip
     with ease
@@ -110,7 +110,7 @@ label scene03:
     usagi "I love arts & crafts, small dogs, strawberries and parfaits."
 
     # introduce her friends: pan the camera towards them (scroll both usagi and her friends to the right)
-    show usagi happy1 at right
+    show usagi happy 1 at right
     show sanders happy at left
     with ease
     usagi "That’s Sanders, another 4th year. He’s an asshole. He’s good, but he’s an asshole."
@@ -119,7 +119,7 @@ label scene03:
     show takeshi at offscreenleft
     pause 0
     show sanders at offscreenleft
-    show takeshi happy1 at left
+    show takeshi happy 1 at left
     with ease
     usagi "And that’s Takeshi, a 3rd year but he’s graduating early, super sweet, super kind... super innocent."
 
@@ -151,7 +151,7 @@ label scene03_usagi_swoops_in:
 
     show sanders at noflip
     show takeshi at noflip
-    show usagi happy1 focus at usagi_swoops_in_swoop2
+    show usagi happy 1 focus at usagi_swoops_in_swoop2
     with hpunch
     pause 0.8
 
@@ -163,7 +163,7 @@ label scene03_usagi_swoops_in:
 
     show sanders happy at noflip
     show takeshi neutral at noflip
-    show usagi happy2 focus at usagi_swoops_in_landing
+    show usagi happy 2 focus at usagi_swoops_in_landing
     # landing is 1.4 seconds total. sanders and takeshi both watch her land
     pause 0.4
     show sanders at flip
@@ -176,7 +176,7 @@ label scene03_usagi_swoops_in:
 
     # reset animation transforms, in case we skipped the animation
     hide usagi 
-    show usagi happy1 at right
+    show usagi happy 1 at right
     return
 
 # renpy coordinates: x=0 is left, y=0 is top

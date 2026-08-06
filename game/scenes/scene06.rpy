@@ -20,21 +20,21 @@ label scene06:
     with ease
 
     # > 6        EXT. TRAIN STATION - AFTERNOON                                            6
-    sanders @ angry1 "Once again we’re late."
+    sanders @ angry 1 "Once again we’re late."
     takeshi "No, there’s still time. We’re gonna make it."
     usagi "I still don’t like the idea of going all the way to RUSH CRATER for some food. That’s nearly across the entire Moon’s surface."
     sanders @ teasing "I heard they have really good strawberry parfaits."
     show usagi at flip
-    usagi @ happy2 "Ok, I might be convinced..."
+    usagi @ happy 2 "Ok, I might be convinced..."
     usagi neutral "But seriously, midterms are coming up. We need to be studying."
     sanders @ eyeroll "We can study on the train."
     sanders "If we make it, that is..."
 
     # fake anger, she's clearly not actually serious
-    usagi serious2 "I hope we MISS our train and then we don’t have to GO."
+    usagi serious 2 "I hope we MISS our train and then we don’t have to GO."
     show usagi excited at noflip
-    show takeshi happy2
-    sanders @ angry2 "YOU’RE SO EVIL!"
+    show takeshi happy 2
+    sanders @ angry 2 "YOU’RE SO EVIL!"
 
     show scene06_train_sign "\n1. Rush Crater     1 min" as sign_line1 at top
     show scene06_train_sign "\n\n2. Rush Crater   61 min" as sign_line2 at top
@@ -63,7 +63,7 @@ label scene06:
     show sanders at noflip
     pause 0.4
     # and finally, jump
-    show sanders angry1 at scene06_gate_jump
+    show sanders angry 1 at scene06_gate_jump
     pause 0.8
     show sanders deadpan
     pause 0.2
@@ -80,7 +80,7 @@ label scene06:
     ### page 10 ###
     sanders @ eyeroll "Everyone hops the gate."
 
-    show sanders angry1 at noflip
+    show sanders angry 1 at noflip
     usagi "I didn’t hop the gate."
     takeshi "Me either."
     show sanders neutral at flip
@@ -92,9 +92,9 @@ label scene06:
     show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at top
     guard "Academy uniforms eh. Let me see some ID, the lot of yous."
     # I'm not sure what to do with faces here... usagi wasn't serious before (I think) but now they're actually missing it
-    sanders angry1 "We’re going to miss the train."
+    sanders angry 1 "We’re going to miss the train."
     usagi "Good. I didn’t want to go in the first place."
-    sanders @ angry2 "Evil..."
+    sanders @ angry 2 "Evil..."
 
     # > USAGI IS NOT COMFORTABLE WITH THE FAME
     guard "Reviewing IDs Kitadani... Usagi... oh, you’re the captain’s daughter!"
@@ -102,7 +102,7 @@ label scene06:
     # "usagi-weary" also works here, but this is serious enough for an entire scene where we call mom later so I don't think weary is quite enough
     show usagi angry
     guard "You know, your father was an inspiration to us all-"
-    sanders @ angry2 "YO... we have somewhere to go, and yeah you’re harrassing Crown royalty so like can we go now?"
+    sanders @ angry 2 "YO... we have somewhere to go, and yeah you’re harrassing Crown royalty so like can we go now?"
 
     show usagi neutral
     show sanders eyeroll
@@ -113,11 +113,11 @@ label scene06:
     guard "Yup, it was definitely you who I saw jump the turnstile."
 
     # everyone reacts to that
-    show sanders angry2
+    show sanders angry 2
     show usagi worried
-    takeshi worried2 "What??"
+    takeshi worried 2 "What??"
     ### page 11 ###
-    sanders @ angry3 "Hey old man, we don’t have TIME for this-"
+    sanders @ angry 3 "Hey old man, we don’t have TIME for this-"
     guard "You’re gonna have to come with me."
     # usagi steps to the front to defend her friend
     show usagi at center
@@ -134,8 +134,8 @@ label scene06:
     guard "Well... If you say so."
 
     # it worked, we're safe, everyone's a little relieved...
-    show takeshi worried1
-    show sanders angry1
+    show takeshi worried 1
+    show sanders angry 1
     show usagi neutral
     # > TRAIN SECURITY GUARD EXITS
     guard "As you were."
@@ -143,12 +143,12 @@ label scene06:
     # ...until they see they've missed the train
     show usagi at noflip
     show takeshi at noflip
-    show sanders angry2 at noflip
+    show sanders angry 2 at noflip
     # sanders "FAAAAHHHH (like the meme) we missed the train!"
     # "like the meme"? google says this, sounds like another f-word
     # https://www.tiktok.com/@soundeffectsonabudget/video/7566849185551568159?lang=en
     # no sound effects, let the voice actor handle it
-    sanders @ angry3 "FAAAAHHHH we missed the train!"
+    sanders @ angry 3 "FAAAAHHHH we missed the train!"
     usagi "The next one is in an hour. We can wait."
     # > USAGI LOOKS SYMPATHETICALLY TO TAKESHI WITHOUT SAYING A WORD.
     sanders "I thought you said you didn’t even want to GO."
