@@ -3,9 +3,7 @@ label scene06:
     scene bg default
 
     # a crude train-departures sign
-    show black:
-        top
-        crop (0, 0, 350, 110)
+    show black as sign_bg at top, scene06_sign_bg
     show scene06_train_sign "DEPARTURES" as sign_line0 at top
     show scene06_train_sign "\n1. Rush Crater     2 min" as sign_line1 at top
     show scene06_train_sign "\n\n2. Rush Crater   62 min" as sign_line2 at top
@@ -69,7 +67,7 @@ label scene06:
     show sanders deadpan
     pause 0.2
 
-    show sanders anxious
+    show sanders anxious at hop
     guard "Hey you! Stop!"
 
     # everyone looks back at the guard
@@ -88,9 +86,7 @@ label scene06:
 
     # > THEY HAND OVER THEIR IDs. A TRAIN ANNOUNCEMENT OVER THE PA.
     # guessing that we'll have sfx here later
-    # for now, departure sign blinks that the train is here
-    show scene06_train_sign "\n1. Rush Crater     0 min" as sign_line1 at top, scene06_sign_blink
-    show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at top
+    # for now, departure sign blinks that the train is here. but not just yet, feels too soon
     guard "Academy uniforms eh. Let me see some ID, the lot of yous."
     # I'm not sure what to do with faces here... usagi wasn't serious before (I think) but now they're actually missing it
     sanders angry 1 "We’re going to miss the train."
@@ -110,6 +106,9 @@ label scene06:
     guard "Sanders, George. Earthborn... you’re good to go..."
 
     show sanders neutral
+    # this seems like a great time for the clock to tick
+    show scene06_train_sign "\n1. Rush Crater     0 min" as sign_line1 at top, scene06_sign_blink
+    show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at top
     guard "Williamson, Takeshi... Colony born... A lunar..."
     guard "Yup, it was definitely you who I saw jump the turnstile."
 
@@ -144,13 +143,23 @@ label scene06:
     show usagi at offscreenleft
     show takeshi at offscreenleft
     show sanders at offscreenleft
+    # the sign moves while running too, to signal camera movement
+    # actually no it doesn't, it looked quite bad
+    #show black as sign_bg at topoffscreenright, scene06_sign_bg
+    #show scene06_train_sign "DEPARTURES" as sign_line0 at topoffscreenright
+    #show scene06_train_sign "\n1. Rush Crater     0 min" as sign_line1 at topoffscreenright, scene06_sign_blink
+    #show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at topoffscreenright
     with ease
+
     show usagi at offscreenright
     show takeshi at offscreenright
     show sanders at offscreenright
-    # they've just missed the train, change the sign
+    # fade out and back in, without destroying the scene
+    show black as fade with dissolve
     show scene06_train_sign "\n1. Rush Crater     59 min" as sign_line1 at top, scene06_sign_noblink
-    show scene06_train_sign "\n\n2. Rush Crater   119 min" as sign_line2 at top
+    show scene06_train_sign "\n\n2. Rush Crater   119 min" as sign_line2 at top 
+    hide fade with dissolve
+    # they've just missed the train, change the sign
     pause 0
     show sanders at left2
     show usagi at center
@@ -169,13 +178,14 @@ label scene06:
 
     # > USAGI LOOKS SYMPATHETICALLY TO TAKESHI WITHOUT SAYING A WORD.
     # not quite sure what to do with takeshi's expression here...
-    # also, usagi should be the one to turn, not takeshi. but how do we arrange people on stage for that?
-    show usagi worried at flip
-    show takeshi annoyed
+    # earlier, they run offstage to get to the train - mostly to rearrange them on stage,
+    # so usagi can turn to look at takeshi
+    show usagi worried focus at flip
+    show takeshi annoyed focus
     pause 1.5
     show usagi neutral at noflip
     show takeshi neutral
-    show sanders at flip
+    show sanders at flip, left2
     sanders "I thought you said you didn’t even want to GO."
     sanders "You CURSED us and now you have your wish, you’re a SORCERESS! AN EVIL SORCERESS!"
     show sanders angry 1
@@ -189,15 +199,18 @@ label scene06:
     return
 
 transform scene06_gate_jump:
+    transform_anchor True
     parallel:
         ypos ypos_textbox
+        rotate 0
         ease 0.1 ypos (ypos_textbox + 100)
-        ease 0.3 ypos (ypos_textbox - 400) # rotate 30
-        ease 0.2 ypos (ypos_textbox + 100) # rotate 0
+        ease 0.3 ypos (ypos_textbox - 400) rotate 30
+        ease 0.2 ypos (ypos_textbox + 100) rotate 0
         ease 0.1 ypos ypos_textbox
     parallel:
         xalign 1.0
         ease 0.7 xalign 0.5
+    ypos ypos_textbox rotate 0
 
 image scene06_train_sign = ParameterizedText(color="#0a0")
 transform scene06_sign_blink:
@@ -208,3 +221,5 @@ transform scene06_sign_blink:
     repeat
 transform scene06_sign_noblink:
     matrixcolor BrightnessMatrix(0)
+transform scene06_sign_bg:
+    crop (0, 0, 350, 110)
