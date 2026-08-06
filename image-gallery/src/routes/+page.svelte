@@ -6,11 +6,14 @@
 		const url = (module_ as any).default as string;
 		const basename = path.split('/').toReversed()[0].split('.')[0];
 		let [tag, ...attrs] = basename.split('-');
+		// special-case characters at different times
 		if (attrs[0] === 'young' || attrs[0] === 'postgrad') {
 			tag = `${tag} ${attrs[0]}`;
 			attrs = attrs.slice(1);
 		}
-		const clipboard = `show ${tag} ${attrs.join(' ')}`;
+		// special-case reporters, which have different tags in renpy, but I don't want them to show different buttons here
+		const t = tag === 'reporter' ? tag : `${tag} `
+		const clipboard = `show ${t}${attrs.join(' ')}`;
 		return { path, url, basename, tag, attrs, clipboard };
 	});
 	type Img = (typeof images)[number];
