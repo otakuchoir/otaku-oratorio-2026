@@ -1,6 +1,7 @@
 # scene 06 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi
 label scene06:
     scene bg default
+    play music bgm_scene06_01
 
     # a crude train-departures sign
     show black as sign_bg at top, scene06_sign_bg
@@ -68,6 +69,7 @@ label scene06:
     pause 0.2
 
     show sanders anxious at hop
+    stop music
     guard "Hey you! Stop!"
 
     # everyone looks back at the guard
@@ -192,10 +194,12 @@ label scene06:
     usagi "I said we can wait."
     usagi happy 1 "I am craving that Pho..."
     usagi annoyed "And they better have the best damned Strawberry parfaits on the moon, or I’m coming for YOU Sanders..."
+    show sanders at noflip
     # > 
     # > SONG: HANA NI NATTE    # > 
     # > 2 WEEKS LATER
     ### page 12 ###
+    show black with dissolve
     return
 
 transform scene06_gate_jump:
