@@ -1,3 +1,4 @@
+# scene 06 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi
 label scene06:
     scene bg default
 

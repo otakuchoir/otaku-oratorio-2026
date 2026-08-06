@@ -1,22 +1,4 @@
-# this is the first scene from the script we've written. took a little under 4 hours. of that:
-#
-# - entering text from the script was under half an hour. very fast - paste the script into the file and reformat things. vim macros helped a lot here
-# - usagi's fancy animation was around 1.5 hours. I already knew many (but not all) of the required functions, and copied some animation from an earlier demo of mine
-# - the rest of the scene's faces and movement took around 2 hours. A better renpy ide would help here: I spent lots of time looking at the list of sprites, choosing the best face for each moment
-# - highlighting the speaker (without tons of code in every scene) is surprisingly difficult, but I did most of that work earlier so it didn't add much time
-#
-# after that, not directly related to the scene:
-#
-# - 1.5 hours getting sprites to sit on top of the textbox, instead of partially hidden underneath it
-#
-# things to do next:
-#
-# - how's it look? get team review
-# - save my script entry vim macros. we'll be using them a lot!
-# - auto speaker highlighting worked well, but putting "dim" everywhere really sucks, I keep messing it up. can we remove that?
-# - get that vscode extension working (renpy magic)
-# - add background, when it's done
-#
+# scene 03 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi 
 image bg scene03 imhit = Solid("#cc0000")
 label scene03: 
     scene bg default

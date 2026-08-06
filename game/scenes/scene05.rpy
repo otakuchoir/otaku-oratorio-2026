@@ -1,3 +1,4 @@
+# scene 05 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=jojo&t=bart
 label scene05:
     scene bg default
     play music bgm_scene05_01
