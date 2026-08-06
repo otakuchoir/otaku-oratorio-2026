@@ -4,8 +4,6 @@ label scene13:
     scene black
     play music bgm_scene13_01
     "PLACEHOLDER IRL scene13 (pre-destruction)"
-    play music bgm_scene13_02 noloop
-    "PLACEHOLDER IRL scene13 (pre-destruction)"
     stop music
     "PLACEHOLDER Song: Lilium"
     

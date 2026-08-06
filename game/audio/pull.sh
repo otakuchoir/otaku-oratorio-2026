@@ -25,7 +25,4 @@ cd "`dirname "$0"`"
 #yt-dlp -xo bgm_scene11_01 https://www.youtube.com/watch?v=b-GWaFYgXM0 
 ##yt-dlp -xo bgm_scene12_01 duplicate of 04_02
 #yt-dlp -xo bgm_scene13_01 https://www.youtube.com/watch?v=H-W7xveVzUw
-#yt-dlp -xo bgm_scene13_02 https://www.youtube.com/watch?v=aOwJyEKupdc --download-sections "*00:00:00-00:00:03.05"
 #yt-dlp -xo bgm_scene14_01 https://www.youtube.com/watch?v=Al4ongqx_2I
-#yt-dlp -xo bgm_scene15_01 https://www.youtube.com/watch?v=kQuBZcO0m7A
-#yt-dlp -xo bgm_scene15_02 https://www.youtube.com/watch?v=WSphnwWo7E8
