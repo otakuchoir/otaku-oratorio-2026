@@ -1,7 +1,7 @@
 
 label gen_scene04:
     scene black
-    show text "{color=#fff}Scene \"gen_scene04\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.680681\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene04\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.491736\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show kelisha neutral at center
     show sanders neutral at left2
     show usagi neutral at right2
@@ -9,6 +9,7 @@ label gen_scene04:
     show reporter1 at right
     show reporter2 at top
     show reporter3 at topleft
+    show king at topright
     # > 4        INT. CROWN MILITARY ACADEMY, CLASSROOM                                    4
     kelisha "Late again?"
     trio "Sorry professor."

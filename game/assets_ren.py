@@ -64,7 +64,7 @@ for f in fs:
     m = re.match(r"^assets\/Character Sprites\/(?P<basename>.*).(png|jpg|gif)$", f)
     if m:
         basename = m.group('basename')
-        (tag, attr) = basename.split('-', 1)
+        (tag, attr) = basename.split('-', 1) if '-' in basename else (basename, '')
         if tag == 'reporter':
             # exception for the reporters, which have only one image each with no attributes.
             # dashes in the tag break it for some reason, so remove them.

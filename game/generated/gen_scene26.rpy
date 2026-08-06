@@ -1,11 +1,12 @@
 
 label gen_scene26:
     scene black
-    show text "{color=#fff}Scene \"gen_scene26\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:02:04.682622\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#fff}Scene \"gen_scene26\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.493639\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show linda neutral at center
     show usagi neutral at left2
     show takeshi neutral at right2
     show reporter1 at left
+    show king at right
     # > 26       INT. USAGI’S APARTMENT                                                   26
     # > USAGI AND LINDA ARE ON ANOTHER ONE OF THEIR HOLO-TIME CALLS.
     linda "Yeah, Elizabeth and I ended the fight right there."

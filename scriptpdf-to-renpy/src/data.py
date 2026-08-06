@@ -94,6 +94,7 @@ _character_images = [
     ('princess', 'queen neutral'),
     ('noname', 'child neutral'),
     ('kagu', 'child neutral'),
+    'king',
 ]
 character_images = dict((i.split(' ')[0], i) if isinstance(i, str) else i
                         for i in _character_images)

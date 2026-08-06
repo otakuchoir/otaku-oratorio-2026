@@ -20,3 +20,5 @@ echo "" >> $F
 echo "Updated at: `date`" >> $F
 echo "Updated by: `git config user.name`" >> $F
 echo "Updated using \`./bin/pull-assets\`" >> $F
+# force the image gallery to rebuild + redeploy
+cp $F ./image-gallery/

@@ -7,7 +7,7 @@
 		const basename = path.split('/').toReversed()[0].split('.')[0];
 		let [tag, ...attrs] = basename.split('-');
 		// special-case characters at different times
-		if (attrs[0] === 'young' || attrs[0] === 'postgrad') {
+		if (attrs[0] === 'young' || attrs[0] === 'postgrad' || attrs[0] === 'child') {
 			tag = `${tag} ${attrs[0]}`;
 			attrs = attrs.slice(1);
 		}

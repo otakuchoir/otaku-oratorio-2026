@@ -16,7 +16,7 @@
 
                 for img in renpy.list_images():
                     # not sure why these are listed, they're not images and they break things. ignore them
-                    if img in ["text", "vtext"]:
+                    if img in ["text", "vtext", 'scene06_train_sign']:
                         continue
                     # tried to display image dimensions and failed. they'd take up too much screen space anyway
                     # python:

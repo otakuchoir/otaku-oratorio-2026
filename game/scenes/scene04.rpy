@@ -102,6 +102,11 @@ label scene04:
     # > (MORE)
     ### page 7 ###
     reporter3 "While the Kingdom of New Jersey is responsible for a large part of the Ultima Ore supply chain, Our Crown Military King, is confident that an agreement will be reached before the situations impacts the economy."
+    hide reporter1
+    hide reporter2
+    hide reporter3
+    show king at center
+    with dissolve
     # > TRANSITION TO
     king "WE ARE FULLY CONFIDENT THAT THE PEOPLE OF THE KINGDOM OF NEW JERSEY WILL COMPLY WITH ORDERS AND ALL WILL BE WELL."
 

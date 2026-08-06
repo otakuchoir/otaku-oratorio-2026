@@ -20,6 +20,7 @@ define huxtable = Character("Robert Huxtable", color="#c99e61", image="huxtable"
 define reporter1 = Character("News Reporter 1", color="#aaaaaa", image="reporter1")
 define reporter2 = Character("News Reporter 2", color="#aaaaaa", image="reporter2")
 define reporter3 = Character("News Reporter 3", color="#aaaaaa", image="reporter3")
+define king = Character("King", color="#8800ff", image="king")
 
 # the background is not a character, but pretending it is is the easiest way to change backgrounds mid-scene
 define bg = Character(image="bg")
