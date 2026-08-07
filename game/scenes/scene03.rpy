@@ -1,5 +1,4 @@
 # scene 03 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi 
-image bg scene03 imhit = Solid("#cc0000")
 label scene03: 
     scene bg training room with dissolve
 
@@ -30,7 +29,7 @@ label scene03:
     takeshi "NOT YET!"
 
     # sanders is hit! show this with background, screen shake, and tense music
-    show bg scene03 imhit as bg2 behind takeshi, sanders:
+    show bg red as bg2 behind takeshi, sanders:
         alpha 0.7
     show takeshi worried 2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch

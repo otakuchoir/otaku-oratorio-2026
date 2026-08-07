@@ -25,7 +25,10 @@ define king = Character("King", color="#8800ff", image="king")
 # the background is not a character, but pretending it is is the easiest way to change backgrounds mid-scene
 define bg = Character(image="bg")
 
-image bg default = Solid("#cccccc")
+image bg default = Solid("#ccc")
+image bg black = Solid('#000')
+image bg white = Solid('#fff')
+image bg red = Solid('#f00')
 
 # redefine builtin positions so the bottom edge of our sprites is sitting on top of the textbox.
 define ypos_textbox = 880
