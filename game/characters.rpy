@@ -79,3 +79,7 @@ transform topright:
 transform topoffscreenright:
     xalign 1.6
     ytop
+
+transform offscreentop:
+    yalign -10.0
+    xalign 0.5

@@ -78,8 +78,18 @@ for f in fs:
         renpy.image(name_unfocus, dim(renpy.get_registered_image(name_focus))) # type: ignore
         # print('image:', name, '-', f)
 
+    m = re.match(r"^assets\/backgrounds\/(?P<basename>.*).(png|jpg|gif)$", f)
+    if m:
+        basename = m.group('basename')
+        attrs = basename.split('-')
+        name = ' '.join(['bg'] + attrs)
+        load_image(name, f)
+
 # Load a list of other assets with less predictible naming patterns.
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')
+load_image('bg scene16a nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16A-noforeground.png')
+load_image('bg scene16b nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16B-noforeground.png')
+load_image('bg scene16c nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16C-noforeground.png')
 load_image('bg scene16a', 'assets/Scene 16/Scene16A.png')
 load_image('bg scene16b', 'assets/Scene 16/Scene16B.png')
 load_image('bg scene16c', 'assets/Scene 16/Scene16C.png')

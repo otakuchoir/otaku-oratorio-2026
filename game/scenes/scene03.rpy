@@ -1,7 +1,7 @@
 # scene 03 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi 
 image bg scene03 imhit = Solid("#cc0000")
 label scene03: 
-    scene bg default
+    scene bg training room with dissolve
 
     # they walk in from the right
     show sanders smug at offscreenright
@@ -30,13 +30,14 @@ label scene03:
     takeshi "NOT YET!"
 
     # sanders is hit! show this with background, screen shake, and tense music
-    show bg scene03 imhit behind takeshi, sanders
+    show bg scene03 imhit as bg2 behind takeshi, sanders:
+        alpha 0.7
     show takeshi worried 2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch
     pause 0.4
+    hide bg2
     # no looping BGM unless the track is loopable! for most of these the track is much longer than the show, anyway
     play music "<from 1.6>bgm_scene03_01.opus" noloop
-    show bg default behind takeshi, sanders
     sanders anxious "I’m hit!"
     takeshi worried 1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
 
@@ -115,6 +116,7 @@ label scene03:
     # usagi walks off stage, making sure to face where she's walking
     show usagi weary at offscreenright, flip
     with ease
+    show bg black with dissolve
 
     # > USAGI, SANDERS, AND TAKESHI TAKE OFF FOR CLASS, THE CHOIR
     # > EXEMPLIFIES SCHOOL LIFE, AND EVENTUALLY SETTLES INTO A

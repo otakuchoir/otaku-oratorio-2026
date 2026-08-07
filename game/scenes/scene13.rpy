@@ -1,7 +1,7 @@
 # scene 13 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=linda
 image bg black = Solid('#000000')
 label scene13: 
-    scene black
+    scene bg great hall inside with dissolve
     play music bgm_scene13_01
     "PLACEHOLDER IRL scene13 (pre-destruction)"
     stop music
@@ -45,4 +45,5 @@ label scene13:
     with dissolve
     usagi "After that mid term, none of us really spoke much. Finals came and went, and then graduation..."
     hide usagi with dissolve
+    show bg black with dissolve
     return

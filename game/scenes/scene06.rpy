@@ -1,6 +1,6 @@
 # scene 06 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi
 label scene06:
-    scene bg default
+    scene bg train station with dissolve
     play music bgm_scene06_01
 
     # a crude train-departures sign

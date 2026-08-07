@@ -1,6 +1,6 @@
 # scene 04 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=kelisha
 label scene04:
-    scene bg default
+    scene bg classroom at flip with dissolve
     play music bgm_scene04_01
 
     # the trio walk into the classroom (the stage) from the right. kelisha's already in class.
@@ -86,6 +86,12 @@ label scene04:
     kelisha "Pay attention, this has to do with your midterms..."
 
     # news report starts. zoom in on the reporters, pushing the others off screen
+    # TODO: there's gotta be a better news room background
+    show bg great hall outside as bg2 behind kelisha, usagi, sanders, takeshi:
+        top
+        zoom 0.0
+        ease 0.5 zoom 1.0
+    pause 0
     play music bgm_scene04_02
     show kelisha at offscreenleft
     show usagi at offscreenright
@@ -95,6 +101,7 @@ label scene04:
     show reporter2 at center, smoothzoom
     show reporter3 at right2, smoothzoom
     with ease
+    hide bg
 
     reporter1 "Tensions flare in the North American region as we approach day 42 of the mine workers strike."
     reporter2 "Residents and workers in the Kingdom of New Jersey continue to resist Crown Military orders to extract Ultima Ore."

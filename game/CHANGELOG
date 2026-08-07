@@ -1,7 +1,12 @@
+## 2026/08/06
+- Add backgrounds to most act 1 scenes
+- Add nicer scene transitions between most act 1 scenes
+
 ## 2026/08/05
 - Add scene 6
 - Remove scene 13, 15 music
 - Add a sprite gallery at https://otaku-oratorio-2026-gallery.netlify.app/ , hoping it makes sprite coding quicker
+- Add the king to scene 4's news report
 
 ## 2026/08/04
 - Add choir placeholder for scene 2

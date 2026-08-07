@@ -1,15 +1,29 @@
 <script lang="ts">
 	import { page } from '$app/state';
 
-	const imports = import.meta.glob('/assets/Character Sprites/*.{png,jpg,gif}', { eager: true });
+	const imports = {
+		...import.meta.glob('/assets/Character Sprites/*.{png,jpg,gif}', { eager: true }),
+		...import.meta.glob('/assets/backgrounds/*.{png,jpg,gif}', { eager: true }),
+	}
 	const images = Object.entries(imports).map(([path, module_]) => {
 		const url = (module_ as any).default as string;
 		const basename = path.split('/').toReversed()[0].split('.')[0];
-		let [tag, ...attrs] = basename.split('-');
-		// special-case characters at different times
-		if (attrs[0] === 'young' || attrs[0] === 'postgrad' || attrs[0] === 'child') {
-			tag = `${tag} ${attrs[0]}`;
-			attrs = attrs.slice(1);
+		let tag: string
+		let attrs: readonly string[]
+		if (path.startsWith('/assets/Character Sprites/')) {
+			[tag, ...attrs] = basename.split('-');
+			// special-case characters at different times
+			if (attrs[0] === 'young' || attrs[0] === 'postgrad' || attrs[0] === 'child') {
+				tag = `${tag} ${attrs[0]}`;
+				attrs = attrs.slice(1);
+			}
+		}
+		else if (path.startsWith('/assets/backgrounds')) {
+			tag = 'bg'
+			attrs = basename.split('-')
+		}
+		else {
+			throw new Error('unknown asset path: '+path)
 		}
 		// special-case reporters, which have different tags in renpy, but I don't want them to show different buttons here
 		const t = tag === 'reporter' ? tag : `${tag} `

@@ -1,6 +1,6 @@
 # scene 05 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=jojo&t=bart
 label scene05:
-    scene bg default
+    scene bg campus
     play music bgm_scene05_01
 
     # slide onto the screen from the right
@@ -138,6 +138,7 @@ label scene05:
     show bart at offscreenright, flip
     show jojo at offscreenright, flip
     with ease
+    show bg black with dissolve
     return
 
 transform hop:
