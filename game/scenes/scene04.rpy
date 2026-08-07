@@ -86,8 +86,7 @@ label scene04:
     kelisha "Pay attention, this has to do with your midterms..."
 
     # news report starts. zoom in on the reporters, pushing the others off screen
-    # TODO: there's gotta be a better news room background
-    show bg great hall outside as bg2 behind kelisha, usagi, sanders, takeshi:
+    show bg jersey city cityscape as bg2 behind kelisha, usagi, sanders, takeshi:
         top
         zoom 0.0
         ease 0.5 zoom 1.0
@@ -97,9 +96,9 @@ label scene04:
     show usagi at offscreenright
     show takeshi at offscreenright
     show sanders at offscreenright
-    show reporter1 at left2, smoothzoom
+    show reporter1 at left, smoothzoom
     show reporter2 at center, smoothzoom
-    show reporter3 at right2, smoothzoom
+    show reporter3 at right, smoothzoom
     with ease
     hide bg
 
