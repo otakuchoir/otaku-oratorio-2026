@@ -28,6 +28,7 @@ import re
 import dataclasses
 
 config.speaking_attribute = 'focus' # type: ignore
+config.side_image_only_not_showing = True  # type: ignore
 
 def load_image(name: str, path: str):
     """Load an image if possible, or throw an error.

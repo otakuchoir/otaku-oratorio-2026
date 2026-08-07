@@ -41,7 +41,8 @@ scenes = [
     S('scene15', '(IRL) Mission Briefing'),
     S('scene15a', 'SONG: Weight of the World'),
     S('scene16', '(partial IRL) Dark Side of the Moon; SONG: Ragnarok'),
-    S('scene16a', 'End Act 1'),
+    S('scene16a', '(manga) Discovering the Child'),
+    S('scene16b', 'End Act 1'),
 
     ### Act 2
     S('gen_scene17', 'Start Act 2'),
