@@ -1,3 +1,4 @@
+# scene 16 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi+postgrad&t=usagi+postgrad&t=sanders+postgrad&t=jojo&t=kelisha&t=bart
 label scene16: 
     scene bg moon and earth with dissolve
     "PLACEHOLDER IRL scene16 first few lines only, until surface landing"
