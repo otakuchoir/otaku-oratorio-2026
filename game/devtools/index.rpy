@@ -7,6 +7,6 @@ screen devtools():
             textbutton "exit":
                 action Hide()
             textbutton "image gallery":
-                action ShowMenu('gallery')
+                action ShowMenu('image_gallery')
             textbutton "sound test":
                 action ShowMenu('sound_test')
