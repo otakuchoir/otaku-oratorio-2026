@@ -73,8 +73,8 @@ label scene05:
     usagi "Oh, I’m so sorry."
 
     # takeshi/sanders collect themselves.
-    show takeshi neutral at bowdown
-    show sanders deadpan at bowdown
+    show takeshi neutral at bowdown(0.3, 20)
+    show sanders deadpan at bowdown(0.3, 20)
     takeshi "Your Holiness."
 
     # usagi's still clueless, why are her friends reacting?
@@ -91,7 +91,10 @@ label scene05:
     # usagi recognizes bart now!
     show usagi at noflip
     pause 0.3
-    show usagi shock at hop
+    show usagi shock:
+        hop
+        "usagi neutral"
+        bowdown(0.15, 40)
     bart "I see that the legacy of The Eden runs strong. Good day to you, Kitadani."
 
     # > USAGI, TAKESHI AND SANDERS exit stage while whispering
@@ -99,8 +102,9 @@ label scene05:
     # I'm interpreting this as bart exiting the stage instead.
     show bart at offscreenleft, noflip
     with ease
-    show takeshi at bowup
-    show sanders at bowup
+    show usagi at bowup(0.2, 40)
+    show takeshi at bowup(0.2, 20)
+    show sanders at bowup(0.2, 20)
     sanders shock "How does the POPE know who you are??"
     takeshi "Well she is kind of famous."
 
@@ -109,7 +113,7 @@ label scene05:
     sanders "No but seriously, why is he HERE?"
     takeshi "Doesn’t he need, like... a security detail?"
 
-    show usagi at flip
+    show usagi at flip, left2
     usagi "He’s a really powerful HEAL class, so he’s probably walking around with max defense buffs at all times GUYS get me OUT OF HERE."
 
     # pan the camera to bart and jojo, away from the trio
@@ -141,18 +145,19 @@ label scene05:
     show bg black with dissolve
     return
 
-transform hop:
+transform hop(duration=0.3, y=50):
     ypos ypos_textbox
-    easein 0.15 ypos (ypos_textbox - 50)
-    easeout 0.15 ypos ypos_textbox
+    easein (duration/2) ypos (ypos_textbox - y)
+    easeout (duration/2) ypos ypos_textbox
 
-define ypos_bow = ypos_textbox + 20
 define angle_bow = -15
-transform bowdown:
+transform bowdown(duration, y, a=angle_bow):
     transform_anchor True
-    ypos ypos_textbox rotate 0
-    linear 0.3 ypos ypos_bow rotate angle_bow
-transform bowup:
+    yoffset 0
+    rotate 0
+    linear duration yoffset y rotate a
+transform bowup(duration, y, a=angle_bow):
     transform_anchor True
-    ypos ypos_bow rotate angle_bow
-    linear 0.2 ypos ypos_textbox rotate 0
+    yoffset y
+    rotate a
+    linear duration yoffset 0 rotate 0
