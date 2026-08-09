@@ -4,24 +4,26 @@ label animation_test:
         xanchor 0.5
         ypos 0.8
         yanchor 1.0
-        fx.hop(dur=0.4, y=100)
-        pause 0.5
-        repeat
+        pause 0.2
+        block:
+            fx.hop(dur=0.5, y=100)
+            pause 0.5
+            repeat
     show usagi happy 2 focus as u2:
         xpos 0.3
         xanchor 0.5
         ypos 0.8
         yanchor 1.0
-        fx.hop1(dur=(0.1, 0.3), y=100, stretch=(0.1, 0.15))
-        pause 0.5
+        fx.hopN(dur=(0.2, 0.3), y=100, stretch=(0.1, 0.15))
+        pause 0.3
         repeat
     show usagi happy 2 focus as u3:
         xpos 0.5
         xanchor 0.5
         ypos 0.8
         yanchor 1.0
-        fx.hop1(dur=(0.1, 0.3), y=100, stretch=(0.2, 0.3))
-        pause 0.5
+        fx.hopN(dur=(0.2, 0.3), y=100, stretch=(0.2, 0.3))
+        pause 0.3
         repeat
 
     show usagi happy 2 focus as tu1:
@@ -29,22 +31,23 @@ label animation_test:
         xanchor 0.5
         ypos 0.4
         yanchor 1.0
-        fx.hop(dur=0.4, y=100)
-        repeat
+        pause 0.2
+        # block:
+            # fx.hop(dur=0.5, y=100)
+            # repeat
+        fx.hopN(dur=(0, 0.5), y=100, stretch=(0,0), n=None)
     show usagi happy 2 focus as tu2:
         xpos 0.3
         xanchor 0.5
         ypos 0.4
         yanchor 1.0
-        fx.hop1(dur=(0.1, 0.3), y=100, stretch=(0.1, 0.15))
-        repeat
+        fx.hopN(dur=(0.2, 0.3), y=100, stretch=(0.1, 0.15), n=None)
     show usagi happy 2 focus as tu3:
         xpos 0.5
         xanchor 0.5
         ypos 0.4
         yanchor 1.0
-        fx.hop1(dur=(0.1, 0.3), y=100, stretch=(0.2, 0.3))
-        repeat
+        fx.hopN(dur=(0.2, 0.3), y=100, stretch=(0.2, 0.3), n=None)
 
     show usagi happy 2 focus as u4:
         xpos 0.8
