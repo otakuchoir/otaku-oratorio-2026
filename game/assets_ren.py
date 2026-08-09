@@ -109,3 +109,20 @@ load_image('bg scene19d', 'assets/Storyboards/storyboard-19-4.png')
 changelog = renpy.file('CHANGELOG').read().decode('utf-8')
 last_updated = re.match(r'^## (?P<u>.*)$', changelog.split('\n')[0]).group('u')
 if not last_updated: raise Exception("couldn't find latest version number from changelog")
+
+# create the title page from the logo (transparent png) + a solid color background.
+# be careful not to mangle the logo's aspect ratio!
+# 
+# we do this in three steps:
+# 1. create a large solid-color image, with exactly the same aspect ratio as our screen.
+#    put the logo in roughly the center-right of it.
+# 2. scale that image down to match our theater's screen size.
+# 3. flatten the image down to one layer. usually renpy happily uses multilayer images,
+#    but they break if used for the main screen background for whatever reason
+logo_dim = (2804, 1558)
+screen_dim = (1440, 1080)
+renpy.image('bg mainmenu', Flatten(Transform(Composite( # type: ignore
+    (int(screen_dim[0]*2.5), int(screen_dim[1]*2.5)),
+    (0,0), Solid('#e7dbc7'), # type: ignore
+    (800, 550), renpy.get_registered_image('logo'),
+), size=screen_dim)))
