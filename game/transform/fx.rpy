@@ -40,9 +40,25 @@ transform hvibrate:
     repeat
 
 transform fx.hop(dur=0.3, y=50):
-    ypos ypos_textbox
-    easein (dur/2) ypos (ypos_textbox - y)
-    easeout (dur/2) ypos ypos_textbox
+    yoffset 0
+    # yanchor 1
+    xanchor 0.5
+    easein (dur/2) yoffset -y
+    easeout (dur/2) yoffset 0
+transform fx.hop1(dur=(0.1, 0.3), y=50, stretch=(0.2, 0.3)):
+    yoffset 0
+    # yanchor 1
+    xanchor 0.5
+    fx.stretch0(1, 1)
+    # squash down in anticipation
+    easein dur[0]/4 fx.stretch0(1 + stretch[0], 1 - stretch[0])
+    easeout dur[0]/4 fx.stretch0(1, 1)
+    # hop, along with a stretch upward
+    easein (dur[1]/2) fx.stretch0(1 - stretch[1], 1 + stretch[1]) yoffset -y
+    easeout (dur[1]/2) fx.stretch0(1, 1) yoffset 0
+    # squash down on landing
+    easein dur[0]/4 fx.stretch0(1 + stretch[0], 1 - stretch[0])
+    easeout dur[0]/4 fx.stretch0(1, 1)
 
 define angle_bow = -15
 transform fx.bowdown(dur, y, a=angle_bow):

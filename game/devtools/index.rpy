@@ -10,3 +10,5 @@ screen devtools():
                 action ShowMenu('image_gallery')
             textbutton "sound test":
                 action ShowMenu('sound_test')
+            textbutton "animation test":
+                action Start('animation_test')
