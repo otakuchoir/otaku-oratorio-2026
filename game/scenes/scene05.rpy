@@ -73,8 +73,8 @@ label scene05:
     usagi "Oh, I’m so sorry."
 
     # takeshi/sanders collect themselves.
-    show takeshi neutral at fx.bowdown(0.3, 20)
-    show sanders deadpan at fx.bowdown(0.3, 20)
+    show takeshi neutral at fx.bowdown(0.3)
+    show sanders deadpan at fx.bowdown(0.3)
     takeshi "Your Holiness."
 
     # usagi's still clueless, why are her friends reacting?
@@ -94,7 +94,7 @@ label scene05:
     show usagi shock:
         fx.hop
         "usagi neutral"
-        fx.bowdown(0.15, 40)
+        fx.bowdown(0.15)
     bart "I see that the legacy of The Eden runs strong. Good day to you, Kitadani."
 
     # > USAGI, TAKESHI AND SANDERS exit stage while whispering
@@ -102,9 +102,9 @@ label scene05:
     # I'm interpreting this as bart exiting the stage instead.
     show bart at offscreenleft, noflip
     with ease
-    show usagi at fx.bowup(0.2, 40)
-    show takeshi at fx.bowup(0.2, 20)
-    show sanders at fx.bowup(0.2, 20)
+    show usagi at fx.bowup(0.2)
+    show takeshi at fx.bowup(0.2)
+    show sanders at fx.bowup(0.2)
     sanders shock "How does the POPE know who you are??"
     takeshi "Well she is kind of famous."
 

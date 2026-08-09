@@ -49,31 +49,30 @@ transform fx.hopN(dur=(0.1, 0.3), y=50, stretch=(0.2, 0.3), n=1):
     yoffset 0
     # yanchor 1
     xanchor 0.5
-    fx.stretch0(1, 1)
+    fx.stretch(1, 1)
     block:
         # squash down in anticipation
-        easein dur[0]/2 fx.stretch0(1 + stretch[0], 1 - stretch[0])
-        easeout dur[0]/2 fx.stretch0(1, 1)
+        easein dur[0]/2 fx.stretch(1 + stretch[0], 1 - stretch[0])
+        easeout dur[0]/2 fx.stretch(1, 1)
         # hop, along with a stretch upward
-        easein (dur[1]/2) fx.stretch0(1 - stretch[1], 1 + stretch[1]) yoffset -y
-        easeout (dur[1]/2) fx.stretch0(1, 1) yoffset 0
+        easein (dur[1]/2) fx.stretch(1 - stretch[1], 1 + stretch[1]) yoffset -y
+        easeout (dur[1]/2) fx.stretch(1, 1) yoffset 0
         repeat n
     # squash down on landing
-    easein dur[0]/2 fx.stretch0(1 + stretch[0], 1 - stretch[0])
-    easeout dur[0]/2 fx.stretch0(1, 1)
+    easein dur[0]/2 fx.stretch(1 + stretch[0], 1 - stretch[0])
+    easeout dur[0]/2 fx.stretch(1, 1)
 
 define angle_bow = -15
-transform fx.bowdown(dur, y, a=angle_bow):
+transform fx.bowdown(dur, a=angle_bow):
     transform_anchor True
     yoffset 0
     rotate 0
-    linear dur yoffset y rotate a
-transform fx.bowup(dur, y, a=angle_bow):
+    ease dur yoffset (-a*2) rotate a
+transform fx.bowup(dur, a=angle_bow):
     transform_anchor True
-    yoffset y
+    yoffset (-a*2)
     rotate a
-    linear dur yoffset 0 rotate 0
-transform fx.stretch0(x, y):
-    xzoom x yzoom y
-transform fx.stretch(dur, x, y):
-    ease dur xzoom x yzoom y
+    ease dur yoffset 0 rotate 0
+transform fx.stretch(x, y):
+    xzoom x
+    yzoom y

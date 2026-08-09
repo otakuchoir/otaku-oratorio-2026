@@ -1,3 +1,11 @@
+## 2026/08/09
+- Update scene 4: add bowing to apologies, add stretch when running
+- Update scene 6: add guard placeholder
+- Update scene 10: add parallax when the camera shifts to Kelisha
+- Update scene 10: during takeoff, gravity squishes the trio a little
+- Update sprite anchors throughout the show to be more consistent (no visible changes, hopefully)
+- Add some animation experiments to devtools
+
 ## 2026/08/08
 - Update scene 5: Usagi also bows (in a hurry)
 - Add an outline to the speaker's name, shamelessly stolen from last year's show

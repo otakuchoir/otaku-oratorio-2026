@@ -70,12 +70,19 @@ label scene06:
 
     show sanders anxious at fx.hop
     stop music
+    # train guard placeholder
+    show huxtable neutral:
+        right
+        matrixcolor BrightnessMatrix(-1)
+        xoffset 500
+        ease 0.5 xoffset 0
+
     guard "Hey you! Stop!"
 
     # everyone looks back at the guard
-    show usagi at flip
-    show takeshi at flip
-    show sanders deadpan at flip
+    show usagi at left, flip
+    show takeshi at left2, flip
+    show sanders deadpan at center, flip
     usagi "Us?"
     guard "Did you hop the gate?"
     ### page 10 ###
@@ -134,8 +141,9 @@ label scene06:
     show takeshi worried 1
     show sanders angry 1
     show usagi neutral
-    # > TRAIN SECURITY GUARD EXITS
     guard "As you were."
+    # > TRAIN SECURITY GUARD EXITS
+    show huxtable at flip, offscreenright
 
     # ...they stay relieved while running for the train...
     # (running for the train is mostly to rearrange the characters, so usagi can look toward takeshi below, instead of the other way round)
@@ -152,6 +160,7 @@ label scene06:
     #show scene06_train_sign "\n1. Rush Crater     0 min" as sign_line1 at topoffscreenright, scene06_sign_blink
     #show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at topoffscreenright
     with ease
+    hide huxtable
 
     show usagi at offscreenright
     show takeshi at offscreenright
@@ -205,20 +214,20 @@ label scene06:
 transform scene06_gate_jump:
     transform_anchor True
     parallel:
-        ypos ypos_textbox
+        yoffset 0
         rotate 0
-        ease 0.1 ypos (ypos_textbox + 100)
-        ease 0.3 ypos (ypos_textbox - 400) rotate 30
-        ease 0.2 ypos (ypos_textbox + 100) rotate 0
-        ease 0.1 ypos ypos_textbox
+        ease 0.1 yoffset 100 
+        ease 0.3 yoffset -400 rotate 30
+        ease 0.2 yoffset 100 rotate 0
+        ease 0.1 yoffset 0
     parallel:
         xalign 1.0
         ease 0.7 xalign 0.5
     #parallel:
-    #    easeout 0.1 fx.stretch0(1.2, 0.8)
-    #    easeout 0.3 fx.stretch0(0.7, 1.3)
-    #    easeout 0.2 fx.stretch0(1.2, 0.8)
-    #    easeout 0.1 fx.stretch0(1, 1)
+    #    easeout 0.1 fx.stretch(1.2, 0.8)
+    #    easeout 0.3 fx.stretch(0.7, 1.3)
+    #    easeout 0.2 fx.stretch(1.2, 0.8)
+    #    easeout 0.1 fx.stretch(1, 1)
     ypos ypos_textbox rotate 0
 
 image scene06_train_sign = ParameterizedText(color="#0a0")

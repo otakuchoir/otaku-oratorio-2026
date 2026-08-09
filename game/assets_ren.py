@@ -20,6 +20,8 @@ transform dim:
 transform nodim:
     matrixcolor BrightnessMatrix(0)
     zoom 1
+transform anchor_sprite:
+    anchor (0.5, 1.0)
 
 init python:
 """
@@ -30,7 +32,7 @@ import dataclasses
 config.speaking_attribute = 'focus' # type: ignore
 config.side_image_only_not_showing = True  # type: ignore
 
-def load_image(name: str, path: str):
+def load_image(name: str, path: str, transform=lambda x: x):
     """Load an image if possible, or throw an error.
     
     Ren'py's normal image loading behavior, if an image can't be found, is to
@@ -40,7 +42,7 @@ def load_image(name: str, path: str):
     """
     if not renpy.loadable(path):
         raise RuntimeError("couldn't load file: "+path)
-    return renpy.image(name, path)
+    return renpy.image(name, transform(path))
 
 # Load all sprites.
 #
@@ -75,8 +77,8 @@ for f in fs:
         name = ' '.join([tag, attr])
         name_unfocus = name
         name_focus = name+' focus'
-        load_image(name_focus, f)
-        renpy.image(name_unfocus, dim(renpy.get_registered_image(name_focus))) # type: ignore
+        load_image(name_focus, f, transform=anchor_sprite)
+        renpy.image(name_unfocus, Transform(dim(renpy.get_registered_image(name_focus)))) # type: ignore
         # print('image:', name, '-', f)
 
     m = re.match(r"^assets\/backgrounds\/(?P<basename>.*).(png|jpg|gif)$", f)

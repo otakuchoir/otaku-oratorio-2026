@@ -1,6 +1,9 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene10:
-    scene bg lunar tarmac with dissolve
+    scene bg lunar tarmac with dissolve:
+        anchor (0.0,0.0)
+        zoom 1.1
+        xpos -0.1
     show sanders happy at center
     show usagi weary at right
     show takeshi neutral at left
@@ -46,6 +49,8 @@ label scene10:
     sanders "And I go back home every chance I get because."
     ### page 17 ###
     takeshi "Because what?"
+    show bg lunar tarmac:
+        xpos -0.05
     show kelisha neutral at left, flip
     show takeshi at left2
     show sanders at right2
@@ -94,3 +99,7 @@ transform scene10_blastoff:
     parallel:
         yoffset 0
         easeout 4 yoffset -1000
+    parallel:
+        fx.stretch(1.0,1.0)
+        easein 0.03 fx.stretch(1.08, 0.92)
+        easeout 3.97 fx.stretch(1.0, 1.0)

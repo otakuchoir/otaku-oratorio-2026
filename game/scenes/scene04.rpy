@@ -1,27 +1,41 @@
 # scene 04 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=kelisha
+transform scene04.run_in(pause_dur):
+    # transform_anchor True
+    xoffset 1000
+    fx.stretch(1.2, 0.8)
+    pause pause_dur
+    # rotate 0
+    parallel:
+        easein 0.9 xoffset -150 fx.stretch(0.9, 1.1)
+        easeout 0.2 xoffset 0 fx.stretch(1.0, 1.0)
+    # parallel:
+        # pause 0.6
+        # easein 0.1 rotate 5
+        # easeout 0.3 rotate 0
+
+transform scene04.bow(ma=1):
+    fx.bowdown(0.3, ma*-5)
+    pause 0.6
+    fx.bowup(0.3, ma*-5)
+
 label scene04:
     scene bg classroom at flip with dissolve
     play music bgm_scene04_01
 
     # the trio walk into the classroom (the stage) from the right. kelisha's already in class.
     show kelisha serious at left, flip
-    show sanders neutral at offscreenright
-    show takeshi neutral at offscreenright
-    show usagi neutral at offscreenright
-    pause 0
-    show sanders neutral at center
-    show takeshi neutral at right2
-    show usagi neutral at right
-    with ease
+    show sanders neutral at right, scene04.run_in(0.0)
+    show usagi neutral at right2, scene04.run_in(0.5)
+    show takeshi neutral at center, scene04.run_in(1.0)
 
     # > 4        INT. CROWN MILITARY ACADEMY, CLASSROOM                                    4
     kelisha "Late again?"
 
     # autofocusing-on-speech only works with one speaker at a time.
     # the trio is speaking here, so highlight them manually for this one line.
-    show sanders neutral focus
-    show usagi neutral focus
-    show takeshi neutral focus
+    show sanders neutral focus at scene04.bow
+    show usagi neutral focus at scene04.bow
+    show takeshi neutral focus at scene04.bow
     trio "Sorry professor."
     show sanders neutral
     show usagi neutral
@@ -47,11 +61,13 @@ label scene04:
 
     kelisha serious "And as for you, Kitadani... You think you can just come in here whenever you want? You should know better."
     ### page 6 ###
-    usagi "Sorry, professor."
+    show usagi at scene04.bow
+    usagi "Sorry professor."
 
     show sanders neutral
     show kelisha neutral
     kelisha "And you, Williamson... you could fail everything from now until the end of the year and you’d be good, but you DON’T need to be late. Don’t let your little friends drag you down."
+    show takeshi at scene04.bow(3)
     takeshi @ happy 1 "My apologies professor, we just ran over time in the training simulator."
     "The classroom is annoyed with Takeshi’s apology..."
     classmate "It’s crazy he’s so smart... He’s a Lunar."
@@ -111,7 +127,8 @@ label scene04:
     hide reporter1
     hide reporter2
     hide reporter3
-    show king at center
+    show king at center:
+        zoom 1.8
     with dissolve
     # > TRANSITION TO
     king "WE ARE FULLY CONFIDENT THAT THE PEOPLE OF THE KINGDOM OF NEW JERSEY WILL COMPLY WITH ORDERS AND ALL WILL BE WELL."
