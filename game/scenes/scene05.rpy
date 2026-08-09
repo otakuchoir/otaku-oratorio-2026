@@ -53,8 +53,8 @@ label scene05:
 
     # usagi/bart bump into each other
     stop music
-    show bart shock at hop
-    show usagi shock at left2, hop
+    show bart shock at fx.hop
+    show usagi shock at left2, fx.hop
     # takeshi/sanders don't recognize bart immediately...
     show takeshi neutral
     show sanders neutral
@@ -73,8 +73,8 @@ label scene05:
     usagi "Oh, I’m so sorry."
 
     # takeshi/sanders collect themselves.
-    show takeshi neutral at bowdown(0.3, 20)
-    show sanders deadpan at bowdown(0.3, 20)
+    show takeshi neutral at fx.bowdown(0.3, 20)
+    show sanders deadpan at fx.bowdown(0.3, 20)
     takeshi "Your Holiness."
 
     # usagi's still clueless, why are her friends reacting?
@@ -92,9 +92,9 @@ label scene05:
     show usagi at noflip
     pause 0.3
     show usagi shock:
-        hop
+        fx.hop
         "usagi neutral"
-        bowdown(0.15, 40)
+        fx.bowdown(0.15, 40)
     bart "I see that the legacy of The Eden runs strong. Good day to you, Kitadani."
 
     # > USAGI, TAKESHI AND SANDERS exit stage while whispering
@@ -102,9 +102,9 @@ label scene05:
     # I'm interpreting this as bart exiting the stage instead.
     show bart at offscreenleft, noflip
     with ease
-    show usagi at bowup(0.2, 40)
-    show takeshi at bowup(0.2, 20)
-    show sanders at bowup(0.2, 20)
+    show usagi at fx.bowup(0.2, 40)
+    show takeshi at fx.bowup(0.2, 20)
+    show sanders at fx.bowup(0.2, 20)
     sanders shock "How does the POPE know who you are??"
     takeshi "Well she is kind of famous."
 
@@ -144,20 +144,3 @@ label scene05:
     with ease
     show bg black with dissolve
     return
-
-transform hop(duration=0.3, y=50):
-    ypos ypos_textbox
-    easein (duration/2) ypos (ypos_textbox - y)
-    easeout (duration/2) ypos ypos_textbox
-
-define angle_bow = -15
-transform bowdown(duration, y, a=angle_bow):
-    transform_anchor True
-    yoffset 0
-    rotate 0
-    linear duration yoffset y rotate a
-transform bowup(duration, y, a=angle_bow):
-    transform_anchor True
-    yoffset y
-    rotate a
-    linear duration yoffset 0 rotate 0
