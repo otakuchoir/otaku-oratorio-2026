@@ -68,7 +68,7 @@ label scene06:
     show sanders deadpan
     pause 0.2
 
-    show sanders anxious at hop
+    show sanders anxious at fx.hop
     stop music
     guard "Hey you! Stop!"
 
@@ -214,6 +214,11 @@ transform scene06_gate_jump:
     parallel:
         xalign 1.0
         ease 0.7 xalign 0.5
+    #parallel:
+    #    easeout 0.1 fx.stretch0(1.2, 0.8)
+    #    easeout 0.3 fx.stretch0(0.7, 1.3)
+    #    easeout 0.2 fx.stretch0(1.2, 0.8)
+    #    easeout 0.1 fx.stretch0(1, 1)
     ypos ypos_textbox rotate 0
 
 image scene06_train_sign = ParameterizedText(color="#0a0")

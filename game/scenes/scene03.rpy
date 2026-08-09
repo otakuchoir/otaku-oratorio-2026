@@ -170,13 +170,6 @@ label scene03_usagi_swoops_in:
 # |        y=1        |
 #  ___________________
 
-transform flip:
-    xzoom -1
-transform noflip:
-    xzoom 1
-transform nozoom:
-    zoom 1.0
-
 transform usagi_swoops_in_swoop1:
     parallel:
         noflip
@@ -224,23 +217,3 @@ transform usagi_swoops_in_landing:
         pause 0.9
         ease 0.3 noflip
         pause 0.2
-
-transform yshake(size, n, dur):
-    yoffset 0
-    ease dur yoffset size
-    easeout dur yoffset 0
-    easein dur yoffset -size
-    ease dur yoffset 0
-    repeat n
-
-transform blinkon:
-    matrixcolor BrightnessMatrix(0.65)
-    # zoom 0.97
-transform blinkoff:
-    matrixcolor BrightnessMatrix(0)
-    # zoom 1
-transform blink(n, dur):
-    blinkoff
-    linear dur blinkon
-    linear dur blinkoff
-    repeat n

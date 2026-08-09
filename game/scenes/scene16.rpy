@@ -103,7 +103,7 @@ label scene16:
     sanders "And sometimes, to keep the peace, we’ve got to get our hands dirty."
 
     takeshi @ angry 2 "For the greater good?"
-    show sanders at right, flip, hop with ease
+    show sanders at right, flip, fx.hop with ease
     sanders "For the greater good, dammit. I don’t know why you act like you don’t understand this."
 
     show usagi at center with ease
@@ -128,9 +128,9 @@ label scene16:
     sanders "Because we all know the alternative, Kitadani. And you know that if Williamson here ever behaved with even a FRACTION of the way you do..."
     sanders "He’s not the child of a legend. If you weren’t you, you would have been dealt with a long time ago."
     sanders @ postgrad angry 3 "You’re just as bad as The Queen of New Jersey... Only you don’t even take a stand. You just go with it, sulk and pretend like you’re not benefiting."
-    show usagi postgrad shock at hop
+    show usagi postgrad shock at fx.hop
     sanders "No quippy comeback? What? Cat got your tongue?"
-    show takeshi postgrad shock at hop
+    show takeshi postgrad shock at fx.hop
     ### page 31 ###
 
     # > They have happened upon a large crystal structure.
@@ -143,7 +143,7 @@ label scene16:
         ease 3 xalign 1.6
     show sanders postgrad shock:
         flip
-        hop
+        fx.hop
         pause 1.5
         ease 3 xalign 1.6
     # next kelisha, worried for what happens next...
@@ -158,7 +158,7 @@ label scene16:
         flip
         pause 3
         parallel:
-            hop
+            fx.hop
             repeat
         parallel:
             ease 4 xalign 1.6

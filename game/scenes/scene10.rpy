@@ -94,9 +94,3 @@ transform scene10_blastoff:
     parallel:
         yoffset 0
         easeout 4 yoffset -1000
-
-transform hvibrate:
-    xoffset 0
-    easein 0.02 xoffset 10
-    ease 0.04 xoffset -10
-    repeat

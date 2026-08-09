@@ -119,6 +119,3 @@ label scene04:
     scene black with dissolve
     stop music fadeout 1
     return
-
-transform smoothzoom:
-    ease 0.4 zoom 1
