@@ -65,10 +65,20 @@ label scene12:
     "PLACEHOLDER song"
 
     play music bgm_scene04_02
+    window hide
+    window auto
+    show bg breaking news as bg2:
+        top
+        zoom 0.0
+        alpha 0.0
+
+        ease 0.5 alpha 1.0 zoom 1.0
+    pause 1.0
     show bg great hall outside
     show reporter1 at left
     show reporter2 at center
     show reporter3 at right
+    hide bg2
     with dissolve
     reporter1 "BREAKING NEWS, we take you now live to the Kingdom of New Jersey where talks are underway in the ongoing miners strike..."
     ### page 22 ###

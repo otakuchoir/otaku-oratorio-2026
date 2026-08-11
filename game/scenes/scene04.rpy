@@ -89,34 +89,55 @@ label scene04:
     show takeshi neutral
     show kelisha neutral
     pause 0
-    # because they're zoomed out, "topleft2", "topcenter", etc. aren't quite aligned right
-    show reporter1:
-        zoom 0.5 yalign 0 xalign 0.4
-    show reporter2:
-        zoom 0.5 yalign 0 xalign 0.5
-    show reporter3:
-        zoom 0.5 yalign 0 xalign 0.6
-    with dissolve
+    ## because they're zoomed out, "topleft2", "topcenter", etc. aren't quite aligned right
+    show bg breaking news as bg2 behind kelisha, usagi, sanders, takeshi:
+        top
+        zoom 0.2
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    #show reporter1:
+    #    zoom 0.5 yalign 0 xalign 0.4
+    #show reporter2:
+    #    zoom 0.5 yalign 0 xalign 0.5
+    #show reporter3:
+    #    zoom 0.5 yalign 0 xalign 0.6
+    #with dissolve
 
     kelisha "And speaking of the colony-born Earth-born dichotomy, there are developments in the North American mining region, Northeast sector."
     kelisha "Pay attention, this has to do with your midterms..."
 
     # news report starts. zoom in on the reporters, pushing the others off screen
-    show bg jersey city cityscape as bg2 behind kelisha, usagi, sanders, takeshi:
-        top
-        zoom 0.0
-        ease 0.5 zoom 1.0
-    pause 0
     play music bgm_scene04_02
+    window hide
+    window auto
+    show bg breaking news as bg2:
+        ease 0.5 zoom 1.0
     show kelisha at offscreenleft
     show usagi at offscreenright
     show takeshi at offscreenright
     show sanders at offscreenright
-    show reporter1 at left, smoothzoom
-    show reporter2 at center, smoothzoom
-    show reporter3 at right, smoothzoom
     with ease
-    hide bg
+    pause 1.0
+    $ y = 0.48
+    show bg news studio behind bg2:
+        noflip
+        anchor (0.5,1.0)
+        pos (0.5,1.0)
+        zoom 1.15
+    show reporter1:
+        zoom 1.0
+        xpos 0.2
+        ypos y
+    show reporter2:
+        zoom 1.0
+        xpos 0.5
+        ypos y+0.03
+    show reporter3:
+        zoom 1.0
+        xpos 0.8
+        ypos y
+    hide bg2
+    with dissolve
 
     reporter1 "Tensions flare in the North American region as we approach day 42 of the mine workers strike."
     reporter2 "Residents and workers in the Kingdom of New Jersey continue to resist Crown Military orders to extract Ultima Ore."
@@ -127,6 +148,7 @@ label scene04:
     hide reporter1
     hide reporter2
     hide reporter3
+    show bg black as bg2
     show king at center:
         zoom 1.8
     with dissolve
