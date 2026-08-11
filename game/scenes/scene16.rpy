@@ -23,31 +23,33 @@ label scene16:
     # show kelisha neutral at right
     # show bart neutral at top
     computer "Approaching the drop zone. Prepare for landing."
+    $ y0 = -0.1
+    $ x0 = 0.5
     show sanders postgrad neutral:
-        offscreentop
-        easein 3 ytextbox xalign 0.75
+        ypos y0 xpos x0
+        easein 3 ytextbox xpos 0.65
     show takeshi postgrad neutral:
-        offscreentop
+        ypos y0 xpos x0
         flip
         pause 0.3
-        easein 3 ytextbox xalign 0.0
+        easein 3 ytextbox xpos 0.15
     show jojo neutral:
-        offscreentop
+        ypos y0 xpos x0
         pause 0.6
-        easein 3 ytextbox xalign 1.6
+        easein 3 ytextbox xpos 1.3
     show usagi postgrad neutral:
-        offscreentop
+        ypos y0 xpos x0
         pause 1
-        easein 3 ytextbox xalign 0.25
+        easein 3 ytextbox xpos 0.35
     show bart neutral:
-        offscreentop
+        ypos y0 xpos x0
         flip
         pause 1.4
-        easein 3 ytextbox xalign -0.6
+        easein 3 ytextbox xpos -0.3
     show kelisha neutral:
-        offscreentop
+        ypos y0 xpos x0
         pause 2
-        easein 3 ytextbox xalign 1.6
+        easein 3 ytextbox xpos 1.3
     pause 4
     #show sanders at right2
     #show takeshi at left, flip
@@ -136,35 +138,38 @@ label scene16:
     # > They have happened upon a large crystal structure.
     usagi "What is that..."
     # everyone walks toward the crystal. first usagi, then the rest of the trio...
+    $ x0 = -0.3
+    $ x1 = 1.3
     show usagi postgrad worried:
-        ease 3 xalign 1.6
+        ease 3 xpos x1
     show takeshi postgrad worried 1:
         pause 1
-        ease 3 xalign 1.6
+        ease 3 xpos x1
     show sanders postgrad shock:
         flip
         fx.hop
         pause 1.5
-        ease 3 xalign 1.6
+        ease 3 xpos x1
     # next kelisha, worried for what happens next...
     show kelisha worried:
-        offscreenleft
+        xpos x0
         flip
         pause 1.5
-        ease 5 xalign 1.6
+        ease 5 xpos x1
     # finally bart and jojo, giddy about finding it at last
     show jojo grin 2:
-        offscreenleft
+        xpos x0
         flip
         pause 3
         parallel:
             fx.hop
             repeat
         parallel:
-            ease 4 xalign 1.6
+            ease 4.5 xpos x1
     show bart grin 2:
-        offscreenleft
+        xpos x0
         flip
         pause 3.3
-        ease 4 xalign 1.6
+        ease 4.5 xpos x1
     pause 6
+    return

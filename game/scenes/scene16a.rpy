@@ -41,8 +41,11 @@ label scene16a:
     show bg black # deliberately no transition
     pause 0.5
     # show the sprites over the textbox
-    show usagi postgrad worried focus at flip, left2
-    show child unamused focus at right2
+    define z = 1.3
+    show usagi postgrad worried focus at flip, left2:
+        zoom z
+    show child unamused focus at right2:
+        zoom z
     # with deliberately no transition
     pause 1
     show child neutral focus at right2

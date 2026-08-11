@@ -34,27 +34,27 @@ transform ytop:
     yanchor 0.0
 
 transform topoffscreenleft:
-    xalign -0.6
+    xpos -0.6
     ytop
 transform topleft:
-    xalign 0.0
+    xpos 0.0
     ytop
 transform topleft2:
-    xalign 0.25
+    xpos 0.25
     ytop
 transform topcenter:
-    xalign 0.5
+    xpos 0.5
     ytop
 transform topright2:
-    xalign 0.75
+    xpos 0.75
     ytop
 transform topright:
-    xalign 1.0
+    xpos 1.0
     ytop
 transform topoffscreenright:
-    xalign 1.6
+    xpos 1.6
     ytop
 
 transform offscreentop:
-    yalign -0.9
-    xalign 0.5
+    ypos -0.9
+    xpos 0.5

@@ -1,3 +1,6 @@
+## 2026/08/11
+- Fix scene 16: moon landing no longer flings everyone off the edge of the screen. Oops
+
 ## 2026/08/10
 - Update scene 4: add bowing to apologies, add stretch when running
 - Update scene 6: add security guard
