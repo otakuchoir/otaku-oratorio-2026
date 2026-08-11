@@ -1,9 +1,10 @@
-## 2026/08/09
+## 2026/08/10
 - Update scene 4: add bowing to apologies, add stretch when running
-- Update scene 6: add guard placeholder
+- Update scene 6: add security guard
 - Update scene 10: add parallax when the camera shifts to Kelisha
 - Update scene 10: during takeoff, gravity squishes the trio a little
 - Update sprite anchors throughout the show to be more consistent (no visible changes, hopefully)
+- Add scene 2 music
 - Add some animation experiments to devtools
 
 ## 2026/08/08

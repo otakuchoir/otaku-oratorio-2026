@@ -1,6 +1,7 @@
 
 label scene02:
     scene bg jersey city cityscape
+    play music bgm_scene02_01
     "PLACEHOLDER manga panels: postcard memories (temporary background)"
     # > 2        EXT. CITY MONSTER ATTACK                                                  2
     # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
@@ -8,6 +9,9 @@ label scene02:
     # > A HERO DRESSED IN RED RUNS IN, DRAMATICALLY SKIDDING ON TO
     # > THE SCENE AS THEIR SCARF BLOWS IN THE WIND DRAMATICALLY.
     announcer "Oh no! The monster is destroying the city! Can anybody stop this?"
+
+    stop music fadeout 1
+    play music bgm_scene02_02
     kitadani "Fear not, announcer! Courageous Kaito! Reporting for Duty!"
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
     kitadani "LET’S GO! CROWN BLASTER!"
@@ -53,6 +57,7 @@ label scene02:
     with hpunch
     scene bg black
     with dissolve
+    stop music fadeout 3
     announcer "Kono bangumi wa, goran no suponsaa no teikyou de okurishimasu."
     # > PROJECTOR: “THIS CROWN NETWORK MEMORIAL SEGMENT WAS BROUGHT
     # > TO YOU BY THE FOLLOWING SPONSORS:”

@@ -70,21 +70,19 @@ label scene06:
 
     show sanders anxious at fx.hop
     stop music
-    # train guard placeholder
-    show huxtable neutral:
+    show train_security:
         right
-        matrixcolor BrightnessMatrix(-1)
         xoffset 500
         ease 0.5 xoffset 0
 
-    guard "Hey you! Stop!"
+    train_security "Hey you! Stop!"
 
     # everyone looks back at the guard
     show usagi at left, flip
     show takeshi at left2, flip
     show sanders deadpan at center, flip
     usagi "Us?"
-    guard "Did you hop the gate?"
+    train_security "Did you hop the gate?"
     ### page 10 ###
     sanders @ eyeroll "Everyone hops the gate."
 
@@ -96,30 +94,30 @@ label scene06:
     # > THEY HAND OVER THEIR IDs. A TRAIN ANNOUNCEMENT OVER THE PA.
     # guessing that we'll have sfx here later
     # for now, departure sign blinks that the train is here. but not just yet, feels too soon
-    guard "Academy uniforms eh. Let me see some ID, the lot of yous."
+    train_security "Academy uniforms eh. Let me see some ID, the lot of yous."
     # I'm not sure what to do with faces here... usagi wasn't serious before (I think) but now they're actually missing it
     sanders angry 1 "We’re going to miss the train."
     usagi "Good. I didn’t want to go in the first place."
     sanders @ angry 2 "Evil..."
 
     # > USAGI IS NOT COMFORTABLE WITH THE FAME
-    guard "Reviewing IDs Kitadani... Usagi... oh, you’re the captain’s daughter!"
+    train_security "Reviewing IDs Kitadani... Usagi... oh, you’re the captain’s daughter!"
 
     # "usagi-weary" also works here, but this is serious enough for an entire scene where we call mom later so I don't think weary is quite enough
     show usagi angry
-    guard "You know, your father was an inspiration to us all-"
+    train_security "You know, your father was an inspiration to us all-"
     sanders @ angry 2 "YO... we have somewhere to go, and yeah you’re harrassing Crown royalty so like can we go now?"
 
     show usagi annoyed
     show sanders eyeroll
-    guard "Sanders, George. Earthborn... you’re good to go..."
+    train_security "Sanders, George. Earthborn... you’re good to go..."
 
     show sanders neutral
     # this seems like a great time for the clock to tick
     show scene06_train_sign "\n1. Rush Crater     0 min" as sign_line1 at top, scene06_sign_blink
     show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at top
-    guard "Williamson, Takeshi... Colony born... A lunar..."
-    guard "Yup, it was definitely you who I saw jump the turnstile."
+    train_security "Williamson, Takeshi... Colony born... A lunar..."
+    train_security "Yup, it was definitely you who I saw jump the turnstile."
 
     # everyone reacts to that
     show sanders angry 2
@@ -127,7 +125,7 @@ label scene06:
     takeshi worried 2 "What??"
     ### page 11 ###
     sanders @ angry 3 "Hey old man, we don’t have TIME for this-"
-    guard "You’re gonna have to come with me."
+    train_security "You’re gonna have to come with me."
     # usagi steps to the front to defend her friend
     show usagi at right2
     with ease
@@ -135,15 +133,15 @@ label scene06:
     usagi "Williamson here did not fare evade. I swiped him in because he forgot his transit card at the dorms."
 
     # > TRAIN ANNOUNCEMENT, THEY HAVE MISSED THE TRAIN
-    guard "Well... If you say so."
+    train_security "Well... If you say so."
 
     # it worked, we're safe, everyone's a little relieved...
     show takeshi worried 1
     show sanders angry 1
     show usagi neutral
-    guard "As you were."
+    train_security "As you were."
     # > TRAIN SECURITY GUARD EXITS
-    show huxtable at flip, offscreenright
+    show train_security at flip, offscreenright
 
     # ...they stay relieved while running for the train...
     # (running for the train is mostly to rearrange the characters, so usagi can look toward takeshi below, instead of the other way round)
@@ -160,7 +158,7 @@ label scene06:
     #show scene06_train_sign "\n1. Rush Crater     0 min" as sign_line1 at topoffscreenright, scene06_sign_blink
     #show scene06_train_sign "\n\n2. Rush Crater   60 min" as sign_line2 at topoffscreenright
     with ease
-    hide huxtable
+    hide train_security
 
     show usagi at offscreenright
     show takeshi at offscreenright

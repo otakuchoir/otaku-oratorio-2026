@@ -73,11 +73,14 @@ for f in fs:
             # dashes in the tag break it for some reason, so remove them.
             tag = basename.replace('-', '')
             attr = ''
+        if basename == 'train-security':
+            tag = 'train_security'
+            attr = ''
         attr = attr.replace('-', ' ')
         name = ' '.join([tag, attr])
         name_unfocus = name
         name_focus = name+' focus'
-        load_image(name_focus, f, transform=anchor_sprite)
+        load_image(name_focus, f, transform=anchor_sprite) # type: ignore
         renpy.image(name_unfocus, Transform(dim(renpy.get_registered_image(name_focus)))) # type: ignore
         # print('image:', name, '-', f)
 
