@@ -1,7 +1,24 @@
 label scene14: 
     scene bg campus with dissolve
     play music bgm_scene14_01
-    "PLACEHOLDER IRL scene14: graduation day"
+    show text "{color=#fff}Scene \"gen_scene14\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.492596\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show jojo neutral at center
+    show takeshi neutral at left2
+    show sanders neutral at right2
+    show usagi neutral at left
+    # > 14       EXT. DAY; LUNAR ACADEMY ROSE GARDEN                                      14
+    jojo "Today you take your first steps into the a society that now, more than ever, needs its guardians to stand watch over our democracy. A tradition that has spanned over a millennia since the great cataclysm. We swore to never forget the second fall of humanity."
+    takeshi "(quietly) This is such BS..."
+    sanders "Careful, Williamson."
+    usagi "He’s right."
+    jojo "I’m glad you agree Kitadani. Yes, this year is special. As we all know, Kohei Kitadani, truly a savior among men, who sacrificed himself to prevent the third fall of humanity..."
+    # > (MORE)
+    ### page 26 ###
+    # > Applause from the crowd.
+    jojo "has a daughter in this year’s graduating class. She now enters our society, a guiding light, walking in her father’s footsteps. We look forward to what you will accomplish."
+    # > The applause drowns her out.
+    # > CUT TO
+    usagi "No... that’s not what I .... Stop it... stop it... I am not my"
     stop music
     show bg black with dissolve
     return

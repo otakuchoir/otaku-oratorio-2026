@@ -115,21 +115,23 @@ label scene16:
     show usagi postgrad angry
     usagi "I don’t know how you can look people in the face and just LIE."
 
+    show sanders postgrad angry 2 at noflip
+    sanders "Because we all know the alternative, Kitadani. And you know that if Williamson here ever behaved with even a FRACTION of the way you do..."
+    sanders "He’s not the child of a legend. If you weren’t you, you would have been dealt with a long time ago."
+    sanders @ postgrad angry 3 "You’re just as bad as The Queen of New Jersey... Only you don’t even take a stand. You just go with it, sulk and pretend like you’re not benefiting."
+
     # > Silence.
     # disable the speaker spotlight for this moment of silence
     # (jeez, this is way harder than it should be)
     show usagi postgrad serious 2 focus
     show takeshi postgrad angry 1 focus
-    show sanders postgrad angry 1 focus at noflip
+    show sanders postgrad angry 2 focus
     pause
-    show sanders at right2
-    with ease
+    # show sanders at right2
+    # with ease
     show usagi postgrad serious 2
     show takeshi postgrad angry 1
     show sanders postgrad angry 2
-    sanders "Because we all know the alternative, Kitadani. And you know that if Williamson here ever behaved with even a FRACTION of the way you do..."
-    sanders "He’s not the child of a legend. If you weren’t you, you would have been dealt with a long time ago."
-    sanders @ postgrad angry 3 "You’re just as bad as The Queen of New Jersey... Only you don’t even take a stand. You just go with it, sulk and pretend like you’re not benefiting."
     show usagi postgrad shock at fx.hop
     sanders "No quippy comeback? What? Cat got your tongue?"
     show takeshi postgrad shock at fx.hop
