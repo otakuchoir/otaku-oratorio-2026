@@ -1,21 +1,45 @@
+# https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene11: 
     scene bg spaceship window with dissolve
-    play music bgm_scene11_01
-    show text "{color=#fff}Scene \"gen_scene11\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.492306\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show takeshi neutral at center
-    show kelisha neutral at left2
-    show sanders neutral at right2
-    show usagi neutral at left
+    #camera:
+    #    perspective True
+    #    xoffset -300
+    #    yoffset 100
+    #    zpos -300
+    show bg black as bg2 behind bg
+    play music bgm_scene10_01 if_changed
+    show kelisha neutral at left, flip
+    show takeshi neutral at center:
+        xoffset 500
+        easein 1 xoffset 0
+    show sanders neutral at right2:
+        xoffset 500
+        easein 1 xoffset 0
+    show usagi neutral at right:
+        xoffset 500
+        easein 1 xoffset 0
+
     # > 11       INT. - SPACE SHUTTLE - KELISHA’S OFFICE THE ENVOY IS                     11
     # > TRAVELING TO EARTH.
-    takeshi "You wanted to meet with us Professor Kelisha?"
+    takeshi "You wanted to meet with us, Professor Kelisha?"
     kelisha "Ah yes, please, sit."
-    sanders "We’re not in trouble already are we? I can’t afford to lose ANY points on this midterm..."
-    usagi "She said she wanted to go over some intel, you literally never listen, do you? You don’t read battle briefs and you don’t listen."
+    show sanders anxious
+    sanders "We’re not in trouble already, are we? I can’t afford to lose ANY points on this midterm..."
+    show usagi annoyed
+    usagi "She said she wanted to go over some intel. You literally never listen, do you? You don’t read battle briefs and you don’t listen."
+    show sanders angry 1 at flip
     sanders "Hey!"
+    show sanders angry 1 at noflip
+    show takeshi at flip
     takeshi "She’s not wrong."
-    # > THEY IMMEDIATELY SETTLE AND QUIET DOWN.
+
+    stop music fadeout 2
     kelisha "If you’re ready, I’d like to begin."
+    show takeshi at noflip
+    show sanders neutral at noflip
+    show usagi neutral at noflip
+
+    # > THEY IMMEDIATELY SETTLE AND QUIET DOWN.
     kelisha "You three will have a front row seat at the negotiations."
     # > (MORE)
     ### page 18 ###
@@ -26,20 +50,48 @@ label scene11:
     kelisha "I know that is what you would do, that is why I was asking Sanders. But, Kitadani, what if the reason were one of religion? What if the New Jersians had some doctrine that forbade them from mining Ultima?"
     usagi "That’s highly unlikely... The New Jersians are a godless people."
     kelisha "It is a hypothetical question."
-    takeshi "The more likely reason is not religious, but environmental... No need for hypotheticals... Professor, the reason they protest is because they remember what happened 16 years ago."
-    kelisha "You see... this is why I like the three of you. Straight to the point then -- the negotiations will fail today, and our government, while we would like for it to think like you Williamson, or you Kitadani... Is more like... Sanders."
+    play music bgm_scene11_01
+    takeshi "The more likely reason is not religious, but environmental... No need for hypotheticals..."
+    takeshi "Professor, the reason they protest is because they remember what happened 16 years ago."
+    kelisha "You see... this is why I like the three of you. Straight to the point then..."
+    kelisha "The negotiations will fail today, and our government, while we would like for it to think like you Williamson, or you Kitadani... is more like... Sanders."
     ### page 19 ###
-    sanders "... I feel like I should be offended?"
-    kelisha "The negotiations will fail, and we will bear witness to the repercussions of defiance. Today’s test is not one skill or merit, but of compliance and obedience. I wanted you to know this so that you would be prepared for... whatever may come."
-    takeshi "Should you be doing that?"
+
+    sanders @ angry 1 "... I feel like I should be offended?"
+    # TODO zoom in on kelisha all dramatic-like
+    show kelisha doom focus with dissolve
+    kelisha "The negotiations will fail, and we will bear witness to the repercussions of defiance."
+    kelisha "Today’s test is not one skill or merit, but of compliance and obedience."
+    show kelisha neutral focus with dissolve
+    show kelisha neutral
+    kelisha "I wanted you to know this so that you would be prepared for... whatever may come."
+    takeshi @ worried 1 "Should you be doing that?"
     kelisha "Sometimes, WE... fight from the inside."
     sanders "I’m lost."
     usagi "Come on guys, we have a lot of preparation to do... Professor Kelisha, thank you."
     sanders "Who is “we” in this situation?"
-    # > USAGI DRAGS SANDERS OUT OF THE ROOM
+    show kelisha stinkeye
+    show usagi angry sweat at fx.hopN(n=1, stretch=(0.1, 0.15)):
+        xoffset 0
+        linear 0.5 xoffset -150
+        pause 0.3
+        flip
+        easeout 2 xoffset 1000
+    show sanders neutral focus:
+        transform_anchor True
+        rotate 0
+        pause 0.3
+        "sanders shock focus"
+        easeout 0.2 rotate 60
+        pause 0.3
+        pause 0.15
+        easeout 2 xoffset 1000
     usagi "SANDERS!"
+    show kelisha neutral
+    # > USAGI DRAGS SANDERS OUT OF THE ROOM
     # > SHUTTLE LANDS IN NEW JERSEY.
-    kelisha "Takeshi, whatever happens today, remember: the arc of the moral universe is long but it bends towards justice... Don’t be too loud and don’t move too fast. If you get caught, I will not be there to help you."
-    stop music
-    show bg black with dissolve
+    kelisha "Takeshi, whatever happens today, remember: the arc of the moral universe is long but it bends towards justice..."
+    kelisha "Don’t be too loud and don’t move too fast. If you get caught, I will not be there to help you."
+    stop music fadeout 2
+    scene bg black with dissolve
     return

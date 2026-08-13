@@ -47,6 +47,7 @@ scenes = [
     S('gen_scene17', 'Start Act 2'),
     S('gen_scene18'),
     S('scene18a', 'SONG: The Final Day'),
+    # Manga panels
     S('scene19', '(IRL)'),
     S('gen_scene20'),
     S('gen_scene21'),
@@ -57,17 +58,20 @@ scenes = [
     S('gen_scene26'),
     S('gen_scene27'),
     S('gen_scene28'),
+    # Manga panels (news splash)
     S('gen_scene29'),
     S('gen_scene30'),
     S('gen_scene31'),
     S('gen_scene32'),
     S('gen_scene33'),
+    # Manga panels
     S('gen_scene34'),
     S('gen_scene35'),
     S('gen_scene36'),
     S('gen_scene37'),
     S('gen_scene38'),
     S('gen_scene39'),
+    # Manga panels
     S('gen_scene40'),
     S('gen_scene41'),
 ]
