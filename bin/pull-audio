@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+import pathlib
+import subprocess
+
+dir0 = pathlib.Path(__file__).resolve().parent
+audio_dir = dir0.parent / 'game' / 'audio'
+bgm = [
+    ('https://www.youtube.com/watch?v=qkIJidLfHjk', 'godzilla_1_0_godzilla_suite_ii__godzilla_minus_one'),
+    ('https://www.youtube.com/watch?v=ZYIcCHqdFuo', 'seajetter_kaito'),
+    ('https://www.youtube.com/watch?v=q-Dj-8yvfDk', 'hurry_ff7'),
+    ('https://www.youtube.com/watch?v=oEsGj0tCT4E', 'in_the_name_of_the_moon__sailor_moon'),
+    ('https://www.youtube.com/watch?v=3Vtrqoe-QzY', 'just_an_ordinary_girl__sailor_moon'),
+    ('https://www.youtube.com/watch?v=XVfz__YP4fo', 'nonbiri_seikatsu__nichijou'),
+    ('https://www.youtube.com/watch?v=ahVNJRbGOrs', 'mii_news__tomodachi_life_living_the_dream'),
+    ('https://www.youtube.com/watch?v=Fmu32oWqHx0', 'innocent_boy__free_iwatobi_swim_club'),
+    ('https://www.youtube.com/watch?v=GpBhJo3Jwk8', 'namis_theme__one_piece'),
+    ('https://www.youtube.com/watch?v=X5qNcjRgWmM', 'ready_set_go__kirby_and_the_forgotten_land'),
+    ('https://www.youtube.com/watch?v=b-GWaFYgXM0', 'nightmares__full_metal_alchemist_brotherhood'),
+    ('https://www.youtube.com/watch?v=H-W7xveVzUw', 'anticipation__full_metal_alchemist_brotherhood'),
+    ('https://www.youtube.com/watch?v=Al4ongqx_2I', 'route_26_27__pokemon_anime'),
+]
+
+for i, (source, label) in enumerate(bgm):
+    basename = f"bgm_{i+1:03}_{label}"
+    match = list(audio_dir.glob(f"{basename}.*"))
+    if match:
+        # print(f"file exists, skipping: {source} {match[0]}")
+        print(f"file exists, skipping: {source} {basename}")
+    else:
+        cmd = ["yt-dlp", "-xo", audio_dir/basename, source]
+        subprocess.run(cmd)
+        print(cmd)
+
+# -x: extract audio only
+# -o: output filename
+# --download-sections: clip only part of the audio.
+#     many videos have silence at the start/end that we want to clip,
+#     but yt-dlp sometimes chokes when we do that, so usually we'll 
+#     clip with renpy code instead
+#
+# comment out already-downloaded videos, to avoid youtube rate-limiting.
+# never delete them, keep here for later reference
+#yt-dlp -xo bgm_scene06_01 
+##yt-dlp -xo bgm_scene07_01 duplicate of 04_01
+#yt-dlp -xo bgm_scene10_01 https://www.youtube.com/watch?v=8dZ4OZihEAw
+#yt-dlp -xo bgm_scene11_01 
+##yt-dlp -xo bgm_scene12_01 duplicate of 04_02
+#yt-dlp -xo bgm_scene13_01 
+#yt-dlp -xo bgm_scene14_01 

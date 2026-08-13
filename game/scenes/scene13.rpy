@@ -3,16 +3,17 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=kelisha&t=takeshi&t=usagi&t=sanders
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=linda
 label scene13: 
-    scene bg great hall inside with dissolve:
+    play music bgm_012_anticipation__full_metal_alchemist_brotherhood
+    scene bg great hall inside:
         zoom 1.1
         xpos -0.1
-    play music bgm_scene13_01
     show huxtable neutral at flip:
         ytextbox
         xpos 0.2
     show queen neutral:
         ytextbox
         xpos 0.7
+    with dissolve
 
     #scene bg great hall inside:
     #    zoom 1.1
@@ -122,6 +123,7 @@ label scene13:
         xoffset 0
         pause 0.2 + 0.3# + 0.15
         easeout 3 xoffset 1000
+    stop music fadeout 2
     huxtable @ angry 3 "...TAKE HER AWAY."
     show bg:
         zoom 1.1
@@ -184,7 +186,6 @@ label scene13:
     # > Manga panel sequence of events: Ultima canon is fired,
     # > destroys new jersey.
     ### page 25 ###
-    stop music
     # manga panels: the destruction of new jersey
     scene bg white with dissolve
     show bg white as bg2 behind bg

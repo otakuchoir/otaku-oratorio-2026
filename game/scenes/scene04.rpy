@@ -20,7 +20,7 @@ transform scene04.bow(ma=1):
 
 label scene04:
     scene bg classroom at flip with dissolve
-    play music bgm_scene04_01
+    play music bgm_006_nonbiri_seikatsu__nichijou
 
     # the trio walk into the classroom (the stage) from the right. kelisha's already in class.
     show kelisha serious at left, flip
@@ -107,7 +107,7 @@ label scene04:
     kelisha "Pay attention, this has to do with your midterms..."
 
     # news report starts. zoom in on the reporters, pushing the others off screen
-    play music bgm_scene04_02
+    play music bgm_007_mii_news__tomodachi_life_living_the_dream
     window hide
     window auto
     show bg breaking news as bg2:

@@ -1,8 +1,8 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=bg&t=jojo&t=takeshi&t=sanders&t=usagi
 label scene14: 
-    scene bg campus with dissolve
+    scene bg campus
     # scene bg rooftop with dissolve
-    play music bgm_scene14_01
+    play music bgm_013_route_26_27__pokemon_anime
     show jojo neutral at left, flip
     show takeshi angry 1:
         noflip
@@ -12,6 +12,7 @@ label scene14:
         ytextbox
         xpos 0.55
     show usagi serious 1 at right2, noflip
+    with dissolve
     # > 14       EXT. DAY; LUNAR ACADEMY ROSE GARDEN                                      14
     jojo "Today you take your first steps into the a society that now, more than ever, needs its guardians to stand watch over our democracy."
     jojo "A tradition that has spanned over a millennia since the great cataclysm. We swore to never forget the second fall of humanity."
@@ -45,7 +46,10 @@ label scene14:
         pause 0.3
         noflip
         pause 0.3
-        repeat 3
+        repeat 2
+        flip
+        pause 0.5
+        noflip
     usagi "No... that’s not what I..."
     show usagi cry 1 focus
     usagi "Stop it... stop it... I am not my..."

@@ -3,7 +3,7 @@ label scene07:
         zoom 1.1
         anchor (0.0, 0.0)
         pos (-0.05, 0.0)
-    play music bgm_scene04_01
+    play music bgm_006_nonbiri_seikatsu__nichijou
     show jojo neutral at right2
     show takeshi neutral at left2, flip
     show sanders neutral at left, flip
