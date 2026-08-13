@@ -1,7 +1,7 @@
 label scene14: 
     scene bg campus with dissolve
     play music bgm_scene14_01
-    show text "{color=#fff}Scene \"gen_scene14\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.492596\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
+    show text "{color=#000}Scene \"gen_scene14\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.492596\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show jojo neutral at center
     show takeshi neutral at left2
     show sanders neutral at right2

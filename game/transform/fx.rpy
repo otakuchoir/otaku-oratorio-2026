@@ -4,9 +4,9 @@ image bg white = Solid('#fff')
 image bg red = Solid('#f00')
 
 transform flip:
-    xzoom -1
+    xzoom -1.0
 transform noflip:
-    xzoom 1
+    xzoom 1.0
 transform nozoom:
     zoom 1.0
 
@@ -33,11 +33,11 @@ transform blink(n, dur):
 transform smoothzoom:
     ease 0.4 zoom 1
 
-transform hvibrate:
+transform hvibrate(n=None):
     xoffset 0
     easein 0.02 xoffset 10
     ease 0.04 xoffset -10
-    repeat
+    repeat n
 
 transform fx.hop(dur=0.3, y=50):
     yoffset 0
