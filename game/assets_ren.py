@@ -99,7 +99,7 @@ load_image('bg scene16c nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16
 load_image('bg scene16a', 'assets/Scene 16/Scene16A.png')
 load_image('bg scene16b', 'assets/Scene 16/Scene16B.png')
 load_image('bg scene16c', 'assets/Scene 16/Scene16C.png')
-load_image('bg scene13a', 'assets/Storyboards/storyboard-13-1.png')
+load_image('bg scene13a', 'assets/Scene 13 - NJ blows up/scene13-1.png')
 load_image('bg scene13b', 'assets/Scene 13 - NJ blows up/scene13-2.png')
 load_image('bg scene13c', 'assets/Scene 13 - NJ blows up/scene13-3.png')
 load_image('bg scene13d', 'assets/Scene 13 - NJ blows up/scene13-4.png')
