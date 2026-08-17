@@ -1,32 +1,9 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene11: 
     scene bg kelisha office transparent windows
-    # animate the space background outside the office window.
-    # mirror the background horizontally for a cleanish-looking loop point, since it doesn't loop well naturally
-    $ bgspeed = 20
-    show bg space as bg2_1 behind bg:
-        anchor (0, 0)
-        pos (0, 0)
-        block:
-            xoffset 0
-            linear bgspeed xoffset -1280
-            xoffset 1280
-            linear bgspeed xoffset 0
-            repeat
-    show bg space at flip as bg2_2 behind bg:
-        anchor (0, 0)
-        pos (0, 0)
-        block:
-            xoffset 1280
-            linear bgspeed xoffset 0
-            linear bgspeed xoffset -1280
-            repeat
+    call scene11.space_background
     with dissolve
-    #camera:
-    #    perspective True
-    #    xoffset -300
-    #    yoffset 100
-    #    zpos -300
+
     play music bgm_010_ready_set_go__kirby_and_the_forgotten_land if_changed
     show kelisha neutral at left, flip
     show takeshi neutral at center:
@@ -115,3 +92,72 @@ label scene11:
     stop music fadeout 2
     scene bg black with dissolve
     return
+
+label scene11.space_background:
+    # animate the space background outside the office window.
+    # mirror the background horizontally + vertically, for a cleanish-looking loop point, since it doesn't loop well naturally
+    $ bgvx = 23
+    $ bgvy = 79
+    # faster velocities, for testing the loop
+    # $ bgvx = 3
+    # $ bgvy = 7
+    show bg space as bg2_00 behind bg:
+        anchor (0, 0)
+        pos (0, 0)
+        parallel:
+            xoffset 0
+            linear bgvx xoffset -1280
+            xoffset 1280
+            linear bgvx xoffset 0
+            repeat
+        parallel:
+            yoffset 0
+            linear bgvy yoffset -1370
+            yoffset 1370
+            linear bgvy yoffset 0
+            repeat
+    show bg space as bg2_10 behind bg:
+        anchor (0, 0)
+        pos (0, 0)
+        xzoom -1
+        parallel:
+            xoffset 1280
+            linear bgvx xoffset 0
+            linear bgvx xoffset -1280
+            repeat
+        parallel:
+            yoffset 0
+            linear bgvy yoffset -1370
+            yoffset 1370
+            linear bgvy yoffset 0
+            repeat
+    show bg space as bg2_01 behind bg:
+        anchor (0, 0)
+        pos (0, 0)
+        yzoom -1
+        parallel:
+            xoffset 0
+            linear bgvx xoffset -1280
+            xoffset 1280
+            linear bgvx xoffset 0
+            repeat
+        parallel:
+            yoffset 1370
+            linear bgvy yoffset 0
+            linear bgvy yoffset -1370
+            repeat
+    show bg space as bg2_11 behind bg:
+        anchor (0, 0)
+        pos (0, 0)
+        xzoom -1
+        yzoom -1
+        parallel:
+            xoffset 1280
+            linear bgvx xoffset 0
+            linear bgvx xoffset -1280
+            repeat
+        parallel:
+            yoffset 1370
+            linear bgvy yoffset 0
+            linear bgvy yoffset -1370
+            repeat
