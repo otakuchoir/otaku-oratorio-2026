@@ -1,12 +1,32 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene11: 
-    scene bg spaceship window with dissolve
+    scene bg kelisha office transparent windows
+    # animate the space background outside the office window.
+    # mirror the background horizontally for a cleanish-looking loop point, since it doesn't loop well naturally
+    $ bgspeed = 20
+    show bg space as bg2_1 behind bg:
+        anchor (0, 0)
+        pos (0, 0)
+        block:
+            xoffset 0
+            linear bgspeed xoffset -1280
+            xoffset 1280
+            linear bgspeed xoffset 0
+            repeat
+    show bg space at flip as bg2_2 behind bg:
+        anchor (0, 0)
+        pos (0, 0)
+        block:
+            xoffset 1280
+            linear bgspeed xoffset 0
+            linear bgspeed xoffset -1280
+            repeat
+    with dissolve
     #camera:
     #    perspective True
     #    xoffset -300
     #    yoffset 100
     #    zpos -300
-    show bg black as bg2 behind bg
     play music bgm_010_ready_set_go__kirby_and_the_forgotten_land if_changed
     show kelisha neutral at left, flip
     show takeshi neutral at center:

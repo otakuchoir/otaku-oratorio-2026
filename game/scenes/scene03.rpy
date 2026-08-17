@@ -29,12 +29,11 @@ label scene03:
     takeshi "NOT YET!"
 
     # sanders is hit! show this with background, screen shake, and tense music
-    show bg red as bg2 behind takeshi, sanders:
-        alpha 0.7
+    show bg training room red
     show takeshi worried 2 
     show sanders shock focus at yshake(30, 4, 0.025) with vpunch
     pause 0.4
-    hide bg2
+    show bg training room
     # no looping BGM unless the track is loopable! for most of these the track is much longer than the show, anyway
     play music "<from 1.6>bgm_003_hurry_ff7.opus" noloop
     sanders anxious "I’m hit!"
