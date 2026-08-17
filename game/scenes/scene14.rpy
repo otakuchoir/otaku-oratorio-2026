@@ -26,21 +26,21 @@ label scene14:
     show usagi shock
     show jojo fervent at flip, fx.hopN(n=2, y=75, stretch=(0.05, 0.10))
     jojo "...has a daughter in this year’s graduating class. She now enters our society, a guiding light, walking in her father’s footsteps. We look forward to what you will accomplish."
-    show bg black as bg2 behind bg
+    #show bg black as bg2 behind bg
     stop music fadeout 5
-    show bg:
-        alpha 1
-        linear 5 alpha 0.0
-    show jojo:
-        flip
-        alpha 1
-        linear 5 alpha 0.0
-    show takeshi:
-        alpha 1
-        linear 5 alpha 0.0
-    show sanders:
-        alpha 1
-        linear 5 alpha 0.0
+    #show bg:
+    #    alpha 1
+    #    linear 5 alpha 0.0
+    #show jojo:
+    #    flip
+    #    alpha 1
+    #    linear 5 alpha 0.0
+    #show takeshi:
+    #    alpha 1
+    #    linear 5 alpha 0.0
+    #show sanders:
+    #    alpha 1
+    #    linear 5 alpha 0.0
     show usagi anxious focus:
         flip
         pause 0.3
