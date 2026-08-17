@@ -119,9 +119,10 @@ label scene15:
 # for some reason, each line of dialogue sends us back here, with a "dx is not defined" error!
 # no idea why. but assigning the params to globals and using the globals is an
 # effective workaround, if a little messy.
-$ dx_ = None
-$ bgx_ = None
-$ dur_ = None
+init python:
+    dx_ = None
+    bgx_ = None
+    dur_ = None
 label scene15.camera(dx=0.0, bgx=0.0, dur=1):
     $ dx_ = dx
     $ bgx_ = bgx
