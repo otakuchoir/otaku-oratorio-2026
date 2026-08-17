@@ -18,6 +18,8 @@ bgm = [
     ('https://www.youtube.com/watch?v=b-GWaFYgXM0', 'nightmares__full_metal_alchemist_brotherhood'),
     ('https://www.youtube.com/watch?v=H-W7xveVzUw', 'anticipation__full_metal_alchemist_brotherhood'),
     ('https://www.youtube.com/watch?v=Al4ongqx_2I', 'route_26_27__pokemon_anime'),
+    # not sure if this is the right one - double check later
+    #('https://soundcloud.com/have-a-nice-day321/spirited-away-soundtrack', 'bathhouse_morning__spirited_away'),
 ]
 
 for i, (source, label) in enumerate(bgm):
