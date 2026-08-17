@@ -69,6 +69,9 @@ label scene04:
     kelisha "And you, Williamson... you could fail everything from now until the end of the year and you’d be good, but you DON’T need to be late. Don’t let your little friends drag you down."
     show takeshi at scene04.bow(3)
     takeshi @ happy 1 "My apologies professor, we just ran over time in the training simulator."
+    stop music fadeout 1
+    # ❓Idea: Choir makes quiet chatter sounds during Classmate - “It’s crazy he’s so smart... He’s a Lunar.” ??
+    # And then they fall silent at Usagi - “And what does that have to do with anything?”
     "The classroom is annoyed with Takeshi’s apology..."
     classmate "It’s crazy he’s so smart... He’s a Lunar."
 
