@@ -32,7 +32,7 @@ label scene18:
     reporter1 "Breaking news, The Earth Crown Military is now moving on the Crystal"
     reporter2 "Earth’s last defense against absolute destruction at the hands of a humanoid space alien who, six months ago, doomed the planet"
     reporter3 "Leading this operation is none other than decorated Earth Crown Military Captain, Kohei Kitadani"
-    reporter1 "Kitadani, a well respected geological scientist with the ECM is often credited as the father of the ULTIMA CANON"
+    reporter1 "Kitadani, a well respected geological scientist with the ECM is often credited as the father of the ULTIMA CANNON"
     reporter2 "The very same canon we use for mining ULTIMA to power our homes"
     ### page 34 ###
     # > THE FINAL DAY - FINAL FANTASY XIV ENDWALKER

@@ -44,15 +44,15 @@ scenes = [
     S('scene16b', 'End Act 1'),
 
     ### Act 2
-    S('scene17', 'Start Act 2'),
-    S('scene18'),
+    S('scene17', 'Start Act 2; Flashback: Eden vs. PD 1'),
+    S('scene18', 'Flashback: Eden vs. PD 2, News Report'),
     S('scene18a', 'SONG: The Final Day'),
     # Manga panels
-    S('scene19', '(IRL)'),
+    S('scene19', 'Flashback: Eden vs. PD 2; MANGA: Ultima Cannon Hits the PD'),
     S('scene20'),
-    S('gen_scene21'),
-    S('gen_scene22'),
-    S('gen_scene23'),
+    S('scene21'),
+    S('scene22'),
+    S('scene23'),
     S('gen_scene24'),
     S('scene25', '(IRL)'),
     S('gen_scene26'),

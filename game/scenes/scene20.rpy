@@ -1,6 +1,6 @@
 
 label scene20:
-    scene black
+    scene bg cubicles
     show text "{color=#fff}Scene \"gen_scene20\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.493097\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
     show usagi neutral at center
     show sanders neutral at left2
