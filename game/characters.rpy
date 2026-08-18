@@ -8,7 +8,7 @@ define jojo = Character("Professor Jojo", color="#666666", image="jojo")
 define linda = Character("Linda Kitadani", color="#d68e8e", image="linda")
 define kohei = Character("Kohei Kitadani", color="#00bb00", image="kohei")
 # same character, using different names/titles in different parts of the script
-define child = Character("Child", color="#dddddd", image="child")
+define child = Character("The Child", color="#dddddd", image="child")
 define noname = Character("NoName", color="#dddddd", image="child")
 define kagu = Character("Kagu", color="#dddddd", image="child")
 # same character, using different names/titles in different parts of the script

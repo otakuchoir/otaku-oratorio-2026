@@ -54,10 +54,46 @@ label scene19:
     officer "Aye Captain. I have the conn."
     show huxtable neutral as officer
 
-    "TODO kohei leaves the room for a moment"
+    # kohei leaves the room for a moment...
+    show kohei:
+        xoffset 0
+        ease 1 xoffset -800
+    pause 1
+    show huxtable neutral focus as officer:
+        alpha 0
+    show huxtable neutral focus as gunner:
+        alpha 0
+    show huxtable neutral focus as navigator:
+        alpha 0
+    show bg black
+    with dissolve
+    show bg spaceship window:
+        matrixcolor BrightnessMatrix(0.2)
+    show kohei neutral at center, flip:
+        xoffset -1000
+        ease 1.5 xoffset 0
+    with dissolve
     kitadani "Just listen to me. I want you and Usagi to take move to our spot in the moon barracks-"
     kitadani "I know it was supposed to be a few more years, but... But this doesn’t look good. If what Barry said is true..."
     kitadani "Just go... I have to get back now. I love you."
+    show kohei neutral at center, noflip:
+        xoffset 0
+        ease 1.5 xoffset -1000
+    pause 1
+    show bg black
+    with dissolve
+    show bg spaceship window:
+        matrixcolor BrightnessMatrix(0.2)
+    show huxtable neutral focus as officer:
+        alpha 1
+    show huxtable neutral focus as gunner:
+        alpha 1
+    show huxtable neutral focus as navigator:
+        alpha 1
+    with dissolve
+    show kohei neutral at left2, flip:
+        xoffset -800
+        ease 1 xoffset 0
 
     show huxtable neutral focus as officer
     officer "Captain on Deck"
@@ -153,6 +189,7 @@ label scene19:
     # > BARTHANDELUS STOPS THE FOOTAGE. HE HAS BEEN WATCHING THIS OLD
     # > CLASSIFIED RECORDING FOR SOME REASON....
 
+    # transition to bart and tv in a dark room
     scene bg black
     show bg news studio as tv:
         anchor (0.5, 1.0)
@@ -165,11 +202,15 @@ label scene19:
     show bart neutral focus at right2
     with irisin
     pause 2
+
+    # bart turns off the tv
     show bg news studio as tv:
         linear 1 alpha 0
     show fx_crt_scanlines as tv2:
         linear 1 alpha 0
     pause 2
+
+    # bart leaves
     show bart:
         flip
         xoffset 0

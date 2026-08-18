@@ -64,16 +64,45 @@ transform fx.hopN(dur=(0.1, 0.3), y=50, stretch=(0.2, 0.3), n=1):
     easeout dur[0]/2 fx.stretch(1, 1)
 
 define angle_bow = -15
-transform fx.bowdown(dur, a=angle_bow):
+transform fx.bowdown(dur, a=angle_bow, y=abs(a)*2):
     transform_anchor True
     yoffset 0
     rotate 0
-    ease dur yoffset (-a*2) rotate a
-transform fx.bowup(dur, a=angle_bow):
+    ease dur yoffset y rotate a
+transform fx.bowup(dur, a=angle_bow, y=abs(a)*2):
     transform_anchor True
-    yoffset (-a*2)
+    yoffset y
     rotate a
     ease dur yoffset 0 rotate 0
 transform fx.stretch(x, y):
     xzoom x
     yzoom y
+
+# transform fx.glitch_child:
+label fx.glitch_child:
+    show child:
+        flip
+        parallel:
+            "child faceless focus"
+            pause 0.05
+            "child glitch focus"
+            pause 0.05
+            "child faceless focus"
+            pause 0.05
+            "child glitch 2 focus"
+            pause 0.05
+            repeat 3
+        parallel:
+            yshake(20, 15, 0.01)
+    pause 0.6
+
+transform fx.glitch_lights:
+        # matrixcolor BrightnessMatrix(0)
+        matrixcolor BrightnessMatrix(0.5)
+        pause 0.1
+        matrixcolor BrightnessMatrix(0)
+        pause 0.1
+        matrixcolor BrightnessMatrix(-0.5)
+        pause 0.1
+        matrixcolor BrightnessMatrix(0)
+        repeat 2
