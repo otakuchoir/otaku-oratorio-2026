@@ -1,5 +1,6 @@
 
 label scene21:
+    play music bgm_014_anxious_fart__ff7 if_changed
     show bg car interior
     show sanders postgrad neutral at flip, left2
     show usagi postgrad neutral at noflip, right2

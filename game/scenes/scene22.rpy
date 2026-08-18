@@ -1,5 +1,6 @@
 
 label scene22:
+    play music bgm_014_anxious_fart__ff7 if_changed
     scene bg research lab outside
     with dissolve
     show sanders postgrad neutral at right2
@@ -13,4 +14,5 @@ label scene22:
     # > She touches her ID to the elevator panel and enters.
     show sanders postgrad happy
     sanders "Until next time Kitadani."
+    stop music fadeout 1
     return

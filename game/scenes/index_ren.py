@@ -54,7 +54,7 @@ scenes = [
     S('scene22', 'Sanders Leaves Usagi; Research Lab'),
     S('scene23', 'The Child Speaks'),
     S('gen_scene24'),
-    S('scene25', '(IRL)'),
+    S('gen_scene25'),
     S('gen_scene26'),
     S('gen_scene27'),
     S('gen_scene28'),
