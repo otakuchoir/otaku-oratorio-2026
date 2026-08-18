@@ -15,10 +15,20 @@ import renpy # type: ignore
 # dims characters that aren't speaking.
 # dimmed images are defined while loading sprites, so these have to be defined in this file too
 transform dim:
-    matrixcolor BrightnessMatrix(-0.25)
+    # Lowering brightness generally looks good, except it looks REALLY REALLY BAD
+    # with dark-skinned characters like Kohei, or with screen-darkening special
+    # effects like CRT scanlines. Dealbreaker
+    # matrixcolor BrightnessMatrix(-0.25)
+    #
+    # Lowering saturation is a grayscale effect. Alone, it's not noticeable enough,
+    # until it's cranked up high enough to look bad everywhere. 
+    # matrixcolor SaturationMatrix(0.6)
+    #
+    # Combining the two seems to look okay in most situations, while still being noticeable.
+    matrixcolor BrightnessMatrix(-0.125) * SaturationMatrix(0.7)
     zoom 0.95
 transform nodim:
-    matrixcolor BrightnessMatrix(0)
+    matrixcolor BrightnessMatrix(0) * SaturationMatrix(0)
     zoom 1
 transform anchor_sprite:
     anchor (0.5, 1.0)
