@@ -1,11 +1,92 @@
 label scene19: 
-    scene black
-    "PLACEHOLDER IRL scene19"
+    scene bg black
+    scene bg spaceship window:
+        matrixcolor BrightnessMatrix(0.2)
+    show huxtable neutral at left, flip as gunner:
+        matrixcolor BrightnessMatrix(-1)
+    show huxtable neutral at right, noflip as officer:
+        matrixcolor BrightnessMatrix(-1)
+    show huxtable neutral at right2, noflip as navigator:
+        matrixcolor BrightnessMatrix(-1)
+    show kohei neutral at left2:
+        matrixcolor BrightnessMatrix(0.1)
+    show fx_crt_scanlines
+    with dissolve
+    # > 19       INT. THE SPACESHIP EDEN MAIN DECK                                        19
+    show huxtable neutral focus as gunner
+    gunner "Captain, beam array at 60 percent and climbing; Firing window opens in 3 minutes and counting."
+    show huxtable neutral as gunner
+    kitadani "Copy that, thank you Gunner Chief, Navigation, a read on the firing zone."
 
+    show huxtable neutral focus as navigator
+    navigator "Target is in optimal range, blast zone is clear of any civilian ships. No satellites natural or otherwise."
+    show huxtable neutral as navigator
+
+    show huxtable neutral focus as officer
+    officer "Captain, I have the secure line ready."
+    show huxtable neutral as officer
+    kitadani "Give me just a second."
+
+    show huxtable neutral focus as gunner
+    gunner "70 percent."
+    show huxtable neutral as gunner
+    show huxtable neutral focus as navigator
+    navigator "We’re holding steady Captain. Go take your call."
+    show huxtable neutral as navigator
+
+    # > GUIDE US OH MIGHTY FURY...
+    # side images: usagi's not visible on screen, so this shows her side image in the textbox
+    usagi postgrad neutral focus "On that day, I remember my mom holding for him, our bags were packed and we were ready to go..."
+    usagi postgrad neutral focus "Our society had decided that it was going to defy nature itself. We were about to learn a great lesson."
+
+    show huxtable neutral focus as gunner
+    gunner "80 percent! We’re closing in on the window."
+    show huxtable neutral as gunner
+
+    ### page 35 ###
+    show huxtable neutral focus as navigator
+    navigator "Holding steady."
+    show huxtable neutral as navigator
+    kitadani "I’ll take the call in my quarters. First officer, you have the conn."
+
+    # > Rhos an kyn ala na...
+    show huxtable neutral focus as officer
+    officer "Aye Captain. I have the conn."
+    show huxtable neutral as officer
+
+    "TODO kohei leaves the room for a moment"
+    kitadani "Just listen to me. I want you and Usagi to take move to our spot in the moon barracks-"
+    kitadani "I know it was supposed to be a few more years, but... But this doesn’t look good. If what Barry said is true..."
+    kitadani "Just go... I have to get back now. I love you."
+
+    show huxtable neutral focus as officer
+    officer "Captain on Deck"
+    show huxtable neutral as officer
+    show huxtable neutral focus as gunner
+    gunner "90 percent!"
+    show huxtable neutral as gunner
+
+    show huxtable neutral focus as navigator
+    navigator "Captain, a development, the Crystal is... opening."
+    show huxtable neutral as navigator
+    kitadani "Then this is our chance. That... thing... is coming out again and this time it means to kill us all."
+
+    show huxtable neutral focus as gunner
+    gunner "100 percent the firing window is open."
+    show huxtable neutral as gunner
+
+    # > Gunner Chief locks and loads the Ultima Canon.
+    kitadani "Ready the Ultima Cannon!"
+    # > Ecce venio
+    kitadani "Today we stand ready to defend all that we hold dear. Our families, our friends, our neighbors and our planet."
+
+    ### page 36 ###
+    ### <manga-panels> ###
     # manga panels: fighting the planet destroyer
     window hide
     window auto
-    show bg scene19a with dissolve
+    scene 
+    show bg scene19a
     pause
     show bg scene19b
     pause
@@ -13,4 +94,86 @@ label scene19:
     pause
     show bg scene19d
     pause
+    #destroyer "Behold, I am come, I am the Beginning, And the End."
+    #officer "Captain!"
+    #kitadani "Steady!"
+    #navigator "The PLANET DESTROYER is emerging from the crystal"
+    #gunner "Captain on your command!"
+    ## > Ecce venio
+    #kitadani "FIRE!"
+    #gunner "Impact!"
+    #navigator "The field is NOT CLEAR, the planet destroyer it-"
+    #officer "It absorbed the blast..."
+    #gunner "Brace for counter attack!"
+    #kitadani "Ready another blast!"
+    ### </manga-panels> ###
+    # > et principia!
+
+    # > BLACK OUT, SCREEN REVEALS SHOW TITLE/ LOGO “OTAKU ORATORIO 2:
+    # > I set out to save the world, but it turns out the world’s
+    # > greatest threat is a kid who calls me mom.”
+    scene bg beige
+    show logo:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 0.5
+    with dissolve
+    pause
+
+    window hide
+    window auto
+    $ y = 0.48
+    scene bg news studio:
+        noflip
+        anchor (0.5,1.0)
+        pos (0.5,1.0)
+        zoom 1.15
+    show reporter1:
+        zoom 1.0
+        xpos 0.2
+        ypos y
+    show reporter2:
+        zoom 1.0
+        xpos 0.5
+        ypos y+0.03
+    show reporter3:
+        zoom 1.0
+        xpos 0.8
+        ypos y
+    # show bg breaking news as bg2:
+        # ease 0.5 zoom 1.0
+    show fx_crt_scanlines
+    with dissolve
+    reporter1 "It is unclear whether or not the crew of the Eden are responding after that...."
+    reporter1 "Wait... I’m getting word."
+    ### page 37 ###
+    reporter2 "It is confirmed, the planet destroyer has been neutralized completely."
+    reporter3 "But the Space shuttle Eden and its crew has been decimated in the blast fall out."
+    reporter3 "Folks at home, I think now is a time for a moment of silence as we think about the Eden and their sacrifice..."
+    # > BARTHANDELUS STOPS THE FOOTAGE. HE HAS BEEN WATCHING THIS OLD
+    # > CLASSIFIED RECORDING FOR SOME REASON....
+
+    scene bg black
+    show bg news studio as tv:
+        anchor (0.5, 1.0)
+        zoom 0.2
+        left2
+    show fx_crt_scanlines as tv2:
+        anchor (0.5, 1.0)
+        zoom 0.2
+        left2
+    show bart neutral focus at right2
+    with irisin
+    pause 2
+    show bg news studio as tv:
+        linear 1 alpha 0
+    show fx_crt_scanlines as tv2:
+        linear 1 alpha 0
+    pause 2
+    show bart:
+        flip
+        xoffset 0
+        easeout 2 xoffset 800
+    pause 2
+
     return

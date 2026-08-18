@@ -44,12 +44,12 @@ scenes = [
     S('scene16b', 'End Act 1'),
 
     ### Act 2
-    S('gen_scene17', 'Start Act 2'),
-    S('gen_scene18'),
+    S('scene17', 'Start Act 2'),
+    S('scene18'),
     S('scene18a', 'SONG: The Final Day'),
     # Manga panels
     S('scene19', '(IRL)'),
-    S('gen_scene20'),
+    S('scene20'),
     S('gen_scene21'),
     S('gen_scene22'),
     S('gen_scene23'),

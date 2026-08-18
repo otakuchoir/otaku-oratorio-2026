@@ -2,6 +2,7 @@ image bg default = Solid("#ccc")
 image bg black = Solid('#000')
 image bg white = Solid('#fff')
 image bg red = Solid('#f00')
+image bg beige = Solid("#e7dbc7")
 
 transform flip:
     xzoom -1.0
