@@ -14,7 +14,7 @@ define noname = Character("NoName", color="#dddddd", image="child")
 define kagu = Character("Kagu", color="#dddddd", image="child")
 # same character, using different names/titles in different parts of the script
 define queen = Character("Queen Elizabeth Newark", color="#ffff00", image="queen")
-define princess = Character("Princess Elizabeth Newark", color="#ffff00", image="queen")
+define princess = Character("Princess Elizabeth Newark", color="#ffff00", image="princess")
 # same character, using different names/titles in different parts of the script
 define general = Character("Elite General", color="#c99e61", image="huxtable")
 define huxtable = Character("Robert Huxtable", color="#c99e61", image="huxtable")

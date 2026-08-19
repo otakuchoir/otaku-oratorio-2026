@@ -64,7 +64,7 @@ label scene12:
     # > SONG
     "PLACEHOLDER song"
 
-    # play music bgm_007_mii_news__tomodachi_life_living_the_dream
+    call fx.play_music_in_dev("bgm_007_mii_news__tomodachi_life_living_the_dream.opus")
     window hide
     window auto
     show bg breaking news as bg2:

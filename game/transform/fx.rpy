@@ -95,14 +95,37 @@ label fx.glitch_child:
         parallel:
             yshake(20, 15, 0.01)
     pause 0.6
+    return
 
 transform fx.glitch_lights:
-        # matrixcolor BrightnessMatrix(0)
-        matrixcolor BrightnessMatrix(0.5)
-        pause 0.1
-        matrixcolor BrightnessMatrix(0)
-        pause 0.1
-        matrixcolor BrightnessMatrix(-0.5)
-        pause 0.1
-        matrixcolor BrightnessMatrix(0)
-        repeat 2
+    # matrixcolor BrightnessMatrix(0)
+    matrixcolor BrightnessMatrix(0.5)
+    pause 0.1
+    matrixcolor BrightnessMatrix(0)
+    pause 0.1
+    matrixcolor BrightnessMatrix(-0.5)
+    pause 0.1
+    matrixcolor BrightnessMatrix(0)
+    repeat 2
+
+transform fx.xoffset(x=0):
+    xoffset x
+transform fx.xpos(x=0):
+    xpos x
+
+transform fx.ease_xoffset(dur=1.0, x0=0, x1=0):
+    fx.xoffset(x0)
+    ease dur fx.xoffset(x1)
+transform fx.ease_xpos(dur=1.0, x0=0, x1=0):
+    fx.xpos(x0)
+    ease dur fx.xpos(x1)
+
+$ f_ = None
+label fx.play_music_in_dev(f):
+    $ f_ = f
+    $ if config.developer: renpy.music.play(f_)
+    return
+label fx.play_music_if_changed_in_dev(f):
+    $ f_ = f
+    $ if config.developer: renpy.music.play(f_, if_changed=True)
+    return

@@ -1,6 +1,6 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=usagi+postgrad&t=sanders+postgrad
 label scene20:
-    # play music bgm_014_anxious_fart__ff7 if_changed
+    call fx.play_music_if_changed_in_dev("bgm_014_anxious_fart__ff7.opus")
     scene bg cubicles:
         zoom 1.1
         anchor (0.5, 0.5)

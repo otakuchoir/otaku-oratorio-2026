@@ -1,35 +1,59 @@
-
+# https://otaku-oratorio-2026-gallery.netlify.app/?t=princess&t=bart+young&t=huxtable+young&t=jojo+young&t=kohei+young&t=linda+young
 label scene25:
-    scene black
-    show text "{color=#fff}Scene \"gen_scene25\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.493540\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show queen neutral at center
-    show linda neutral at left2
-    show huxtable neutral at right2
-    show kohei serious 1 at left
-    show jojo neutral at right
-    show bart neutral at top
-    show queen neutral at topleft
+    scene bg training room:
+        zoom 1.1
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+    "TODO is this where we use the moba training map? If so, do I want character sprites (like most scenes), or animated dots on the map (like a game minimap), or both? Until I answer those fundamentals, this scene is deliberately barebones"
+    # PUSH TEAM
+    show jojo young neutral     at left,   fx.xoffset(-1000), flip
+    show bart young neutral     at left2,  fx.xoffset(-1000), flip
+    show kohei young serious 1  at center, fx.xoffset(-1000), flip
+    # DEFENDERS
+    show princess neutral       at right,  fx.xoffset(1000), noflip
+    show huxtable young neutral at right2, fx.xoffset(1000), noflip 
+    show linda young neutral    at center, fx.xoffset(1000), noflip 
+
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
-    wellington "Today’s training is a final lane push on the enemy base. Push team: Joseph Chen, you’re on auxillary. Bartholemew Barthandelus... Support. Kohei Kitadani Ace. Defenders: Elizabeth Newark-"
+    wellington "Today’s training is a final lane push on the enemy base."
+    
+    # manually from the center camera
+    show bg at fx.ease_xpos(1, 0.5, 0.55)
+    show jojo at fx.ease_xoffset(1, -1000, 0)
+    show bart at fx.ease_xoffset(1, -1000, 0)
+    show kohei at fx.ease_xoffset(1, -1000, 0)
+    wellington "Push team: Joseph Chen, you’re on auxillary. Bartholemew Barthandelus... Support. Kohei Kitadani Ace."
+
+    call scene25.camera_defense_team
+    wellington "Defenders: Elizabeth Newark-"
     ### page 47 ###
-    queen "That’s Princess Elizabeth Newark, thank you."
+    princess "That’s Princess Elizabeth Newark, thank you."
     wellington "......... Princess Elizabeth Newark, you’re on Auxillary, Robert Huxtable, you’re on support and Ace is Linda Hudson."
-    queen "Okay cousin!!"
+    princess "Okay cousin!!"
     linda "Hey gurl hey."
     huxtable "Ladies... maybe we should pay attention."
-    queen "Robert, if you don’t shut yo-.... You know what? Nevermind."
+    princess "Robert, if you don’t shut yo-.... You know what? Nevermind."
     linda "Let’s push these losers BACK!"
+
     # > TAINTED LOVERS (GITAROO MAN OST)
     computer "COMMENCE BATTLE SIMULATION"
+
+    call scene25.camera_push_team
     kohei "This is Ace unit Phoenix, Auxillary, jam communications. Let’s hit em hard and fast."
     jojo "Carbunkle here, Copy copy."
-    queen "Diabolos here... Shiva, your boyfriend is coming in hot."
+
+    call scene25.camera_defense_team
+    princess "Diabolos here... Shiva, your boyfriend is coming in hot."
     linda "A mistake on his part. Ace unit Shiva here, let’s get in formation!"
+
+    call scene25.camera_push_team
     jojo "JAMMING COMMUNICATIONS!"
     ### page 48 ###
     kohei "Thanks Carbunkle. Alexander, how are we on defense?"
-    bart "Support Unit Alexander here: Don’t worry about that, it’s a full offensive push, Ultima Cannon is 70%% all you’ve got to do is push the lane. I’ll cover you."
+    bart "Support Unit Alexander here: Don’t worry about that, it’s a full offensive push, Ultima Cannon is 70%%. All you’ve got to do is push the lane. I’ll cover you."
     computer "REMOTE SHIELDS ACTIVATED"
+
+    call scene25.camera_defense_team
     huxtable "Support unit Garuda here: the enemy team is pushing lane... maybe we should get into defensive positions..."
     linda "You guys know me. I never back down from a fight."
     princess "And I enable her so it’s no use looking at me like that - LET’S GOOO~!"
@@ -37,10 +61,32 @@ label scene25:
     princess "How about a nice buff from my personal stash. 35%% should help you fend off yo manz."
     computer "NANO BOTS ACTIVATED, 35%% ATTACK BUFF INSTALLED."
     linda "Oh, thank you! Time to CHARGE!"
+
+    call scene25.camera_push_team
     bart "Looks like their ace is meeting us on the battlefield-"
     kohei "With the auxillary not far behind, what are they thinking."
     ### page 49 ###
     jojo "Guys... I can’t move. I’ve been jammed. Nothing is working."
     bart "They’re debuffing our auxillary, Ace, you’re gonna have to fight two at one time, and I’m picking up nano tech on their ace, 35%% attack buff."
     kohei "Oh they’re gonna need more than 35%%. Support, help out Aux- The Phoenix is going in."
+    return
+
+label scene25.camera_push_team:
+    show bg at fx.ease_xpos(1, 0.45, 0.55)
+    show jojo at fx.ease_xoffset(1, -1000, 0)
+    show bart at fx.ease_xoffset(1, -1000, 0)
+    show kohei at fx.ease_xoffset(1, -1000, 0)
+    show princess at fx.ease_xoffset(1, 0, 1000)
+    show huxtable at fx.ease_xoffset(1, 0, 1000)
+    show linda at fx.ease_xoffset(1, 0, 1000)
+    return
+
+label scene25.camera_defense_team:
+    show bg at fx.ease_xpos(1, 0.55, 0.45)
+    show jojo at fx.ease_xoffset(1, 0, -1000)
+    show bart at fx.ease_xoffset(1, 0, -1000)
+    show kohei at fx.ease_xoffset(1, 0, -1000)
+    show princess at fx.ease_xoffset(1, 1000, 0)
+    show huxtable at fx.ease_xoffset(1, 1000, 0)
+    show linda at fx.ease_xoffset(1, 1000, 0)
     return

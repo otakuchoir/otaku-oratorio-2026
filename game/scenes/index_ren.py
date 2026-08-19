@@ -39,7 +39,7 @@ scenes = [
     S('scene14',  'Graduation Day'),
     S('scene15',  'Mission Briefing'),
     S('scene15a', 'SONG: Weight of the World'),
-    S('scene16',  'partial-IRL: Dark Side of the Moon; SONG: Ragnarok'),
+    S('scene16',  'IRL?: Dark Side of the Moon; SONG: Ragnarok'),
     S('scene16a', 'MANGA: Discovering the Child'),
     S('scene16b', 'End Act 1'),
 
@@ -71,6 +71,6 @@ scenes = [
     S('gen_scene38'),
     S('gen_scene39'),
     S('gen_scene40', "MANGA: Kagu's Final Evolution"),
-    S('gen_scene41'),
+    S('gen_scene41', 'IRL: Road Trip'),
 ]
 len_scenes = len(scenes)

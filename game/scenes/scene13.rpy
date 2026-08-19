@@ -3,7 +3,7 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=kelisha&t=takeshi&t=usagi&t=sanders
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=linda
 label scene13: 
-    # play music bgm_012_anticipation__full_metal_alchemist_brotherhood
+    call fx.play_music_in_dev("bgm_012_anticipation__full_metal_alchemist_brotherhood.opus")
     scene bg great hall inside:
         zoom 1.1
         xpos -0.1

@@ -55,7 +55,7 @@ label scene23:
 
     show usagi postgrad happy 1
     jojo "Well I’ll be damned."
-    # play music "<from 44.7>bgm_015_bathhouse_morning__spirited_away.opus"
+    call fx.play_music_in_dev("<from 44.7>bgm_015_bathhouse_morning__spirited_away.opus")
     bart "I TOLD you, the blood of Kitadani runs through this girl, she IS the key."
     show usagi postgrad confused at flip
     show child confused

@@ -1,7 +1,7 @@
 # scene 06 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi
 label scene06:
     scene bg train station with dissolve
-    # play music bgm_009_namis_theme__one_piece
+    call fx.play_music_in_dev("bgm_009_namis_theme__one_piece.opus")
 
     # a crude train-departures sign
     show black as sign_bg at top, scene06_sign_bg

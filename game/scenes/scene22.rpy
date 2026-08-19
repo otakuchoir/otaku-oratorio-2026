@@ -1,6 +1,6 @@
 
 label scene22:
-    # play music bgm_014_anxious_fart__ff7 if_changed
+    call fx.play_music_if_changed_in_dev("bgm_014_anxious_fart__ff7.opus")
     scene bg research lab outside
     with dissolve
     show sanders postgrad neutral at right2

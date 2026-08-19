@@ -35,7 +35,7 @@ label scene03:
     pause 0.4
     show bg training room
     # no looping BGM unless the track is loopable! for most of these the track is much longer than the show, anyway
-    # play music "<from 1.6>bgm_003_hurry_ff7.opus" noloop
+    call fx.play_music_in_dev("<from 1.6>bgm_003_hurry_ff7.opus")
     sanders anxious "I’m hit!"
     takeshi worried 1 "Support unit B46 breaking formation and moving in to rescue Ace unit B100."
 
@@ -53,7 +53,7 @@ label scene03:
     # > enemy team, taking them out herself one after the other.
     #
     # to show this, usagi's sprites fly around the screen. ff6 esper tech
-    # play music bgm_004_in_the_name_of_the_moon__sailor_moon noloop
+    call fx.play_music_in_dev("bgm_004_in_the_name_of_the_moon__sailor_moon.opus")
     call scene03_usagi_swoops_in
 
     sanders prideful "That’s my duo!"
@@ -84,7 +84,7 @@ label scene03:
     show takeshi neutral at offscreenleft, flip
     with ease
     pause 0.3
-    # play music bgm_005_just_an_ordinary_girl__sailor_moon noloop #fadein 1.5
+    call fx.play_music_in_dev("bgm_005_just_an_ordinary_girl__sailor_moon.opus")
     show usagi hello
     usagi "My name is Usagi Kitadani and I’m a 4th year student at the Crown Military Academy."
     usagi "Yeah, the one on the Moon..."
