@@ -5,7 +5,7 @@ label scene15:
     show takeshi postgrad neutral at flip
     show bart neutral
     show jojo neutral
-    show usagi postgrad derp at flip
+    show usagi postgrad worried at flip
     call scene15.camera_left(dur=0)
     with dissolve
     # > 15       INT. DAY; LUNAR ACADEMY BRIEFING ROOM.                                   15
