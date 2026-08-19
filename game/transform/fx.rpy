@@ -120,12 +120,9 @@ transform fx.ease_xpos(dur=1.0, x0=0, x1=0):
     fx.xpos(x0)
     ease dur fx.xpos(x1)
 
-$ f_ = None
 label fx.play_music_in_dev(f):
-    $ f_ = f
-    $ if config.developer: renpy.music.play(f_)
+    $ if config.developer: renpy.music.play(f)
     return
 label fx.play_music_if_changed_in_dev(f):
-    $ f_ = f
-    $ if config.developer: renpy.music.play(f_, if_changed=True)
+    $ if config.developer: renpy.music.play(f, if_changed=True)
     return
