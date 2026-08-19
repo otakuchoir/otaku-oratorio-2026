@@ -58,22 +58,19 @@ scenes = [
     S('scene25'),
     S('gen_scene26'),
     S('gen_scene27'),
-    S('gen_scene28'),
-    # Manga panels (news splash)
-    S('gen_scene29'),
+    S('gen_scene28', "Christmas Party/What's The Tea?"),
+    S('gen_scene29', "MANGA: PD's Monologue"),
     S('gen_scene30'),
     S('gen_scene31'),
     S('gen_scene32'),
     S('gen_scene33'),
-    # Manga panels
-    S('gen_scene34'),
+    S('gen_scene34', "MANGA: Kagu's Memories"),
     S('gen_scene35'),
     S('gen_scene36'),
     S('gen_scene37'),
     S('gen_scene38'),
     S('gen_scene39'),
-    # Manga panels
-    S('gen_scene40'),
+    S('gen_scene40', "MANGA: Kagu's Final Evolution"),
     S('gen_scene41'),
 ]
 len_scenes = len(scenes)

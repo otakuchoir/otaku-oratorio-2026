@@ -1,6 +1,6 @@
 
 label scene18:
-    play music bgm_007_mii_news__tomodachi_life_living_the_dream
+    # play music bgm_007_mii_news__tomodachi_life_living_the_dream
     window hide
     window auto
     $ y = 0.48

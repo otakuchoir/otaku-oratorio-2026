@@ -2,7 +2,7 @@
 label scene14: 
     scene bg campus
     # scene bg rooftop with dissolve
-    play music bgm_013_route_26_27__pokemon_anime
+    # play music bgm_013_route_26_27__pokemon_anime
     show jojo neutral at left, flip
     show takeshi angry 1:
         noflip

@@ -1,7 +1,7 @@
 
 label scene02:
     scene bg jersey city cityscape
-    play music bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one
+    # play music bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one
     "PLACEHOLDER manga panels: postcard memories (temporary background)"
     # > 2        EXT. CITY MONSTER ATTACK                                                  2
     # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
@@ -11,7 +11,7 @@ label scene02:
     announcer "Oh no! The monster is destroying the city! Can anybody stop this?"
 
     stop music fadeout 1
-    play music bgm_002_seajetter_kaito
+    # play music bgm_002_seajetter_kaito
     kitadani "Fear not, announcer! Courageous Kaito! Reporting for Duty!"
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
     kitadani "LET’S GO! CROWN BLASTER!"

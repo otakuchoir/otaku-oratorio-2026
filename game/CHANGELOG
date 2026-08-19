@@ -2,6 +2,7 @@
 - Add scene 24
 - Change scene 15 expression
 - Changed the dim effect when a character's not speaking. It should now look better with dark-skinned characters like Kohei, and with screen-darkening effects like scene 17-19's CRT scanlines.
+- Remove all music and sound effects, they're Ko's now
 
 ## 2026/08/17
 - Add scenes 17, 18, 19, 20, 21, 22, 23

@@ -1,6 +1,6 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene10:
-    play music bgm_010_ready_set_go__kirby_and_the_forgotten_land
+    # play music bgm_010_ready_set_go__kirby_and_the_forgotten_land
     scene bg lunar tarmac with dissolve:
         anchor (0.0,0.0)
         zoom 1.1

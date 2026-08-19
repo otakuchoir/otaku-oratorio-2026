@@ -1,7 +1,7 @@
 # scene 05 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=jojo&t=bart
 label scene05:
     scene bg campus
-    play music bgm_008_innocent_boy__free_iwatobi_swim_club
+    # play music bgm_008_innocent_boy__free_iwatobi_swim_club
 
     # slide onto the screen from the right
     show usagi happy 1 at offscreenright

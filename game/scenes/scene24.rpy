@@ -50,7 +50,7 @@ label scene24:
     show bart young angry 1
     kohei "Right, but if we’re thinking LOGICALLY, which one are you going with? Humans humaning or an angelic terror from on high? Come on now..."
     # > Holo-time ringtone
-    play sound sfx_pururin_ringtone
+    # play sound sfx_pururin_ringtone
     pause 2
     show kohei young kyaa
     show jojo young sad

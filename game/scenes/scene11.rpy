@@ -4,7 +4,7 @@ label scene11:
     call scene11.space_background
     with dissolve
 
-    play music bgm_010_ready_set_go__kirby_and_the_forgotten_land if_changed
+    # play music bgm_010_ready_set_go__kirby_and_the_forgotten_land if_changed
     show kelisha neutral at left, flip
     show takeshi neutral at center:
         xoffset 500
@@ -47,7 +47,7 @@ label scene11:
     kelisha "I know that is what you would do, that is why I was asking Sanders. But, Kitadani, what if the reason were one of religion? What if the New Jersians had some doctrine that forbade them from mining Ultima?"
     usagi "That’s highly unlikely... The New Jersians are a godless people."
     kelisha "It is a hypothetical question."
-    play music bgm_011_nightmares__full_metal_alchemist_brotherhood
+    # play music bgm_011_nightmares__full_metal_alchemist_brotherhood
     takeshi "The more likely reason is not religious, but environmental... No need for hypotheticals..."
     takeshi "Professor, the reason they protest is because they remember what happened 16 years ago."
     kelisha "You see... this is why I like the three of you. Straight to the point then..."
