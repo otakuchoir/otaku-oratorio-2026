@@ -57,7 +57,7 @@ scenes = [
     S('scene24', 'Flashback: Jojo Discovers Fast Travel'),
     S('scene25', 'Flashback: Training Battle'),
     S('scene26', 'Usagi and Linda, Takeshi and Elizabeth'),
-    S('gen_scene27'),
+    S('scene27', 'The Story of Princess Kaguya'),
     S('gen_scene28', "Christmas Party/What's The Tea?"),
     S('gen_scene29', "MANGA: PD's Monologue"),
     S('gen_scene30'),

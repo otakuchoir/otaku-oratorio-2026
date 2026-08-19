@@ -32,3 +32,9 @@ image side jojo serious 2 focus = Transform(flip(renpy.get_registered_image('joj
 # scene 26
 image side takeshi postgrad happy 1 focus = Transform(flip(renpy.get_registered_image('takeshi postgrad happy 1 focus')), crop=side_crop_takeshi)
 image side takeshi postgrad worried 1 focus = Transform(flip(renpy.get_registered_image('takeshi postgrad worried 1 focus')), crop=side_crop_takeshi)
+
+# scene 27
+image side bart eyebrow raised focus = Transform(flip(renpy.get_registered_image('bart eyebrow raised focus')), crop=side_crop_bart)
+image side bart worried focus = Transform(flip(renpy.get_registered_image('bart worried focus')), crop=side_crop_bart)
+image side bart angry 2 focus = Transform(flip(renpy.get_registered_image('bart angry 2 focus')), crop=side_crop_bart)
+image side jojo grin 2 focus = Transform(flip(renpy.get_registered_image('jojo grin 2 focus')), crop=side_crop_jojo)
