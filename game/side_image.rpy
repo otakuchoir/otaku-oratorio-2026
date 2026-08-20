@@ -38,3 +38,6 @@ image side bart eyebrow raised focus = Transform(flip(renpy.get_registered_image
 image side bart worried focus = Transform(flip(renpy.get_registered_image('bart worried focus')), crop=side_crop_bart)
 image side bart angry 2 focus = Transform(flip(renpy.get_registered_image('bart angry 2 focus')), crop=side_crop_bart)
 image side jojo grin 2 focus = Transform(flip(renpy.get_registered_image('jojo grin 2 focus')), crop=side_crop_jojo)
+
+# scene 30
+image side takeshi postgrad angry 1 focus = Transform(flip(renpy.get_registered_image('takeshi postgrad angry 1 focus')), crop=side_crop_takeshi)
