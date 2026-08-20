@@ -3,6 +3,7 @@ image bg black = Solid('#000')
 image bg white = Solid('#fff')
 image bg red = Solid('#f00')
 image bg beige = Solid("#e7dbc7")
+image bg neongreen = Solid("#0fff50")
 
 transform flip:
     xzoom -1.0
@@ -112,6 +113,10 @@ transform fx.xoffset(x=0):
     xoffset x
 transform fx.xpos(x=0):
     xpos x
+transform fx.yoffset(y=0):
+    yoffset y
+transform fx.ypos(y=0):
+    ypos y
 
 transform fx.ease_xoffset(dur=1.0, x0=0, x1=0):
     fx.xoffset(x0)
@@ -119,6 +124,12 @@ transform fx.ease_xoffset(dur=1.0, x0=0, x1=0):
 transform fx.ease_xpos(dur=1.0, x0=0, x1=0):
     fx.xpos(x0)
     ease dur fx.xpos(x1)
+transform fx.ease_yoffset(dur=1.0, y0=0, y1=0):
+    fx.yoffset(y0)
+    ease dur fx.yoffset(y1)
+transform fx.ease_ypos(dur=1.0, y0=880.0/1080.0, y1=880.0/1080.0):
+    fx.ypos(y0)
+    ease dur fx.ypos(y1)
 
 label fx.play_music_in_dev(f):
     $ if config.developer: renpy.music.play(f)
@@ -126,3 +137,11 @@ label fx.play_music_in_dev(f):
 label fx.play_music_if_changed_in_dev(f):
     $ if config.developer: renpy.music.play(f, if_changed=True)
     return
+
+transform fx.hover(dur=2.0, y0=0, dy=50):
+    yoffset y0
+    easein  dur/4 yoffset y0+dy
+    easeout dur/4 yoffset y0
+    easein  dur/4 yoffset y0-dy
+    easeout dur/4 yoffset y0
+    repeat

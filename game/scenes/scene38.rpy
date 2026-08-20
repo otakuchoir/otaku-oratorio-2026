@@ -8,6 +8,7 @@ label scene38:
     show jojo sad at left2, flip
     show usagi postgrad serious 1 at center
     show bart neutral at right
+    with fade
     # show sanders neutral at left
     # > 38       INT. DAY; THE HIGH CHURCH                                                38
     ### page 74 ###

@@ -22,13 +22,13 @@ label scene25:
     show jojo at fx.ease_xoffset(1, -1000, 0)
     show bart at fx.ease_xoffset(1, -1000, 0)
     show kohei at fx.ease_xoffset(1, -1000, 0)
-    wellington "Push team: Joseph Chen, you’re on auxillary. Bartholemew Barthandelus... Support. Kohei Kitadani Ace."
+    wellington "Push team: Joseph Chen, you’re on auxiliary. Bartholemew Barthandelus... Support. Kohei Kitadani Ace."
 
     call scene25.camera_defense_team
     wellington "Defenders: Elizabeth Newark-"
     ### page 47 ###
     princess "That’s Princess Elizabeth Newark, thank you."
-    wellington "......... Princess Elizabeth Newark, you’re on Auxillary, Robert Huxtable, you’re on support and Ace is Linda Hudson."
+    wellington "......... Princess Elizabeth Newark, you’re on Auxiliary, Robert Huxtable, you’re on support and Ace is Linda Hudson."
     princess "Okay cousin!!"
     linda "Hey gurl hey."
     huxtable "Ladies... maybe we should pay attention."
@@ -39,7 +39,7 @@ label scene25:
     computer "COMMENCE BATTLE SIMULATION"
 
     call scene25.camera_push_team
-    kohei "This is Ace unit Phoenix, Auxillary, jam communications. Let’s hit em hard and fast."
+    kohei "This is Ace unit Phoenix, Auxiliary, jam communications. Let’s hit em hard and fast."
     jojo "Carbunkle here, Copy copy."
 
     call scene25.camera_defense_team
@@ -64,10 +64,10 @@ label scene25:
 
     call scene25.camera_push_team
     bart "Looks like their ace is meeting us on the battlefield-"
-    kohei "With the auxillary not far behind, what are they thinking."
+    kohei "With the auxiliary not far behind, what are they thinking."
     ### page 49 ###
     jojo "Guys... I can’t move. I’ve been jammed. Nothing is working."
-    bart "They’re debuffing our auxillary, Ace, you’re gonna have to fight two at one time, and I’m picking up nano tech on their ace, 35%% attack buff."
+    bart "They’re debuffing our auxiliary, Ace, you’re gonna have to fight two at one time, and I’m picking up nano tech on their ace, 35%% attack buff."
     kohei "Oh they’re gonna need more than 35%%. Support, help out Aux- The Phoenix is going in."
     return
 
