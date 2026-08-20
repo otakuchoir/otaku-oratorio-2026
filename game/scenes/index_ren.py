@@ -62,12 +62,12 @@ scenes = [
     S('scene29', "MANGA/Flashback: PD's Monologue"),
     S('scene29b', "SONG: Floating Moon on the Water"),
     S('scene30', "Takeshi's Message"),
-    # TODO 31, 33, 35
+    # TODO 31, 33
     S('scene31', "Spying on Usagi; Kagu's Hopes and Dreams"),
     S('scene32', 'Flashback: Kohei on the Eden'),
-    S('gen_scene33', 'Kagu Remembers'),
+    S('scene33', 'Kagu Remembers'),
     S('scene34', "MANGA: Kagu's Memories"),
-    S('gen_scene35', "Confronting Barthandelus"),
+    S('scene35', "Confronting Barthandelus"),
     S('scene36', "Flashback: The Eden's Escorts"),
     S('scene37', "Flashback: The Eden vs. The Plant Destroyer"),
     S('scene38', "Barthandelus's Answer"),
