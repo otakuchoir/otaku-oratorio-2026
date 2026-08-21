@@ -64,6 +64,7 @@ scenes = [
     S('scene30', "Takeshi's Message"),
     # TODO 31, 33
     S('scene31', "Spying on Usagi; Kagu's Hopes and Dreams"),
+    S('scene31a', "SONG: Soto"),
     S('scene32', 'Flashback: Kohei on the Eden'),
     S('scene33', 'Kagu Remembers'),
     S('scene34', "MANGA: Kagu's Memories"),
@@ -74,5 +75,6 @@ scenes = [
     S('scene39', "The Last News Report"),
     S('scene40', "IRL: The Final Battle; MANGA: Kagu's Final Evolution"),
     S('scene41', 'MANGA: Road Trip'),
+    S('scene41a', 'SONG: welcome to the new world; CREDITS'),
 ]
 len_scenes = len(scenes)
