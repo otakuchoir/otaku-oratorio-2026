@@ -82,7 +82,6 @@ transform fx.stretch(x, y, flip=False):
 # transform fx.glitch_child:
 label fx.glitch_child:
     show child:
-        flip
         parallel:
             "child faceless focus"
             pause 0.05
@@ -138,10 +137,10 @@ label fx.play_music_if_changed_in_dev(f):
     $ if config.developer: renpy.music.play(f, if_changed=True)
     return
 
-transform fx.hover(dur=2.0, y0=0, dy=50):
+transform fx.hover(dur=2.0, loops=None, y0=0, dy=50):
     yoffset y0
     easein  dur/4 yoffset y0+dy
     easeout dur/4 yoffset y0
     easein  dur/4 yoffset y0-dy
     easeout dur/4 yoffset y0
-    repeat
+    repeat loops
