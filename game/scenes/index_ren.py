@@ -62,7 +62,6 @@ scenes = [
     S('scene29', "MANGA/Flashback: PD's Monologue"),
     S('scene29b', "SONG: Floating Moon on the Water"),
     S('scene30', "Takeshi's Message"),
-    # TODO 31, 33
     S('scene31', "Spying on Usagi; Kagu's Hopes and Dreams"),
     S('scene31a', "SONG: Soto"),
     S('scene32', 'Flashback: Kohei on the Eden'),
