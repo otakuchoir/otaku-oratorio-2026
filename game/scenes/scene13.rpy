@@ -81,15 +81,13 @@ label scene13:
     queen "That it’s all just population control and PROPAGANDA."
     show huxtable angry 2 at noflip, fx.hopN(n=2, y=100, stretch=(0.05,0.1))
     huxtable "Guards."
-    show train_security as guard1 behind queen:
-        matrixcolor BrightnessMatrix(-1)
+    show guard1 behind queen:
         center
         flip
         xoffset -1500
         linear 2 xoffset 0
         noflip
-    show train_security as guard2:
-        matrixcolor BrightnessMatrix(-1)
+    show guard2:
         right
         flip
         xoffset -1500
@@ -113,12 +111,12 @@ label scene13:
     show huxtable at noflip:
         ytextbox
         xpos 0.2
-    show train_security as guard1:
+    show guard1:
         flip
         xoffset 0
         pause 0.2 + 0.3# + 0.15
         easeout 3 xoffset 1000
-    show train_security as guard2:
+    show guard2:
         flip
         xoffset 0
         pause 0.2 + 0.3# + 0.15

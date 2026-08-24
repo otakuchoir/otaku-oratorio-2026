@@ -24,9 +24,9 @@ define reporter3 = Character("News Reporter 3", color="#aaaaaa", image="reporter
 define king = Character("King", color="#aa00ff", image="king")
 define train_security = Character("Train Security", color="#cccc00", image="train_security")
 define kitadani = Character("Kitadani", color="#00bb00", image="kohei")
-define gunner = Character("Gunner Chief")
-define officer = Character("First Officer")
-define navigator = Character("Navigation Chief")
+define gunner = Character("Gunner Chief", image="gunner")
+define officer = Character("First Officer", image="officer")
+define navigator = Character("Navigation Chief", image="navigator")
 
 # lyrics use nvl mode
 define title = Character("Title", what_italic=True, kind=nvl)

@@ -287,3 +287,15 @@ image usagi worried = Transform(dim(renpy.get_registered_image('usagi worried fo
 image usagi young faceless = Transform(dim(renpy.get_registered_image('usagi young faceless focus')))
 image usagi young happy = Transform(dim(renpy.get_registered_image('usagi young happy focus')))
 image usagi young sleepy = Transform(dim(renpy.get_registered_image('usagi young sleepy focus')))
+
+# silhouette sprites.
+# scene 13
+image guard1 = Transform(renpy.get_registered_image('train_security focus'), matrixcolor=BrightnessMatrix(-1.0))
+image guard2 = Transform(renpy.get_registered_image('train_security focus'), matrixcolor=BrightnessMatrix(-1.0))
+# scene 17
+image gunner = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-1.0))
+image gunner focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-1.0))
+image officer = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-1.0))
+image officer focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-1.0))
+image navigator = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-1.0))
+image navigator focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-1.0))
