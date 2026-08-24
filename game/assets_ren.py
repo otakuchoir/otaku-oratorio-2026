@@ -106,20 +106,16 @@ for f in fs:
 
 # Load a list of other assets with less predictible naming patterns.
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')
-load_image('bg scene16a nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16A-noforeground.png')
-load_image('bg scene16b nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16B-noforeground.png')
-load_image('bg scene16c nofg', 'assets/Scene 16/Scene 16 - no foreground/Scene16C-noforeground.png')
-load_image('bg scene16a', 'assets/Scene 16/Scene16A.png')
-load_image('bg scene16b', 'assets/Scene 16/Scene16B.png')
-load_image('bg scene16c', 'assets/Scene 16/Scene16C.png')
-load_image('bg scene13a', 'assets/Scene 13 - NJ blows up/scene13-1.png')
-load_image('bg scene13b', 'assets/Scene 13 - NJ blows up/scene13-2.png')
-load_image('bg scene13c', 'assets/Scene 13 - NJ blows up/scene13-3.png')
-load_image('bg scene13d', 'assets/Scene 13 - NJ blows up/scene13-4.png')
-load_image('bg scene19a', 'assets/Storyboards/storyboard-19-1.png')
-load_image('bg scene19b', 'assets/Storyboards/storyboard-19-2.png')
-load_image('bg scene19c', 'assets/Storyboards/storyboard-19-3.png')
-load_image('bg scene19d', 'assets/Storyboards/storyboard-19-4.png')
+for i, c in enumerate('ABC'):
+    i += 1
+    load_image(f'bg scene16 {i}', f'assets/Scene 16/Scene16{c}.png')
+    load_image(f'bg scene16 {i} nofg', f'assets/Scene 16/Scene 16 - no foreground/Scene16{c}-noforeground.png')
+for i in range(1, 4+1):
+    load_image(f'bg scene13 {i}', f'assets/Scene 13 - NJ blows up/scene13-{i}.png')
+for i in range(1, 4+1):
+    load_image(f'bg scene19 {i}', f'assets/Storyboards/storyboard-19-{i}.png')
+for i in range(1, 9+1):
+    load_image(f'bg scene40 {i}', f'assets/Scene 40 /judgement-{i}.png')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')

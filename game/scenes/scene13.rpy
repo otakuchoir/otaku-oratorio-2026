@@ -189,7 +189,7 @@ label scene13:
     # manga panels: the destruction of new jersey
     scene bg white with dissolve
     show bg white as bg2 behind bg
-    show bg scene13a:
+    show bg scene13 1:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
         zoom 0.8
@@ -199,20 +199,20 @@ label scene13:
     window hide
     window auto
     pause
-    show bg scene13b with dissolve:
+    show bg scene13 2 with dissolve:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
         zoom 0.8
         linear 10 zoom 1.0
     pause
-    show bg scene13c with dissolve:
+    show bg scene13 3 with dissolve:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
         zoom 0.8
         linear 10 zoom 1.0
     pause
     show bg black as bg2
-    show bg scene13d with dissolve:
+    show bg scene13 4 with dissolve:
         anchor (0.5, 0.5)
         pos (0.55, 0.45)
         zoom 1.1

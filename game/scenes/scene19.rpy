@@ -122,13 +122,13 @@ label scene19:
     window hide
     window auto
     scene 
-    show bg scene19a
+    show bg scene19 1
     pause
-    show bg scene19b
+    show bg scene19 2
     pause
-    show bg scene19c
+    show bg scene19 3
     pause
-    show bg scene19d
+    show bg scene19 4
     pause
     #destroyer "Behold, I am come, I am the Beginning, And the End."
     #officer "Captain!"

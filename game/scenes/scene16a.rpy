@@ -3,16 +3,15 @@ label scene16a:
     # too much clutter with sprites after this, show just the manga panel...?
     # we have to show at least the speaker, though!
     # renpy has a nice solution to that: side images
-    scene bg scene16a nofg with dissolve
+    scene bg scene16 1 nofg with dissolve
     pause
-    show bg scene16a with dissolve
+    show bg scene16 1 with dissolve
 
     # no characters are showing - the attributes here control the side images
     takeshi postgrad neutral "The readings align... This is the wave pattern... I’m pinging the squad."
     # > A deafening sound rings over comms, this isn’t a ping. It’s
     # > something else.
-    "PLACEHOLDER sfx" with vpunch
-    usagi postgrad shock "Ahhhh what the..."
+    usagi postgrad shock "Ahhhh what the..." with vpunch
     sanders postgrad angry 3 "UGHHH MY HEAD.... Stop it WILLIAMSON"
     # > The ringing stops. The crystal stucture is glowing.
     takeshi postgrad panic 1 "It wasn’t me... I don’t know what..."
@@ -25,7 +24,7 @@ label scene16a:
     # > until right now.
     # > The crystal’s glowing intensifies and reveals the shaped of a
     # > human inside.
-    show bg scene16b with dissolve
+    show bg scene16 2 with dissolve
     sanders postgrad panic "Is that... A person???"
     # > Usagi moves forward.
     takeshi postgrad worried 2 "The planet destroyer."
@@ -35,7 +34,7 @@ label scene16a:
     window hide 
     window auto
     pause 0
-    show bg scene16c with dissolve
+    show bg scene16 3 with dissolve
     pause 1
     takeshi postgrad panic 2 "No! Usagi, don’t!"
     show bg black # deliberately no transition
@@ -57,7 +56,7 @@ label scene16a:
     hide child
     pause 0.5
     # show
-    show bg scene16c with dissolve
+    show bg scene16 3 with dissolve
     bart scheming "At last!"
 
     ### page 32 ###
