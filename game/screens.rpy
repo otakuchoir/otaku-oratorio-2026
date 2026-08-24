@@ -385,7 +385,7 @@ screen main_menu():
             #text "[config.version]":
             #    style "main_menu_title"
 
-            textbutton "[last_updated]":
+            textbutton "{color=#000}Updated [last_updated]{/color}":
                 style "main_menu_version"
                 action ShowMenu('changelog')
 
