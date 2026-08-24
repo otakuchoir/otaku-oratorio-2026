@@ -299,3 +299,75 @@ image officer = Transform(renpy.get_registered_image('huxtable faceless'), matri
 image officer focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-1.0))
 image navigator = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-1.0))
 image navigator focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-1.0))
+
+# mech sprites. until real sprites are ready, use a silhouette of the pilot as a placeholder.
+transform mech_placeholder:
+    zoom 1.5
+    matrixcolor BrightnessMatrix(-0.75)
+image usagi mech:
+    "usagi postgrad neutral focus"
+    mech_placeholder
+image takeshi mech:
+    "takeshi postgrad neutral focus"
+    mech_placeholder
+image sanders mech:
+    "sanders postgrad neutral focus"
+    mech_placeholder
+image linda mech:
+    "linda neutral focus"
+    mech_placeholder
+image kohei mech:
+    "kohei neutral focus"
+    mech_placeholder
+image queen mech:
+    "queen neutral focus"
+    mech_placeholder
+image bart mech:
+    "bart neutral focus"
+    mech_placeholder
+image jojo mech:
+    "jojo neutral focus"
+    mech_placeholder
+image huxtable mech:
+    "huxtable neutral focus"
+    mech_placeholder
+# run after images are defined
+init 501 python:
+    import dataclasses
+    @dataclasses.dataclass(frozen=True)
+    class MechTemplate:
+        tag: str
+        _dim: (int, int)
+        _pilot: (int, int)
+        pilot_zoom: float = 0.5
+
+        @property
+        def dim(self):
+            return (int(self._dim[0]), int(self._dim[1]))
+        @property
+        def pilot(self):
+            return (int(self._pilot[0]), int(self._pilot[1]))
+
+    mechtemplates = [
+        MechTemplate('usagi', (450*1.5, 316*1.5), (250, 200)),
+        MechTemplate('takeshi', (507*1.5, 400*1.5), (250, 200)),
+        MechTemplate('sanders', (450*1.5, 450*1.5), (225, 250)),
+        MechTemplate('linda', (265*1.5, 283*1.5), (100, 200)),
+        MechTemplate('kohei', (503*1.5, 317*1.5), (250, 200)),
+        MechTemplate('queen', (717*1.5, 474*1.5), (350, 300)),
+        MechTemplate('bart', (308*1.5, 475*1.5), (130, 400)),
+        MechTemplate('jojo', (520*1.5, 340*1.5), (250, 200)),
+        MechTemplate('huxtable', (498*1.5, 381*1.5), (250, 300)),
+    ]
+    for img in list(renpy.list_images()):
+        for m in mechtemplates:
+            if img.startswith(m.tag) and not 'mech' in img:
+                name = f"{img} mech"
+                # renpy.image(name, img)
+                renpy.image(name, anchor_sprite(Composite(
+                    m.dim,
+                    (0, 0), f"{m.tag} mech",
+                    m.pilot, Transform(img, zoom=m.pilot_zoom),
+                )))
+                # print(name)
+    # print(mechtemplates)
