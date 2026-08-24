@@ -29,7 +29,7 @@ label scene38:
     show bart sideeye
     pause 0.5
     show bg at fx.ease_xpos(dur, x0=0.45, x1=0.50)
-    show bart neutral at flip, fx.ease_xpos(dur, x0=0.83, x1=0.23)
+    show bart neutral at flip, fx.ease_xpos(dur, x0=0.83, x1=0.33)
     show sanders postgrad angry 1 at right2, fx.ease_xpos(dur, x0=1.27, x1=0.67)
     show usagi at fx.ease_xoffset(dur, x1=-800)
     show child at fx.ease_xoffset(dur, x1=-800)
@@ -37,37 +37,26 @@ label scene38:
     bart "...Speak of the devil."
     show bart grin 1
     sanders "Barthandelus, I am here by order of the King. You are to come with me. You are under arrest for tampering with Crown Military assets and trespassing on Crown Military facilities."
-    show bart grin 2 at flip:
-        pause 0.5
-        fx.ease_xoffset(1, x1=1500)
+
+    show bart grin 2
+    show bart grin 2 focus at left2, flip as holobart:
+        alpha 0.7
     show sanders:
-        pause 1
-        flip
-    bart "Unfortunately I won’t be able to come with you, commander Sanders."
-    $ dur = 1
-    show bg:
-        zoom 1.1
-        linear 1 zoom 1.0
-        # parallel:
-            # fx.ease_xpos(dur, x0=0.50, x1=0.55)
-    show sanders postgrad shock:
         parallel:
-            fx.ease_xoffset(dur, x1=-700)
+            fx.ease_xpos(dur=0.7, x0=0.67, x1=0.23)
         parallel:
-            zoom 1
-            linear 1 zoom 0.5
-    show bart grin 2 at right2, noflip:
-        zoom 1.5
-        fx.ease_xoffset(dur, x0=700)
-    bart "You see... I’m currently aboard The Alexander. I will have a front row seat to the end of the world."
-    show bart at flip:
-        parallel:
-            fx.ease_xpos(3, x0=0.6, x1=1.3)
-        parallel:
-            yoffset 0
             pause 0.5
-            easeout 2.5 yoffset -1000
-        parallel:
-            hvibrate(n=100)
-    "PLACEHOLDER kaiju bart - waiting for mech assets. Also, very unsure about how I've staged this. Does bart retreat to his mech at the last minute (like I've animated here), or was he in his mech this whole time, or something else?"
+            "sanders postgrad shock"
+            pause 0.2
+            flip
+    bart "Unfortunately I won’t be able to come with you, commander Sanders."
+    show bart at noflip as holobart
+    show bart at noflip:
+        alpha 1.0
+        linear 1.0 alpha 0.0
+    bart "You see... I’m currently aboard The Alexander. I will have a front row seat to the end of the world."
+    show bart at noflip as holobart:
+        alpha 0.7
+        linear 1.0 alpha 0.0
+    "Barthandelus's hologram fades."
     return
