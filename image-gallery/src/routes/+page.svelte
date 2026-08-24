@@ -3,7 +3,7 @@
 
 	const imports = {
 		...import.meta.glob('/assets/Character Sprites/*.{png,jpg,gif}', { eager: true }),
-		...import.meta.glob('/assets/backgrounds/*.{png,jpg,gif}', { eager: true }),
+		//...import.meta.glob('/assets/backgrounds/*.{png,jpg,gif}', { eager: true }),
 	}
 	const images = Object.entries(imports).map(([path, module_]) => {
 		const url = (module_ as any).default as string;
@@ -18,10 +18,10 @@
 				attrs = attrs.slice(1);
 			}
 		}
-		else if (path.startsWith('/assets/backgrounds')) {
-			tag = 'bg'
-			attrs = basename.split('-')
-		}
+		// else if (path.startsWith('/assets/backgrounds')) {
+		// 	tag = 'bg'
+		// 	attrs = basename.split('-')
+		// }
 		else {
 			throw new Error('unknown asset path: '+path)
 		}
@@ -82,7 +82,7 @@
 	<a class="mx-1 inline-block rounded bg-red-200 p-2" href={`?`}>
 		reset
 	</a>
-    <p>click an image to copy its ren'py code to the clipboard.</p>
+    <p>click an image to copy its ren'py code to the clipboard. <a target="_blank" href="https://drive.google.com/drive/folders/1z-uWiRzeMPX7-zC9o1mTezrn6EUNmGcA">source</a></p>
 </header>
 
 <ul>
