@@ -1,6 +1,7 @@
 label scene09a: 
     scene bg black
     # https://genius.com/Genius-english-translations-dali-moonlight-legend-english-translation-lyrics
+    # https://drive.google.com/drive/folders/1DN1PKkUOmgE0XtfsA1OPBGLHYPE2UE14
     title "Moonlight Densetsu (Moonlight Legend)"
     verse1 "I’m sorry, it’s hard for me to say\nAlthough it’s easy to say it in my dreams\nMy thought circuit is about to break down\nYou know right now, I want you with me\nIt has me nearly in tears, this moonlight\nCan’t even call you because it’s midnight\nBut my heart is sincere, what can I do?\nMy heart is a kaleidoscope"
     prechorus "The moonlight guides us to our destination dear\nTime and again, we’ll find each other"
