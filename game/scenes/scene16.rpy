@@ -139,6 +139,7 @@ label scene16:
 
     # > They have happened upon a large crystal structure.
     usagi "What is that..."
+    "PLACEHOLDER song: ragnarok"
     # everyone walks toward the crystal. first usagi, then the rest of the trio...
     $ x0 = -0.3
     $ x1 = 1.3

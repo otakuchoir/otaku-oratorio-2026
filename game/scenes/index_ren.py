@@ -25,7 +25,6 @@ scenes = [
     S('scene03a', 'IRL: Opening Transition; SONG: Butter-Fly'),
     S('scene04',  'Academy Classroom'),
     S('scene05',  'School Grounds, Meet Barthandelus'),
-    S('scene05a', 'SONG: Ragnarok'),
     S('scene06',  'Train Station'),
     S('scene06a', 'SONG: Hana Ni Natte'),
     S('scene07',  'Classroom scene 1'),
