@@ -1,14 +1,14 @@
-
+# https://otaku-oratorio-2026-gallery.netlify.app/?t=bart&t=jojo&t=kelisha&t=kohei&t=linda
+image pd = 'assets/Character Designs/planet_destroyer_adult.png'
 label scene29:
-    scene bg briefing room at flip
-    show text "{color=#fff}Scene \"gen_scene29\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.493990\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show kohei serious 1 at center
-    show bart neutral at left2
-    show jojo neutral at right2
-    show kelisha neutral at left
-    show linda neutral at right
+    scene bg black hole
+    show pd:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        ysize 1080
+        fit "contain"
+    with fade
     "PLACEHOLDER manga panels: destroyer's monologue"
-    "TODO wait for manga panels (or storyboard) before animating this scene. just in case it covers more than I expect - no duplicate work!"
     # > 29       INT. NIGHT; CROWN FACILITY                                               29
     # > Everyone is gathered to review footage captured of the Planet
     # > Destroyer from earlier in the evening:
@@ -18,37 +18,67 @@ label scene29:
     destroyer "There is no escape from what comes next. I offer this world another chance, a new beginning, free of the hands that brought it to ruin."
     destroyer "I offer your extinction. Your time is short. Make amends. Say goodbye."
     destroyer "I will return soon to administer your reset. I am Alpha and Omega, the beginning and the end, the first and the last."
+
+    scene bg briefing room
+    show kohei worried at center
+    show jojo sad at left2, flip
+    show bart peaceful at left, flip
+    show linda worried at right2
+    show kelisha worried at right
+    with fade
     kohei "...What did we do to deserve this...?"
-    bart "Koehi, you know EXACTLY what is going on here."
-    # > A beat
+    bart "Kohei, you know EXACTLY what is going on here."
     jojo "So then... the church was right?"
+    # > A beat
     bart "There’s nothing we can do. It is written in scripture."
     jojo "The extraction of Ultima materia... the mining..."
     # > (MORE)
     ### page 59 ###
-    jojo "the resonance produced when the ore is struck... It all connects to this... being?"
-    # > A long silence...
+    jojo "The resonance produced when the ore is struck... It all connects to this... being?"
     bart "An angel... No, a Weapon, on the cosmic scale. When the planet cries out, the heavens answer."
     bart "God sends the only one who can stop us from reaching out to them, to strike us down time and again..."
-    bart "They send the Great Resetter... Sabik."
+    bart @ happy "They send the Great Resetter... Sabik."
+    pause
+
+    # > A long silence...
+    show kohei serious 1
     kohei "Well... we fight."
+    show bart shock
     bart "You can’t fight it."
     jojo "I’m looking at this thing’s composition... mass... wave output... I don’t think we have the firepower to fight this thing... It’s made of pure Ultima."
+    show bart angry 2
     bart "It is absolute Blasphemy to even SUGGEST-"
-    kohei "Well what should we do Bart? Pray?"
+    kohei @ panic 1 "Well what should we do Bart? Pray?"
+
+    show kelisha serious
+    show bart shock
     kelisha "The decision has already been made. Joseph, your calculations and speculations are incorrect. The Ultima Cannon can make easy work of this thing. This is direct from The Crown. We just need an ace that can-"
+    show linda neutral
     linda "Then that means I’m going up-"
+    show kohei at flip
     kohei "Like hell you are. Kelisha, I’ll do it."
     ### page 60 ###
-    linda "I’m the better ace, by far."
-    kelisha "Linda is the better Ace.... That’s why The Crown has chosen you to go Kohei.... But not to worry, all calculations point to this being a success. When that thing comes back, we will strike."
+    linda @ serious "I’m the better ace, by far."
+    show linda shock
+    show kohei panic 1
+    kelisha "Linda is the better Ace.... That’s why The Crown has chosen you to go, Kohei...."
+    show linda worried
+    show kohei worried
+    kelisha "But not to worry, all calculations point to this being a success. When that thing comes back, we will strike."
+    show bart anxious
     bart "You can’t be serious."
     jojo "Have you seen the wave outputs on this thing? It’s over 9000. The Ultima Cannon, even at maximum power, only just scratches 2200-"
-    kelisha "I’m just relaying the message Joseph."
+    show kelisha worried
+    kelisha "I’m just relaying the message, Joseph."
+    show bart angry 2
     bart "No... This is a setup."
-    # > Everyone sits in an uneasy silence. They know the truth.
+    show bart angry 1
     kohei "Bart... Have some faith! The Crown... We have the firepower to stop this thing. Easy."
+    # > Everyone sits in an uneasy silence. They know the truth.
+    "Everyone sits in an uneasy silence. They know the truth."
+    show linda neutral
     linda "I really am the better ace, though. Let me-"
-    # > Moon Floating Song
+    show kohei serious 2
     kohei "Don’t try to save the world Linda..."
+    # > Moon Floating Song
     return

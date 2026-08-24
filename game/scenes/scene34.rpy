@@ -1,11 +1,14 @@
-
+# https://otaku-oratorio-2026-gallery.netlify.app/?t=child&t=usagi+postgrad
 label scene34:
     scene bg black hole
-    show text "{color=#fff}Scene \"gen_scene34\" automatically generated from \"Otaku Oratorio 2 Script FINISHED.pdf\"\nat \"2026-08-06 02:33:50.494381\" by scriptpdf-to-renpy.py (AI-free)\nThis scene still needs human editing. It is not done. Expect mistakes.{/color}" at top 
-    show child neutral at center
-    show usagi neutral at left2
+    show child sad at center:
+        ypos ypos_textbox-0.2
+        parallel:
+            fx.ease_xoffset(dur=1, x0=-400)
+        parallel:
+            fx.ease_yoffset(dur=1, y0=800)
+        fx.hover(dur=1.9)
     "PLACEHOLDER manga panels: kagu's memories"
-    "TODO wait for manga panels (or storyboard) before animating this scene. just in case it covers more than I expect - no duplicate work!"
     # > 34       EXT. SPACE                                                               34
     # > Kagu searches their memory and sees a crystal floating
     # > through the cosmos, then various scenes of Kagu destroying
@@ -13,21 +16,80 @@ label scene34:
     # > and then again Earth in 2100, the great cataclysm.
     kagu "I’m responsible for this. I... What AM I really. Past lives? Regeneration..."
     kagu "I’m a monster..."
+    show usagi postgrad worried at right:
+        ypos ypos_textbox-0.1
+        parallel:
+            fx.ease_xoffset(dur=2, x0=-400)
+        parallel:
+            fx.ease_yoffset(dur=2, y0=800)
+        fx.hover(dur=2.3)
     # > She has followed Kagu in her own mech.
     usagi "Kagu!"
+    show child:
+        flip
+        fx.hover(dur=1.9)
     kagu "Usagi, I-"
-    usagi "It’s like I said, you can always change who you were born to be. I have always believed that, trust me. I know how it feels to be labeled. DON’T label yourself. YOU are not a monster."
+    usagi "It’s like I said, you can always change who you were born to be. I have always believed that, trust me."
+    usagi "I know how it feels to be labeled. DON’T label yourself. YOU are not a monster."
+    show child:
+        noflip
+        fx.hover(dur=1.9)
     kagu "I only exist for one purpose."
+    show usagi postgrad cry 1:
+        parallel:
+            fx.hover(dur=2.3)
+        parallel:
+            fx.ease_xpos(dur=1.5, x0=0.83, x1=0.16)
+        parallel:
+            noflip
+            pause 0.75
+            flip
     usagi "No! That’s not true."
     kagu "It IS true. I have seen my past lives."
     # > (MORE)
     ### page 69 ###
-    kagu "All of them.It’s all so clear now. I remember every-little-detail. I remember that I responded to your planet’s cries. I doomed the humans to their fate, and then I waited for the day of the eclipse to come back. I-"
+    kagu "All of them. It’s all so clear now. I remember every-little-detail. I remember that I responded to your planet’s cries. I doomed the humans to their fate, and then I waited for the day of the eclipse to come back. I-"
+    show child neutral:
+        parallel:
+            fx.hover(dur=1.9)
+        parallel:
+            noflip
+            pause 0.3
+            flip
+            pause 0.3
+            repeat 3
+    show usagi postgrad worried
     usagi "Kagu?..... Kagu? What’s wrong."
+    show child confused
     kagu "I remember every single detail. So why is this... different?"
     usagi "What? What’s different?"
+    show child:
+        noflip
+        fx.hover(dur=1.9)
     kagu "The alignment of your Star, your Earth and your Earth’s moon."
     usagi "It has been almost 20 years... You’re a cosmic being, surely you know that these things move-"
+    show child neutral
+    kagu "It has been 19 year, 237 days, 16 hours, and 22 minutes. The positioning of everything is off."
+    show child serious 
+    kagu "No... NO!" 
+    show child:
+        flip
+        parallel:
+            fx.ease_xoffset(dur=1.0, x1=-100)
+            fx.ease_xoffset(dur=1.0, x0=-100, x1=200)
+        parallel:
+            ease 1.0 yoffset -200
+            fx.ease_yoffset(dur=1.0, y0=-200, y1=800)
+    show usagi:
+        pause 1.0
+        flip
+        parallel:
+            fx.ease_xoffset(dur=1.0, x1=-100)
+            fx.ease_xoffset(dur=1.0, x0=-100, x1=200)
+        parallel:
+            ease 1.0 yoffset -200
+            fx.ease_yoffset(dur=1.0, y0=-200, y1=800)
+    pause 3
+
     # > Kagu flies off toward the Moon. Usagi follows.
-    kagu "It has been 19 year, 237 days, 16 hours, and 22 minutes. The positioning of everything is off. No... NO!"
     return
