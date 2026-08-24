@@ -28,6 +28,16 @@ define gunner = Character("Gunner Chief")
 define officer = Character("First Officer")
 define navigator = Character("Navigation Chief")
 
+# lyrics use nvl mode
+define title = Character("Title", what_italic=True, kind=nvl)
+define lyrics = Character("Lyrics", what_italic=True, kind=nvl)
+define verse1 = Character("Verse 1", what_italic=True, kind=nvl)
+define prechorus = Character("Pre-Chorus", what_italic=True, kind=nvl)
+define chorus = Character("Chorus", what_italic=True, kind=nvl)
+define verse2 = Character("Verse 2", what_italic=True, kind=nvl)
+define verse3 = Character("Verse 3", what_italic=True, kind=nvl)
+define bridge = Character("Bridge", what_italic=True, kind=nvl)
+
 # the background is not a character, but pretending it is is the easiest way to change backgrounds mid-scene
 define bg = Character(image="bg")
 
