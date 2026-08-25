@@ -1,5 +1,6 @@
 
 label scene41a:
-    scene black
-    "PLACEHOLDER song: welcome to the new world; CREDITS"
+    scene bg black
+    show text "{color=#fff}{size=160}CREDITS{/size}{/color}" at truecenter with dissolve
+    "PLACEHOLDER song: welcome to the new world; manga panels: epilogue; CREDITS"
     return
