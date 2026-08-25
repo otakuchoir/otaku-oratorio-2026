@@ -6,13 +6,13 @@ label scene25:
         pos (0.5, 0.5)
     "TODO is this where we use the moba training map? If so, do I want character sprites (like most scenes), or animated dots on the map (like a game minimap), or both? Until I answer those fundamentals, this scene is deliberately barebones"
     # PUSH TEAM
-    show jojo young neutral     at left,   fx.xoffset(-1000), flip
-    show bart young neutral     at left2,  fx.xoffset(-1000), flip
-    show kohei young serious 1  at center, fx.xoffset(-1000), flip
+    show kohei mech young serious 1  at center, fx.xoffset(-1000), flip
+    show bart mech young neutral     at left2,  fx.xoffset(-1000), flip
+    show jojo mech young neutral     at left,   fx.xoffset(-1000), flip
     # DEFENDERS
-    show princess neutral       at right,  fx.xoffset(1000), noflip
-    show huxtable young neutral at right2, fx.xoffset(1000), noflip 
-    show linda young neutral    at center, fx.xoffset(1000), noflip 
+    show princess mech neutral       at right,  fx.xoffset(1000), noflip
+    show huxtable mech young neutral at right2, fx.xoffset(1000), noflip 
+    show linda mech young neutral    at center, fx.xoffset(1000), noflip 
 
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
     wellington "Today’s training is a final lane push on the enemy base."

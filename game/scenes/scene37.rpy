@@ -1,29 +1,29 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=bart&t=linda&t=jojo&t=queen
 label scene37:
     scene bg black hole
-    show queen neutral at center, fx.hover(dur=2.3, y0=-300)
-    show bart neutral at right, fx.hover(dur=2.9, y0=-300)
-    show jojo neutral at right2, fx.hover(dur=1.9, y0=-50)
-    show linda worried at left2, fx.hover(dur=1.7, y0=-50)
+    show queen mech neutral at center, fx.hover(dur=2.3, y0=-300)
+    show bart mech neutral at right, fx.hover(dur=2.9, y0=-300)
+    show jojo mech neutral at right2, fx.hover(dur=1.9, y0=-50)
+    show linda mech worried at left2, fx.hover(dur=1.7, y0=-50)
 
     # > 37       EXT. SPACE                                                               37
     queen "Not gonna lie, Bart... I never thought you’d partake in insubordination like this."
-    bart @ peaceful "Technically I’m not with the Crown Military anymore, so this is me fulfilling my papal duties."
-    show jojo sad
+    bart @ mech peaceful "Technically I’m not with the Crown Military anymore, so this is me fulfilling my papal duties."
+    show jojo mech sad
     jojo "Still... you could get in HUGE trouble along with the rest of us. The penatly for this kind of defiance is death."
-    bart @ worried "I know what I’m getting myself into, and I know what I believe... but they can’t just take our best friend and throw him away like this, right?"
+    bart @ mech worried "I know what I’m getting myself into, and I know what I believe... but they can’t just take our best friend and throw him away like this, right?"
     linda "Bart... Thank you."
-    show jojo serious
+    show jojo mech serious
     jojo "I have eyes on the Eden. Eden, this is auxiliary unit Carbunkle, do you read me?"
     ### page 73 ###
-    show queen serious 1
+    show queen mech serious 1
     queen "No use, the comms are jammed... But why?"
-    show bart worried
+    show bart mech worried
     bart "They really sent him on a one way trip, huh..."
     jojo "What’s that? Scanning the space... The crystal is opening. It’s the Planet Destroyer."
     linda "We’re almost there."
     jojo "The Ultima Cannon is charging, it’s about to fire."
-    show linda serious
+    show linda mech serious
     linda "Shiva, moving in."
     queen "Diabolos, right behind you."
 
@@ -34,19 +34,19 @@ label scene37:
         alpha 0.7
         easein 5 alpha 0.0
     with vpunch
-    show linda worried
-    show queen worried
-    show bart worried
-    show jojo sad
+    show linda mech worried
+    show queen mech worried
+    show bart mech worried
+    show jojo mech sad
     "The ultima cannon fires."
     show bg neongreen as bg2:
         alpha 0.8
         easein 5 alpha 0.3
     with vpunch
-    show linda scared
-    show queen serious 2
-    show bart anxious
-    show jojo crying
+    show linda mech scared
+    show queen mech serious 2
+    show bart mech anxious
+    show jojo mech crying
     "The Planet Destroyer counter-attacks, and the Eden explodes."
     bart "NO!"
     linda "NO!"

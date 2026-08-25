@@ -25,28 +25,28 @@ label scene16:
     computer "Approaching the drop zone. Prepare for landing."
     $ y0 = -0.1
     $ x0 = 0.5
-    show sanders postgrad neutral:
+    show sanders mech postgrad neutral:
         ypos y0 xpos x0
         easein 3 ytextbox xpos 0.65
-    show takeshi postgrad neutral:
+    show takeshi mech postgrad neutral:
         ypos y0 xpos x0
         flip
         pause 0.3
         easein 3 ytextbox xpos 0.15
-    show jojo neutral:
+    show jojo mech neutral:
         ypos y0 xpos x0
         pause 0.6
         easein 3 ytextbox xpos 1.3
-    show usagi postgrad neutral:
+    show usagi mech postgrad neutral:
         ypos y0 xpos x0
         pause 1
         easein 3 ytextbox xpos 0.35
-    show bart neutral:
+    show bart mech neutral:
         ypos y0 xpos x0
         flip
         pause 1.4
         easein 3 ytextbox xpos -0.3
-    show kelisha neutral:
+    show kelisha mech neutral:
         ypos y0 xpos x0
         pause 2
         easein 3 ytextbox xpos 1.3
@@ -59,37 +59,37 @@ label scene16:
     #show jojo at offscreenleft, flip
     #with MoveTransition(3, time_warp=_warper.easein)
     usagi "Internal loop comms activated. Proximity mode activated. We’re free to speak..."
-    show usagi postgrad serious 1 at left2, flip
+    show usagi mech postgrad serious 1 at left2, flip
     usagi "That doesn’t mean get on my nerves."
 
-    show sanders postgrad angry 2
+    show sanders mech postgrad angry 2
     sanders "Yo, what’s your problem."
     usagi "You’re already getting on my nerves."
 
     # > Professor Jojo approaches.
-    show jojo at offscreenright
+    show jojo mech neutral at offscreenright
     pause 0
-    show jojo neutral at right, noflip
+    show jojo at right, noflip
     with ease
     takeshi "It has been months... we haven’t talked about it."
 
     # > Jojo walks off. Kelisha passes.
-    show sanders postgrad angry 1 at flip
+    show sanders mech postgrad angry 1 at flip
     jojo @ serious "We’re moving out. Do not lag behind. If you find the source of the pattern, ping your location to the rest of the squad."
-    show kelisha at offscreenright
+    show kelisha mech worried at offscreenright
     pause 0
     show jojo at offscreenright, flip
-    show kelisha worried at right
+    show kelisha at right
     with ease
 
     # > Kelisha moves on.
-    show usagi postgrad neutral
+    show usagi mech postgrad neutral
     kelisha "Now is not the time. Remember what I told you during the New Jersey mission."
     show kelisha at offscreenright, flip
     with ease
     show sanders at noflip
-    show takeshi postgrad annoyed
-    show usagi postgrad serious 1
+    show takeshi mech postgrad annoyed
+    show usagi mech postgrad serious 1
     sanders "That’s what this is about? That’s why we’ve barely spoken since midterms? Because you suddenly want to care about social justice or something?"
     takeshi "Sanders... stop."
     # > The three begin their search for the energy pattern.
@@ -97,7 +97,7 @@ label scene16:
 
     sanders "No... I just don’t get it."
     ### page 30 ###
-    show takeshi postgrad angry 1
+    show takeshi mech postgrad angry 1
     takeshi "Let it go Sanders..."
 
     sanders "No because... Kitadani. We’re not kids anymore. Haven’t been for a long time."
@@ -109,13 +109,13 @@ label scene16:
     sanders "For the greater good, dammit. I don’t know why you act like you don’t understand this."
 
     show usagi at center with ease
-    show usagi postgrad serious 2
+    show usagi mech postgrad serious 2
     usagi "I don’t know why you can’t imagine a world where “corrective action” isn’t the default when someone disagrees with you."
     usagi "I don’t understand how, in all the time you’ve been around a Colony Born like Takeshi, you’ve somehow held on to this ridiculous Earth born nobility."
-    show usagi postgrad angry
+    show usagi mech postgrad angry
     usagi "I don’t know how you can look people in the face and just LIE."
 
-    show sanders postgrad angry 2 at noflip
+    show sanders mech postgrad angry 2 at noflip
     sanders "Because we all know the alternative, Kitadani. And you know that if Williamson here ever behaved with even a FRACTION of the way you do..."
     sanders "He’s not the child of a legend. If you weren’t you, you would have been dealt with a long time ago."
     sanders @ postgrad angry 3 "You’re just as bad as The Queen of New Jersey... Only you don’t even take a stand. You just go with it, sulk and pretend like you’re not benefiting."
@@ -123,18 +123,18 @@ label scene16:
     # > Silence.
     # disable the speaker spotlight for this moment of silence
     # (jeez, this is way harder than it should be)
-    show usagi postgrad serious 2 focus
-    show takeshi postgrad angry 1 focus
-    show sanders postgrad angry 2 focus
+    show usagi mech postgrad serious 2 focus
+    show takeshi mech postgrad angry 1 focus
+    show sanders mech postgrad angry 2 focus
     pause
     # show sanders at right2
     # with ease
-    show usagi postgrad serious 2
-    show takeshi postgrad angry 1
-    show sanders postgrad angry 2
-    show usagi postgrad shock at fx.hop
+    show usagi mech postgrad serious 2
+    show takeshi mech postgrad angry 1
+    show sanders mech postgrad angry 2
+    show usagi mech postgrad shock at fx.hop
     sanders "No quippy comeback? What? Cat got your tongue?"
-    show takeshi postgrad shock at fx.hop
+    show takeshi mech postgrad shock at fx.hop
     ### page 31 ###
 
     # > They have happened upon a large crystal structure.
@@ -143,24 +143,24 @@ label scene16:
     # everyone walks toward the crystal. first usagi, then the rest of the trio...
     $ x0 = -0.3
     $ x1 = 1.3
-    show usagi postgrad worried:
+    show usagi mech postgrad worried:
         ease 3 xpos x1
-    show takeshi postgrad worried 1:
+    show takeshi mech postgrad worried 1:
         pause 1
         ease 3 xpos x1
-    show sanders postgrad shock:
+    show sanders mech postgrad shock:
         flip
         fx.hop
         pause 1.5
         ease 3 xpos x1
     # next kelisha, worried for what happens next...
-    show kelisha worried:
+    show kelisha mech worried:
         xpos x0
         flip
         pause 1.5
         ease 5 xpos x1
     # finally bart and jojo, giddy about finding it at last
-    show jojo grin 2:
+    show jojo mech grin 2:
         xpos x0
         flip
         pause 3
@@ -169,7 +169,7 @@ label scene16:
             repeat
         parallel:
             ease 4.5 xpos x1
-    show bart grin 2:
+    show bart mech grin 2:
         xpos x0
         flip
         pause 3.3

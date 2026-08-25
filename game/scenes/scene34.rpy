@@ -1,5 +1,7 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=child&t=usagi+postgrad
 label scene34:
+    # TODO scaling is weird here, it's the only scene that shows both non-mechs and mechs.
+    # but making child super-tiny looks bad, so let's not worry about it...?
     scene bg black hole
     show child sad at center:
         ypos ypos_textbox-0.2
@@ -16,7 +18,7 @@ label scene34:
     # > and then again Earth in 2100, the great cataclysm.
     kagu "I’m responsible for this. I... What AM I really. Past lives? Regeneration..."
     kagu "I’m a monster..."
-    show usagi postgrad worried at right:
+    show usagi mech postgrad worried at right behind child:
         ypos ypos_textbox-0.1
         parallel:
             fx.ease_xoffset(dur=2, x0=-400)
@@ -35,7 +37,7 @@ label scene34:
         noflip
         fx.hover(dur=1.9)
     kagu "I only exist for one purpose."
-    show usagi postgrad cry 1:
+    show usagi mech postgrad cry 1:
         parallel:
             fx.hover(dur=2.3)
         parallel:
@@ -58,7 +60,7 @@ label scene34:
             flip
             pause 0.3
             repeat 3
-    show usagi postgrad worried
+    show usagi mech postgrad worried
     usagi "Kagu?..... Kagu? What’s wrong."
     show child confused
     kagu "I remember every single detail. So why is this... different?"

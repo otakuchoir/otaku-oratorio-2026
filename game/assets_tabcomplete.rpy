@@ -331,6 +331,9 @@ image jojo mech:
 image huxtable mech:
     "huxtable neutral focus"
     mech_placeholder
+image kelisha mech:
+    "kelisha neutral focus"
+    mech_placeholder
 # run after images are defined
 init 501 python:
     import dataclasses
@@ -340,6 +343,7 @@ init 501 python:
         _dim: (int, int)
         _pilot: (int, int)
         pilot_zoom: float = 0.5
+        alias: list[str] = dataclasses.field(default_factory=list)
 
         @property
         def dim(self):
@@ -347,6 +351,9 @@ init 501 python:
         @property
         def pilot(self):
             return (int(self._pilot[0]), int(self._pilot[1]))
+        @property
+        def tags(self):
+            return [self.tag] + self.alias
 
     mechtemplates = [
         MechTemplate('usagi', (450*1.5, 316*1.5), (250, 200)),
@@ -354,20 +361,22 @@ init 501 python:
         MechTemplate('sanders', (450*1.5, 450*1.5), (225, 250)),
         MechTemplate('linda', (265*1.5, 283*1.5), (100, 200)),
         MechTemplate('kohei', (503*1.5, 317*1.5), (250, 200)),
-        MechTemplate('queen', (717*1.5, 474*1.5), (350, 300)),
+        MechTemplate('queen', (717*1.5, 474*1.5), (350, 300), alias=['princess']),
         MechTemplate('bart', (308*1.5, 475*1.5), (130, 400)),
         MechTemplate('jojo', (520*1.5, 340*1.5), (250, 200)),
         MechTemplate('huxtable', (498*1.5, 381*1.5), (250, 300)),
+        MechTemplate('kelisha', (350*1.5, 400*1.5), (150, 200)),
     ]
     for img in list(renpy.list_images()):
         for m in mechtemplates:
-            if img.startswith(m.tag) and not 'mech' in img:
-                name = f"{img} mech"
-                # renpy.image(name, img)
-                renpy.image(name, anchor_sprite(Composite(
-                    m.dim,
-                    (0, 0), f"{m.tag} mech",
-                    m.pilot, Transform(img, zoom=m.pilot_zoom),
-                )))
-                # print(name)
+            for tag in m.tags:
+                if img.startswith(tag) and not 'mech' in img:
+                    name = f"{img} mech"
+                    # renpy.image(name, img)
+                    renpy.image(name, anchor_sprite(Composite(
+                        m.dim,
+                        (0, 0), f"{m.tag} mech",
+                        m.pilot, Transform(img, zoom=m.pilot_zoom),
+                    )))
+                    # print(name)
     # print(mechtemplates)
