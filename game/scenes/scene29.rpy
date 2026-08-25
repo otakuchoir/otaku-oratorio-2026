@@ -12,6 +12,8 @@ label scene29:
     # > 29       INT. NIGHT; CROWN FACILITY                                               29
     # > Everyone is gathered to review footage captured of the Planet
     # > Destroyer from earlier in the evening:
+    #
+    # technically this is a flashback, but let's not ruin the manga panels with the filter
     destroyer "Your planet’s core has called out to me."
     destroyer "You have pillaged your sacred home. You have broken its body and named the wound “progress.”"
     destroyer "You have heard its suffering and answered with deeper violence."
@@ -20,6 +22,7 @@ label scene29:
     destroyer "I will return soon to administer your reset. I am Alpha and Omega, the beginning and the end, the first and the last."
 
     scene bg briefing room
+    show layer master at fx.flashback
     show kohei worried at center
     show jojo sad at left2, flip
     show bart peaceful at left, flip

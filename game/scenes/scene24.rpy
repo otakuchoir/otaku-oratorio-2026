@@ -1,6 +1,8 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=bart+young&t=linda+young&t=jojo+young&t=kohei+young
 label scene24:
     scene bg campus
+    # transforming the camera works too, but this resets when we say `scene` and camera doesn't
+    show layer master at fx.flashback
     show kohei young neutral at right 
     show bart young neutral at center, flip
     show jojo young neutral at left, flip

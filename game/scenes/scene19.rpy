@@ -1,13 +1,14 @@
 label scene19: 
-    scene bg black
     scene bg spaceship window:
         matrixcolor BrightnessMatrix(0.2)
+    # scene bg spaceship window
+    show layer master at fx.flashback
     show gunner at left, flip
     show officer at right, noflip
     show navigator at right2, noflip
-    show kohei neutral at left2:
-        matrixcolor BrightnessMatrix(0.1)
-    show fx_crt_scanlines
+    # show kohei neutral at left2:
+        # matrixcolor BrightnessMatrix(0.1)
+    show kohei neutral at left2
     with dissolve
     # > 19       INT. THE SPACESHIP EDEN MAIN DECK                                        19
     gunner "Captain, beam array at 60 percent and climbing; Firing window opens in 3 minutes and counting."
@@ -45,6 +46,7 @@ label scene19:
     with dissolve
     show bg spaceship window:
         matrixcolor BrightnessMatrix(0.2)
+    show bg spaceship window
     show kohei neutral at center, flip:
         xoffset -1000
         ease 1.5 xoffset 0
@@ -130,6 +132,7 @@ label scene19:
         anchor (0.5,1.0)
         pos (0.5,1.0)
         zoom 1.15
+    show layer master at fx.flashback
     show reporter1:
         zoom 1.0
         xpos 0.2
@@ -144,7 +147,7 @@ label scene19:
         ypos y
     # show bg breaking news as bg2:
         # ease 0.5 zoom 1.0
-    show fx_crt_scanlines
+    # show fx_crt_scanlines
     with dissolve
     reporter1 "It is unclear whether or not the crew of the Eden are responding after that...."
     reporter1 "Wait... I’m getting word."

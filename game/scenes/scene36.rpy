@@ -2,6 +2,7 @@
 label scene36:
     # crowded room, and everyone's a different width!
     scene bg briefing room
+    show layer master at fx.flashback
     show bart worried at right:
         xpos 0.90
     show jojo serious at right2

@@ -1,6 +1,7 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=bart&t=linda&t=jojo&t=queen
 label scene37:
     scene bg black hole
+    show layer master at fx.flashback
     show queen mech neutral at center, fx.hover(dur=2.3, y0=-300)
     show bart mech neutral at right, fx.hover(dur=2.9, y0=-300)
     show jojo mech neutral at right2, fx.hover(dur=1.9, y0=-50)
@@ -39,7 +40,8 @@ label scene37:
     show bart mech worried
     show jojo mech sad
     "The ultima cannon fires."
-    show bg neongreen as bg2:
+    # sabik's boom is so intense it skips the flashback discoloration ("on layer screens")
+    show bg neongreen onlayer screens as bg2:
         alpha 0.8
         easein 5 alpha 0.3
     with vpunch
@@ -53,8 +55,10 @@ label scene37:
     jojo "ABORT ABORT! THE BLAST RADIUS IT-"
 
     show linda at flip, fx.ease_ypos(dur=2, y1=0.0), fx.ease_xoffset(dur=2, x1=1000)
-    show queen at flip, fx.ease_ypos(dur=4, y1=2.0), fx.ease_xoffset(dur=2, x1=1000)
+    show queen at flip, fx.ease_ypos(dur=4, y1=2.0), fx.ease_xoffset(dur=2, x1=1300)
     show bart at flip, fx.ease_ypos(dur=5, y1=0.0), fx.ease_xoffset(dur=2, x1=1000)
     show jojo at flip, fx.ease_ypos(dur=3, y1=2.0), fx.ease_xoffset(dur=2, x1=1000)
     queen "Everyone get the hell outta dodge RIGHT NOW!"
+    scene bg black with dissolve
+    hide bg2 onlayer screens
     return

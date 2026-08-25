@@ -10,7 +10,8 @@ label scene03:
     show takeshi mech neutral at right
     with ease
 
-    sanders @ smug "They’re sitting ducks."
+    "PLACEHOLDER mechs throughout the show are temporarily a giant dim copy of their pilot. pilots will be visible on top of their real mech sprites, just like in these placeholders: it's important to see their pretty faces, and to show who controls which mech"
+    sanders @ mech smug "They’re sitting ducks."
     takeshi mech annoyed "Something’s not right. Performing field scan."
 
     # sanders steps forward, ready to engage...

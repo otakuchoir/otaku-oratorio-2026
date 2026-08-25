@@ -1,3 +1,8 @@
+## 2026/08/25
+- Add mech placeholders to scene 16, 25, 34, 37. They should now be in every non-IRL mech scene (40 is IRL)
+- Add a comment about mech placeholders to scene 3, where they're first used
+- Add a flashback filter, and use it in all flashback scenes: 17, 18, 19, 24, 25, 28, 29, 32, 36, 37
+
 ## 2026/08/24
 - Add song lyrics: 6 (Hana Ni Natte), 9 (Moonlight Densetsu)
 - Implement mech placeholders

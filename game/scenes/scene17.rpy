@@ -24,12 +24,14 @@ label scene17:
     # background are already very dark! so, make them brighter.
     scene bg spaceship window:
         matrixcolor BrightnessMatrix(0.2)
+    # scene bg spaceship window
+    show layer master at fx.flashback
     show gunner at left, flip
     show officer at right, noflip 
     show navigator at right2, noflip 
-    show kohei neutral at left2:
-        matrixcolor BrightnessMatrix(0.1)
-    show fx_crt_scanlines
+    show kohei neutral at left2
+    # show kohei neutral at left2:
+        # matrixcolor BrightnessMatrix(0.1)
     with irisout
 
     # > 17       INT. TV SCREENS                                                          17

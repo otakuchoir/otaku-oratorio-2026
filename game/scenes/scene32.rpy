@@ -1,6 +1,7 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=kohei
 label scene32:
     scene bg spaceship window
+    show layer master at fx.flashback
     # > 32       EXT. - NOWHERE                                                           32
     show kohei serious 1 at center
     kohei "I’m piloting the Eden. I always said it would be awesome to command that thing. Didn’t realize it’d be under these circumstances...."

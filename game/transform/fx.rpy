@@ -144,3 +144,12 @@ transform fx.hover(dur=2.0, loops=None, y0=0, dy=50):
     easein  dur/4 yoffset y0-dy
     easeout dur/4 yoffset y0
     repeat loops
+
+transform fx.flashback():
+    #matrixcolor SepiaMatrix()
+    # no, this removes all color. I want partial color!
+    #
+    # docs say sepiamatrix is equivalent to:
+    # matrixcolor TintMatrix('#ffeec2') * SaturationMatrix(0.0, (0.2126, 0.7152, 0.0722))
+    # so we copy and modify that:
+    matrixcolor TintMatrix('#ffeec2') * SaturationMatrix(0.15, (0.2126, 0.7152, 0.0722))

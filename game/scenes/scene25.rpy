@@ -4,6 +4,7 @@ label scene25:
         zoom 1.1
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
+    show layer master at fx.flashback
     "TODO is this where we use the moba training map? If so, do I want character sprites (like most scenes), or animated dots on the map (like a game minimap), or both? Until I answer those fundamentals, this scene is deliberately barebones"
     # PUSH TEAM
     show kohei mech young serious 1  at center, fx.xoffset(-1000), flip

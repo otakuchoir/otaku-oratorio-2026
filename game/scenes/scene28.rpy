@@ -5,6 +5,7 @@ label scene28:
     # show kelisha neutral at top
     # > 28       INT. NIGHT; KITADANI RESIDENCE                                           28
     scene bg usagi dorm night
+    show layer master at fx.flashback
     show usagi young happy at right2
     show linda smile at center, flip
     usagi "That’s my favorite story mom! Thanks! Good night!"
@@ -14,6 +15,7 @@ label scene28:
     pause 1.5
 
     scene bg living room 2
+    show layer master at fx.flashback
     show kohei happy at left, flip
     show linda smile at left2, flip, fx.ease_xoffset(dur=1.5, x0=-1000)
     show jojo neutral at right
