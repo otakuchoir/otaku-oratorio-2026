@@ -38,25 +38,52 @@ label scene38:
     show bart grin 1
     sanders "Barthandelus, I am here by order of the King. You are to come with me. You are under arrest for tampering with Crown Military assets and trespassing on Crown Military facilities."
 
-    show bart grin 2
-    show bart grin 2 focus at left2, flip as holobart:
+    show bart grin 2 focus:
+        flip
+    show bart grin 2 focus at left2 as holobart:
+        flip
         alpha 0.7
+        pause 0.5
+        "bart grin 2 glitch focus"
+        pause 0.2
+        "bart grin 2 focus"
     show sanders:
         parallel:
             fx.ease_xpos(dur=0.7, x0=0.67, x1=0.23)
         parallel:
-            pause 0.5
+            pause 0.3
             "sanders postgrad shock"
-            pause 0.2
+            pause 0.12
             flip
     bart "Unfortunately I won’t be able to come with you, commander Sanders."
-    show bart at noflip as holobart
-    show bart at noflip:
-        alpha 1.0
-        linear 1.0 alpha 0.0
+    show bart as holobart:
+        noflip
+        scene38.bart_glitch
+    show bart grin 2 focus:
+        noflip
+        parallel:
+            scene38.bart_glitch
+        parallel:
+            alpha 1.0
+            linear 1.0 alpha 0.0
     bart "You see... I’m currently aboard The Alexander. I will have a front row seat to the end of the world."
-    show bart at noflip as holobart:
+    show bart grin 2 holo as holobart:
+        noflip
         alpha 0.7
         linear 1.0 alpha 0.0
     "Barthandelus's hologram fades."
     return
+
+transform scene38.bart_glitch:
+    pause 0.1
+    "bart grin 2 glitch focus"
+    pause 0.15
+    "bart grin 2 holo focus"
+    pause 0.25
+    "bart grin 2 glitch focus"
+    pause 0.08
+    "bart grin 2 focus"
+    pause 0.4
+    "bart grin 2 glitch focus"
+    pause 0.11
+    "bart grin 2 holo focus"

@@ -112,13 +112,13 @@ label gen_scene40:
     kagu "Well... this will be goodbye. The blast... That will be super heated Ultima Ore. It will be enough energy to complete my evolution instantly... Look we don’t have time, get out of here. Sorry we didn’t have time for introductions you two."
     sanders "Oh I know who you are."
     takeshi "Me too... part of the intel. It was nice to meet you Sabik."
+    kagu "Actually, my name is Kagu. Short for Kaguya, but we don’t have time. Go, now! I’ll see you in a bit."
     ### page 82 ###
     # > Usagi, Takeshi and Sanders rush away back to Linda, Kelisha
-    # > and Elizabeth. Kaguya floats near the Ultima Cannon and then
+    # > and Elizabeth. Kagu floats near the Ultima Cannon and then
     # > a huge explosion. When the picture comes back into view it is
     # > the adult planet destoryer, absorbing the last bits of the
     # > explosion. And staring... Then:
-    kagu "Actually, my name is Kagu. Short for Kaguya, but we don’t have time. Go, now! I’ll see you in a bit."
     destroyer "BEAR WITNESS NOW, FOR I AM THE MESSENGER OF THE HEAVENS, THE BEGINNING AND THE END, THE FIRST AND THE LAST. I AM THE GREAT RESETTER; SABIK."
     usagi "Oh no... Kagu has fully evolved."
     # > In an instant, Sabik is encased in a crystal and disappears

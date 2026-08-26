@@ -32,6 +32,8 @@ transform nodim:
     zoom 1
 transform anchor_sprite:
     anchor (0.5, 1.0)
+transform screen_size:
+    size screen_dim
 
 init python:
 """
@@ -114,8 +116,10 @@ for i in range(1, 4+1):
     load_image(f'bg scene13 {i}', f'assets/Scene 13 - NJ blows up/scene13-{i}.png')
 for i in range(1, 4+1):
     load_image(f'bg scene19 {i}', f'assets/Storyboards/storyboard-19-{i}.png')
+for i in range(1, 4+1):
+    load_image(f'bg scene40 explosion {i}', f'assets/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
 for i in range(1, 9+1):
-    load_image(f'bg scene40 {i}', f'assets/Scene 40 /judgement-{i}.png')
+    load_image(f'bg scene40 judgement {i}', f'assets/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')
