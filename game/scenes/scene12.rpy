@@ -62,7 +62,6 @@ label scene12:
 
     scene bg black with dissolve
     # > SONG
-    "PLACEHOLDER song"
 
     call fx.play_music_in_dev("bgm_007_mii_news__tomodachi_life_living_the_dream.opus")
     window hide

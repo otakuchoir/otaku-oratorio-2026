@@ -59,7 +59,7 @@ scenes = [
     S('scene27', 'The Story of Princess Kaguya'),
     S('scene28', "Flashback: Christmas Party/What's The Tea?"),
     S('scene29', "MANGA/Flashback: PD's Monologue"),
-    S('scene29b', "SONG: Floating Moon on the Water"),
+    S('scene29a', "SONG: Floating Moon on the Water"),
     S('scene30', "Takeshi's Message"),
     S('scene31', "Spying on Usagi; Kagu's Hopes and Dreams"),
     S('scene31a', "SONG: Soto"),

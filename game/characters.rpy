@@ -37,6 +37,8 @@ define chorus = Character("Chorus", what_italic=True, kind=nvl)
 define verse2 = Character("Verse 2", what_italic=True, kind=nvl)
 define verse3 = Character("Verse 3", what_italic=True, kind=nvl)
 define bridge = Character("Bridge", what_italic=True, kind=nvl)
+define intro = Character("Intro", what_italic=True, kind=nvl)
+define outro = Character("Outro", what_italic=True, kind=nvl)
 
 # the background is not a character, but pretending it is is the easiest way to change backgrounds mid-scene
 define bg = Character(image="bg")

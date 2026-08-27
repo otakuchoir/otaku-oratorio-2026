@@ -8,6 +8,7 @@ label scene06a:
     verse1 "Isn’t it fine to hide quietly in the shadows?\nAren’t there flowers that are more like buds?\nIsn’t it fine to protect in secret?\nUndisturbed by anyone, you bloom magnificently"
     prechorus "You don’t get hooked on either sweetness or bitterness\nThat sort of decision-making is worthless\nDon't let anything worry you, keep your head up\nNot used to love, not adorned excessively\nDon’t need a pretty vase, fertilizer, or anything\nYou’re beautiful just like that"
     chorus "Be a flower, come on, smile wryly for me\nI get chills from the look on your face, I can’t look away\nHave a taste - your poison is my medicine\nI’ll wrap you up nicely, so smile"
+    nvl clear
     verse2 "“Hey, I miss you”\n“I miss that smile of yours”\nIf I said that, would you smile for me?\nIsn’t it fine to just support from the shadows?\nSelfishly, I want to prove that I can make you bloom with my own hands"
     verse3 "You’re a flower that devours hearts like a disease\nAnd I don’t want to let you wither away\nEven if the light doesn’t reach you\nI’ll keep watering\n"
     bridge "Hurry up and realize it already - you’re wonderful\nBe proud and take better care of yourself"
