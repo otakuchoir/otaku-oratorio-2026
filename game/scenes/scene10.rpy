@@ -72,7 +72,8 @@ label scene10:
     show sanders at fx.ease_xoffset(dur=dur, x1=dx)
     show usagi at fx.ease_xoffset(dur=dur, x1=dx)
     show takeshi at fx.ease_xoffset(dur=dur, x1=dx)
-    pause dur
+    # pause dur  # breaks lint
+    pause 2.0
 
     # ...and back onscreen
     scene bg spaceship window transparent
@@ -105,7 +106,8 @@ label scene10:
     show takeshi neutral at right2, flip, fx.ease_xoffset(dur=dur, x0=dx)
     show usagi neutral at left2, flip, fx.ease_xoffset(dur=dur, x0=dx)
     show sanders neutral at center, flip, fx.ease_xoffset(dur=dur, x0=dx)
-    pause dur
+    # pause dur   # breaks lint
+    pause 1.5
 
     # > TAKE OFF SEQUENCE. SPACE SHUTTLE TRAVELS FROM THE MOON TO
     # > EARTH.
