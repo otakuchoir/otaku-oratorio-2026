@@ -68,7 +68,10 @@ label scene10:
     # everyone boards the shuttle. walk offscreen...
     $ dur = 2.0
     $ dx = -2000
-    show kelisha at noflip, fx.ease_xoffset(dur=dur, x1=dx)
+    show kelisha:
+        noflip
+        fx.ease_xoffset(dur=dur, x1=dx)
+    pause 0.3
     show sanders at fx.ease_xoffset(dur=dur, x1=dx)
     show usagi at fx.ease_xoffset(dur=dur, x1=dx)
     show takeshi at fx.ease_xoffset(dur=dur, x1=dx)
