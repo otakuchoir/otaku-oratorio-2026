@@ -89,14 +89,32 @@ label scene19:
     # manga panels: fighting the planet destroyer
     window hide
     window auto
-    scene 
-    show bg scene19 1
+    scene bg white with dissolve
+    show bg white as bg2 behind bg
+    show bg scene19 1 with dissolve:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 0.8
+        linear 10 zoom 1.0
     pause
-    show bg scene19 2
+    show bg scene19 2 with dissolve:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 0.8
+        linear 10 zoom 1.0
     pause
-    show bg scene19 3
+    show bg scene19 3 with dissolve:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 0.8
+        linear 10 zoom 1.0
     pause
-    show bg scene19 4
+    show bg scene19 4 with dissolve:
+        # TODO different bg on this one
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 1.0
+        #linear 10 zoom 1.0
     pause
     #destroyer "Behold, I am come, I am the Beginning, And the End."
     #officer "Captain!"

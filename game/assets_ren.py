@@ -115,7 +115,7 @@ for i, c in enumerate('ABC'):
 for i in range(1, 4+1):
     load_image(f'bg scene13 {i}', f'assets/Scene 13 - NJ blows up/scene13-{i}.png')
 for i in range(1, 4+1):
-    load_image(f'bg scene19 {i}', f'assets/Storyboards/storyboard-19-{i}.png')
+    load_image(f'bg scene19 {i}', f'assets/Scene 19/scene19_{i:03d}.png')
 for i in range(1, 4+1):
     load_image(f'bg scene40 explosion {i}', f'assets/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
 for i in range(1, 9+1):
