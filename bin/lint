@@ -7,6 +7,5 @@ V=8.5.3
 docker run --rm \
   -v "./game:/game" \
   -v "./build:/build" \
-  -v "./assets:/assets" \
   dinaki/renpy:$V \
   sh renpy.sh /game lint --error-code
