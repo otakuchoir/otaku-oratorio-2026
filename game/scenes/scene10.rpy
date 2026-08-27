@@ -56,7 +56,7 @@ label scene10:
     show takeshi at left2
     show sanders at right2
     show usagi:   
-        xalign 1.2
+        xpos 1.0
     with moveinleft
     kelisha "I’m sure whatever RIVETING conversation you’re having at 5AM can wait until we all board?"
     show sanders at noflip
@@ -66,41 +66,82 @@ label scene10:
     kelisha "You three, after you’re settled, come find me in my office. We need to review some intel."
 
     # everyone boards the shuttle. walk offscreen...
-    show kelisha at noflip
-    pause 0
-    hide kelisha
-    hide takeshi
-    hide sanders
-    hide usagi
-    with moveoutleft
+    $ dur = 2.0
+    $ dx = -2000
+    show kelisha at noflip, fx.ease_xoffset(dur=dur, x1=dx)
+    show sanders at fx.ease_xoffset(dur=dur, x1=dx)
+    show usagi at fx.ease_xoffset(dur=dur, x1=dx)
+    show takeshi at fx.ease_xoffset(dur=dur, x1=dx)
+    pause dur
 
     # ...and back onscreen
-    show sanders neutral at center
-    show usagi neutral at left2
-    show takeshi neutral at right2
-    with moveinright
+    scene bg spaceship window transparent
+    $ z = 2.0
+    $ dx = z - 0.5 # 0.5 is anchor
+    # $ zright2 = (0.5)/z
+    # $ zleft1 = 1 - zright2
+    # $ zright1 = zleft1 + dx
+    # $ zleft2 = zright2 - dx
+    $ zleft1 = (0.5)/z
+    $ zright2 = 1 - zleft1
+    $ zleft2 = zright2 + dx
+    $ zright1 = zleft1 - dx
+    call scene11.space_background
+    show bg lunar tarmac as bg1 behind bg:
+        zoom z
+        anchor (0.5, 1.0)
+        pos (zleft1, 1.0)
+    show bg lunar tarmac as bg2 behind bg:
+        flip
+        zoom z
+        anchor (0.5, 1.0)
+        pos (zleft2, 1.0)
+    with fade
+    window show
 
-    # no lengthy wait for blastoff, just go
-    pause 1
-    show bg white as bg2:
-        alpha 0.7
-        easein 5 alpha 0.0
-    show takeshi at scene10_blastoff
-    show usagi at scene10_blastoff
-    show sanders at scene10_blastoff
-    pause 4
+    $ dur = 1.5
+    # $ dur = 0
+    $ dx = -1500
+    show takeshi neutral at right2, flip, fx.ease_xoffset(dur=dur, x0=dx)
+    show usagi neutral at left2, flip, fx.ease_xoffset(dur=dur, x0=dx)
+    show sanders neutral at center, flip, fx.ease_xoffset(dur=dur, x0=dx)
+    pause dur
+
     # > TAKE OFF SEQUENCE. SPACE SHUTTLE TRAVELS FROM THE MOON TO
     # > EARTH.
+    # no lengthy wait for blastoff, just go
+    pause 1
+    show bg lunar tarmac as bg1:
+        xpos zleft1
+        ypos 1.0
+        parallel:
+            easeout 3.0 xpos zright1
+        parallel:
+            pause 1.5
+            easeout 1.5 ypos 1.5
+    show bg lunar tarmac as bg2:
+        xpos zleft2
+        ypos 1.0
+        parallel:
+            easeout 3.0 xpos zright2
+        parallel:
+            pause 1.5
+            easeout 1.5 ypos 1.5
+    show bg white as bgfx behind bg:
+        alpha 0.0
+        pause 1.0
+        easeout 2.0 alpha 1.0
+        pause 1.5
+        easein 2.0 alpha 0.0
+    show bg white as fgfx:
+        alpha 0.0
+        pause 1.0
+        easeout 2.0 alpha 0.3
+        pause 1.5
+        easein 2.0 alpha 0.0
+    pause 3.0
+    hide bg1
+    hide bg2
+    pause 4.0
     show bg black with dissolve
     return
-
-transform scene10_blastoff:
-    parallel:
-        hvibrate
-    parallel:
-        yoffset 0
-        easeout 4 yoffset -1000
-    parallel:
-        fx.stretch(1.0,1.0)
-        easein 0.03 fx.stretch(1.08, 0.92)
-        easeout 3.97 fx.stretch(1.0, 1.0)
