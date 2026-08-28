@@ -116,6 +116,13 @@ label scene19:
         zoom 1.0
         #linear 10 zoom 1.0
     pause
+    show bg:
+        yshake(5, 1000, 0.02)
+    show bg neongreen as boom:
+        alpha 0.0
+        # pause 0.5
+        linear 2.0 alpha 1.0
+    pause 2.5
     #destroyer "Behold, I am come, I am the Beginning, And the End."
     #officer "Captain!"
     #kitadani "Steady!"
@@ -139,7 +146,7 @@ label scene19:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
         zoom 0.5
-    with dissolve
+    with fade
     pause
 
     window hide
