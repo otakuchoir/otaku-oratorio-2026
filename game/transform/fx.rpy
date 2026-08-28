@@ -138,12 +138,23 @@ label fx.play_music_if_changed_in_dev(f):
     return
 
 transform fx.hover(dur=2.0, loops=None, y0=0, dy=50):
+    # Start hovering, initializing the start location
     yoffset y0
+    fx.hovering(dur=dur, loops=loops, y0=y0, dy=dy)
+
+transform fx.hovering(dur=2.0, loops=None, y0=0, dy=50):
+    # Continue hovering after an earlier fx.hover(), without initializing the start location
     easein  dur/4 yoffset y0+dy
     easeout dur/4 yoffset y0
     easein  dur/4 yoffset y0-dy
     easeout dur/4 yoffset y0
     repeat loops
+
+#transform fx.hover_xoffset(hdur=2.0, xdur=1.0, x0=0, x1=0, loops=None, y0=0, dy=50):
+#    parallel:
+#        fx.hovering(dur=hdur, loops=loops, y0=y0, dy=dy)
+#    parallel:
+#        fx.ease_xoffset(dur=xdur, x0=x0, x1=x1)
 
 transform fx.flashback():
     #matrixcolor SepiaMatrix()

@@ -4,17 +4,17 @@ label scene40:
     "TODO the final battle, WIP. oops i thought this one was IRL, but that's scene 41, apparently I can't read"
 
     # > 40       EXT. SPACE ABOVE THE MOON                                                40
-    show jojo mech neutral at right, fx.hover
-    show sanders mech postgrad neutral at right2, fx.hover
-    show usagi mech postgrad neutral at center, fx.hover
+    show jojo mech neutral at right, fx.hover(1.9)
+    show sanders mech postgrad neutral at right2, fx.hover(2.3)
+    show usagi mech postgrad neutral at center, fx.hover(1.7)
     sanders "I’ve gotta say, I never thought I’d ever see you piloting-"
     usagi "I’m not doing this for The Crown, I’m doing it for everyone."
     jojo "I need to get control of the Ultima Cannon. The Alexander is acting as a blockade, though..."
     sanders "We’ll get you through, right Usagi?"
     jojo "If we don’t make it through... That’s it. Luckily, the moon hasn’t crossed the gravitational threshold yet, but we were cutting it close."
 
-    show kelisha mech neutral at left, flip, fx.hover, fx.ease_xoffset(dur=0.5, x0=-500)
-    kelisha "This is Crown Officer Kelisha Alvarez, pilots, identify yourself."
+    show kelisha mech neutral at left, flip, fx.hover(2.1), fx.ease_xoffset(dur=0.5, x0=-500)
+    kelisha "This is Crown Officer Kelisha Alvarez. Pilots, identify yourself."
     usagi "Professor Kelisha?"
     kelisha "Ok, so it IS you... Joseph, Commander Sanders?"
     ### page 76 ###
@@ -24,52 +24,113 @@ label scene40:
     jojo "Barthandelus... he has gone mad. He’s using the Ultima Cannon to push the Moon into the Earth."
     kelisha "What!?"
     sanders "We’re on an escort mission, we’ve got to get Professor Chen here to the Ultima Cannon."
-    kelisha "Then you’ll have my support from the Bahamut. God speed."
-
-    scene bg space battlefield
-    show kelisha mech neutral at right, noflip, fx.hover
-    show jojo mech neutral at right2, noflip, fx.hover
+    kelisha "Then you’ll have my support from the Bahamut. Godspeed."
     jojo "There it is... The Alexander... and just beyond, the Ultima Cannon."
+
+    # camera shifts to kelisha soloing as jojo/sanders/usagi run for the goal
+    # scene bg space battlefield
+    $ dur = 2.0
+    show jojo at fx.hover(1.9), fx.ease_xoffset(dur=dur, x1=-2000)
+    show sanders at fx.hover(2.3), fx.ease_xoffset(dur=dur, x1=-2000)
+    show usagi at fx.hover(1.7), fx.ease_xoffset(dur=dur, x1=-2000)
+    show kelisha at noflip, fx.hover(2.1), fx.ease_xpos(dur=dur, x0=0.15, x1=0.85)
+    pause 2.0
+
     kelisha "Barthandelus pilots the Alexander as a high level defensive heal class. I’m debuffing his systems now."
-    show bart mech neutral at left, flip, fx.hover, fx.ease_xoffset(dur=0.5, x0=-500)
+    show bart mech neutral at left, flip, fx.hover(3.7), fx.ease_xoffset(dur=1.5, x0=-500)
     bart "So... you have come to challenge the will of god..."
     kelisha "Barthandelus! Stand down and let’s stop this insanity."
     ### page 77 ###
-    bart "The only insanity I see is a traitor the Crown who not so secretly peruses with the Rebellion, now coming to stop the demise of the very system she swore to take down from the shadows. Have you lost your nerve?"
+    bart "The only insanity I see is a traitor to the Crown who not so secretly peruses with the Rebellion, now coming to stop the demise of the very system she swore to take down from the shadows. Have you lost your nerve?"
     kelisha "I can’t believe I’m telling YOU this, of all people, Bart, but burning it all down is not the way-"
 
-    scene bg space battlefield
-    show bart mech neutral at right, noflip, fx.hover
-    show sanders mech postgrad neutral at left2, flip, fx.hover
-    show usagi mech postgrad neutral at left, flip, fx.hover
+    ###################################
+    $ dur = 1.0
+    show bart mech neutral at right, noflip, fx.hover(3.7), fx.ease_xpos(dur=dur, x0=0.15, x1=0.85)
+    show sanders mech postgrad neutral at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=dur, x0=-2000)
+    show usagi mech postgrad neutral at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=dur, x0=-2000)
+    show jojo mech neutral at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=dur, x0=-2000)
+    show kelisha mech neutral at right, fx.hover(2.1), fx.ease_xoffset(dur=dur, x1=1000)
     sanders "We’re approaching the Alexander now. We’ll rush past it and put Jojo in position. Follow me everyone-"
+    show bart:
+        linear 0.25 yoffset 0
+    pause 0.25
+    show bart mech as bartglow at right, noflip behind bart:
+        blur 12
+        matrixcolor ColorizeMatrix(color_bart, color_bart)
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    pause 0.5
+    show sanders mech postgrad neutral at left2, noflip, fx.hover(2 * 2.3):
+        matrixcolor TintMatrix('#fff')
+        linear 0.5 matrixcolor TintMatrix(color_bart)
+    show usagi at left, noflip, fx.hover(2 * 1.7):
+        matrixcolor TintMatrix('#fff')
+        linear 0.5 matrixcolor TintMatrix(color_bart)
+    show jojo mech neutral at center, noflip, fx.hover(2 * 1.9):
+        matrixcolor TintMatrix('#fff')
+        linear 0.5 matrixcolor TintMatrix(color_bart)
     usagi "Guys... I’m losing power... We’re slowing down?"
-
-    scene bg space battlefield
-    show bart mech neutral at left, flip, fx.hover
-    show kelisha mech neutral at right, noflip, fx.hover
-    show jojo mech neutral at right2, noflip, fx.hover
     jojo "The Alexander has a magnetic tractor beam."
     bart "That’s right. I don’t need you getting any closer. Just sit still while-"
-    # > Missiles bombard the Alexander.
     computer "INCOMING MISSILES"
+    # > Missiles bombard the Alexander.
+    show bart:
+        yshake(5, 6, 0.02)
+        fx.hover(3.7)
+    show bart mech as bartglow:
+        parallel:
+            alpha 1.0
+            linear 0.5 alpha 0.0
+        parallel:
+            yshake(5, 10, 0.02)
+    show sanders mech postgrad neutral at left2, noflip, fx.hover(2.3):
+        matrixcolor TintMatrix(color_bart)
+        linear 0.5 matrixcolor TintMatrix('#fff')
+    show usagi at left, noflip, fx.hover(1.7):
+        matrixcolor TintMatrix(color_bart)
+        linear 0.5 matrixcolor TintMatrix('#fff')
+    show jojo mech neutral at center, noflip, fx.hover(1.9):
+        matrixcolor TintMatrix(color_bart)
+        linear 0.5 matrixcolor TintMatrix('#fff')
     bart "What!?"
+    show sanders at fx.hover(2.3), fx.ease_xoffset(dur=1.0, x1=-1000):
+        ease 1.0 ypos 0.5
+    show usagi at fx.hover(1.7), fx.ease_xoffset(dur=1.0, x1=-1000):
+        ease 1.0 ypos 0.8
+    show jojo at fx.hover(1.9), fx.ease_xoffset(dur=1.0, x1=-1000):
+        ease 1.0 ypos 1.0
     jojo "We’re free. Good job Kelisha."
-    kelisha "That wasn’t me."
 
-    show linda mech neutral at center, fx.hover
+    ###################################
+    show bart mech neutral at left, noflip, fx.hover(3.7), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.15)
+    show kelisha mech neutral at right, noflip, fx.hover(2.1), fx.ease_xoffset(dur=1.0, x0=1000)
+    kelisha "That wasn’t me."
+    hide usagi
+    hide sanders
+    hide jojo
+
+    show linda mech neutral at center, fx.hover(1.3), fx.ease_xoffset(dur=1.0, x0=1000), fx.ease_yoffset(dur=1.0, y0=500)
     linda "Ace Unit Shiva here, Carbunkle, Sanders, Usagi, you should be good to go again."
     usagi postgrad neutral "Mom??"
     ### page 78 ###
     linda "I came as soon as I saw the news. No time for shock and surprise. You already knew I was the best Ace there was. Now go, little rabbit! I’ll keep The Alexander busy."
     usagi postgrad neutral "Thanks mom!"
-    jojo "Thanks Linda. I won’t let you down."
 
+    ###################################
     # > Usagi, Professor Jojo and Sanders rush to the Ultima Cannon
-    scene bg space battlefield
-    show sanders mech postgrad neutral at left2, flip, fx.hover
-    show usagi mech postgrad neutral at center, flip, fx.hover
-    show jojo mech neutral at left, flip, fx.hover
+    # scene bg space battlefield
+    show bart at fx.hover(3.7), fx.ease_xoffset(dur=0.5, x1=1500)
+    show kelisha at fx.hover(2.1), fx.ease_xoffset(dur=0.5, x1=1500)
+    show linda at fx.hover(1.3), fx.ease_xoffset(dur=0.5, x1=1500)
+    pause 0.5
+    hide bart
+    hide kelisha
+    hide linda
+    show usagi mech postgrad neutral at center, fx.hover(1.7), fx.ease_xoffset(dur=0.5, x0=-1500)
+    show sanders mech postgrad neutral at left2, fx.hover(2.3), fx.ease_xoffset(dur=0.5, x0=-1500)
+    show jojo mech neutral at left, fx.hover(1.9), fx.ease_xoffset(dur=0.5, x0=-1500)
+    jojo "Thanks Linda. I won’t let you down."
     usagi "Kagu, buckle up!"
     sanders "Little Rabbit?"
     usagi "Careful... you’re the one who took her cousin away."
@@ -77,26 +138,53 @@ label scene40:
     usagi "What do you have to say for yourself and why shouldn’t I blow you up along with Barthandelus."
     sanders "We... never found her, the Queen of New Jersey. It was another cover up. The place that we blew up... just innocent people... The Crown made up a story and we were told to keep quiet...."
     jojo "We’re closing in on the Ultima Cannon now."
-    bart neutral "Insolent fools! Alexander primary burst weapon load out."
 
-    scene bg space battlefield
-    show linda mech neutral at left2, flip, fx.hover
-    show bart mech neutral at center, fx.hover
+    ###################################
+    show bart mech neutral at fx.hover(3.7), right, fx.ease_xoffset(dur=1.0, x0=500), fx.ease_ypos(dur=1.0, y0=1.0, y1=ypos_textbox)
+    bart "Insolent fools! Alexander primary burst weapon load out."
+    show linda mech neutral at center, flip, fx.hover(1.3), fx.ease_xoffset(dur=1.0, x0=1000), fx.ease_ypos(dur=1.0, y0=0.0, y1=ypos_textbox)
+    show sanders at fx.hover(2.3), fx.ease_xoffset(dur=1.0, x1=-1200):
+        ease 1.5 ypos 0.5
+    show usagi at fx.hover(1.7), fx.ease_xoffset(dur=1.0, x1=-1200):
+        ease 1.5 ypos 0.8
+    show jojo at fx.hover(1.9), fx.ease_xoffset(dur=1.0, x1=-1200):
+        ease 1.5 ypos 1.0
+    pause 1.0
     linda "I don’t think so."
+
+    # scene bg space battlefield
+    # show linda mech neutral at left2, flip, fx.hover(1.3)
+    # show bart mech neutral at center, fx.hover(3.7)
 
     # > Linda slices the primary weapon barrel, disabling The
     # > Alexander’s main weapon. Barthandelus activates the tractor
     # > beam again, catching Linda.
+    show linda:
+        noflip
+        parallel:
+            xpos 0.50
+            ease 1.0 xpos 0.67
+        parallel:
+            matrixcolor TintMatrix('#fff')
+            linear 0.5 matrixcolor TintMatrix(color_bart)
+    pause 1.0
+
     bart "And so your story ends here."
     ### page 79 ###
     computer "INCOMING BEAM ATTACK"
+    show linda:
+        parallel:
+            fx.hover(1.3)
+        parallel:
+            matrixcolor TintMatrix(color_bart)
+            linear 0.5 matrixcolor TintMatrix('#fff')
     bart "What?"
 
-    show queen mech neutral at right, fx.hover
+    show queen mech neutral at left, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
     queen "Diabolos Dark Laser Charge, Attack!"
     linda "LIZZY!"
-    queen "The one and only ;) back away from his tractor beam. Kelisha, break his defenses!"
-    show kelisha mech neutral at left, flip, fx.hover
+    queen "The one and only ;) Back away from his tractor beam. Kelisha, break his defenses!"
+    show kelisha mech neutral at center, flip, fx.hover(2.1)
     kelisha "Already on it, Mega Flare Pierce Rifle, Activate!"
     # > The Bahamut shoots a blast that break’s The Alexander’s
     # > shields.
@@ -105,11 +193,11 @@ label scene40:
     # > Linda’s attack severely damages The Alexander
 
     scene bg space battlefield
-    show sanders mech postgrad neutral at left2, flip, fx.hover
-    show usagi mech postgrad neutral at left, flip, fx.hover
-    show jojo mech neutral at center, flip, fx.hover
+    show sanders mech postgrad neutral at left2, flip, fx.hover(2.3)
+    show usagi mech postgrad neutral at left, flip, fx.hover(1.7)
+    show jojo mech neutral at center, flip, fx.hover(1.9)
     jojo "We’re in range, let’s park it right here. I’m taking control of the system now...."
-    show bart mech neutral at right2, fx.hover
+    show bart mech neutral at right2, fx.hover(3.7)
     bart "I may be defeated here... but I WILL NOT LOSE! JUDGEMENT LANCE!"
     # > The Alexander launches a golden lance toward Professor Jojo.
     kelisha neutral "JOSEPH!"
@@ -124,7 +212,7 @@ label scene40:
     linda neutral "Joseph.... Bart...."
 
     sanders "Shit. What do we do now??"
-    show takeshi mech neutral at right2, fx.hover
+    show takeshi mech neutral at right2, fx.hover(2.5)
     takeshi "Support unit B-100 reporting... Sounds like you need someone who knows how to hack."
     usagi "Takeshi!"
     takeshi "Sorry I couldn’t be here sooner guys. Sanders..."
@@ -144,7 +232,7 @@ label scene40:
     sanders "Well we only have a few minutes. We need to make a decision now. I’ll do it."
     sanders "Save me the shock ok? I know you both hate me. The things I’ve done in the name of the Crown... I realized too late what I had become. Let me redeem myself with this-"
 
-    show child neutral at right, fx.hover
+    show child neutral at right, fx.hover(1.3)
     kagu "I can do it. It won’t hurt. I can’t be destroyed."
     usagi "Are you serious Kagu?"
     kagu "Yeah. It’s just..."
