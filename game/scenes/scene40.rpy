@@ -1,7 +1,7 @@
 
 label scene40:
     scene bg space battlefield
-    "TODO the final battle, WIP. oops i thought this one was IRL, but that's scene 41, apparently I can't read"
+    "TODO the final battle, work in progress"
 
     # > 40       EXT. SPACE ABOVE THE MOON                                                40
     show jojo mech neutral at right, fx.hover(1.9)
@@ -141,54 +141,179 @@ label scene40:
 
     ###################################
     show bart mech neutral at fx.hover(3.7), right, fx.ease_xoffset(dur=1.0, x0=500), fx.ease_ypos(dur=1.0, y0=1.0, y1=ypos_textbox)
+    show bg bart hits as barthits behind bart:
+        alpha 0.0
+        pause 0.5
+        linear 1.5 alpha 0.4
+    show usagi behind barthits
+    show sanders behind barthits
+    show jojo behind barthits
     bart "Insolent fools! Alexander primary burst weapon load out."
-    show linda mech neutral at center, flip, fx.hover(1.3), fx.ease_xoffset(dur=1.0, x0=1000), fx.ease_ypos(dur=1.0, y0=0.0, y1=ypos_textbox)
+
+    # > Linda slices the primary weapon barrel, disabling The
+    # > Alexander’s main weapon.
+    $ dur = 0.8
+    show linda mech neutral at center, flip:
+        rotate -15
+        fx.ease_pos(dur=dur, xy0=(0.5, 1.5), xy1=(1.0, 0.0))
+        rotate 15
+        fx.ease_pos(dur=dur, xy0=(0.5, 0.0), xy1=(1.0, 1.5))
+    show bg bart hits as barthits:
+        pause 0.5
+        linear 0.1 alpha 0.0
+    show bg linda hits as lindahits behind linda, sanders, usagi, jojo:
+        alpha 0.0
+        pause 0.5
+        linear 0.1 alpha 0.6
+        linear 0.1 alpha 0.0
+        pause 0.1
+        pause 0.5
+        linear 0.1 alpha 0.6
+        linear 0.1 alpha 0.0
+        pause 0.1
+    show bart behind lindahits
+        # pause 0.5
+        # yshake(5, 10, 0.02)
+        # pause 0.1
+        # pause 0.5
+        # yshake(5, 10, 0.02)
+        # pause 0.1
+    pause 0.5
     show sanders at fx.hover(2.3), fx.ease_xoffset(dur=1.0, x1=-1200):
         ease 1.5 ypos 0.5
     show usagi at fx.hover(1.7), fx.ease_xoffset(dur=1.0, x1=-1200):
         ease 1.5 ypos 0.8
     show jojo at fx.hover(1.9), fx.ease_xoffset(dur=1.0, x1=-1200):
         ease 1.5 ypos 1.0
-    pause 1.0
     linda "I don’t think so."
 
-    # scene bg space battlefield
-    # show linda mech neutral at left2, flip, fx.hover(1.3)
-    # show bart mech neutral at center, fx.hover(3.7)
-
-    # > Linda slices the primary weapon barrel, disabling The
-    # > Alexander’s main weapon. Barthandelus activates the tractor
+    # > Barthandelus activates the tractor
     # > beam again, catching Linda.
+    hide lindahits
+    show bart:
+        flip
+        pause 0.7
+        noflip
+    show bart mech as bartglow at right, behind bart:
+        flip
+        blur 12
+        matrixcolor ColorizeMatrix(color_bart, color_bart)
+        alpha 0.0
+        linear 0.2 alpha 1.0
+        pause 0.5
+        noflip
     show linda:
         noflip
-        parallel:
-            xpos 0.50
-            ease 1.0 xpos 0.67
-        parallel:
-            matrixcolor TintMatrix('#fff')
-            linear 0.5 matrixcolor TintMatrix(color_bart)
+        xoffset 0
+        yoffset 0
+        matrixcolor TintMatrix(color_bart)
+        pos (1.5, 1.0)
+        ease 1.0 pos (0.67, ypos_textbox)
     pause 1.0
 
     bart "And so your story ends here."
     ### page 79 ###
     computer "INCOMING BEAM ATTACK"
+    bart "What?"
+    show queen mech neutral at left, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
+    show bg queen hits as queenhits behind linda, queen:
+        alpha 0.0
+        linear 0.08 alpha 0.6
+        linear 0.08 alpha 0.0
+        pause 0.1
+        repeat 3
     show linda:
         parallel:
             fx.hover(1.3)
         parallel:
             matrixcolor TintMatrix(color_bart)
             linear 0.5 matrixcolor TintMatrix('#fff')
-    bart "What?"
+        parallel:
+            rotate 15
+            ease 0.5 rotate 0
+    show bart mech as bartglow:
+        alpha 1.0
+        linear 0.5 alpha 0.0
+    show bart at yshake(5, 10, 0.02) behind queenhits
 
-    show queen mech neutral at left, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
     queen "Diabolos Dark Laser Charge, Attack!"
     linda "LIZZY!"
+    show linda:
+        parallel:
+            fx.ease_xoffset(dur=1.0, x1=-500)
+        parallel:
+            fx.ease_yoffset(dur=0.3, y1=200)
+            fx.ease_yoffset(dur=0.7, y0=200, y1=-1200)
     queen "The one and only ;) Back away from his tractor beam. Kelisha, break his defenses!"
-    show kelisha mech neutral at center, flip, fx.hover(2.1)
+    show kelisha mech neutral at center, flip, fx.hover(2.1):
+        parallel:
+            fx.ease_xoffset(dur=1.3, x0=-500)
+        parallel:
+            fx.ease_yoffset(dur=1.0, y0=1200, y1=-200)
+            fx.ease_yoffset(dur=0.3, y0=-200)
+    hide queenhits
+    show bg kelisha hits as kelishahits behind linda, queen, kelisha:
+        alpha 0.0
+        linear 1.0 alpha 0.9
+        linear 1.0 alpha 0.0
+    show bart:
+        parallel:
+            matrixcolor TintMatrix('#fff')
+            linear 0.5 matrixcolor TintMatrix(color_kelisha)
+        parallel:
+            yshake(5, 6, 0.02)
+
     kelisha "Already on it, Mega Flare Pierce Rifle, Activate!"
     # > The Bahamut shoots a blast that break’s The Alexander’s
     # > shields.
     bart "No!"
+
+    show queen at flip, fx.hover(3.1), fx.ease_xoffset(dur=2.0, x1=-1000)
+    show kelisha at flip, fx.hover(2.1), fx.ease_xoffset(dur=2.0, x1=-1000)
+    $ dur = 0.6
+    show bart:
+        parallel:
+            fx.ease_xpos(dur=2.0, x0=0.85, x1=0.5)
+        parallel:
+            pause (dur-0.2)
+            yshake(5, 4, 0.01)
+            pause 0.04
+            repeat 7
+        pause 0.3
+        parallel:
+            fx.ease_pos(dur=4.0, xy0=(0.5, ypos_textbox), xy1=(0.8, -0.5))
+        parallel:
+            rotate 0.0
+            linear 4.0 rotate 4 * -360
+    show bg linda hits as lindahits behind linda, queen, kelisha:
+        alpha 0.0
+        pause (dur-0.3)
+        linear 0.1 alpha 0.6
+        linear 0.1 alpha 0.0
+        pause 0.1
+        repeat 8
+    hide linda
+    show linda mech neutral:
+        flip
+        rotate -15
+        fx.ease_pos(dur=dur, xy0=(0.5, 1.5), xy1=(1.0, 0.0))
+        rotate 15
+        fx.ease_pos(dur=dur, xy0=(0.5, 0.0), xy1=(1.0, 1.5))
+        noflip
+        rotate 15
+        fx.ease_pos(dur=dur, xy0=(0.85, 1.5), xy1=(0.35, 0.0))
+        rotate -15
+        fx.ease_pos(dur=dur, xy0=(0.85, 0.0), xy1=(0.35, 1.5))
+        flip
+        rotate -15
+        fx.ease_pos(dur=dur, xy0=(0.25, 1.5), xy1=(0.75, 0.0))
+        rotate 15
+        fx.ease_pos(dur=dur, xy0=(0.25, 0.0), xy1=(0.75, 1.5))
+        noflip
+        rotate 15
+        fx.ease_pos(dur=dur, xy0=(0.75, 1.5), xy1=(0.25, 0.0))
+        rotate -15
+        fx.ease_pos(dur=dur, xy0=(0.75, 0.0), xy1=(0.25, 1.5))
     linda "I’m sorry, Bart... OVERDRIVE MARIPOOOOOSA!"
     # > Linda’s attack severely damages The Alexander
 

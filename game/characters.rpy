@@ -1,12 +1,14 @@
 define usagi = Character("Usagi", color="#fd7979", image="usagi")
 define takeshi = Character("Takeshi", color="#44bbff", image="takeshi")
 define sanders = Character("Sanders", color="#00ff00", image="sanders")
-define kelisha = Character("Professor Kelisha", color="#88aaff", image="kelisha")
+define color_kelisha = "#88aaff"
+define kelisha = Character("Professor Kelisha", color=color_kelisha, image="kelisha")
 define takeshis_console = Character(name="Takeshi's console", color="#aaaaaa")
 define color_bart = "#8844ff"
 define bart = Character("Barthandelus", color=color_bart, image="bart")
 define jojo = Character("Professor Jojo", color="#666666", image="jojo")
-define linda = Character("Linda Kitadani", color="#d68e8e", image="linda")
+define color_linda= "#d68e8e"
+define linda = Character("Linda Kitadani", color=color_linda, image="linda")
 define linda_young = Character("Linda Hudson", color="#d68e8e", image="linda")
 define kohei = Character("Kohei Kitadani", color="#00bb00", image="kohei")
 # same character, using different names/titles in different parts of the script
@@ -14,8 +16,9 @@ define child = Character("The Child", color="#dddddd", image="child")
 define noname = Character("NoName", color="#dddddd", image="child")
 define kagu = Character("Kagu", color="#dddddd", image="child")
 # same character, using different names/titles in different parts of the script
-define queen = Character("Queen Elizabeth Newark", color="#ffff00", image="queen")
-define princess = Character("Princess Elizabeth Newark", color="#ffff00", image="princess")
+define color_queen = "#ffff00"
+define queen = Character("Queen Elizabeth Newark", color=color_queen, image="queen")
+define princess = Character("Princess Elizabeth Newark", color=color_queen, image="princess")
 # same character, using different names/titles in different parts of the script
 define general = Character("Elite General", color="#c99e61", image="huxtable")
 define huxtable = Character("Robert Huxtable", color="#c99e61", image="huxtable")

@@ -4,6 +4,10 @@ image bg white = Solid('#fff')
 image bg red = Solid('#f00')
 image bg beige = Solid("#e7dbc7")
 image bg neongreen = Solid("#0fff50")
+image bg linda hits = Solid(color_linda)
+image bg bart hits = Solid(color_bart)
+image bg queen hits = Solid(color_queen)
+image bg kelisha hits = Solid(color_kelisha)
 
 transform flip:
     xzoom -1.0
@@ -129,6 +133,10 @@ transform fx.ease_yoffset(dur=1.0, y0=0, y1=0):
 transform fx.ease_ypos(dur=1.0, y0=880.0/1080.0, y1=880.0/1080.0):
     fx.ypos(y0)
     ease dur fx.ypos(y1)
+
+transform fx.ease_pos(dur=1.0, xy0=(0, 880.0/1080.0), xy1=(0, 880.0/1080.0)):
+    pos xy0
+    ease dur pos xy1
 
 label fx.play_music_in_dev(f):
     $ if config.developer: renpy.music.play(f)
