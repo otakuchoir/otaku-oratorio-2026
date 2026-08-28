@@ -45,8 +45,6 @@ scenes = [
     ### Act 2
     S('scene17', 'Start Act 2; Flashback: Eden vs. PD 1'),
     S('scene18', 'Flashback: Eden vs. PD 2, News Report'),
-    S('scene18a', 'SONG: The Final Day'),
-    # Manga panels
     S('scene19', 'Flashback: Eden vs. PD 2; MANGA: Ultima Cannon Hits the PD'),
     S('scene20', 'Sanders Reassigns Usagi'),
     S('scene21', 'Sanders Chauffeurs Usagi'),

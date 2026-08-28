@@ -2,10 +2,10 @@
 label scene37:
     scene bg black hole
     show layer master at fx.flashback
-    show queen mech neutral at center, fx.hover(dur=2.3, y0=-300)
-    show bart mech neutral at right, fx.hover(dur=2.9, y0=-300)
-    show jojo mech neutral at right2, fx.hover(dur=1.9, y0=-50)
-    show linda mech worried at left2, fx.hover(dur=1.7, y0=-50)
+    show queen mech neutral at center, fx.yoffset(-300), fx.hover(dur=2.3)
+    show bart mech neutral at right, fx.yoffset(-300), fx.hover(dur=2.9)
+    show jojo mech neutral at right2, fx.yoffset(-50), fx.hover(dur=1.9)
+    show linda mech worried at left2, fx.yoffset(-50), fx.hover(dur=1.7)
 
     # > 37       EXT. SPACE                                                               37
     queen "Not gonna lie, Bart... I never thought you’d partake in insubordination like this."

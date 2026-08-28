@@ -147,10 +147,11 @@ label fx.play_music_if_changed_in_dev(f):
 
 transform fx.hover(dur=2.0, loops=None, y0=0, dy=50):
     # Start hovering, initializing the start location
-    yoffset y0
+    # yoffset y0
     fx.hovering(dur=dur, loops=loops, y0=y0, dy=dy)
 
 transform fx.hovering(dur=2.0, loops=None, y0=0, dy=50):
+    animation
     # Continue hovering after an earlier fx.hover(), without initializing the start location
     easein  dur/4 yoffset y0+dy
     easeout dur/4 yoffset y0

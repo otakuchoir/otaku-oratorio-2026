@@ -53,6 +53,7 @@ label scene40:
     show kelisha mech neutral at right, fx.hover(2.1), fx.ease_xoffset(dur=dur, x1=1000)
     sanders "We’re approaching the Alexander now. We’ll rush past it and put Jojo in position. Follow me everyone-"
     show bart:
+        # TODO I want this to transition from wherever the hover puts him, but it seems to teleport abruptly instead...?
         linear 0.25 yoffset 0
     pause 0.25
     show bart mech as bartglow at right, noflip behind bart:
@@ -322,6 +323,7 @@ label scene40:
         fx.ease_pos(dur=dur, xy0=(0.75, 0.0), xy1=(0.25, 1.5))
     linda "I’m sorry, Bart... OVERDRIVE MARIPOOOOOSA!"
     # > Linda’s attack severely damages The Alexander
+    "TODO from here"
 
     scene bg space battlefield
     show sanders mech postgrad neutral at left2, flip, fx.hover(2.3)
