@@ -75,6 +75,12 @@ label scene40:
     bart "That’s right. I don’t need you getting any closer. Just sit still while-"
     computer "INCOMING MISSILES"
     # > Missiles bombard the Alexander.
+    show bg linda hits as lindahits behind linda, sanders, usagi, jojo:
+        alpha 0.0
+        linear 0.05 alpha 0.4
+        linear 0.05 alpha 0.0
+        pause 0.05
+        repeat 5
     show bart:
         yshake(5, 6, 0.02)
         fx.hover(3.7)
