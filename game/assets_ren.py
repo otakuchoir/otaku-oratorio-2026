@@ -95,8 +95,8 @@ for f in fs:
         load_image(name_focus, f, transform=anchor_sprite) # type: ignore
         # renpy.image(name_unfocus, Transform(dim(renpy.get_registered_image(name_focus)))) # type: ignore
         # uncomment this line to generate assets_tabcomplete.rpy
-        if config.developer: # type: ignore
-            print(f"image {name_unfocus} = Transform(dim(renpy.get_registered_image('{name_focus}')))")
+        # if config.developer: # type: ignore
+            # print(f"image {name_unfocus} = Transform(dim(renpy.get_registered_image('{name_focus}')))")
         # print('image:', name, '-', f)
 
     m = re.match(r"^assets\/backgrounds\/(?P<basename>.*).(png|jpg|gif)$", f)

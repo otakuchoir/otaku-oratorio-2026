@@ -15,12 +15,12 @@ label scene02:
     call fx.play_music_in_dev("bgm_002_seajetter_kaito.opus")
     kitadani "Fear not, announcer! Courageous Kaito! Reporting for Duty!"
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
-    kitadani "LET’S GO! CROWN BLASTER!"
-    pause 0
-    with vpunch
     # > 
     # >          SONG: Fumetsu no Hero    # > 
     "PLACEHOLDER Song: Fumetsu no Hero"
+    kitadani "LET’S GO! CROWN BLASTER!"
+    pause 0
+    with vpunch
     # > THE MONSTER DOES NOT FLINCH.
     monster "Your precious Earth is mine to devour!"
     # > MONSTER EATS MINIATURE BUILDING COOKIE MONSTER STYLE
