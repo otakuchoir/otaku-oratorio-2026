@@ -47,6 +47,7 @@ config.side_image_only_not_showing = True  # type: ignore
 # config.keymap['skip'] = [ 'anymod_K_LCTRL', 'anymod_K_RCTRL' ]
 # config.keymap['skip'] = []  # type: ignore
 config.keymap['skip'] = ['anyrepeat_K_PAGEDOWN', 'anyrepeat_KP_PAGEDOWN', ] # type: ignore
+config.keymap['toggle_skip'] = ['anyrepeat_K_PAGEUP', 'anyrepeat_KP_PAGEUP' ] # type: ignore
 
 
 def load_image(name: str, path: str, transform=lambda x: x):
