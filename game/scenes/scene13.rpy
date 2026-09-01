@@ -164,21 +164,6 @@ label scene13:
         flip
         easeout 2 xoffset 800
 
-    show kelisha at noflip
-    kelisha "Repeat after me:"
-    kelisha "Negotiations failed." 
-    call trio_say("Negotiations failed.")
-    show takeshi at hvibrate(n=2)
-    kelisha "The people of New Jersey rioted."
-    show usagi at hvibrate(n=2)
-    call trio_say("The people of New Jersey rioted.")
-    kelisha "They broke their dome and were consumed by earth’s violent atmosphere."
-    call trio_say("They broke their dome and were consumed by earth’s violent atmosphere.")
-    show takeshi at hvibrate(n=2)
-    kelisha "This is why we build the domes."
-    call trio_say("This is why we build the domes.")
-    show usagi at hvibrate(n=2)
-
     # > 
     # > SONG: Lillium    # > 
     # > Manga panel sequence of events: Ultima canon is fired,
@@ -223,6 +208,30 @@ label scene13:
     # post-destruction
     #show usagi neutral at topleft
     #show takeshi neutral at right2
+    show usagi cry 1 at left, flip
+    show takeshi worried 2 at left2, flip
+    show sanders neutral at center, flip
+    show kelisha neutral at right
+    with dissolve
+    kelisha "Repeat after me:"
+    kelisha "Negotiations failed." 
+    call trio_say("Negotiations failed.")
+    show takeshi at hvibrate(n=2)
+    kelisha "The people of New Jersey rioted."
+    show usagi at hvibrate(n=2)
+    call trio_say("The people of New Jersey rioted.")
+    kelisha "They broke their dome and were consumed by earth’s violent atmosphere."
+    call trio_say("They broke their dome and were consumed by earth’s violent atmosphere.")
+    show takeshi at hvibrate(n=2)
+    kelisha "This is why we build the domes."
+    call trio_say("This is why we build the domes.")
+    show usagi at hvibrate(n=2)
+    hide usagi
+    hide takeshi
+    hide sanders
+    hide kelisha
+    with dissolve
+
     show linda neutral holo focus at center with dissolve
     linda "Usagi... there’s something I need to tell you. Call me back."
     hide linda with dissolve
