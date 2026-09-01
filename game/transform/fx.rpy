@@ -137,6 +137,10 @@ transform fx.ease_ypos(dur=1.0, y0=880.0/1080.0, y1=880.0/1080.0):
 transform fx.ease_pos(dur=1.0, xy0=(0, 880.0/1080.0), xy1=(0, 880.0/1080.0)):
     pos xy0
     ease dur pos xy1
+transform fx.ease_xyoffset(dur=1.0, xy0=(0, 0), xy1=(0, 0)):
+    xoffset xy0[0]
+    yoffset xy0[1]
+    ease dur xoffset xy1[0] yoffset xy1[1]
 
 label fx.play_music_in_dev(f):
     $ if config.developer: renpy.music.play(f)

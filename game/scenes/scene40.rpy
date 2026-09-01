@@ -1,3 +1,9 @@
+# define hover_bart = 3.7
+# define hover_jojo = 1.9
+# define hover_sanders = 2.3
+# define hover_usagi = 1.7
+# define hover_kelisha = 2.1
+# define hover_kelisha = 2.1
 
 label scene40:
     scene bg space battlefield
@@ -323,29 +329,63 @@ label scene40:
         fx.ease_pos(dur=dur, xy0=(0.75, 0.0), xy1=(0.25, 1.5))
     linda "I’m sorry, Bart... OVERDRIVE MARIPOOOOOSA!"
     # > Linda’s attack severely damages The Alexander
-    "TODO from here"
 
     scene bg space battlefield
-    show sanders mech postgrad neutral at left2, flip, fx.hover(2.3)
-    show usagi mech postgrad neutral at left, flip, fx.hover(1.7)
-    show jojo mech neutral at center, flip, fx.hover(1.9)
-    jojo "We’re in range, let’s park it right here. I’m taking control of the system now...."
-    show bart mech neutral at right2, fx.hover(3.7)
+    show sanders mech postgrad neutral at left2, noflip, fx.hover(2.3)
+    show usagi mech postgrad neutral at left, noflip, fx.hover(1.7)
+    show jojo mech neutral at center, noflip, fx.hover(1.9)
+    jojo "We’re in range, let’s park it right here."
+    jojo "I’m taking control of the system now...."
+
+    show bart mech neutral at center:
+        parallel:
+            fx.ease_xyoffset(dur=1.0, xy0=(500, 1500))
+        parallel:
+            rotate -270.0
+            easein 1.5 rotate 45.0
+            easein 1.0 rotate -60.0
+        parallel:
+            pause 2.0
+            ease 1.0 fx.stretch(0.9, 1.15)
+    show sanders at fx.ease_xyoffset(dur=1.0, xy1=(-500, 1500))
+    show usagi at fx.ease_xyoffset(dur=1.0, xy1=(-500, 1500))
+    show jojo at fx.ease_xyoffset(dur=1.0, xy1=(-500, 1500))
+
     bart "I may be defeated here... but I WILL NOT LOSE! JUDGEMENT LANCE!"
+
     # > The Alexander launches a golden lance toward Professor Jojo.
+    show bg bart hits as barthits behind bart, jojo:
+        alpha 0.0
+        pause 0.5
+        linear 0.1 alpha 0.8
+        linear 2.0 alpha 0.3
+    show bart:
+        ease 0.2 fx.stretch(1.15, 0.9)
+        pause 0.3
+        ease 0.2 fx.stretch(1.0, 1.0)
+    show sanders at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -1500))
+    show usagi at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -1500))
+    show jojo at fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500))
     kelisha neutral "JOSEPH!"
     # > The lance makes impact with Jojo, causing a huge explosion.
     # > He’s gone in an instant.
     ### page 80 ###
+    hide jojo with dissolve
     bart "My... friend.... AHHHHHH!"
-    hide jojo
-    hide bart
+    show bg bart hits as barthits:
+        linear 0.1 alpha 1.0
+        pause 1.5
+        easein 3.0 alpha 0.0
+    hide bart with dissolve
     # > Barthandelus and the Alexander go up in a ball of flame and
     # > explosion.
     linda neutral "Joseph.... Bart...."
 
+    # hide barthits
+    show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500))
+    show usagi at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500))
     sanders "Shit. What do we do now??"
-    show takeshi mech neutral at right2, fx.hover(2.5)
+    show takeshi mech postgrad neutral at right2, fx.hover(2.5), fx.ease_xyoffset(dur=2.0, xy0=(1500, -500))
     takeshi "Support unit B-100 reporting... Sounds like you need someone who knows how to hack."
     usagi "Takeshi!"
     takeshi "Sorry I couldn’t be here sooner guys. Sanders..."
@@ -356,16 +396,18 @@ label scene40:
     sanders "What!? What is it?"
     takeshi "We’ve got a few minutes until the moon crosses Earth’s gravitational threshold."
     sanders "Yeah, and? You can stop the Ultima Cannon right?"
-    takeshi "Its been sabotaged. If we disable the tractor beam function... The cannon self destruct. We’ll lose the Ultima Cannon."
+    takeshi "Its been sabotaged. If we disable the tractor beam function... The cannon self destructs. We’ll lose the Ultima Cannon."
     ### page 81 ###
     sanders "Isn’t that what you want? An end to the mining? The Crown’s weapon?"
     takeshi "The self destruct would be instant..."
     sanders "...."
     usagi "...."
     sanders "Well we only have a few minutes. We need to make a decision now. I’ll do it."
-    sanders "Save me the shock ok? I know you both hate me. The things I’ve done in the name of the Crown... I realized too late what I had become. Let me redeem myself with this-"
+    sanders "Save me the shock ok? I know you both hate me."
+    sanders "The things I’ve done in the name of the Crown... I realized too late what I had become. Let me redeem myself with this-"
 
-    show child neutral at right, fx.hover(1.3)
+    show takeshi at flip, fx.hover(2.5)
+    show child neutral at right, fx.hover(1.3), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000))
     kagu "I can do it. It won’t hurt. I can’t be destroyed."
     usagi "Are you serious Kagu?"
     kagu "Yeah. It’s just..."
@@ -376,6 +418,12 @@ label scene40:
     sanders "Oh I know who you are."
     takeshi "Me too... part of the intel. It was nice to meet you Sabik."
     kagu "Actually, my name is Kagu. Short for Kaguya, but we don’t have time. Go, now! I’ll see you in a bit."
+
+    show sanders at noflip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show usagi at noflip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show takeshi at noflip, fx.hover(2.5), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show child at fx.hover(1.3), fx.ease_xpos(dur=1.5, x0=0.85, x1=0.50)
+    pause 1.0
     scene bg black with dissolve
 
     window hide
