@@ -311,8 +311,9 @@ transform mech_placeholder:
     zoom 1.5
     matrixcolor BrightnessMatrix(-0.75)
 image usagi mech:
-    "usagi postgrad neutral focus"
-    mech_placeholder
+    'images/Usagi_mech_sketch_transparent.png'
+#     "usagi postgrad neutral focus"
+#     mech_placeholder
 image takeshi mech:
     "takeshi postgrad neutral focus"
     mech_placeholder
@@ -329,8 +330,9 @@ image queen mech:
     "queen neutral focus"
     mech_placeholder
 image bart mech:
-    "bart neutral focus"
-    mech_placeholder
+    'images/bart-mech-transparent.png'
+    # "bart neutral focus"
+    # mech_placeholder
 image jojo mech:
     "jojo neutral focus"
     mech_placeholder
@@ -362,13 +364,13 @@ init 501 python:
             return [self.tag] + self.alias
 
     mechtemplates = [
-        MechTemplate('usagi', (450*1.5, 316*1.5), (250, 200)),
+        MechTemplate('usagi', (675, 550), (300, 300)),
         MechTemplate('takeshi', (507*1.5, 400*1.5), (250, 200)),
         MechTemplate('sanders', (450*1.5, 450*1.5), (225, 250)),
         MechTemplate('linda', (265*1.5, 283*1.5), (100, 200)),
         MechTemplate('kohei', (503*1.5, 317*1.5), (250, 200)),
         MechTemplate('queen', (717*1.5, 474*1.5), (350, 300), alias=['princess']),
-        MechTemplate('bart', (308*1.5, 475*1.5), (130, 400)),
+        MechTemplate('bart', (500*1.2, 500*1.2), (220*1.2, 150*1.2)),
         MechTemplate('jojo', (520*1.5, 340*1.5), (250, 200)),
         MechTemplate('huxtable', (498*1.5, 381*1.5), (250, 300)),
         MechTemplate('kelisha', (350*1.5, 400*1.5), (150, 200)),

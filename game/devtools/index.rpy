@@ -12,3 +12,5 @@ screen devtools():
                 action ShowMenu('sound_test')
             textbutton "animation test":
                 action Start('animation_test')
+            textbutton "mech test":
+                action Start('mech_test')
