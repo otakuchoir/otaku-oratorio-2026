@@ -5,6 +5,7 @@ init python:
     side_crop_bart = (50, 0, 200, 360)
     side_crop_jojo = (150, 20, 200, 200)
     side_crop_kelisha = (80, 0, 200, 250)
+    side_crop_linda = (40, 0, 200, 220)
 
 # scene 16
 image side takeshi postgrad neutral focus = Transform(flip(renpy.get_registered_image('takeshi postgrad neutral focus')), crop=side_crop_takeshi)
@@ -53,3 +54,4 @@ image side bart grin 1 focus = Transform(flip(renpy.get_registered_image('bart g
 # scene 40
 image side usagi postgrad shock focus = Transform(flip(renpy.get_registered_image('usagi postgrad shock focus')), crop=side_crop_usagi)
 image side kelisha neutral focus = Transform(flip(renpy.get_registered_image('kelisha neutral focus')), crop=side_crop_kelisha)
+image side linda shock focus = Transform(flip(renpy.get_registered_image('linda shock focus')), crop=side_crop_linda)
