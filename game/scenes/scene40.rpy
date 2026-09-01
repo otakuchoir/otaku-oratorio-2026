@@ -65,7 +65,7 @@ label scene40:
     pause 2.0
 
     kelisha "Barthandelus pilots the Alexander as a high level defensive heal class. I’m debuffing his systems now."
-    show bart mech neutral at left, flip, fx.hover(3.7), fx.ease_xoffset(dur=1.5, x0=-500)
+    show bart mech neutral at left2, flip, fx.hover(3.7), fx.ease_xoffset(dur=2.5, x0=-1000)
     bart "So... you have come to challenge the will of god..."
     kelisha mech worried "Barthandelus! Stand down and let’s stop this insanity."
     ### page 77 ###
@@ -83,12 +83,17 @@ label scene40:
     show jojo mech serious at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=dur, x0=-2000)
     show kelisha mech serious at right, fx.hover(2.1), fx.ease_xoffset(dur=dur, x1=1000)
     sanders "We’re approaching the Alexander now. We’ll rush past it and put Jojo in position. Follow me everyone-"
-    show bart mech grin 1:
+    # since we're teleporting abruptly anyway, hide/show to reset his position. the glow position is finicky...!
+    hide bart
+    show bart mech grin 1 at right:
         # TODO I want this to transition from wherever the hover puts him, but it seems to teleport abruptly instead...?
         linear 0.25 yoffset 0
     pause 0.25
     show bart mech as bartglow at right, noflip behind bart:
-        blur 12
+        # offsets make the glow match bart's silhouette. guess and check - I couldn't/didn't figure out the exact math!
+        xoffset -20
+        yoffset -35
+        blur 20
         matrixcolor ColorizeMatrix(color_bart, color_bart)
         alpha 0.0
         linear 0.5 alpha 1.0
@@ -104,7 +109,9 @@ label scene40:
         linear 0.5 matrixcolor TintMatrix(color_bart)
     usagi "Guys... I’m losing power... We’re slowing down?"
     jojo "The Alexander has a magnetic tractor beam."
+    show bart mech focus as bartglow
     bart "That’s right. I don’t need you getting any closer. Just sit still while-"
+    show bart mech as bartglow
     show bart mech shock
     computer "INCOMING MISSILES"
     # > Missiles bombard the Alexander.
@@ -117,12 +124,12 @@ label scene40:
     show bart:
         yshake(5, 6, 0.02)
         fx.hover(3.7)
-    show bart mech as bartglow:
-        parallel:
+    show bart mech focus as bartglow:
+        # parallel:
             alpha 1.0
             linear 0.5 alpha 0.0
-        parallel:
-            yshake(5, 10, 0.02)
+        # parallel:
+            # yshake(5, 10, 0.02)
     show sanders mech postgrad neutral at left2, noflip, fx.hover(2.3):
         matrixcolor TintMatrix(color_bart)
         linear 0.5 matrixcolor TintMatrix('#fff')
@@ -252,11 +259,11 @@ label scene40:
     show bart mech angry 1 at fx.hover(dur=3.7) behind lindahits
     pause 0.1
     show bart mech shock
-    show sanders at fx.hover(2.3), fx.ease_xoffset(dur=1.0, x1=-1200):
+    show sanders at fx.hover(2.3), fx.ease_xoffset(dur=1.0, x1=-1400):
         ease 1.5 ypos 0.5
-    show usagi at fx.hover(1.7), fx.ease_xoffset(dur=1.0, x1=-1200):
+    show usagi at fx.hover(1.7), fx.ease_xoffset(dur=1.0, x1=-1400):
         ease 1.5 ypos 0.8
-    show jojo at fx.hover(1.9), fx.ease_xoffset(dur=1.0, x1=-1200):
+    show jojo at fx.hover(1.9), fx.ease_xoffset(dur=1.0, x1=-1400):
         ease 1.5 ypos 1.0
     linda "I don’t think so."
 
@@ -268,14 +275,19 @@ label scene40:
         linear 0.2 yoffset 0
         pause 0.5
         noflip
-    show bart mech as bartglow at right, behind bart:
+    show bart mech as bartglow at right behind bart:
+        # offsets make the glow match bart's silhouette. guess and check - I couldn't/didn't figure out the exact math!
+        xoffset 20
+        yoffset -35
         flip
-        blur 12
+        blur 20
         matrixcolor ColorizeMatrix(color_bart, color_bart)
         alpha 0.0
         linear 0.2 alpha 1.0
         pause 0.5
         noflip
+        xoffset -20
+        yoffset -35
     show linda mech scared:
         noflip
         xoffset 0
@@ -288,12 +300,16 @@ label scene40:
     pause 1.0
     show bart mech grin 2
 
+    show bart mech focus as bartglow
     bart "And so your story ends here."
+    show bart mech as bartglow
     ### page 79 ###
     show bart mech neutral
     computer "INCOMING BEAM ATTACK"
     show bart mech angry 1
+    show bart mech focus as bartglow
     bart "What?"
+    show bart mech as bartglow
     show bart mech shock
     show queen mech serious 1 at left, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
     show bg queen hits as queenhits behind linda, queen:
@@ -412,15 +428,12 @@ label scene40:
     show usagi mech postgrad happy 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=-1000)
     show jojo mech grin 2 at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=-1000)
     jojo "We’re in range, let’s park it right here."
-    show sanders mech postgrad happy at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=-1000)
-    show usagi mech postgrad happy 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=-1000)
-    show jojo mech grin 2 at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=-1000)
     jojo mech serious 2 "I’m taking control of the system now...."
 
     show bg space battlefield:
         pos (0.55, 0.45)
         ease 1.0 pos (0.50, 0.55)
-    show bart mech angry 2 at center:
+    show bart mech angry 2 at right2:
         parallel:
             fx.ease_xyoffset(dur=1.0, xy0=(500, 1500))
         parallel:
@@ -447,17 +460,33 @@ label scene40:
         linear 0.1 alpha 0.8
         linear 2.0 alpha 0.3
     show bart mech angry 3:
-        ease 0.2 fx.stretch(1.15, 0.9)
-        pause 0.3
+        parallel:
+            ease 0.2 fx.stretch(1.15, 0.9)
+            pause 0.3
+        parallel:
+            fx.yoffset(0)
+            easeout 0.5 fx.yoffset(200)
+        # impact
         ease 0.2 fx.stretch(1.0, 1.0)
-    show sanders mech postgrad panic at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -1500))
-    show usagi mech postgrad shock at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -1500))
-    show jojo mech crying at fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500))
+    show sanders mech postgrad panic at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
+    show usagi mech postgrad shock at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
+    show jojo mech crying at fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500)) behind bart
+    # overlay half of jojo's sprite so bart's lance is impaling him
+    show jojo mech crying as jojostabbed at center, fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500)):
+        # crop(x, y, w, h)
+        # crop (0.5, 0.0, 0.5, 1.0)
+        # anchor (0.0, 1.0)
+        crop (0.45, 0.0, 0.55, 1.0)
+        # anchor ((0.55-0.45)*0.5, 1.0)
+        # where's the anchor point? guess and check lol, couldn't figure out math for it
+        anchor (0.09, 1.0)
     kelisha mech worried "JOSEPH!"
     # > The lance makes impact with Jojo, causing a huge explosion.
     # > He’s gone in an instant.
     ### page 80 ###
-    hide jojo with dissolve
+    hide jojo
+    hide jojostabbed
+    with dissolve
     show bart mech anxious
     bart "My... friend.... AHHHHHH!"
     show bg bart hits as barthits:
@@ -529,7 +558,9 @@ label scene40:
     show takeshi mech postgrad neutral at flip, fx.hover(2.5)
     show usagi mech postgrad neutral at noflip, fx.hover(1.7)
     show sanders mech postgrad neutral at noflip, fx.hover(2.3)
-    show child neutral at right, fx.hover(1.3), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000))
+    show child neutral at right, fx.hover(1.3), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000)):
+        # a little smaller to match the mech scale. but 0.5 is too small!
+        zoom 0.70
     kagu "I can do it. It won’t hurt. I can’t be destroyed."
     usagi "Are you serious Kagu?"
     show child sad

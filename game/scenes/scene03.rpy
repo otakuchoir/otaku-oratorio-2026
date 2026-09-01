@@ -10,7 +10,6 @@ label scene03:
     show takeshi mech neutral at right
     with ease
 
-    "PLACEHOLDER mechs throughout the show are temporarily a giant dim copy of their pilot. pilots will be visible on top of their real mech sprites, just like in these placeholders: it's important to see their pretty faces, and to show who controls which mech"
     sanders @ mech smug "They’re sitting ducks."
     takeshi mech annoyed "Something’s not right. Performing field scan."
 
@@ -210,7 +209,6 @@ transform usagi_swoops_in_swoop3:
 transform usagi_swoops_in_landing:
     parallel:
         # easein 1.4 right  # nope, this breaks for some reason
-        yanchor 1.0
         easein 1.5 xpos 0.85 ypos ypos_textbox
     parallel:
         flip

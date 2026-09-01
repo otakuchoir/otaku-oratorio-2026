@@ -38,7 +38,7 @@ label scene16:
         pause 0.6
         easein 3 ytextbox xpos 1.3
     show usagi mech postgrad neutral:
-        ypos y0 xpos x0
+        ypos -0.7 xpos x0
         pause 1
         easein 3 ytextbox xpos 0.35
     show bart mech neutral:

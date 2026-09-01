@@ -2,7 +2,10 @@
 label scene34:
     # TODO scaling is weird here, it's the only scene that shows both non-mechs and mechs.
     # but making child super-tiny looks bad, so let's not worry about it...?
-    scene bg black hole
+    scene bg black hole:
+        zoom 1.1
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
     show child sad at center:
         ypos ypos_textbox-0.2
         parallel:
@@ -18,6 +21,12 @@ label scene34:
     # > and then again Earth in 2100, the great cataclysm.
     kagu "I’m responsible for this. I... What AM I really. Past lives? Regeneration..."
     kagu "I’m a monster..."
+    show bg black hole:
+        zoom 1.1
+        linear 0.5 zoom 1.0
+    show child:
+        zoom 1.0
+        linear 0.5 zoom 0.7
     show usagi mech postgrad worried at right behind child:
         ypos ypos_textbox-0.1
         parallel:

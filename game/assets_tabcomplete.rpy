@@ -310,36 +310,41 @@ image navigator focus = Transform(renpy.get_registered_image('huxtable faceless 
 transform mech_placeholder:
     zoom 1.5
     matrixcolor BrightnessMatrix(-0.75)
-image usagi mech:
+transform mech_setup:
+    anchor (0.5, 1.0)
+image usagi rawmech:
     'images/Usagi_mech_sketch_transparent.png'
+    mech_setup
 #     "usagi postgrad neutral focus"
 #     mech_placeholder
-image takeshi mech:
+image takeshi rawmech:
     "takeshi postgrad neutral focus"
     mech_placeholder
-image sanders mech:
+image sanders rawmech:
     "sanders postgrad neutral focus"
     mech_placeholder
-image linda mech:
+image linda rawmech:
     "linda neutral focus"
     mech_placeholder
-image kohei mech:
+image kohei rawmech:
     "kohei neutral focus"
     mech_placeholder
-image queen mech:
+image queen rawmech:
     "queen neutral focus"
     mech_placeholder
-image bart mech:
+image bart rawmech:
     'images/bart-mech-transparent.png'
+    zoom 1.2
+    mech_setup
     # "bart neutral focus"
     # mech_placeholder
-image jojo mech:
+image jojo rawmech:
     "jojo neutral focus"
     mech_placeholder
-image huxtable mech:
+image huxtable rawmech:
     "huxtable neutral focus"
     mech_placeholder
-image kelisha mech:
+image kelisha rawmech:
     "kelisha neutral focus"
     mech_placeholder
 # run after images are defined
@@ -348,43 +353,77 @@ init 501 python:
     @dataclasses.dataclass(frozen=True)
     class MechTemplate:
         tag: str
-        _dim: (int, int)
+        _xy: (int, int)
         _pilot: (int, int)
+        anchor: (float, float) = (0.5, 1.0)
         pilot_zoom: float = 0.5
         alias: list[str] = dataclasses.field(default_factory=list)
+        pilot_under: bool = False
 
         @property
-        def dim(self):
-            return (int(self._dim[0]), int(self._dim[1]))
+        def xy(self):
+            return (int(self._xy[0]), int(self._xy[1]))
         @property
         def pilot(self):
             return (int(self._pilot[0]), int(self._pilot[1]))
+        @property
+        def nofocus(self):
+            return MechTemplate(
+                tag=self.tag,
+                _xy=(self._xy[0] * 0.95, self._xy[1] * 0.95),
+                _pilot=(self._pilot[0] * 0.95, self._pilot[1] * 0.95),
+                anchor=self.anchor,
+                pilot_zoom=self.pilot_zoom,
+                alias=self.alias,
+                pilot_under=self.pilot_under,
+            )
         @property
         def tags(self):
             return [self.tag] + self.alias
 
     mechtemplates = [
-        MechTemplate('usagi', (675, 550), (300, 300)),
-        MechTemplate('takeshi', (507*1.5, 400*1.5), (250, 200)),
-        MechTemplate('sanders', (450*1.5, 450*1.5), (225, 250)),
-        MechTemplate('linda', (265*1.5, 283*1.5), (100, 200)),
-        MechTemplate('kohei', (503*1.5, 317*1.5), (250, 200)),
-        MechTemplate('queen', (717*1.5, 474*1.5), (350, 300), alias=['princess']),
-        MechTemplate('bart', (500*1.2, 500*1.2), (220*1.2, 150*1.2)),
-        MechTemplate('jojo', (520*1.5, 340*1.5), (250, 200)),
-        MechTemplate('huxtable', (498*1.5, 381*1.5), (250, 300)),
-        MechTemplate('kelisha', (350*1.5, 400*1.5), (150, 200)),
+        # xy=(exact-image-size * zoom), see rawmech images above. anchor and pilot are guesses/what looks best
+        # careful with x-anchors other than 0.5: they interact poorly with `flip`!
+        # MechTemplate('usagi',   _xy=(950*1.0, 1272*1.0), anchor=(0.37, 0.43), _pilot=(330, 0), pilot_under=True),
+        # MechTemplate('bart',    _xy=(694*1.2, 660 *1.2), anchor=(0.45, 0.90), _pilot=(330*1.2, -110), pilot_under=True),
+        MechTemplate('usagi',   _xy=(950*1.0, 1272*1.0), anchor=(0.50, 0.43), _pilot=(330, 0), pilot_under=True),
+        MechTemplate('bart',    _xy=(694*1.2, 660 *1.2), anchor=(0.50, 0.90), _pilot=(330*1.2, -110), pilot_under=True),
+        MechTemplate('takeshi', _xy=(507*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(250, 200)),
+        MechTemplate('sanders', _xy=(450*1.5, 450 *1.5), anchor=(0.50, 1.00), _pilot=(225, 250)),
+        MechTemplate('linda',   _xy=(265*1.5, 283 *1.5), anchor=(0.50, 1.00), _pilot=(100, 200)),
+        MechTemplate('kohei',   _xy=(503*1.5, 317 *1.5), anchor=(0.50, 1.00), _pilot=(250, 200)),
+        MechTemplate('queen',   _xy=(717*1.5, 474 *1.5), anchor=(0.50, 1.00), _pilot=(350, 300), alias=['princess']),
+        MechTemplate('jojo',    _xy=(520*1.5, 340 *1.5), anchor=(0.50, 1.00), _pilot=(250, 200)),
+        MechTemplate('huxtable',_xy=(498*1.5, 381 *1.5), anchor=(0.50, 1.00), _pilot=(250, 300)),
+        MechTemplate('kelisha', _xy=(350*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(150, 200)),
     ]
     for img in list(renpy.list_images()):
         for m in mechtemplates:
             for tag in m.tags:
-                if img.startswith(tag) and not 'mech' in img:
-                    name = f"{img} mech"
-                    # renpy.image(name, img)
-                    renpy.image(name, anchor_sprite(Composite(
-                        m.dim,
-                        (0, 0), f"{m.tag} mech",
-                        m.pilot, Transform(img, zoom=m.pilot_zoom),
-                    )))
-                    # print(name)
+                if img.startswith(tag):
+                    if 'rawmech' in img:
+                        # redrawing the mech using the template gets its anchor correct
+                        sprite = Composite(
+                            m.xy if 'focus' in img else m.nofocus.xy,
+                            (0, 0), f"{m.tag} rawmech",
+                        )
+                        renpy.image(f"{m.tag} mech", Transform(dim(sprite), anchor=m.anchor))
+                        renpy.image(f"{m.tag} mech focus", Transform(sprite, anchor=m.anchor))
+                    else:
+                        name = f"{img} mech"
+                        mech = renpy.get_registered_image(f"{m.tag} rawmech")
+                        # renpy.image(name, img)
+                        if m.pilot_under:
+                            renpy.image(name, Transform(Composite(
+                                m.xy if 'focus' in img else m.nofocus.xy,
+                                m.pilot if 'focus' in img else m.nofocus.pilot, Transform(img, zoom=m.pilot_zoom),
+                                (0, 0), mech if 'focus' in img else dim(mech),
+                            ), anchor=m.anchor))
+                        else:
+                            renpy.image(name, Transform(Composite(
+                                m.xy if 'focus' in img else m.nofocus.xy,
+                                (0, 0), mech if 'focus' in img else dim(mech),
+                                m.pilot if 'focus' in img else m.nofocus.pilot, Transform(img, zoom=m.pilot_zoom),
+                            ), anchor=m.anchor))
+                        # print(name)
     # print(mechtemplates)
