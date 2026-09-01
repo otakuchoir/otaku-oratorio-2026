@@ -9,6 +9,7 @@ label scene36:
     show queen worried at left, flip
     show linda worried at center, flip:
         xpos 0.45
+    with fade
     # > 36       INT. CROWN MILITARY ACADEMY DR. JOJO'S OFFICE                            36
     # > THE FINAL DAY (REPRISE)
     bart "There’s no way he’s going it alone."

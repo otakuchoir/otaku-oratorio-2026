@@ -6,6 +6,7 @@ label scene20:
         anchor (0.5, 0.5)
         pos (0.55, 0.5)
     show usagi postgrad sad at center
+    with fade
     # > 20       INT. DAY; CROWN MILITARY HQ OFFICES                                      20
     # > Usagi is sitting in her cubicle, quietly working. Her phone
     # > buzzes, she looks at it and then ignores it.

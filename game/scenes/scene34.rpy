@@ -13,6 +13,7 @@ label scene34:
         parallel:
             fx.ease_yoffset(dur=1, y0=800)
         fx.hover(dur=1.9)
+    with fade
     "PLACEHOLDER manga panels: kagu's memories"
     # > 34       EXT. SPACE                                                               34
     # > Kagu searches their memory and sees a crystal floating

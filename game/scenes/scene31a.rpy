@@ -4,6 +4,7 @@ label scene31a:
     # TODO compare genius TL to sheet music
     # https://genius.com/Genius-english-translations-hakushi-hasegawa-outside-soto-english-translation-lyrics
     # https://drive.google.com/drive/folders/1YfW1BESusTIj58PYCd7fJaNTQko4uopv
+    nvl clear
     title "Soto"
     intro "I was told many times, my smile didn't reach\nDidn't reach my eyes\nYeah, I'm sure I was a creepy child\nI couldn't lift the bottoms of my feet off the ground"
     chorus "I love the outdoors and want to go outside\nThe colors change outside and I love it"

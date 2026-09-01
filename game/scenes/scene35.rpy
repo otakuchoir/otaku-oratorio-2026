@@ -12,6 +12,7 @@ label scene35:
             flip
             fx.ease_yoffset(dur=2, y0=-1000)
     show bart grin 1 at right
+    with fade
     kagu "What have you done."
     bart "Ah, the failure, tainted by a child, and now come to chastise me. What ever shall I do."
     ### page 70 ###

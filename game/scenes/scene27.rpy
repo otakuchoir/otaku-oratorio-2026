@@ -3,6 +3,7 @@ label scene27:
     scene bg research lab inside
     show jojo neutral at right2
     show usagi postgrad neutral at left2, flip, fx.ease_xoffset(dur=1, x0=-800)
+    with fade
     # > 27       INT. DAY; CROWN MILITARY RESEARCH LAB.                                   27
     jojo "You’re late... again."
     usagi "Train traffic. Sorry for the inconvenience."

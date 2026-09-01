@@ -80,24 +80,24 @@ label scene10:
 
     # ...and back onscreen
     scene bg spaceship window transparent
-    $ z = 2.0
-    $ dx = z - 0.5 # 0.5 is anchor
+    $ zz = 2.0
+    $ dx = zz - 0.5 # 0.5 is anchor
     # $ zright2 = (0.5)/z
     # $ zleft1 = 1 - zright2
     # $ zright1 = zleft1 + dx
     # $ zleft2 = zright2 - dx
-    $ zleft1 = (0.5)/z
+    $ zleft1 = (0.5)/zz
     $ zright2 = 1 - zleft1
     $ zleft2 = zright2 + dx
     $ zright1 = zleft1 - dx
     call scene11.space_background
     show bg lunar tarmac as bg1 behind bg:
-        zoom z
+        zoom zz
         anchor (0.5, 1.0)
         pos (zleft1, 1.0)
     show bg lunar tarmac as bg2 behind bg:
         flip
-        zoom z
+        zoom zz
         anchor (0.5, 1.0)
         pos (zleft2, 1.0)
     with fade

@@ -4,6 +4,7 @@ label scene30:
     # > 30       INT. DAY; USAGI’S APARTMENT                                              30
     # > A voice mail.
     show takeshi postgrad neutral holo at center
+    with fade
     takeshi "Hey... It’s me... I know you said never to call you again, but... Well, I wanted to let you know..."
     show takeshi postgrad worried 1 holo
     takeshi "Well... maybe I shouldn’t say all of that... don’t want to compromise you..."

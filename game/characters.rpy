@@ -32,6 +32,7 @@ define kitadani = Character("Kitadani", color="#00bb00", image="kohei")
 define gunner = Character("Gunner Chief", image="gunner")
 define officer = Character("First Officer", image="officer")
 define navigator = Character("Navigation Chief", image="navigator")
+define wellington = Character("Professor Wellington")
 
 # lyrics use nvl mode
 define title = Character("Title", what_italic=True, kind=nvl)
@@ -59,4 +60,3 @@ define worker = Character("WORKER")
 define student1 = Character("STUDENT1")
 define student2 = Character("STUDENT2")
 define student3 = Character("STUDENT3")
-define wellington = Character("WELLINGTON")

@@ -10,6 +10,7 @@ label scene26:
     # https://otaku-oratorio-2026-gallery.netlify.app/?t=linda&t=usagi+postgrad
     show linda happy holo at right2
     show usagi postgrad happy 1 at left2, flip
+    with fade
     linda "Yeah, Elizabeth and I ended the fight right there."
     usagi @ postgrad shock "What?"
     show linda happy 2 holo

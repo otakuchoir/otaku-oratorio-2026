@@ -1,5 +1,6 @@
 label scene15a: 
     scene bg black
+    nvl clear
     # TODO compare genius TL to sheet music
     # https://genius.com/Keiichi-okabe-weight-of-the-world-english-ver-lyrics
     # https://drive.google.com/drive/folders/1eGwHAIeJT8nH7Ggvhry5DIf327qB5GDx

@@ -172,7 +172,7 @@ label scene16:
     show bart mech grin 2:
         xpos x0
         flip
-        pause 3.3
+        pause 3.7
         ease 4.5 xpos x1
     pause 6
     return

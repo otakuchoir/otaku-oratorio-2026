@@ -1,6 +1,6 @@
 # scene 06 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi
 label scene06:
-    scene bg train station with dissolve
+    scene bg train station
     call fx.play_music_in_dev("bgm_009_namis_theme__one_piece.opus")
 
     # a crude train-departures sign
@@ -8,6 +8,7 @@ label scene06:
     show scene06_train_sign "DEPARTURES" as sign_line0 at top
     show scene06_train_sign "\n1. Rush Crater     2 min" as sign_line1 at top
     show scene06_train_sign "\n\n2. Rush Crater   62 min" as sign_line2 at top
+    with dissolve
 
     show sanders neutral at offscreenright
     show usagi neutral at offscreenright
@@ -101,7 +102,7 @@ label scene06:
     sanders @ angry 2 "Evil..."
 
     # > USAGI IS NOT COMFORTABLE WITH THE FAME
-    train_security "Reviewing IDs Kitadani... Usagi... oh, you’re the captain’s daughter!"
+    train_security "Kitadani... Usagi... oh, you’re the captain’s daughter!"
 
     # "usagi-weary" also works here, but this is serious enough for an entire scene where we call mom later so I don't think weary is quite enough
     show usagi angry

@@ -4,6 +4,7 @@ label scene06a:
     # https://genius.com/Genius-english-translations-ryokuoushoku-shakai-be-a-flower-english-translation-lyrics
     # https://genius.com/Genius-romanizations-ryokuoushoku-shakai-be-a-flower-romanized-lyrics
     scene bg black
+    nvl clear
     title "Hana Ni Natte (Like a Flower)"
     verse1 "Isn’t it fine to hide quietly in the shadows?\nAren’t there flowers that are more like buds?\nIsn’t it fine to protect in secret?\nUndisturbed by anyone, you bloom magnificently"
     prechorus "You don’t get hooked on either sweetness or bitterness\nThat sort of decision-making is worthless\nDon't let anything worry you, keep your head up\nNot used to love, not adorned excessively\nDon’t need a pretty vase, fertilizer, or anything\nYou’re beautiful just like that"

@@ -4,6 +4,7 @@ label scene32:
     show layer master at fx.flashback
     # > 32       EXT. - NOWHERE                                                           32
     show kohei serious 1 at center
+    with fade
     kohei "I’m piloting the Eden. I always said it would be awesome to command that thing. Didn’t realize it’d be under these circumstances...."
     show kohei happy at center
     kohei "Linda... The love of my life... take good care of Usagi for me... for us."

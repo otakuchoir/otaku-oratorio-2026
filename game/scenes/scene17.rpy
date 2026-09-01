@@ -36,8 +36,9 @@ label scene17:
 
     # > 17       INT. TV SCREENS                                                          17
     # > CLASSIFIED FOOTAGE... EDEN BLACK BOX... THE TRUTH OF THAT DAY
+    show kohei neutral
     gunner "You ready for this?"
-    kitadani "I have a kid back home. Let’s get this over with so I can go see her."
+    kitadani @ worried "I have a kid back home. Let’s get this over with so I can go see her."
     officer "Aye Captain."
     scene bg black with dissolve
     return

@@ -120,7 +120,7 @@ label scene05:
     # jojo moves backwards across the screen awfully fast, but I think it's clear it's a pan, not a moonwalk
     show jojo neutral at offscreenleft
     pause 0
-    show usagi at offscreenright
+    show usagi at flip, offscreenright
     show sanders neutral at offscreenright
     show takeshi at offscreenright
     show bart at left2

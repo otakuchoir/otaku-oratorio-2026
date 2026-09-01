@@ -1,6 +1,7 @@
 
 label scene41:
     scene bg lunar tarmac
+    with fade
     "PLACEHOLDER IRL"
     #show linda neutral at center
     #show usagi postgrad worried at left2, flip

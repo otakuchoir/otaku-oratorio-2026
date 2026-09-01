@@ -1,5 +1,5 @@
 label scene07: 
-    scene bg classroom with dissolve:
+    scene bg classroom:
         zoom 1.1
         anchor (0.0, 0.0)
         pos (-0.05, 0.0)
@@ -7,6 +7,7 @@ label scene07:
     show jojo neutral at right2
     show takeshi neutral at left2, flip
     show sanders neutral at left, flip
+    with dissolve
     # > 7        INT. CROWN MILITARY ACADEMY, CLASSROOM                                    7
     jojo "Listen up. I have 3 minutes left and we’re on the last chapter. This will be part of your midterm tomorrow. What do the Domes do?"
     takeshi "They are walls regulate atmosphere and temperature, filtering out the toxins in the air released after the Cataclysm Era, Sir."

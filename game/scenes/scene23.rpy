@@ -8,6 +8,7 @@ label scene23:
     show usagi postgrad neutral at left2, flip:
         xoffset -800
         ease 1 xoffset 0
+    with fade
     # show child neutral at left
     # > 23       INT. DAY; CROWN MILITARY RESEARCH LAB.                                   23
     jojo "There you are... You’re late."
@@ -88,7 +89,7 @@ label scene23:
     call scene23.child_mirroring
     pause 1
     show usagi postgrad happy 1
-    show child happy
+    show child happy at flip
     usagi "What is your name?"
     child "What is your name?"
     # > A glitch, the child glitches, energy glitches, lights

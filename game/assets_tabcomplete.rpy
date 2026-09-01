@@ -332,6 +332,7 @@ image kohei rawmech:
 image queen rawmech:
     "queen neutral focus"
     mech_placeholder
+    zoom 1.0
 image bart rawmech:
     'images/bart-mech-transparent.png'
     zoom 1.2
@@ -388,14 +389,14 @@ init 501 python:
         # MechTemplate('bart',    _xy=(694*1.2, 660 *1.2), anchor=(0.45, 0.90), _pilot=(330*1.2, -110), pilot_under=True),
         MechTemplate('usagi',   _xy=(950*1.0, 1272*1.0), anchor=(0.50, 0.43), _pilot=(330, 0), pilot_under=True),
         MechTemplate('bart',    _xy=(694*1.2, 660 *1.2), anchor=(0.50, 0.90), _pilot=(330*1.2, -110), pilot_under=True),
-        MechTemplate('takeshi', _xy=(507*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(250, 200)),
-        MechTemplate('sanders', _xy=(450*1.5, 450 *1.5), anchor=(0.50, 1.00), _pilot=(225, 250)),
-        MechTemplate('linda',   _xy=(265*1.5, 283 *1.5), anchor=(0.50, 1.00), _pilot=(100, 200)),
-        MechTemplate('kohei',   _xy=(503*1.5, 317 *1.5), anchor=(0.50, 1.00), _pilot=(250, 200)),
-        MechTemplate('queen',   _xy=(717*1.5, 474 *1.5), anchor=(0.50, 1.00), _pilot=(350, 300), alias=['princess']),
-        MechTemplate('jojo',    _xy=(520*1.5, 340 *1.5), anchor=(0.50, 1.00), _pilot=(250, 200)),
-        MechTemplate('huxtable',_xy=(498*1.5, 381 *1.5), anchor=(0.50, 1.00), _pilot=(250, 300)),
-        MechTemplate('kelisha', _xy=(350*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(150, 200)),
+        MechTemplate('linda',   _xy=(265*1.5, 283 *1.5), anchor=(0.50, 1.00), _pilot=(120, -100), pilot_under=True),
+        MechTemplate('kohei',   _xy=(503*1.5, 317 *1.5), anchor=(0.50, 1.00), _pilot=(270, -100), pilot_under=True),
+        MechTemplate('jojo',    _xy=(520*1.5, 340 *1.5), anchor=(0.50, 1.00), _pilot=(280, -90), pilot_under=True),
+        MechTemplate('huxtable',_xy=(498*1.5, 381 *1.5), anchor=(0.50, 1.00), _pilot=(250, -60), pilot_under=True),
+        MechTemplate('takeshi', _xy=(507*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(250, -130), pilot_under=True),
+        MechTemplate('sanders', _xy=(450*1.5, 450 *1.5), anchor=(0.50, 1.00), _pilot=(200, -80), pilot_under=True),
+        MechTemplate('queen',   _xy=(717*1.0, 474 *1.0), anchor=(0.50, 1.00), _pilot=(190*1.0, -130), pilot_under=True, alias=['princess']),
+        MechTemplate('kelisha', _xy=(350*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(150, -120), pilot_under=True),
     ]
     for img in list(renpy.list_images()):
         for m in mechtemplates:

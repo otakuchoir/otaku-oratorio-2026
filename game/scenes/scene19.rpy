@@ -8,14 +8,14 @@ label scene19:
     show navigator at right2, noflip
     # show kohei neutral at left2:
         # matrixcolor BrightnessMatrix(0.1)
-    show kohei neutral at left2
+    show kohei serious 1 at left2
     with dissolve
     # > 19       INT. THE SPACESHIP EDEN MAIN DECK                                        19
     gunner "Captain, beam array at 60 percent and climbing; Firing window opens in 3 minutes and counting."
-    kitadani "Copy that, thank you Gunner Chief, Navigation, a read on the firing zone."
-    navigator "Target is in optimal range, blast zone is clear of any civilian ships. No satellites natural or otherwise."
+    kitadani "Copy that, thank you Gunner Chief. Navigation, a read on the firing zone."
+    navigator "Target is in optimal range, blast zone is clear of any civilian ships. No satellites, natural or otherwise."
     officer "Captain, I have the secure line ready."
-    kitadani "Give me just a second."
+    kitadani neutral "Give me just a second."
     gunner "70 percent."
     navigator "We’re holding steady Captain. Go take your call."
 
@@ -27,7 +27,7 @@ label scene19:
     gunner "80 percent! We’re closing in on the window."
     ### page 35 ###
     navigator "Holding steady."
-    kitadani "I’ll take the call in my quarters. First officer, you have the conn."
+    kitadani serious 1 "I’ll take the call in my quarters. First officer, you have the conn."
     # > Rhos an kyn ala na...
     officer "Aye Captain. I have the conn."
 
@@ -47,14 +47,14 @@ label scene19:
     show bg spaceship window:
         matrixcolor BrightnessMatrix(0.2)
     show bg spaceship window
-    show kohei neutral at center, flip:
+    show kohei worried at center, flip:
         xoffset -1000
         ease 1.5 xoffset 0
     with dissolve
     kitadani "Just listen to me. I want you and Usagi to take move to our spot in the moon barracks-"
     kitadani "I know it was supposed to be a few more years, but... But this doesn’t look good. If what Barry said is true..."
     kitadani "Just go... I have to get back now. I love you."
-    show kohei neutral at center, noflip:
+    show kohei worried at center, noflip:
         xoffset 0
         ease 1.5 xoffset -1000
     pause 1
@@ -69,20 +69,21 @@ label scene19:
     show navigator:
         alpha 1
     with dissolve
-    show kohei neutral at left2, flip:
+    show kohei serious 1 at left2, flip:
         xoffset -800
         ease 1 xoffset 0
 
     officer "Captain on Deck"
     gunner "90 percent!"
+    show kohei serious 2
     navigator "Captain, a development, the Crystal is... opening."
     kitadani "Then this is our chance. That... thing... is coming out again and this time it means to kill us all."
     gunner "100 percent the firing window is open."
 
     # > Gunner Chief locks and loads the Ultima Canon.
-    kitadani "Ready the Ultima Cannon!"
+    kitadani panic 2 "Ready the Ultima Cannon!"
     # > Ecce venio
-    kitadani "Today we stand ready to defend all that we hold dear. Our families, our friends, our neighbors and our planet."
+    kitadani serious 3 "Today we stand ready to defend all that we hold dear. Our families, our friends, our neighbors and our planet."
 
     ### page 36 ###
     ### <manga-panels> ###
@@ -173,7 +174,7 @@ label scene19:
     # show bg breaking news as bg2:
         # ease 0.5 zoom 1.0
     # show fx_crt_scanlines
-    with dissolve
+    with fade
     reporter1 "It is unclear whether or not the crew of the Eden are responding after that...."
     reporter1 "Wait... I’m getting word."
     ### page 37 ###

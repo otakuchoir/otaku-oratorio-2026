@@ -8,6 +8,7 @@ label scene28:
     show layer master at fx.flashback
     show usagi young happy at right2
     show linda smile at center, flip
+    with fade
     usagi "That’s my favorite story mom! Thanks! Good night!"
     linda @ happy 2 "Good night little rabbit. Anytime you want to hear the story, let me know."
     show usagi young sleepy focus
@@ -49,12 +50,13 @@ label scene28:
     show kohei confused
     show bart peaceful
     show jojo neutral
-    pause 1
+    pause
     linda "What the?"
     kohei "What is it?"
     jojo "The Crown is calling us in? Right now?"
     bart @ eyebrow raised "Even me? Why are they sending for me? I’m with the church now."
-    kohei "Must be something big if that’s the case, Linda, can you stay with Usagi-"
+    kohei "Must be something big if that’s the case. Linda, can you stay with Usagi-"
+    pause
 
     # > A knock at the door.
     linda "I’ll get that."

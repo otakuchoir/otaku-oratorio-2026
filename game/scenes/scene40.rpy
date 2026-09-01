@@ -23,6 +23,7 @@ label scene40:
     show jojo mech neutral at right, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=1000)
     show sanders mech postgrad neutral at right2, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=1000)
     show usagi mech postgrad neutral at center, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=1000)
+    with fade
     call fx.play_music_in_dev("bgm_035_main_theme__star_fox_2026.opus")
     sanders "I’ve gotta say, I never thought I’d ever see you piloting-"
     usagi "I’m not doing this for The Crown, I’m doing it for everyone."

@@ -4,6 +4,7 @@ label scene23a:
     # https://genius.com/Genius-romanizations-kana-boon-silhouette-romanized-lyrics
     # https://drive.google.com/drive/folders/1ChKUs_r4ykOjx3c8W4vzouFeMiTZoKYQ
     scene bg black
+    nvl clear
     title "Silhouette"
     verse1 "Altogether now, make a break for the goal line\nWe don't know anything, anything yet\nWe passed the point of no return, but looking back\nWe don't know anything, anything yet"
     prechorus "Fired up, fired up, get fired up\nBursting with glistening sweat"

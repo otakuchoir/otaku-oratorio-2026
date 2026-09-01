@@ -3,9 +3,7 @@ label scene24:
     scene bg campus
     # transforming the camera works too, but this resets when we say `scene` and camera doesn't
     show layer master at fx.flashback
-    show kohei young neutral at right 
-    show bart young neutral at center, flip
-    show jojo young neutral at left, flip
+    with fade
     # show linda young neutral at right2
     # show fx_crt_scanlines
 
@@ -14,6 +12,10 @@ label scene24:
     student2 "I heard his two best friends are on completely opposite sides of this. Kohei Kitadani is supporting this discovery while Bartholemew Barthandelus says it’s against our religious teachings."
     student3 "Hey, if it means we get more time for vacation, then I’m all for it! I love technology!"
 
+    show kohei young neutral at right 
+    show bart young neutral at center, flip
+    show jojo young neutral at left, flip
+    with dissolve
     kohei "Bart, you’ve GOT to let it go. I mean... I get it... We get it, you’re a church guy-"
     show bart young stern
     bart "Oh screw you, “church guy”, this is my entire life!"

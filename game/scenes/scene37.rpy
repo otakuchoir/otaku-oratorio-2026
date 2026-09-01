@@ -6,6 +6,7 @@ label scene37:
     show bart mech neutral at right, fx.yoffset(-50), fx.hover(dur=2.9)
     show jojo mech neutral at right2, fx.yoffset(-300), fx.hover(dur=1.9)
     show linda mech worried at left2, fx.yoffset(-300), fx.hover(dur=1.7)
+    with fade
 
     # > 37       EXT. SPACE                                                               37
     queen "Not gonna lie, Bart... I never thought you’d partake in insubordination like this."

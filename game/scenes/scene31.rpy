@@ -5,6 +5,7 @@ label scene31:
     show sanders postgrad angry 1 at center
     show jojo serious at right2
     show bart peaceful at right
+    with fade
     # show child neutral at right
     # > 31       INT. DAY; CROWN MILITARY RESEARCH LAB.                                   31
     sanders "And that’s the recording we retrieved."
@@ -83,7 +84,7 @@ label scene31:
     show usagi postgrad happy 1
     show child happy
     kagu "Then Professor Jojo back there, he gave me a holo device. That’s how I watch the dramas."
-    kagu @ happy 2 "Have you seen the series, I got hit by a bus and now my love triangle of friends are rpg heroes? That one cracks me up!"
+    kagu @ happy 2 "Have you seen the series, I Got Hit By a Bus and Now My Love Triangle of Friends are RPG Heroes? That one cracks me up!"
     show usagi postgrad happy 2
     usagi "Actually... I do know that one. It’s pretty good. The part with the pirate cats was hilarious."
     ### page 64 ###

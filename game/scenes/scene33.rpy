@@ -8,6 +8,7 @@ label scene33:
         ypos ypos_textbox-0.1
         fx.hover
     show usagi postgrad happy 1 at right
+    with fade
     # > 33       EXT. USAGI'S APARTMENT - ROOFTOP                                         33
     kagu @ happy 2 "... And then they summoned a bus using the metro card, but insted of hitting him, it revealed the driver, and it was his DAD! Ahh I can’t wait for next week’s episode!"
     usagi @ happy 2"Well, you don’t have to wait, Kagu. All of the episodes are online already."
@@ -20,7 +21,7 @@ label scene33:
     show usagi postgrad smug
     kagu "Oh, have I overstayed my welcome? Sorry about that. I should have seen this coming earlier but I just evolved to understand social cues."
     # > Holo-time rings
-    pause 1
+    pause
     show linda smile holo at right2, flip
     with dissolve
     show usagi postgrad happy 1
