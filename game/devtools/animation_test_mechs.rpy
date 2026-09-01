@@ -4,12 +4,12 @@ label mech_test:
     show usagi postgrad neutral focus at left, fx.hover():
         zoom 0.5
         ypos 0.75
-        xoffset 75
+        xoffset -20
     show bart mech as bartmech at right2, fx.hover()
     show bart neutral at right2, fx.hover():
         zoom 0.5
         ypos 0.64
-        xoffset 60
+        xoffset 20
     with fade
     usagi "mech layout A: pilot on chest. a little ugly, but the audience always knows who's driving which mech"
 
@@ -19,16 +19,16 @@ label mech_test:
         anchor (0.5, 1.0)
         crop (0, 0, 140, 120)
         ypos 0.75
-        xoffset 95
+        xoffset 5
     show usagi postgrad neutral focus at left, fx.hover():
         zoom 0.4
         ypos 0.75
-        xoffset 75
+        xoffset -5
     show fx_crt_scanlines as usagicrt at left, fx.hover():
         anchor (0.5, 1.0)
         crop (0, 0, 140, 120)
         ypos 0.75
-        xoffset 95
+        xoffset 5
     with fade
     usagi "mech layout B: pilot-screen on chest. it's a good idea! but my attempt at it is REALLY ugly. has potential with a better screen graphic, though. also, worried that the screen has to be pretty small to fit nicely"
     
@@ -42,12 +42,12 @@ label mech_test:
     show usagi postgrad neutral focus at left, fx.hover() behind usagimech:
         zoom 0.5
         ypos 0.48
-        xoffset 110
+        xoffset 0
     show usagi mech focus as usagimech at left, fx.hover()
     show bart neutral at right2, fx.hover():
         zoom 0.5
         ypos 0.33
-        xoffset 100
+        xoffset 70
     show bart mech as bartmech at right2, fx.hover()
     with fade
     usagi "mech layout D: pilot rides on top. less ugly, and the audience always knows who's driving which mech. but how do they breathe in space...?"
