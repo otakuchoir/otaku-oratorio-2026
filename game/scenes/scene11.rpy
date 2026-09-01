@@ -93,71 +93,85 @@ label scene11:
     scene bg black with dissolve
     return
 
-label scene11.space_background:
+label scene11.space_background_hide:
+    hide bg2_00
+    hide bg2_01
+    hide bg2_10
+    hide bg2_11
+    return
+
+label scene11.space_background(bgvx=23, bgvy=79, flip=True):
     # animate the space background outside the office window.
     # mirror the background horizontally + vertically, for a cleanish-looking loop point, since it doesn't loop well naturally
-    $ bgvx = 23
-    $ bgvy = 79
     # faster velocities, for testing the loop
     # $ bgvx = 3
     # $ bgvy = 7
+    $ z = 1440.0/1280.0
+    $ w = 1440.0   # or 1280.0 * z
+    $ w = w if not flip else -w
+    $ h = 1370.0 * z
     show bg space as bg2_00 behind bg:
+        zoom z
         anchor (0, 0)
         pos (0, 0)
         parallel:
             xoffset 0
-            linear bgvx xoffset -1280
-            xoffset 1280
+            linear bgvx xoffset -w
+            xoffset w
             linear bgvx xoffset 0
             repeat
         parallel:
             yoffset 0
-            linear bgvy yoffset -1370
-            yoffset 1370
+            linear bgvy yoffset -h
+            yoffset h
             linear bgvy yoffset 0
             repeat
     show bg space as bg2_10 behind bg:
+        zoom z
         anchor (0, 0)
         pos (0, 0)
         xzoom -1
         parallel:
-            xoffset 1280
+            xoffset w
             linear bgvx xoffset 0
-            linear bgvx xoffset -1280
+            linear bgvx xoffset -w
             repeat
         parallel:
             yoffset 0
-            linear bgvy yoffset -1370
-            yoffset 1370
+            linear bgvy yoffset -h
+            yoffset h
             linear bgvy yoffset 0
             repeat
     show bg space as bg2_01 behind bg:
+        zoom z
         anchor (0, 0)
         pos (0, 0)
         yzoom -1
         parallel:
             xoffset 0
-            linear bgvx xoffset -1280
-            xoffset 1280
+            linear bgvx xoffset -w
+            xoffset w
             linear bgvx xoffset 0
             repeat
         parallel:
-            yoffset 1370
+            yoffset h
             linear bgvy yoffset 0
-            linear bgvy yoffset -1370
+            linear bgvy yoffset -h
             repeat
     show bg space as bg2_11 behind bg:
+        zoom z
         anchor (0, 0)
         pos (0, 0)
         xzoom -1
         yzoom -1
         parallel:
-            xoffset 1280
+            xoffset w
             linear bgvx xoffset 0
-            linear bgvx xoffset -1280
+            linear bgvx xoffset -w
             repeat
         parallel:
-            yoffset 1370
+            yoffset h
             linear bgvy yoffset 0
-            linear bgvy yoffset -1370
+            linear bgvy yoffset -h
             repeat
+    return

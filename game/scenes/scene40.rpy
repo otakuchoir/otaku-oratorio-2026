@@ -5,15 +5,24 @@
 # define hover_kelisha = 2.1
 # define hover_kelisha = 2.1
 
+# Nope, this is harder to compose than it looks...!
+#image bg wide battlefield = Composite(
+#    (screen_dim[0] * 2, screen_dim[1]),
+#    (159, -180), Transform(renpy.get_registered_image("bg space"), xzoom=-1, matrixcolor=SaturationMatrix(0.8)), 
+#    (screen_dim[0], 0), "bg space battlefield",
+#)
+
 label scene40:
-    scene bg space battlefield
-    "TODO the final battle, work in progress"
+    scene bg space battlefield:
+        zoom 1.1
+        anchor (0.5, 0.5)
+        pos (0.45, 0.45)
 
     # > 40       EXT. SPACE ABOVE THE MOON                                                40
     # https://otaku-oratorio-2026-gallery.netlify.app/?t=usagi+postgrad&t=sanders+postgrad&t=jojo&t=kelisha
-    show jojo mech neutral at right, fx.hover(1.9)
-    show sanders mech postgrad neutral at right2, fx.hover(2.3)
-    show usagi mech postgrad neutral at center, fx.hover(1.7)
+    show jojo mech neutral at right, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=1000)
+    show sanders mech postgrad neutral at right2, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=1000)
+    show usagi mech postgrad neutral at center, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=1000)
     call fx.play_music_in_dev("bgm_035_main_theme__star_fox_2026.opus")
     sanders "I’ve gotta say, I never thought I’d ever see you piloting-"
     usagi "I’m not doing this for The Crown, I’m doing it for everyone."
@@ -38,6 +47,9 @@ label scene40:
         noflip
         pause 0.8
         flip
+    show bg space battlefield:
+        pos (0.45, 0.45)
+        linear 2.0 pos (0.55, 0.45)
     show jojo at right2, fx.hover(1.9), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.66)
     show sanders at center, fx.hover(2.3), fx.ease_xpos(dur=1.0, x0=0.66, x1=0.50)
     show usagi at left2, fx.hover(1.7), fx.ease_xpos(dur=1.0, x0=0.50, x1=0.33)
@@ -62,6 +74,9 @@ label scene40:
 
     ###################################
     $ dur = 1.0
+    show bg space battlefield:
+        pos (0.55, 0.45)
+        linear 1.0 pos (0.45, 0.45)
     show bart mech eyebrow raised at right, noflip, fx.hover(3.7), fx.ease_xpos(dur=dur, x0=0.15, x1=0.85)
     show sanders mech postgrad angry 1 at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=dur, x0=-2000)
     show usagi mech postgrad serious 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=dur, x0=-2000)
@@ -127,9 +142,12 @@ label scene40:
     jojo "We’re free. Good job Kelisha."
 
     ###################################
+    show bg space battlefield:
+        pos (0.45, 0.45)
+        linear 1.0 pos (0.55, 0.45)
     hide kelisha
-    show bart mech neutral at left, noflip, fx.hover(3.7), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.15)
     show kelisha mech worried at right, noflip, fx.hover(2.1), fx.ease_xoffset(dur=1.0, x0=1000)
+    show bart mech neutral at left, noflip, fx.hover(3.7), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.15)
     kelisha "That wasn’t me."
     hide usagi
     hide sanders
@@ -145,21 +163,33 @@ label scene40:
     linda "I came as soon as I saw the news. No time for shock and surprise. You already knew I was the best Ace there was."
     linda @ mech happy "Now go, little rabbit! I’ll keep The Alexander busy."
     usagi postgrad neutral "Thanks mom!"
+    show bart mech angry 1 at noflip, fx.hover(3.7)
+    pause 0.3
 
     ###################################
     # > Usagi, Professor Jojo and Sanders rush to the Ultima Cannon
-    # scene bg space battlefield
+    show bg space battlefield: 
+        pos (0.55, 0.45)
+        linear 0.5 pos (0.45, 0.45)
     show bart at fx.hover(3.7), fx.ease_xoffset(dur=0.5, x1=1500)
     show kelisha at fx.hover(2.1), fx.ease_xoffset(dur=0.5, x1=1500)
     show linda at fx.hover(1.3), fx.ease_xoffset(dur=0.5, x1=1500)
+    show bg black as bg2:
+        alpha 0.0
+        linear 0.5 alpha 1.0
     pause 0.5
-    hide bart
-    hide kelisha
-    hide linda
+    scene bg space battlefield:
+        alpha 0.0
+        zoom 1.1
+        anchor (0.5, 0.5)
+        pos (0.45, 0.45)
+    call scene11.space_background(bgvx=7, bgvy=79, flip=True)
     show usagi mech postgrad happy 1 at center, fx.hover(1.7), fx.ease_xoffset(dur=0.5, x0=-1500)
     show sanders mech postgrad happy at left2, fx.hover(2.3), fx.ease_xoffset(dur=0.5, x0=-1500)
     show jojo mech sad at left, fx.hover(1.9), fx.ease_xoffset(dur=0.5, x0=-1500)
+    with dissolve
     jojo "Thanks Linda. I won’t let you down."
+    hide bg2
     usagi @ mech postgrad happy 3 "Kagu, buckle up!"
     sanders mech postgrad teasing "Little Rabbit?"
     usagi mech postgrad annoyed "Careful... you’re the one who took her cousin away."
@@ -167,9 +197,24 @@ label scene40:
     usagi mech postgrad angry "What do you have to say for yourself and why shouldn’t I blow you up along with Barthandelus."
     show usagi mech postgrad shock
     sanders "We... never found her, the Queen of New Jersey. It was another cover up. The place that we blew up... just innocent people... The Crown made up a story and we were told to keep quiet...."
+    show bg black as bg2 behind bg:
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    pause 0.5
+    call scene11.space_background_hide
+    show bg space battlefield:
+        alpha 0.0
+        zoom 1.1
+        anchor (0.5, 0.5)
+        pos (0.45, 0.45)
+        parallel:
+            linear 1.5 alpha 1.0
+        parallel:
+            easein 1.5 pos (0.55, 0.45)
     show usagi mech postgrad neutral
     show sanders mech postgrad neutral
     jojo mech grin 1 "We’re closing in on the Ultima Cannon now."
+    hide bg2
 
     ###################################
     show bart mech stern at fx.hover(3.7), right, fx.ease_xoffset(dur=1.0, x0=500), fx.ease_ypos(dur=1.0, y0=1.0, y1=ypos_textbox)
@@ -306,6 +351,9 @@ label scene40:
     show bart mech angry 2
     bart "No!"
 
+    show bg space battlefield:
+        pos (0.55, 0.45)
+        ease 2.0 pos (0.50, 0.45)
     show queen at flip, fx.hover(3.1), fx.ease_xoffset(dur=2.0, x1=-1000)
     show kelisha at flip, fx.hover(2.1), fx.ease_xoffset(dur=2.0, x1=-1000)
     $ dur = 0.6
@@ -355,13 +403,23 @@ label scene40:
     linda "I’m sorry, Bart... OVERDRIVE MARIPOOOOOSA!"
     # > Linda’s attack severely damages The Alexander
 
-    scene bg space battlefield
+    scene bg space battlefield:
+        zoom 1.1
+        anchor (0.5, 0.5)
+        pos (0.50, 0.45)
+        ease 1.0 pos (0.55, 0.45)
     show sanders mech postgrad happy at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=-1000)
     show usagi mech postgrad happy 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=-1000)
     show jojo mech grin 2 at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=-1000)
     jojo "We’re in range, let’s park it right here."
+    show sanders mech postgrad happy at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=-1000)
+    show usagi mech postgrad happy 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=-1000)
+    show jojo mech grin 2 at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=-1000)
     jojo mech serious 2 "I’m taking control of the system now...."
 
+    show bg space battlefield:
+        pos (0.55, 0.45)
+        ease 1.0 pos (0.50, 0.55)
     show bart mech angry 2 at center:
         parallel:
             fx.ease_xyoffset(dur=1.0, xy0=(500, 1500))
@@ -380,6 +438,9 @@ label scene40:
 
     # > The Alexander launches a golden lance toward Professor Jojo.
     call fx.play_music_in_dev("bgm_037_escape__xenosaga_episode_1.opus")
+    show bg space battlefield:
+        pos (0.50, 0.55)
+        ease 1.0 pos (0.55, 0.45)
     show bg bart hits as barthits behind bart, jojo:
         alpha 0.0
         pause 0.5
@@ -410,21 +471,32 @@ label scene40:
     linda shock "Joseph.... Bart...."
 
     # hide barthits
-    show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500))
-    show usagi at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500))
+    show bg space battlefield:
+        pos (0.55, 0.45)
+        ease 1.0 pos (0.50, 0.50)
+    show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy0=(500, -1500))
+    show usagi mech postgrad cry 1 at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy0=(500, -1500))
     pause 0.5
     sanders "Shit. What do we do now??"
     show sanders mech postgrad shock
     show usagi mech postgrad happy 1
     show takeshi mech postgrad happy 1 at right2, fx.hover(2.5), fx.ease_xyoffset(dur=2.0, xy0=(1500, -500))
     takeshi "Support unit B-100 reporting... Sounds like you need someone who knows how to hack."
-    usagi "Takeshi!"
+    usagi @ mech postgrad happy 3 "Takeshi!"
     show sanders mech postgrad neutral
     takeshi "Sorry I couldn’t be here sooner guys. Sanders..."
     show sanders mech postgrad happy
     sanders "... Well can you stop this thing or not?"
     # > Takeshi begins hacking the Ultima Cannon.
-    show takeshi mech postgrad happy 2
+    show takeshi mech postgrad happy 2 at left, fx.hover(2.5), fx.ease_xpos(dur=1.0, x0=0.66, x1=0.15)
+    show usagi at right2, fx.hover(1.7), fx.ease_xpos(dur=1.0, x0=0.15, x1=0.66):
+        noflip
+        pause 0.5
+        flip
+    show sanders at center, fx.hover(2.3), fx.ease_xpos(dur=1.0, x0=0.33, x1=0.50):
+        noflip
+        pause 0.5
+        flip
     takeshi "Can I stop this thing, ha!"
     pause 1.0
     show takeshi mech postgrad shock
@@ -448,14 +520,15 @@ label scene40:
     show sanders mech postgrad angry 1
     sanders "Well we only have a few minutes. We need to make a decision now. I’ll do it."
     show usagi mech postgrad worried
-    show takeshi mech postgrad worried 1
+    show takeshi mech postgrad worried 1 at flip, fx.hover(2.5)
     show sanders mech postgrad angry 2
     sanders "Save me the shock ok? I know you both hate me."
     show sanders mech postgrad angry 1
     sanders "The things I’ve done in the name of the Crown... I realized too late what I had become. Let me redeem myself with this-"
 
     show takeshi mech postgrad neutral at flip, fx.hover(2.5)
-    show sanders mech postgrad neutral
+    show usagi mech postgrad neutral at noflip, fx.hover(1.7)
+    show sanders mech postgrad neutral at noflip, fx.hover(2.3)
     show child neutral at right, fx.hover(1.3), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000))
     kagu "I can do it. It won’t hurt. I can’t be destroyed."
     usagi "Are you serious Kagu?"
@@ -471,9 +544,9 @@ label scene40:
     kagu "Actually, my name is Kagu. Short for Kaguya, but we don’t have time. Go, now! I’ll see you in a bit."
     stop music
 
-    show sanders at noflip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
-    show usagi at noflip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
-    show takeshi at noflip, fx.hover(2.5), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show usagi at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show takeshi at flip, fx.hover(2.5), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
     show child serious at fx.hover(1.3), fx.ease_xpos(dur=1.5, x0=0.85, x1=0.50)
     pause 1.0
     scene bg black with dissolve
