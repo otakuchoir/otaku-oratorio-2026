@@ -44,6 +44,11 @@ import dataclasses
 config.speaking_attribute = 'focus' # type: ignore
 config.side_image_only_not_showing = True  # type: ignore
 
+# config.keymap['skip'] = [ 'anymod_K_LCTRL', 'anymod_K_RCTRL' ]
+# config.keymap['skip'] = []  # type: ignore
+config.keymap['skip'] = ['anyrepeat_K_PAGEDOWN', 'anyrepeat_KP_PAGEDOWN', ] # type: ignore
+
+
 def load_image(name: str, path: str, transform=lambda x: x):
     """Load an image if possible, or throw an error.
     
