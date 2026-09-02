@@ -36,14 +36,14 @@ label scene24:
     show bart young neutral
     bart "When did our ancestors invent holo- net?"
     show jojo young neutral
-    jojo "Well back then they called it the internet, and it was somewhere around the second millennium."
+    jojo "Well back then they called it the Internet, and it was somewhere around the second millennium."
     jojo "Like... the early 2000s. Maybe late 1900s?"
     kohei @ young neutral "And before that, they couldn’t talk to each other freely."
-    kohei "Bart... what’s your point? The internet was a revolutionary step. Kind of goes against the idea that technology should be-"
+    kohei "Bart... what’s your point? The Internet was a revolutionary step. Kind of goes against the idea that technology should be-"
     show bart young worried at flip
     bart "And in less than 50 years, the great cataclysm. The second fall of humanity."
     show bart young neutral
-    bart "First the internet, then huge facilities that were killing the planet. Then reactors that destroyed the environment... The planet answered..."
+    bart "First the Internet, then huge facilities that were killing the planet. Then reactors that destroyed the environment... The planet answered..."
     show kohei young confused
     kohei "And then the Angel from above blah blah blah I get it... but you see that part right there... that’s not an actual explanation, Bart."
     # > (MORE)

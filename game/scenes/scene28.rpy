@@ -27,6 +27,7 @@ label scene28:
     kohei "How was the ten thousandth reading of the legend of Princess Kaguya?"
     linda "Just as thrilling as the last."
     show jojo grin 1
+    # "TODO jojo hop here?"
     jojo "So the little one is finally asleep? Let’s get this party started!"
     linda "A small, quiet gathering these days, Joe. It’s always a great time hanging out with you all."
     kohei "It’s just too bad the life of the party couldn’t be here."
@@ -41,8 +42,9 @@ label scene28:
     linda "Well, you are the newly appointed pope after all... meanwhile I have to stop Kohei here from running errands in his."
     kohei "But picking up groceries is just so much more fun by mech! And don’t worry about Bart, fighting was always against his religion, or so he said..."
     jojo "Hey Bart.... You thinking of selling-"
-    show jojo neutral
+    show jojo sad
     bart @ neutral "Don’t even think about it."
+    show jojo neutral
 
     # > Everyone’s holo-device goes off, an alarm similar to an amber
     # > alert or an earthquake warning

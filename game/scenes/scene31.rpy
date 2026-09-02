@@ -121,7 +121,6 @@ label scene31:
     call fx.glitch_child
 
     kagu "Hopes.... And .... Dreams..... What do I want?"
-    bart angry 2 "If you don’t do it, I will."
     # > 
     # > SONG: SOTO    # > 
     # > BLACKOUT

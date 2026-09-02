@@ -111,6 +111,7 @@ label scene27:
     usagi "No, that’s not what I- ... NoName... just listen. Today I’m going to tell you the story of Princess Kaguya."
     show child neutral
     # > Time lapse
+    "TODO show panels of the kaguya story above the characters here? or fullscreen?"
     usagi "Once, an old bamboo cutter found a tiny princess glowing inside a stalk of bamboo."
     # > Time lapse
     show child: 

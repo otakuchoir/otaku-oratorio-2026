@@ -10,7 +10,7 @@ label scene07:
     with dissolve
     # > 7        INT. CROWN MILITARY ACADEMY, CLASSROOM                                    7
     jojo "Listen up. I have 3 minutes left and we’re on the last chapter. This will be part of your midterm tomorrow. What do the Domes do?"
-    takeshi "They are walls regulate atmosphere and temperature, filtering out the toxins in the air released after the Cataclysm Era, Sir."
+    takeshi "They are walls that regulate atmosphere and temperature, filtering out the toxins in the air released after the Cataclysm Era, Sir."
     jojo "Good. But not walls, they are stabilizers. Language matters."
     jojo "And who can tell me about the Cataclysm Era? Sanders?"
     sanders "During the Cataclysm Era, there was chaos with widespread scarcity, conflict, and volatility, Sir."

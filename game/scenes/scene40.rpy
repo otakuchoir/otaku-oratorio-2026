@@ -67,7 +67,7 @@ label scene40:
 
     kelisha "Barthandelus pilots the Alexander as a high level defensive heal class. I’m debuffing his systems now."
     show bart mech neutral at left2, flip, fx.hover(3.7), fx.ease_xoffset(dur=2.5, x0=-1000)
-    bart "So... you have come to challenge the will of god..."
+    bart "So... you have come to challenge the will of God..."
     kelisha mech worried "Barthandelus! Stand down and let’s stop this insanity."
     ### page 77 ###
     bart mech angry 1 "The only insanity I see is a traitor to the Crown who not so secretly peruses with the Rebellion, now coming to stop the demise of the very system she swore to take down from the shadows. Have you lost your nerve?"
@@ -514,7 +514,7 @@ label scene40:
     takeshi "Support unit B-100 reporting... Sounds like you need someone who knows how to hack."
     usagi @ mech postgrad happy 3 "Takeshi!"
     show sanders mech postgrad neutral
-    takeshi "Sorry I couldn’t be here sooner guys. Sanders..."
+    takeshi "Sorry I couldn’t be here sooner, guys. Sanders..."
     show sanders mech postgrad happy
     sanders "... Well can you stop this thing or not?"
     # > Takeshi begins hacking the Ultima Cannon.
@@ -559,7 +559,7 @@ label scene40:
     show takeshi mech postgrad neutral at flip, fx.hover(2.5)
     show usagi mech postgrad neutral at noflip, fx.hover(1.7)
     show sanders mech postgrad neutral at noflip, fx.hover(2.3)
-    show child neutral at right, fx.hover(1.3), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000)):
+    show child neutral at right, fx.hover(1.3), fx.ypos(ypos_textbox - 0.1), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000)):
         # a little smaller to match the mech scale. but 0.5 is too small!
         zoom 0.70
     kagu "I can do it. It won’t hurt. I can’t be destroyed."

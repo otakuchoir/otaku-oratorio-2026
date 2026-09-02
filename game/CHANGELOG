@@ -5,7 +5,8 @@
 - Remove fast-forwarding with the ctrl and tab keys (it's too easy to press accidentally). Add fast-forwarding with the pagedown and pageup keys.
 - Fix buggy song lyrics displays
 - Fix scene transitions and minor bugs throughout the show
-- Update scene 6 dialogue from 09/01 VA rehearsal: "Hey old man" -> "Hey lady"
+- Update scene 6 dialogue from 09/01's VA rehearsal: "Hey old man" -> "Hey lady"
+- Various small fixes from 09/01's full show reading
 
 ## 2026/08/30
 - Fix scene 2 dialogue/song order. Thanks to Nathan for reporting!

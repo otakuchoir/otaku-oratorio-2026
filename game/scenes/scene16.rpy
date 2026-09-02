@@ -1,7 +1,7 @@
 # scene 16 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi+postgrad&t=usagi+postgrad&t=sanders+postgrad&t=jojo&t=kelisha&t=bart
 label scene16: 
     scene bg moon and earth with dissolve
-    "PLACEHOLDER IRL scene16 first few lines only, until surface landing"
+    "PLACEHOLDER IRL scene16 - TODO nope not anymore, I do need to animate this"
 
     # > 16       EXT. SPACE - MECHS                                                       16
     # > Usagi, Sanders, and Takeshi are traveling to the dark side of

@@ -14,6 +14,7 @@ label scene25:
     show princess mech neutral       at right,  fx.xoffset(1000), noflip
     show huxtable mech young neutral at right2, fx.xoffset(1000), noflip 
     show linda mech young neutral    at center, fx.xoffset(1000), noflip 
+    # "TODO add emotes for this scene, at least"
 
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
     wellington "Today’s training is a final lane push on the enemy base."

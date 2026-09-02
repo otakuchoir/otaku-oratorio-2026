@@ -92,13 +92,12 @@ label scene23:
     show child happy at flip
     usagi "What is your name?"
     child "What is your name?"
+    usagi "My name is Usagi. Usagi Kitadani. What is your name."
     # > A glitch, the child glitches, energy glitches, lights
     # > flicker.
     show usagi at fx.glitch_lights
     show bg at fx.glitch_lights
     call fx.glitch_child
-    show child happy focus at flip
-    usagi "My name is Usagi. Usagi Kitadani. What is your name."
     show child happy
     child "My name is. My name is. I have no name. My name is No Name."
     show usagi postgrad neutral
@@ -111,13 +110,13 @@ label scene23:
     show usagi postgrad happy 2
     show child happy 2
     usagi "Specimen one? Ok we’ll call you No Name, that’s much more mysterious and cool, don’t you think?"
-    child "Haha, I like that. NoName."
+    noname "Haha, I like that. NoName."
     usagi "Pleased to meet you NoName!"
-    child "Pleased to meet you NoName!"
+    noname "Pleased to meet you NoName!"
     show usagi postgrad happy 1
     show child happy
     usagi "No... I’m Usagi, remember?"
-    child "Remember? Ah! Please to meet you Usagi!"
+    noname "Remember? Ah! Please to meet you Usagi!"
     show usagi postgrad happy 2
     show child happy 2
     # > Quietly behind the glass.
@@ -243,4 +242,11 @@ label scene23.child_mirroring:
             ease 0.4 xoffset -150
             ease 0.4 xoffset -0
     pause 1.5
+    # just in case we skip the animation, reset all attributes
+    hide usagi
+    show usagi postgrad happy 2 focus at right2, noflip:
+        xpos 0.59
+    hide child
+    show child happy at left2, flip:
+        xpos 0.41
     return

@@ -56,7 +56,7 @@ label scene33:
     show usagi postgrad neutral
     linda "Jojo and Barthandelus? Just... Be careful. I don’t-"
     usagi "Sorry mom, gotta go, I think Kagu froze up or something."
-    linda "Oh, Of course. I’ll talk with you later."
+    linda "Oh, of course. I’ll talk with you later."
 
     show linda:
         alpha 1.0

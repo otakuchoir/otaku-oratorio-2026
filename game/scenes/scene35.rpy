@@ -29,7 +29,7 @@ label scene35:
     jojo @ serious 2 "Well... the consequences ARE exponential. WHAT did you DO?"
     show bart peaceful
     show usagi postgrad serious 1
-    bart "I did what was necessary. I did what Kohei petitioned against and I did what his daughter tried to stop: The inevitable."
+    bart "I did what was necessary. I did what Kohei petitioned against and I did what his daughter tried to stop: the inevitable."
     show jojo sad
     jojo @ crying "No... you swore to me that you only wanted to learn more... for Kohei’s sake... you wanted science to progress... not cling to that old belief that-"
     show bart angry 2

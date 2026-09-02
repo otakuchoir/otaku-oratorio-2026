@@ -78,7 +78,7 @@ label scene19:
     show kohei serious 2
     navigator "Captain, a development, the Crystal is... opening."
     kitadani "Then this is our chance. That... thing... is coming out again and this time it means to kill us all."
-    gunner "100 percent the firing window is open."
+    gunner "100 percent! The firing window is open."
 
     # > Gunner Chief locks and loads the Ultima Canon.
     kitadani panic 2 "Ready the Ultima Cannon!"
@@ -142,13 +142,14 @@ label scene19:
     # > BLACK OUT, SCREEN REVEALS SHOW TITLE/ LOGO “OTAKU ORATORIO 2:
     # > I set out to save the world, but it turns out the world’s
     # > greatest threat is a kid who calls me mom.”
-    scene bg beige
-    show logo:
-        anchor (0.5, 0.5)
-        pos (0.5, 0.5)
-        zoom 0.5
-    with fade
-    pause
+    # NOPE this was an old directive from when this was scene 1
+    #scene bg beige
+    #show logo:
+    #    anchor (0.5, 0.5)
+    #    pos (0.5, 0.5)
+    #    zoom 0.5
+    #with fade
+    #pause
 
     window hide
     window auto
