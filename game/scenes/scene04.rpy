@@ -85,7 +85,7 @@ label scene04:
     # TODO: remove this narration and just pause the music instead?
     "The classroom falls silent."
 
-    kelisha "Take your seats your three. And for the rest of you, we prefer the term colony-born. Lunars sounds so... alien."
+    kelisha "Take your seats you three. And for the rest of you, we prefer the term colony-born. Lunars sounds so... alien."
     # > On the screen a news story appears
     # fade-in the reporters at a distance (zoomed out), but not the others' expression changes
     show usagi neutral
@@ -147,7 +147,7 @@ label scene04:
     reporter3 "But not to fear, this dispute won’t be affecting your vacation plans."
     # > (MORE)
     ### page 7 ###
-    reporter3 "While the Kingdom of New Jersey is responsible for a large part of the Ultima Ore supply chain, Our Crown Military King, is confident that an agreement will be reached before the situations impacts the economy."
+    reporter3 "While the Kingdom of New Jersey is responsible for a large part of the Ultima Ore supply chain, our Crown Military King, is confident that an agreement will be reached before the situations impacts the economy."
     hide reporter1
     hide reporter2
     hide reporter3

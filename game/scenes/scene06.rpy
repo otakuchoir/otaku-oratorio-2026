@@ -125,7 +125,7 @@ label scene06:
     show usagi worried
     takeshi worried 2 "What??"
     ### page 11 ###
-    sanders @ angry 3 "Hey old man, we don’t have TIME for this-"
+    sanders @ angry 3 "Hey lady, we don’t have TIME for this-"
     train_security "You’re gonna have to come with me."
     # usagi steps to the front to defend her friend
     show usagi at right2
