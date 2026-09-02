@@ -79,7 +79,9 @@ label scene10:
     pause 2.0
 
     # ...and back onscreen
-    scene bg spaceship window transparent
+    scene black
+    call scene11.space_background(flip_=True)
+    show bg spaceship window transparent
     $ zz = 2.0
     $ dx = zz - 0.5 # 0.5 is anchor
     # $ zright2 = (0.5)/z
@@ -90,7 +92,6 @@ label scene10:
     $ zright2 = 1 - zleft1
     $ zleft2 = zright2 + dx
     $ zright1 = zleft1 - dx
-    call scene11.space_background
     show bg lunar tarmac as bg1 behind bg:
         zoom zz
         anchor (0.5, 1.0)

@@ -16,6 +16,11 @@ transform noflip:
 transform nozoom:
     zoom 1.0
 
+transform yflip:
+    yzoom -1.0
+transform noyflip:
+    yzoom 1.0
+
 transform yshake(size, n, dur):
     yoffset 0
     ease dur yoffset size
@@ -177,3 +182,116 @@ transform fx.flashback():
     # matrixcolor TintMatrix('#ffeec2') * SaturationMatrix(0.0, (0.2126, 0.7152, 0.0722))
     # so we copy and modify that:
     matrixcolor TintMatrix('#ffeec2') * SaturationMatrix(0.15, (0.2126, 0.7152, 0.0722))
+
+transform fx.bgloop0:
+    anchor (0.0, 0.0)
+    pos (0.0, 0.0)
+
+label fx.bgloop_x_hide:
+    hide bgloop_x_0
+    hide bgloop_x_1
+    return
+
+label fx.bgloop_x(img, dur):
+    # mirror the background for a cleanish-looking loop point
+    show expression img as bgloop_x_0 at fx.bgloop0
+    show expression img as bgloop_x_1 at fx.bgloop0
+
+    python:
+        xdur = dur
+        x, y, w, h = renpy.get_image_bounds('bgloop_x_0')
+        if xdur < 0:
+            xdur = -xdur
+            w = -w
+    show expression img as bgloop_x_0:
+        block:
+            xoffset 0
+            linear xdur xoffset w
+            xoffset -w
+            linear xdur xoffset 0
+            repeat
+    show expression img as bgloop_x_1:
+        flip
+        block:
+            xoffset -w
+            linear xdur xoffset 0
+            linear xdur xoffset w
+            repeat
+    return
+
+label fx.bgloop_hide:
+    hide bgloop_00
+    hide bgloop_01
+    hide bgloop_10
+    hide bgloop_11
+    return
+
+label fx.bgloop(img, dur):
+    # mirror the background for a cleanish-looking loop point
+    show expression img as bgloop_00 at fx.bgloop0
+    show expression img as bgloop_10 at fx.bgloop0
+    show expression img as bgloop_01 at fx.bgloop0
+    show expression img as bgloop_11 at fx.bgloop0
+
+    python:
+        xdur, ydur = dur
+        x, y, w, h = renpy.get_image_bounds('bgloop_00')
+        if xdur < 0:
+            xdur = -xdur
+            w = -w
+        if ydur < 0:
+            ydur = -ydur
+            h = -h
+    show expression img as bgloop_00:
+        parallel:
+            xoffset 0
+            linear xdur xoffset w
+            xoffset -w
+            linear xdur xoffset 0
+            repeat
+        parallel:
+            yoffset 0
+            linear ydur yoffset h
+            yoffset -h
+            linear ydur yoffset 0
+            repeat
+    show expression img as bgloop_01:
+        flip
+        parallel:
+            xoffset -w
+            linear xdur xoffset 0
+            linear xdur xoffset w
+            repeat
+        parallel:
+            yoffset 0
+            linear ydur yoffset h
+            yoffset -h
+            linear ydur yoffset 0
+            repeat
+    show expression img as bgloop_10:
+        yflip
+        parallel:
+            xoffset 0
+            linear xdur xoffset w
+            xoffset -w
+            linear xdur xoffset 0
+            repeat
+        parallel:
+            yoffset -h
+            linear ydur yoffset 0
+            linear ydur yoffset h
+            repeat
+    show expression img as bgloop_11:
+        flip
+        yflip
+        parallel:
+            xoffset -w
+            linear xdur xoffset 0
+            linear xdur xoffset w
+            repeat
+        parallel:
+            yoffset -h
+            linear ydur yoffset 0
+            linear ydur yoffset h
+            repeat
+    return

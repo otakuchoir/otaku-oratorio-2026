@@ -1,7 +1,8 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene11: 
-    scene bg kelisha office transparent windows
-    call scene11.space_background
+    scene black
+    call scene11.space_background(flip_=True)
+    show bg kelisha office transparent windows
     with dissolve
 
     call fx.play_music_if_changed_in_dev("bgm_010_ready_set_go__kirby_and_the_forgotten_land.opus")
@@ -94,84 +95,9 @@ label scene11:
     return
 
 label scene11.space_background_hide:
-    hide bg2_00
-    hide bg2_01
-    hide bg2_10
-    hide bg2_11
+    call fx.bgloop_hide
     return
 
-label scene11.space_background(bgvx=23, bgvy=79, flip=True):
-    # animate the space background outside the office window.
-    # mirror the background horizontally + vertically, for a cleanish-looking loop point, since it doesn't loop well naturally
-    # faster velocities, for testing the loop
-    # $ bgvx = 3
-    # $ bgvy = 7
-    $ z = 1440.0/1280.0
-    $ w = 1440.0   # or 1280.0 * z
-    $ w = w if not flip else -w
-    $ h = 1370.0 * z
-    show bg space as bg2_00 behind bg:
-        zoom z
-        anchor (0, 0)
-        pos (0, 0)
-        parallel:
-            xoffset 0
-            linear bgvx xoffset -w
-            xoffset w
-            linear bgvx xoffset 0
-            repeat
-        parallel:
-            yoffset 0
-            linear bgvy yoffset -h
-            yoffset h
-            linear bgvy yoffset 0
-            repeat
-    show bg space as bg2_10 behind bg:
-        zoom z
-        anchor (0, 0)
-        pos (0, 0)
-        xzoom -1
-        parallel:
-            xoffset w
-            linear bgvx xoffset 0
-            linear bgvx xoffset -w
-            repeat
-        parallel:
-            yoffset 0
-            linear bgvy yoffset -h
-            yoffset h
-            linear bgvy yoffset 0
-            repeat
-    show bg space as bg2_01 behind bg:
-        zoom z
-        anchor (0, 0)
-        pos (0, 0)
-        yzoom -1
-        parallel:
-            xoffset 0
-            linear bgvx xoffset -w
-            xoffset w
-            linear bgvx xoffset 0
-            repeat
-        parallel:
-            yoffset h
-            linear bgvy yoffset 0
-            linear bgvy yoffset -h
-            repeat
-    show bg space as bg2_11 behind bg:
-        zoom z
-        anchor (0, 0)
-        pos (0, 0)
-        xzoom -1
-        yzoom -1
-        parallel:
-            xoffset w
-            linear bgvx xoffset 0
-            linear bgvx xoffset -w
-            repeat
-        parallel:
-            yoffset h
-            linear bgvy yoffset 0
-            linear bgvy yoffset -h
-            repeat
+label scene11.space_background(bgvx=23, bgvy=79, flip_=False):
+    call fx.bgloop(Transform('bg space', zoom=1440.0/1280.0), dur=((-bgvx if flip_ else bgvx), bgvy))
     return

@@ -191,7 +191,7 @@ label scene40:
         zoom 1.1
         anchor (0.5, 0.5)
         pos (0.45, 0.45)
-    call scene11.space_background(bgvx=7, bgvy=79, flip=True)
+    call fx.bgloop(Transform('bg space', zoom=1440.0/1280.0), dur=(7.0, 79.0))
     show usagi mech postgrad happy 1 at center, fx.hover(1.7), fx.ease_xoffset(dur=0.5, x0=-1500)
     show sanders mech postgrad happy at left2, fx.hover(2.3), fx.ease_xoffset(dur=0.5, x0=-1500)
     show jojo mech sad at left, fx.hover(1.9), fx.ease_xoffset(dur=0.5, x0=-1500)
@@ -205,11 +205,13 @@ label scene40:
     usagi mech postgrad angry "What do you have to say for yourself and why shouldn’t I blow you up along with Barthandelus."
     show usagi mech postgrad shock
     sanders "We... never found her, the Queen of New Jersey. It was another cover up. The place that we blew up... just innocent people... The Crown made up a story and we were told to keep quiet...."
+
     show bg black as bg2 behind bg:
         alpha 0.0
         linear 0.5 alpha 1.0
     pause 0.5
-    call scene11.space_background_hide
+    call fx.bgloop_hide
+    with dissolve
     show bg space battlefield:
         alpha 0.0
         zoom 1.1

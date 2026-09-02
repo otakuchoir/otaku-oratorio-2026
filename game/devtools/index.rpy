@@ -14,3 +14,5 @@ screen devtools():
                 action Start('animation_test')
             textbutton "mech test":
                 action Start('mech_test')
+            textbutton "background-scroll test":
+                action Start('animation_test_bgloop')
