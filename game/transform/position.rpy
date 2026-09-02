@@ -29,6 +29,13 @@ transform offscreenright:
     xpos 1.6
     ytextbox
 
+transform bottom:
+    pos (0.5, 1.0)
+transform bottomleft:
+    pos (0.0, 1.0)
+transform bottomright:
+    pos (1.0, 1.0)
+
 # TODO: avoid changing sprite anchors, special effects rely on it
 transform ytop:
     yanchor 0.0

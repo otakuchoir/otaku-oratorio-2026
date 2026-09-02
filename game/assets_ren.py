@@ -116,6 +116,7 @@ for f in fs:
 
 # Load a list of other assets with less predictible naming patterns.
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')
+load_image('logo choir', 'images/OtakuChoir-LogoMark_Full+Color.png')
 for i, c in enumerate('ABC'):
     i += 1
     load_image(f'bg scene16 {i}', f'assets/Scene 16/Scene16{c}.png')
