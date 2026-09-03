@@ -67,8 +67,8 @@ transform ed.driving_scroll(delay, ypos_):
     pause (driving_dur + delay)
     linear (credits_dur - driving_dur) ypos (ypos_+driving_scrolls_at-credits_size)
 
-transform ed.car(delay, ypos_):
-    zoom 0.5
+transform ed.car(delay, ypos_, zoom_=0.3):
+    zoom zoom_
     xpos 1.3
     # drive on to the screen quickly
     parallel:
@@ -86,16 +86,25 @@ transform ed.car(delay, ypos_):
     parallel:
         ed.driving_scroll(delay, ypos_)
 
-image ed_car_ph = ParameterizedText(size=80, outlines=[(3, '#000', 0, 0)], xalign=0.5)
-define ed_car_ph_text = """            ____________________\n          /                                 \\\n  ____/                                     \\\n/ o o                                          \\\n________PLACEHOLDER CAR______\n          \___/                   \___/"""
+# image ed_car_ph = ParameterizedText(size=80, outlines=[(3, '#000', 0, 0)], xalign=0.5)
+# define ed_car_ph_text = """            ____________________\n          /                                 \\\n  ____/                                     \\\n/ o o                                          \\\n________PLACEHOLDER CAR______\n          \___/                   \___/"""
+
+# https://pixabay.com/vectors/automobile-car-gs-1300464/
+image ed_car = "images/automobile-1300464_1280.png"
+
 label ed.driving(delay):
     call fx.bgloop_x('ed_bg_driving', dur=4.0, transform_=ed.driving_scroll(delay, ypos_=0.5))
-    show linda smile              at fx.xoffset(-150), ed.car(delay, ypos_=0.95)
-    show usagi postgrad happy 1   at fx.xoffset(-100), ed.car(delay, ypos_=0.95)
-    show takeshi postgrad happy 1 at fx.xoffset( 100), ed.car(delay, ypos_=0.95)
-    show sanders postgrad happy   at fx.xoffset( 200), ed.car(delay, ypos_=0.95)
-    show ed_car_ph ed_car_ph_text at fx.xoffset(0), ed.car(delay, ypos_=1.00):
+    show linda smile              at fx.xoffset(-50), ed.car(delay, ypos_=0.84)
+    show usagi postgrad happy 1   at fx.xoffset(10), ed.car(delay, ypos_=0.84)
+    show takeshi postgrad happy 1 at fx.xoffset(140), ed.car(delay, ypos_=0.86)
+    show sanders postgrad happy   at fx.xoffset(220), ed.car(delay, ypos_=0.86)
+    show ed_car:
+        flip
         anchor (0.5, 1.0)
+        fx.xoffset(0)
+        ed.car(delay, ypos_=1.06, zoom_=0.65)
+    # show ed_car_ph ed_car_ph_text at fx.xoffset(0), ed.car(delay, ypos_=1.00):
+        # anchor (0.5, 1.0)
     return
 
 init python:
