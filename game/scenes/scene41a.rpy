@@ -1,5 +1,5 @@
-define credits_size = 5.5
-define credits_dur = 30
+define credits_size = 7.5
+define credits_dur = 40
 label scene41a:
     scene bg black
     window hide
@@ -24,6 +24,14 @@ label scene41a:
         pos (0.5, 1.0)
         linear credits_dur ypos (1.0-credits_size)
     # "PLACEHOLDER song: welcome to the new world\nmanga panels/postcards: epilogue\nCREDITS"
+    
+    call roxbury
+    show layer roxbury:
+        anchor (0.5, 0.5)
+        zoom 0.5
+        pos (0.5, 6.5)
+        linear credits_dur ypos (6.5-credits_size)
+
     pause
     return
 
