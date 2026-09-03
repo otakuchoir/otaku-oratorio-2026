@@ -1,7 +1,8 @@
-## 2026/09/02
+## 2026/09/03
 - Add opening introductions, very incomplete
 - Add ending credits, incomplete
 - Redesign looping-background code. It's now easy to loop any background, not just space. (But it can still look bad, choose carefully)
+- Add ending credits driving animation
 
 ## 2026/09/01
 - Finish scene 40
