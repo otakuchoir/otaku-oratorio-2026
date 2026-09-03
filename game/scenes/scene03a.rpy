@@ -3,12 +3,13 @@ label scene03a:
     window auto
 
     call op.logo
-    "TODO opening is work in progress. eventually everyone will have a short sprite animation, instead of an image - or, maybe we should keep the VN simple here and focus on the IRL actor intros? character order is easy to change, except groups like the trio who might have scenes together later"
+    "TODO opening is work in progress. eventually everyone will have a short sprite animation, instead of an image. (or maybe we should keep the VN simple and focus on the IRL actor intros?) character order is very easy to change, except those with scenes together like the trio"
     window hide
     window auto
-    call op.usagi
-    call op.sanders
-    call op.takeshi
+    call op.trio
+    # call op.usagi
+    # call op.sanders
+    # call op.takeshi
     call op.kagu
     call op.bart
     call op.jojo
@@ -59,31 +60,46 @@ label op.logo:
     pause op.intro_dur
     return
 
-label op.usagi:
-    scene bg usagi dorm night
-    show usagi postgrad happy 2 focus at bottom:
-        zoom 2.0
+transform op.trio_run_1:
+    zoom 1.5
+    xoffset 1200
+    parallel:
+        easein 1.0 xoffset 300
+    parallel:
+        # interrupt the easing above, so there's no dead stop, just a slowdown
+        pause 0.6
+        easein 7.4 xoffset -300
+
+transform op.trio_run_2:
+    easeout 1.0 xoffset -1200
+
+label op.trio:
+    scene black
+    call fx.bgloop_x('bg countryside', dur=3.0)
+
+    # scene bg usagi dorm night
+    show usagi happy 2 focus at bottom, op.trio_run_1
     show op_text "{=op_starring}Starring{/}\n{=op_actor}Sophia Chan{/}\n{=op_as}as{/}\n{=op_char}Usagi Kitadani{/}" at top
     with dissolve
     pause op.intro_dur
-    return
+    show usagi at op.trio_run_2
+    pause 0.0
 
-label op.sanders:
-    scene bg countryside
-    show sanders postgrad angry 1 focus at bottom:
-        zoom 2.0
+    # scene bg countryside
+    show sanders angry 1 focus at bottom, op.trio_run_1
     show op_text "\n\n{=op_actor}Chomp{/}\n{=op_as}as{/}\n{=op_char}George Sanders{/}" at top
     with dissolve
     pause op.intro_dur
-    return
+    show sanders at op.trio_run_2
+    pause 0.0
 
-label op.takeshi:
-    scene bg cubicles
-    show takeshi postgrad worried 2 focus at bottom:
-        zoom 2.0
+    # scene bg cubicles
+    show takeshi worried 2 focus at bottom, op.trio_run_1
     show op_text "\n\n{=op_actor}Geoffery Shlapak{/}\n{=op_as}as{/}\n{=op_char}Takeshi Williamson{/}" at top
     with dissolve
     pause op.intro_dur
+    show takeshi at op.trio_run_2
+    pause 1.0
     return
 
 label op.kagu:
@@ -97,7 +113,7 @@ label op.kagu:
 
 label op.bart:
     scene bg church interior
-    show bart grin 2 focus at bottom:
+    show bart worried focus at bottom:
         zoom 2.0
     show op_text "\n\n{=op_actor}Connor \"Bear\" Barre{/}\n{=op_as}as{/}\n{=op_char}Bartholomew Barthandelus{/}" at top
     with dissolve
