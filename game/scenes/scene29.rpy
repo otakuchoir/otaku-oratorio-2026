@@ -1,8 +1,7 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=bart&t=jojo&t=kelisha&t=kohei&t=linda
-image pd = 'assets/Character Designs/planet_destroyer_adult.png'
 label scene29:
     scene bg black hole
-    show pd:
+    show destroyer:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
         ysize 1080

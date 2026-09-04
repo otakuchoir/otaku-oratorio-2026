@@ -1,3 +1,8 @@
+# actors blocking doc:
+# https://docs.google.com/document/d/1TY9hcwGGRmYvBaMOoS-97qJit_nVjHjjL2uWjPJ6IAI/edit?tab=t.0
+#
+# VN intros must match this, because we're coordinating with IRL actor intros on stage
+
 label scene03a: 
     window hide
     window auto
@@ -11,16 +16,17 @@ label scene03a:
     # call op.sanders
     # call op.takeshi
     call op.kagu
-    call op.bart
-    call op.jojo
-    call op.kelisha
-    call op.linda
     call op.kohei
+    call op.linda
+    call op.jojo
+    call op.bart
+    call op.kelisha
     call op.queen
     call op.huxtable
-    call op.trio1
-    call op.trio2
-    call op.trio3
+    call op.destroyer
+    call op.gunner
+    call op.wellington
+    call op.reporters
     call op.choir
     return
 
@@ -79,7 +85,7 @@ label op.trio:
 
     # scene bg usagi dorm night
     show usagi happy 2 focus at bottom, op.trio_run_1
-    show op_text "{=op_starring}Starring{/}\n{=op_actor}Sophia Chan{/}\n{=op_as}as{/}\n{=op_char}Usagi Kitadani{/}" at top
+    show op_text "\n\n{=op_actor}Sophia Chan{/}\n{=op_as}as{/}\n{=op_char}Usagi Kitadani{/}" at top
     with dissolve
     pause op.intro_dur
     show usagi at op.trio_run_2
@@ -87,7 +93,7 @@ label op.trio:
 
     # scene bg countryside
     show sanders angry 1 focus at bottom, op.trio_run_1
-    show op_text "\n\n{=op_actor}Chomp{/}\n{=op_as}as{/}\n{=op_char}George Sanders{/}" at top
+    show op_text "\n\n{=op_actor}Chomp Yamile Martine Cuevas{/}\n{=op_as}as{/}\n{=op_char}George Sanders{/}" at top
     with dissolve
     pause op.intro_dur
     show sanders at op.trio_run_2
@@ -106,7 +112,34 @@ label op.kagu:
     scene bg lunar surface
     show child happy focus at bottom:
         zoom 2.0
-    show op_text "\n\n{=op_actor}Jalisha Paz{/}\n{=op_as}as{/}\n{=op_char}The Child{/}\nwait, isn't this a spoiler?" at top
+    show op_text "\n\n{=op_actor}Jalisha Paz{/}\n{=op_as}as{/}\n{=op_char}The Child{/}\nTODO: wait, isn't this a spoiler?" at top
+    with dissolve
+    pause op.intro_dur
+    return
+
+label op.kohei:
+    scene bg spaceship window
+    show kohei panic 2 focus at bottom:
+        zoom 2.0
+    show op_text "\n\n{=op_actor}Erin-Marquise Watson{/}\n{=op_as}as{/}\n{=op_char}Kohei Kitadani{/}" at top
+    with dissolve
+    pause op.intro_dur
+    return
+
+label op.linda:
+    scene bg training room
+    show linda happy 2 focus at bottom:
+        zoom 2.0
+    show op_text "\n\n{=op_actor}Rahanna Brown{/}\n{=op_as}as{/}\n{=op_char}Linda Kitadani{/}" at top
+    with dissolve
+    pause op.intro_dur
+    return
+
+label op.jojo:
+    scene bg research lab inside
+    show jojo fervent focus at bottom:
+        zoom 2.0
+    show op_text "\n\n{=op_actor}Abraham \"AJ\" Rogers Lopez{/}\n{=op_as}as{/}\n{=op_char}Professor Joseph \"Jojo\" Chen{/}" at top
     with dissolve
     pause op.intro_dur
     return
@@ -120,38 +153,11 @@ label op.bart:
     pause op.intro_dur
     return
 
-label op.jojo:
-    scene bg research lab inside
-    show jojo fervent focus at bottom:
-        zoom 2.0
-    show op_text "\n\n{=op_actor}AJ{/}\n{=op_as}as{/}\n{=op_char}Professor Joseph \"Jojo\" Chen{/}" at top
-    with dissolve
-    pause op.intro_dur
-    return
-
 label op.kelisha:
     scene bg classroom
     show kelisha stinkeye focus at bottom:
         zoom 2.0
     show op_text "\n\n{=op_actor}Ashley Foster{/}\n{=op_as}as{/}\n{=op_char}Professor Kelisha Alvarez{/}" at top
-    with dissolve
-    pause op.intro_dur
-    return
-
-label op.linda:
-    scene bg training room
-    show linda happy 2 focus at bottom:
-        zoom 2.0
-    show op_text "\n\n{=op_actor}Rahanna{/}\n{=op_as}as{/}\n{=op_char}Linda Kitadani{/}" at top
-    with dissolve
-    pause op.intro_dur
-    return
-
-label op.kohei:
-    scene bg spaceship window
-    show kohei panic 2 focus at bottom:
-        zoom 2.0
-    show op_text "\n\n{=op_actor}Erin-Marquise Watson{/}\n{=op_as}as{/}\n{=op_char}Kohei Kitadani{/}" at top
     with dissolve
     pause op.intro_dur
     return
@@ -170,30 +176,91 @@ label op.huxtable:
     scene bg great hall inside
     show huxtable angry 2 focus at bottom:
         zoom 2.0
-    show op_text "\n\n{=op_actor}(missing from credits doc!){/}\n{=op_as}as{/}\n{=op_char}General Robert Huxtable{/}" at top
+    show op_text "\n\n{=op_actor}Pablo Giraldo{/}\n{=op_as}as{/}\n{=op_char}General Robert Huxtable{/}" at top
     with dissolve
     pause op.intro_dur
     return
 
-# TODO which one are we introducing?
-label op.trio1:
-    scene bg black
-    show op_text "\n\n{=op_actor}Felicity Audet{/}\n{=op_as}as{/}\n{=op_char}several characters.\nwhich one are we introducing?{/}" at top
+label op.destroyer:
+    scene bg black hole
+    show destroyer:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.6)
+        ysize 700
+        fit "contain"
+        fx.hover
+    show op_text "\n\n{=op_actor}Nina Pankova{/}\n{=op_as}as{/}\n{=op_char}The Planet Destroyer{/}" at top
     with dissolve
     pause op.intro_dur
     return
 
-label op.trio2:
-    scene bg black
-    show op_text "\n\n{=op_actor}Allison \"Illy\" Huang{/}\n{=op_as}as{/}\n{=op_char}several characters.\nwhich one are we introducing?{/}" at top
+label op.gunner:
+    scene bg spaceship window
+    show gunner focus at bottom:
+        zoom 2.0
+    show op_text "\n\n{=op_actor}Allison \"Illy\" Huang{/}\n{=op_as}as{/}\n{=op_char}Gunner Chief{/}" at top
     with dissolve
     pause op.intro_dur
     return
 
-label op.trio3:
-    scene bg black
-    show op_text "\n\n{=op_actor}Eiji Ren{/}\n{=op_as}as{/}\n{=op_char}several characters.\nwhich one are we introducing?{/}" at top
+label op.wellington:
+    scene bg training room
+    show layer master at fx.flashback
+    # `onlayer` so this text doesn't get flashbacked
+    show op_text "\n\n{=op_actor}Delaney R. Page{/}\n{=op_as}as{/}\n{=op_char}Professor Wellington{/}\nTODO: no sprite for wellington, and no good placeholders. maybe a clip from scene25's mech practice instead?" at top onlayer roxbury
     with dissolve
+    pause op.intro_dur
+    hide op_text onlayer roxbury
+    return
+
+label op.reporters:
+    $ y = 0.48
+    show bg breaking news as bg2:
+        top
+        zoom 0.0
+        alpha 0.0
+
+        ease 0.5 alpha 1.0 zoom 1.0
+    pause 1.0
+    scene bg news studio:
+        noflip
+        anchor (0.5,1.0)
+        pos (0.5,1.0)
+        zoom 1.15
+    show reporter1:
+        zoom 1.0
+        xpos 0.2
+        ypos y
+    show reporter2:
+        zoom 1.0
+        xpos 0.5
+        ypos y+0.03
+    show reporter3:
+        zoom 1.0
+        xpos 0.8
+        ypos y
+    with dissolve
+    show reporter1 focus
+    show op_text "{=op_actor}Felicity Audet{/}\n{=op_as}as{/}\n{=op_char}Crown Reporter{/}":
+        anchor (0.5, 1.0)
+        pos (0.25, 0.8)
+    # with dissolve
+    pause op.intro_dur
+
+    show reporter1
+    show reporter2 focus
+    show op_text "{=op_actor}Ashley Mendez{/}\n{=op_as}as{/}\n{=op_char}Crown Reporter{/}":
+        anchor (0.5, 1.0)
+        pos (0.50, 0.8)
+    # with dissolve
+    pause op.intro_dur
+
+    show reporter2
+    show reporter3 focus
+    show op_text "{=op_actor}Eiji Ren{/}\n{=op_as}as{/}\n{=op_char}Crown Reporter{/}":
+        anchor (0.5, 1.0)
+        pos (0.75, 0.8)
+    # with dissolve
     pause op.intro_dur
     return
 

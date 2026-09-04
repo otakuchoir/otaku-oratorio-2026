@@ -1,13 +1,14 @@
 
 label scene39:
-    scene bg black
+    # no `scene` here, we want breaking-news to be our transition
+    window hide
+    window auto
     show bg breaking news as bg2:
         top
         zoom 0.0
         alpha 0.0
 
         ease 0.5 alpha 1.0 zoom 1.0
-    with fade
     pause 1.0
     $ y = 0.48
     scene bg news studio:

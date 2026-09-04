@@ -306,6 +306,9 @@ image officer focus = Transform(renpy.get_registered_image('huxtable faceless fo
 image navigator = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-0.5))
 image navigator focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-0.5))
 
+# misc
+image destroyer = 'assets/Character Designs/planet_destroyer_adult.png'
+
 # mech sprites. until real sprites are ready, use a silhouette of the pilot as a placeholder.
 transform mech_placeholder:
     zoom 1.5
