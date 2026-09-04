@@ -114,21 +114,22 @@ for f in fs:
         name = ' '.join(['bg'] + attrs)
         load_image(name, f)
 
-# Load a list of other assets with less predictible naming patterns.
+# Load a list of other assets with less predictible naming patterns
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')
 load_image('logo choir', 'images/OtakuChoir-LogoMark_Full+Color.png')
 for i, c in enumerate('ABC'):
     i += 1
-    load_image(f'bg scene16 {i}', f'assets/Scene 16/Scene16{c}.png')
-    load_image(f'bg scene16 {i} nofg', f'assets/Scene 16/Scene 16 - no foreground/Scene16{c}-noforeground.png')
+    load_image(f'bg scene16 {i}', f'assets/manga/Scene 16/Scene16{c}.png')
+    load_image(f'bg scene16 {i} nofg', f'assets/manga/Scene 16/Scene 16 - no foreground/Scene16{c}-noforeground.png')
 for i in range(1, 4+1):
-    load_image(f'bg scene13 {i}', f'assets/Scene 13 - NJ blows up/scene13-{i}.png')
+    load_image(f'bg scene13 {i}', f'assets/manga/Scene 13 - NJ blows up/scene13-{i}.png')
 for i in range(1, 4+1):
-    load_image(f'bg scene19 {i}', f'assets/Scene 19/scene19_{i:03d}.png')
+    load_image(f'bg scene19 {i}', f'assets/manga/Scene 19/scene19_{i:03d}.png')
 for i in range(1, 4+1):
-    load_image(f'bg scene40 explosion {i}', f'assets/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
+    load_image(f'bg scene40 explosion {i}', f'assets/manga/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
 for i in range(1, 9+1):
-    load_image(f'bg scene40 judgement {i}', f'assets/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
+    load_image(f'bg scene40 judgement {i}', f'assets/manga/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
+load_image(f'bg scene34', f'assets/manga/Scene_34.png')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')
