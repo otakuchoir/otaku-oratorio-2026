@@ -44,7 +44,6 @@ label scene41a:
         # pos (0.5, -2.0)
         pos (0.5, 1.0)
         linear credits_dur ypos (1.0-credits_size)
-    # "PLACEHOLDER song: welcome to the new world\nmanga panels/postcards: epilogue\nCREDITS"
     
     call roxbury
     show layer roxbury:

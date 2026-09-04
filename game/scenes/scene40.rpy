@@ -513,7 +513,7 @@ label scene40:
     show sanders mech postgrad shock
     show usagi mech postgrad happy 1
     show takeshi mech postgrad happy 1 at right2, fx.hover(2.5), fx.ease_xyoffset(dur=2.0, xy0=(1500, -500))
-    takeshi "Support unit B-100 reporting... Sounds like you need someone who knows how to hack."
+    takeshi "Support unit B46 reporting... Sounds like you need someone who knows how to hack."
     usagi @ mech postgrad happy 3 "Takeshi!"
     show sanders mech postgrad neutral
     takeshi "Sorry I couldn’t be here sooner, guys. Sanders..."
