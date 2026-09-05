@@ -195,6 +195,8 @@ label fx.bgloop_x_hide:
 transform fx.noop:
     pass
 
+init python:
+    _bgloop_x_transform = fx.noop
 label fx.bgloop_x(img, dur, transform_=None):
     # mirror the background for a cleanish-looking loop point
     show expression img as bgloop_x_0 at fx.bgloop0
@@ -206,10 +208,10 @@ label fx.bgloop_x(img, dur, transform_=None):
         if xdur < 0:
             xdur = -xdur
             w = -w
-        transform_ = transform_ if transform_ is not None else fx.noop
+        _bgloop_x_transform = transform_ if transform_ is not None else fx.noop
     show expression img as bgloop_x_0:
         parallel:
-            transform_
+            _bgloop_x_transform
         parallel:
             xoffset 0
             linear xdur xoffset w
@@ -219,7 +221,7 @@ label fx.bgloop_x(img, dur, transform_=None):
     show expression img as bgloop_x_1:
         flip
         parallel:
-            transform_
+            _bgloop_x_transform
         parallel:
             xoffset -w
             linear xdur xoffset 0

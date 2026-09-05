@@ -1,7 +1,7 @@
 define credits_size = 11.5
 # TODO: we're singing "welcome to the new world" here, so duration should be a bit longer than that.
 # but... that's so slow during dev.
-# define credits_dur = credits_size * 8.0
+# define credits_dur = credits_size * 4.0
 define credits_dur = credits_size * 8.0
 define driving_scrolls_at = 5.5
 define driving_dur = (driving_scrolls_at / credits_size) * credits_dur
@@ -39,10 +39,11 @@ label scene41a:
         linear credits_dur ypos (0.0-credits_size)
     show logo:
         linear credits_dur ypos (0.5-credits_size)
-    show expression scene41.credits behind bgloop_x_0, bgloop_x_1:
+    # show expression ed_credits_text behind bgloop_x_0, bgloop_x_1:
+    show ed_text ed_credits_text:
         anchor (0.5, 0.0)
         # pos (0.5, -2.0)
-        pos (0.5, 1.0)
+        pos (0.25, 1.0)
         linear credits_dur ypos (1.0-credits_size)
     
     call roxbury
@@ -52,14 +53,31 @@ label scene41a:
         pos (0.5, 6.5)
         linear credits_dur ypos (roxbury_scrolls_at-credits_size)
 
+    pause 10
+    call fx.bgloop_x('bg jersey city cityscape', dur=4.0, transform_=ed.driving_scroll(-10.0, ypos_=0.0))
+    with dissolve # +0.5 sec
+    pause 9.5
+    # not sure where the extra 0.1 comes from, but it needs to be in the last background change for correct timing
+    call fx.bgloop_x('bg countryside', dur=4.0, transform_=ed.driving_scroll(-20.1, ypos_=0.0))
+    with dissolve
+    pause
+    pause
     pause
     return
 
-image ed_bg_driving = Transform(Composite(
-    (1440*2, 1080),
-    (0, 0), 'bg countryside',
-    (1440, 0), Transform('bg countryside', xzoom=-1),
-), zoom=0.5)
+style ed_text_s:
+    xalign 0.5
+    size 24
+    textalign 0.5
+    outlines [(2, '#000', 0, 0)]
+    xsize 0.5
+image ed_text = ParameterizedText(style='ed_text_s')
+
+# image ed_bg_driving = Transform(Composite(
+#     (1440*2, 1080),
+#     (0, 0), 'bg countryside',
+#     (1440, 0), Transform('bg countryside', xzoom=-1),
+# ), zoom=0.5)
 
 transform ed.driving_scroll(delay, ypos_):
     ypos ypos_
@@ -76,7 +94,7 @@ transform ed.car(delay, ypos_, zoom_=0.3):
     # creep forward slowly during the credits
     parallel:
         pause (delay + 2.0 + 2.0)
-        linear (credits_dur - driving_dur + 10) xpos 0.2
+        linear (credits_dur - driving_dur + 10) xpos 0.4
     # drive off the screen quickly
     parallel:
         pause (credits_dur - driving_dur + 9)
@@ -92,7 +110,8 @@ transform ed.car(delay, ypos_, zoom_=0.3):
 image ed_car = "images/automobile-1300464_1280.png"
 
 label ed.driving(delay):
-    call fx.bgloop_x('ed_bg_driving', dur=4.0, transform_=ed.driving_scroll(delay, ypos_=0.5))
+    # call fx.bgloop_x('ed_bg_driving', dur=4.0, transform_=ed.driving_scroll(delay, ypos_=0.5))
+    call fx.bgloop_x('bg countryside', dur=4.0, transform_=ed.driving_scroll(delay, ypos_=0.0))
     show linda smile              at fx.xoffset(-50), ed.car(delay, ypos_=0.84)
     show usagi postgrad happy 1   at fx.xoffset(10), ed.car(delay, ypos_=0.84)
     show takeshi postgrad happy 1 at fx.xoffset(140), ed.car(delay, ypos_=0.86)
@@ -112,10 +131,11 @@ init python:
         # skip the first few lines describing the file to humans
         c ='\n'.join(c.splitlines()[5:])
         c = markdown_to_renpy(c)
-        c = 'TODO: credits work in progress\n\n'+c
+        c = "TODO: credits work in progress. final ones will be much slower, same duration as Welcome to the New World, and hopefully have more backgrounds\n\n"+c
         # NOPE renpy's default font does not support japanese, gotta find and use one that does for this
         # c = c+'\n\nおわり'
-        return Text(c, text_align=0.5)
+        # return Text(c, text_align=0.5)
+        return c
 
     def markdown_to_renpy(t) -> str:
         t = re.sub(r'\*\*\*(?P<body>[^\*]*)\*\*\*', r'{b}{i}\g<body>{/i}{/b}', t)
@@ -127,4 +147,4 @@ init python:
         t = re.sub(r'\\<[Yy]our [Nn]ame [Hh]ere\\>\n', r'', t)
         return t
 
-define scene41.credits = credits_text(renpy.open_file('images/credits-20260902.md').read().decode('utf-8'))
+define ed_credits_text = credits_text(renpy.open_file('images/credits-20260902.md').read().decode('utf-8'))
