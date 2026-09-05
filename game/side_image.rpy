@@ -54,4 +54,5 @@ image side bart grin 1 focus = Transform(flip(renpy.get_registered_image('bart g
 # scene 40
 image side usagi postgrad shock focus = Transform(flip(renpy.get_registered_image('usagi postgrad shock focus')), crop=side_crop_usagi)
 image side kelisha neutral focus = Transform(flip(renpy.get_registered_image('kelisha neutral focus')), crop=side_crop_kelisha)
+image side kelisha worried focus = Transform(flip(renpy.get_registered_image('kelisha worried focus')), crop=side_crop_kelisha)
 image side linda shock focus = Transform(flip(renpy.get_registered_image('linda shock focus')), crop=side_crop_linda)

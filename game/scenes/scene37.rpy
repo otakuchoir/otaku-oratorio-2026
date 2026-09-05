@@ -2,10 +2,10 @@
 label scene37:
     scene bg black hole
     show layer master at fx.flashback
-    show queen mech neutral at center, fx.yoffset(-50), fx.hover(dur=2.3)
     show bart mech neutral at right, fx.yoffset(-50), fx.hover(dur=2.9)
-    show jojo mech neutral at right2, fx.yoffset(-250), fx.hover(dur=1.9)
-    show linda mech worried at left2, fx.yoffset(-300), fx.hover(dur=1.7)
+    show jojo mech neutral at right2, fx.yoffset(-150), fx.hover(dur=1.9)
+    show linda mech worried at left2, fx.yoffset(-200), fx.hover(dur=1.7)
+    show queen mech neutral at center, fx.yoffset(-0), fx.hover(dur=2.3)
     with fade
 
     # > 37       EXT. SPACE                                                               37

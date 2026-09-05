@@ -69,5 +69,6 @@ label scene08:
         xoffset 0
         ease 2 xoffset -1000
     pause 0.5
+    stop music fadeout 1
     scene bg black with dissolve
     return

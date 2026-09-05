@@ -1,7 +1,7 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene10:
     call fx.play_music_in_dev("bgm_010_ready_set_go__kirby_and_the_forgotten_land.opus")
-    scene bg lunar tarmac with dissolve:
+    scene bg lunar tarmac with fade:
         anchor (0.0,0.0)
         zoom 1.1
         xpos -0.1

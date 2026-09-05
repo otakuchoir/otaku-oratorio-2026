@@ -314,7 +314,7 @@ label scene40:
     bart "What?"
     show bart mech as bartglow
     show bart mech shock
-    show queen mech serious 1 at left, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
+    show queen mech serious 1 at left2, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
     show bg queen hits as queenhits behind linda, queen:
         alpha 0.0
         linear 0.08 alpha 0.6
@@ -401,24 +401,24 @@ label scene40:
     show linda mech doom:
         flip
         rotate -15
-        fx.ease_pos(dur=dur, xy0=(0.5, 1.5), xy1=(1.0, 0.0))
+        fx.ease_pos(dur=dur, xy0=(0.5, 1.7), xy1=(1.0, 0.0))
         rotate 15
-        fx.ease_pos(dur=dur, xy0=(0.5, 0.0), xy1=(1.0, 1.5))
+        fx.ease_pos(dur=dur, xy0=(0.5, 0.0), xy1=(1.0, 1.7))
         noflip
         rotate 15
-        fx.ease_pos(dur=dur, xy0=(0.85, 1.5), xy1=(0.35, 0.0))
+        fx.ease_pos(dur=dur, xy0=(0.85, 1.7), xy1=(0.35, 0.0))
         rotate -15
-        fx.ease_pos(dur=dur, xy0=(0.85, 0.0), xy1=(0.35, 1.5))
+        fx.ease_pos(dur=dur, xy0=(0.85, 0.0), xy1=(0.35, 1.7))
         flip
         rotate -15
-        fx.ease_pos(dur=dur, xy0=(0.25, 1.5), xy1=(0.75, 0.0))
+        fx.ease_pos(dur=dur, xy0=(0.25, 1.7), xy1=(0.75, 0.0))
         rotate 15
-        fx.ease_pos(dur=dur, xy0=(0.25, 0.0), xy1=(0.75, 1.5))
+        fx.ease_pos(dur=dur, xy0=(0.25, 0.0), xy1=(0.75, 1.7))
         noflip
         rotate 15
-        fx.ease_pos(dur=dur, xy0=(0.75, 1.5), xy1=(0.25, 0.0))
+        fx.ease_pos(dur=dur, xy0=(0.75, 1.7), xy1=(0.25, 0.0))
         rotate -15
-        fx.ease_pos(dur=dur, xy0=(0.75, 0.0), xy1=(0.25, 1.5))
+        fx.ease_pos(dur=dur, xy0=(0.75, 0.0), xy1=(0.25, 1.7))
     linda "I’m sorry, Bart... OVERDRIVE MARIPOOOOOSA!"
     # > Linda’s attack severely damages The Alexander
 
@@ -473,22 +473,29 @@ label scene40:
         ease 0.2 fx.stretch(1.0, 1.0)
     show sanders mech postgrad panic at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
     show usagi mech postgrad shock at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
-    show jojo mech crying at fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500)) behind bart
+    hide jojo
     # overlay half of jojo's sprite so bart's lance is impaling him
-    show jojo mech crying as jojostabbed at center, fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500)):
-        # crop(x, y, w, h)
-        # crop (0.5, 0.0, 0.5, 1.0)
-        # anchor (0.0, 1.0)
-        crop (0.45, 0.0, 0.55, 1.0)
-        # anchor ((0.55-0.45)*0.5, 1.0)
-        # where's the anchor point? guess and check lol, couldn't figure out math for it
-        anchor (0.09, 1.0)
-    kelisha mech worried "JOSEPH!"
+    show jojo mech crying as jojo_left behind bart:
+        center
+        crop (0.0, -0.3, 0.53, 1.3)
+        anchor (1.0, 0.7)
+        fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500))
+        pause 0.5
+        fx.ease_xyoffset(dur=3.0, xy1=(-50, 40))
+    show jojo mech crying as jojo_right:
+        center
+        crop (0.53, -0.3, 0.47, 1.3)
+        anchor (0.0, 0.7)
+        fx.ease_xyoffset(dur=0.5, xy0=(-500, 1500))
+        pause 0.5
+        fx.ease_xyoffset(dur=3.0, xy1=(50, 60))
+    hide kelisha
+    kelisha worried "JOSEPH!"
     # > The lance makes impact with Jojo, causing a huge explosion.
     # > He’s gone in an instant.
     ### page 80 ###
-    hide jojo
-    hide jojostabbed
+    hide jojo_left
+    hide jojo_right
     with dissolve
     show bart mech anxious
     bart "My... friend.... AHHHHHH!"
@@ -561,17 +568,18 @@ label scene40:
     show takeshi mech postgrad neutral at flip, fx.hover(2.5)
     show usagi mech postgrad neutral at noflip, fx.hover(1.7)
     show sanders mech postgrad neutral at noflip, fx.hover(2.3)
-    show child neutral at right, fx.hover(1.3), fx.ypos(ypos_textbox - 0.1), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000)):
+    show child mech neutral at right, fx.hover(1.3), fx.ypos(ypos_textbox - 0.1), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000)):
         # a little smaller to match the mech scale. but 0.5 is too small!
+        anchor (0.5, 0.5)
         zoom 0.70
     kagu "I can do it. It won’t hurt. I can’t be destroyed."
     usagi "Are you serious Kagu?"
-    show child sad
+    show child mech sad
     kagu "Yeah. It’s just..."
     usagi "What?"
     kagu "Well... this will be goodbye."
     kagu "The blast... That will be super heated Ultima Ore. It will be enough energy to complete my evolution instantly..."
-    show child neutral
+    show child mech neutral
     kagu "Look we don’t have time, get out of here. Sorry we didn’t have time for introductions you two."
     sanders "Oh I know who you are."
     takeshi "Me too... part of the intel. It was nice to meet you Sabik."
@@ -581,7 +589,7 @@ label scene40:
     show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
     show usagi at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
     show takeshi at flip, fx.hover(2.5), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
-    show child serious at fx.hover(1.3), fx.ease_xpos(dur=1.5, x0=0.85, x1=0.50)
+    show child mech serious at fx.hover(1.3), fx.ease_xpos(dur=1.5, x0=0.85, x1=0.50)
     pause 1.0
     scene bg black with dissolve
 

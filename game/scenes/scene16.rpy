@@ -1,7 +1,21 @@
 # scene 16 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi+postgrad&t=usagi+postgrad&t=sanders+postgrad&t=jojo&t=kelisha&t=bart
 label scene16: 
-    scene bg moon and earth with dissolve
-    "PLACEHOLDER IRL scene16 - TODO nope not anymore, I do need to animate this"
+    scene black
+    # scroll the ground, keep the sky the same. not a perfect effect, visible seam if you're looking,
+    # but the big ol mechs mostly block it. cheating(tm)
+    call fx.bgloop_x('bg moon and earth', dur=3.0) 
+    show bg moon and earth:
+        crop (0.0, 0.0, 1.0, 0.67)
+    show sanders mech postgrad neutral at center, fx.yoffset(-50), fx.hover(2.3, y0=-50)
+    show takeshi mech postgrad neutral at right,  fx.yoffset(-50), fx.hover(2.5, y0=-50)
+    show usagi mech postgrad neutral   at left,   fx.yoffset(-50), fx.hover(1.7, y0=-50)
+    with dissolve
+    sanders "You know, on Earth, there used to be collections of trees called forests. Now everyone lives in domed regions..."
+    sanders mech postgrad happy "What I’m saying is... flying out here is awesome. It’s so open wide and spacious."
+    takeshi mech postgrad happy 1 "You actually have something positive to say about the moon for once?"
+    show sanders mech postgrad neutral
+    show takeshi mech postgrad neutral
+    usagi "Orders are to keep comms clear. We don’t know if the energy pattern is aware of our approaching. Stay silent."
 
     # > 16       EXT. SPACE - MECHS                                                       16
     # > Usagi, Sanders, and Takeshi are traveling to the dark side of
@@ -9,21 +23,18 @@ label scene16:
 
     # IRL section: cut from dialogue shown here
     #
-    # sanders "You know, on Earth, there used to be collections of trees called forests. Now everyone lives in domed regions... What I’m saying is... flying out here is awesome. It’s so open wide and spacious."
-    # takeshi "You actually have something positive to say about the moon for once?"
-    # usagi "Orders are to keep comms clear. We don’t know if the energy pattern is aware of our approaching. Stay silent."
     #
     # end IRL section
 
     # > They land on the surface.
     ### page 29 ###
-    show bg lunar surface with dissolve
+    scene bg lunar surface with fade
 
     # show jojo neutral at left
     # show kelisha neutral at right
     # show bart neutral at top
     computer "Approaching the drop zone. Prepare for landing."
-    $ y0 = -0.1
+    $ y0 = -0.7
     $ x0 = 0.5
     show sanders mech postgrad neutral:
         ypos y0 xpos x0
@@ -38,7 +49,7 @@ label scene16:
         pause 0.6
         easein 3 ytextbox xpos 1.3
     show usagi mech postgrad neutral:
-        ypos -0.7 xpos x0
+        ypos y0 xpos x0
         pause 1
         easein 3 ytextbox xpos 0.35
     show bart mech neutral:

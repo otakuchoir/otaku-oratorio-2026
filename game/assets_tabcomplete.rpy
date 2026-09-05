@@ -308,6 +308,10 @@ image navigator focus = Transform(renpy.get_registered_image('huxtable faceless 
 
 # misc
 image destroyer = 'assets/Character Designs/planet_destroyer_adult.png'
+image child body = Transform(dim('assets/Character Designs/planet_destroyer.png'))
+image child body focus = 'assets/Character Designs/planet_destroyer.png'
+# 337x758
+image child rawmech = Crop((0, 258, 337, 500), 'assets/Character Designs/planet_destroyer.png')
 
 # mech sprites. until real sprites are ready, use a silhouette of the pilot as a placeholder.
 transform mech_placeholder:
@@ -315,42 +319,54 @@ transform mech_placeholder:
     matrixcolor BrightnessMatrix(-0.75)
 transform mech_setup:
     anchor (0.5, 1.0)
+
 image usagi rawmech:
-    'images/Usagi_mech_sketch_transparent.png'
+    'assets/mechs/usagi-mech.png'
+    zoom 0.8
     mech_setup
-#     "usagi postgrad neutral focus"
-#     mech_placeholder
 image takeshi rawmech:
     "takeshi postgrad neutral focus"
     mech_placeholder
 image sanders rawmech:
-    "sanders postgrad neutral focus"
-    mech_placeholder
-image linda rawmech:
-    "linda neutral focus"
-    mech_placeholder
-image kohei rawmech:
-    "kohei neutral focus"
-    mech_placeholder
-image queen rawmech:
-    "queen neutral focus"
-    mech_placeholder
-    zoom 1.0
-image bart rawmech:
-    'images/bart-mech-transparent.png'
-    zoom 1.2
+    "assets/mechs/sanders-mech.png"
+    # 800x1200
+    zoom 0.8
     mech_setup
-    # "bart neutral focus"
-    # mech_placeholder
+image linda rawmech:
+    "assets/mechs/linda-mech.png"
+    zoom 0.6
+    # 1400x1400, with cropped side transparency
+    crop (300, 0, 1400-300-100, 1200)
+    mech_setup
+image kohei rawmech:
+    "assets/mechs/kohei-mech.png"
+    zoom 0.6
+    # 1400x1400, with cropped side transparency
+    crop (200, 0, 1400-200-0, 1200)
+    mech_setup
+image queen rawmech:
+    "assets/mechs/queen-mech.png"
+    # 2941x4769, no real crop
+    zoom 0.22
+    mech_setup
+image bart rawmech:
+    'assets/mechs/bart-mech.png'
+    zoom 0.58
+    mech_setup
 image jojo rawmech:
-    "jojo neutral focus"
-    mech_placeholder
+    "assets/mechs/jojo-mech.png"
+    zoom 0.38
+    # 1413x2427, no cropping
+    mech_setup
 image huxtable rawmech:
     "huxtable neutral focus"
     mech_placeholder
 image kelisha rawmech:
-    "kelisha neutral focus"
-    mech_placeholder
+    "assets/mechs/kelisha-mech.png"
+    zoom 0.75
+    # 1400x1400, with cropped side transparency
+    crop (400, 0, 1400-400-300, 1200)
+    mech_setup
 # run after images are defined
 init 501 python:
     import dataclasses
@@ -361,6 +377,8 @@ init 501 python:
         _pilot: (int, int)
         anchor: (float, float) = (0.5, 1.0)
         pilot_zoom: float = 0.5
+        pilot_rotate: int | None = None
+        pilot_crop: (float, float, float, float) = (0.0, 0.0, 1.0, 1.0)
         alias: list[str] = dataclasses.field(default_factory=list)
         pilot_under: bool = False
 
@@ -378,6 +396,8 @@ init 501 python:
                 _pilot=(self._pilot[0] * 0.95, self._pilot[1] * 0.95),
                 anchor=self.anchor,
                 pilot_zoom=self.pilot_zoom,
+                pilot_rotate=self.pilot_rotate,
+                pilot_crop=self.pilot_crop,
                 alias=self.alias,
                 pilot_under=self.pilot_under,
             )
@@ -390,16 +410,17 @@ init 501 python:
         # careful with x-anchors other than 0.5: they interact poorly with `flip`!
         # MechTemplate('usagi',   _xy=(950*1.0, 1272*1.0), anchor=(0.37, 0.43), _pilot=(330, 0), pilot_under=True),
         # MechTemplate('bart',    _xy=(694*1.2, 660 *1.2), anchor=(0.45, 0.90), _pilot=(330*1.2, -110), pilot_under=True),
-        MechTemplate('usagi',   _xy=(950*1.0, 1272*1.0), anchor=(0.50, 0.43), _pilot=(330, 0), pilot_under=True),
+        MechTemplate('usagi',   _xy=(950*0.8, 1272*0.8), anchor=(0.50, 0.70), _pilot=(240, -20), pilot_under=True),
         MechTemplate('bart',    _xy=(694*1.2, 660 *1.2), anchor=(0.50, 0.90), _pilot=(330*1.2, -110), pilot_under=True),
-        MechTemplate('linda',   _xy=(265*1.5, 283 *1.5), anchor=(0.50, 1.00), _pilot=(120, -100), pilot_under=True),
-        MechTemplate('kohei',   _xy=(503*1.5, 317 *1.5), anchor=(0.50, 1.00), _pilot=(270, -100), pilot_under=True),
-        MechTemplate('jojo',    _xy=(520*1.5, 340 *1.5), anchor=(0.50, 1.00), _pilot=(280, -90), pilot_under=True),
+        MechTemplate('linda',   _xy=(1000*0.6,1200*0.6), anchor=(0.50, 0.80), _pilot=(260, -50), pilot_under=True),
+        MechTemplate('kohei',   _xy=(1100*0.6,1200*0.6), anchor=(0.50, 0.80), _pilot=(210, -10), pilot_under=True),
+        MechTemplate('jojo',    _xy=(1413*0.35, 2427*0.35), anchor=(0.50, 0.70), _pilot=(135, -105), pilot_under=True),
         MechTemplate('huxtable',_xy=(498*1.5, 381 *1.5), anchor=(0.50, 1.00), _pilot=(250, -60), pilot_under=True),
         MechTemplate('takeshi', _xy=(507*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(250, -130), pilot_under=True),
-        MechTemplate('sanders', _xy=(450*1.5, 450 *1.5), anchor=(0.50, 1.00), _pilot=(200, -80), pilot_under=True),
-        MechTemplate('queen',   _xy=(717*1.0, 474 *1.0), anchor=(0.50, 1.00), _pilot=(190*1.0, -130), pilot_under=True, alias=['princess']),
-        MechTemplate('kelisha', _xy=(350*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(150, -120), pilot_under=True),
+        MechTemplate('sanders', _xy=(800*0.8, 1200*0.8), anchor=(0.50, 0.70), _pilot=(240, -130), pilot_under=True),
+        MechTemplate('queen',   _xy=(2941*0.2,4769*0.2), anchor=(0.50, 0.70), _pilot=(340, -30), pilot_under=True, alias=['princess'], pilot_zoom=0.35, pilot_rotate=60.0),
+        MechTemplate('kelisha', _xy=(700*0.75, 1200*0.75), anchor=(0.50, 0.70), _pilot=(170, -50), pilot_under=True),
+        MechTemplate('child',   _xy=(337, 500), anchor=(0.50, 0.50), _pilot=(-63, -258-30), pilot_zoom=1.10),
     ]
     for img in list(renpy.list_images()):
         for m in mechtemplates:
@@ -420,14 +441,14 @@ init 501 python:
                         if m.pilot_under:
                             renpy.image(name, Transform(Composite(
                                 m.xy if 'focus' in img else m.nofocus.xy,
-                                m.pilot if 'focus' in img else m.nofocus.pilot, Transform(img, zoom=m.pilot_zoom),
+                                m.pilot if 'focus' in img else m.nofocus.pilot, Crop(m.pilot_crop, Transform(img, zoom=m.pilot_zoom, rotate=m.pilot_rotate)),
                                 (0, 0), mech if 'focus' in img else dim(mech),
                             ), anchor=m.anchor))
                         else:
                             renpy.image(name, Transform(Composite(
                                 m.xy if 'focus' in img else m.nofocus.xy,
                                 (0, 0), mech if 'focus' in img else dim(mech),
-                                m.pilot if 'focus' in img else m.nofocus.pilot, Transform(img, zoom=m.pilot_zoom),
+                                m.pilot if 'focus' in img else m.nofocus.pilot, Crop(m.pilot_crop, Transform(img, zoom=m.pilot_zoom, rotate=m.pilot_rotate)),
                             ), anchor=m.anchor))
                         # print(name)
     # print(mechtemplates)

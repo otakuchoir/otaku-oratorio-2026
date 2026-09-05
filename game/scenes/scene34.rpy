@@ -6,7 +6,7 @@ label scene34:
         zoom 1.1
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
-    show child sad at center:
+    show child mech sad at center:
         ypos ypos_textbox-0.2
         parallel:
             fx.ease_xoffset(dur=1, x0=-400)
@@ -61,7 +61,7 @@ label scene34:
     # > (MORE)
     ### page 69 ###
     kagu "All of them. It’s all so clear now. I remember every-little-detail. I remember that I responded to your planet’s cries. I doomed the humans to their fate, and then I waited for the day of the eclipse to come back. I-"
-    show child neutral:
+    show child mech neutral:
         parallel:
             fx.hover(dur=1.9)
         parallel:
@@ -72,7 +72,7 @@ label scene34:
             repeat 3
     show usagi mech postgrad worried
     usagi "Kagu?..... Kagu? What’s wrong."
-    show child confused
+    show child mech confused
     kagu "I remember every single detail. So why is this... different?"
     usagi "What? What’s different?"
     show child:
@@ -80,27 +80,27 @@ label scene34:
         fx.hover(dur=1.9)
     kagu "The alignment of your Star, your Earth and your Earth’s moon."
     usagi "It has been almost 20 years... You’re a cosmic being, surely you know that these things move-"
-    show child neutral
+    show child mech neutral
     kagu "It has been 19 year, 237 days, 16 hours, and 22 minutes. The positioning of everything is off."
-    show child serious 
+    show child mech serious 
     kagu "No... NO!" 
     show child:
         flip
         parallel:
             fx.ease_xoffset(dur=1.0, x1=-100)
-            fx.ease_xoffset(dur=1.0, x0=-100, x1=200)
+            fx.ease_xoffset(dur=1.0, x0=-100, x1=300)
         parallel:
             ease 1.0 yoffset -200
-            fx.ease_yoffset(dur=1.0, y0=-200, y1=800)
+            fx.ease_yoffset(dur=1.0, y0=-200, y1=1200)
     show usagi:
         pause 1.0
         flip
         parallel:
             fx.ease_xoffset(dur=1.0, x1=-100)
-            fx.ease_xoffset(dur=1.0, x0=-100, x1=200)
+            fx.ease_xoffset(dur=1.0, x0=-100, x1=300)
         parallel:
             ease 1.0 yoffset -200
-            fx.ease_yoffset(dur=1.0, y0=-200, y1=800)
+            fx.ease_yoffset(dur=1.0, y0=-200, y1=1200)
     pause 3
 
     # > Kagu flies off toward the Moon. Usagi follows.
