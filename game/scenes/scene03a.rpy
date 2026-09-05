@@ -206,8 +206,10 @@ label op.gunner:
 label op.wellington:
     scene bg training room
     show layer master at fx.flashback
+    show wellington focus at bottom:
+        zoom 2.0
     # `onlayer` so this text doesn't get flashbacked
-    show op_text "\n\n{=op_actor}Delaney R. Page{/}\n{=op_as}as{/}\n{=op_char}Professor Wellington{/}\nTODO: no sprite for wellington, and no good placeholders. maybe a clip from scene25's mech practice instead?" at top onlayer roxbury
+    show op_text "\n\n{=op_actor}Delaney R. Page{/}\n{=op_as}as{/}\n{=op_char}Professor Wellington{/}" at top onlayer roxbury
     with dissolve
     pause op.intro_dur
     hide op_text onlayer roxbury

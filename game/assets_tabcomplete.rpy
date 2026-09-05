@@ -299,18 +299,27 @@ image usagi young sleepy = Transform(dim(renpy.get_registered_image('usagi young
 image guard1 = Transform(renpy.get_registered_image('train_security focus'), matrixcolor=BrightnessMatrix(-1.0))
 image guard2 = Transform(renpy.get_registered_image('train_security focus'), matrixcolor=BrightnessMatrix(-1.0))
 # scene 17
-image gunner = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-0.5))
-image gunner focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-0.5))
-image officer = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-0.5))
-image officer focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-0.5))
-image navigator = Transform(renpy.get_registered_image('huxtable faceless'), matrixcolor=BrightnessMatrix(-0.5))
-image navigator focus = Transform(renpy.get_registered_image('huxtable faceless focus'), matrixcolor=BrightnessMatrix(-0.5))
+image gunner focus:
+    'assets/Character Designs/npc_eden_gunner_chief.png'
+    crop (0, 0, 1.0, 0.40)
+    anchor (0.5, 1.0)
+image gunner = Transform(dim(renpy.get_registered_image('gunner focus')))
+image officer focus:
+    'assets/Character Designs/npc_eden_first_officer.png'
+    crop (0, 0, 1.0, 0.40)
+    anchor (0.5, 1.0)
+image officer = Transform(dim(renpy.get_registered_image('officer focus')))
+image navigator focus:
+    'assets/Character Designs/npc_eden_navigation_chief.png'
+    crop (0, 0, 1.0, 0.40)
+    anchor (0.5, 1.0)
+image navigator = Transform(dim(renpy.get_registered_image('navigator focus')))
+image wellington focus = 'officer focus'
+image wellington = 'officer'
 
 # misc
 image destroyer = 'assets/Character Designs/planet_destroyer_adult.png'
-image child body = Transform(dim('assets/Character Designs/planet_destroyer.png'))
-image child body focus = 'assets/Character Designs/planet_destroyer.png'
-# 337x758
+# the child's "mech" is its body, because it's weird for the child to be the only disembodied head in mech scenes
 image child rawmech = Crop((0, 258, 337, 500), 'assets/Character Designs/planet_destroyer.png')
 
 # mech sprites. until real sprites are ready, use a silhouette of the pilot as a placeholder.
