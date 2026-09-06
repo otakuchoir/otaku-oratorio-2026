@@ -16,3 +16,10 @@ docker run --rm \
   #-v "./web-presplash.png:/game/web-presplash.png" \
 # TODO this really shouldn't require sudo. I haven't figured out docker permissions yet, it creates all files as root. `--user` breaks
 sudo chown $(id -u):$(id -g) -R build/web*
+
+ls build/web.zip
+if find build/web.zip -size +499M | grep -q .; then
+  echo "web build too big. itch.io's web size limit is 500M" >&2
+  ls -lh build/web.zip
+  exit 1
+fi
