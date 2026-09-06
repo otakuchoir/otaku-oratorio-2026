@@ -148,10 +148,10 @@ transform fx.ease_xyoffset(dur=1.0, xy0=(0, 0), xy1=(0, 0)):
     ease dur xoffset xy1[0] yoffset xy1[1]
 
 label fx.play_music_in_dev(f):
-    $ if config.developer: renpy.music.play(f)
+    # $ if config.developer: renpy.music.play(f)
     return
 label fx.play_music_if_changed_in_dev(f):
-    $ if config.developer: renpy.music.play(f, if_changed=True)
+    # $ if config.developer: renpy.music.play(f, if_changed=True)
     return
 
 transform fx.hover(dur=2.0, loops=None, y0=0, dy=50):
