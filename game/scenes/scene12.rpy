@@ -1,9 +1,23 @@
 
 label scene12:
-    scene bg earth tarmac
-    show sanders prideful at center, flip
-    show usagi weary at left, flip
-    show takeshi neutral at right
+    scene bg earth tarmac at flip:
+        zoom 1.0
+        pos (0.5, 1.0)
+        anchor (0.5, 1.0)
+    show shuttle at fx.ease_xyoffset(dur=3.0, xy0=(1500, -400)):
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 0.35
+    with fade
+    pause 4.0
+
+    show bg earth tarmac at flip:
+        ease 2.0 zoom 1.2
+    show shuttle:
+        ease 2.0 zoom 1.0 pos (0.5, -0.2)
+    show sanders prideful at center, flip, fx.ease_yoffset(dur=2.0, y0=500)
+    show usagi weary at left, flip, fx.ease_yoffset(dur=2.0, y0=500)
+    show takeshi neutral at right, fx.ease_yoffset(dur=2.0, y0=500)
     with dissolve
     # > 12       EXT. DAY; EARTH, KINGDOM OF NEW JERSEY SPACE PORT                        12
     # > USAGI, TAKESHI AND SANDERS ARE DE-SHUTTLING
@@ -18,9 +32,9 @@ label scene12:
     show usagi at offscreenleft, noflip
     with ease
 
-    show sanders at left2
-    show takeshi at right2
-    with ease
+    # show sanders at left2
+    # show takeshi at right2
+    # with ease
     takeshi "Hey, Sanders, do you... have you ever thought of what happens after something like this conflict?"
 
     show sanders at flip

@@ -2,9 +2,9 @@
 label scene10:
     call fx.play_music_in_dev("bgm_010_ready_set_go__kirby_and_the_forgotten_land.opus")
     scene bg lunar tarmac with fade:
-        anchor (0.0,0.0)
-        zoom 1.1
-        xpos -0.1
+        zoom 1.5
+        yalign 0.8
+        xalign 1.0
     show sanders happy at center
     show usagi weary at right
     show takeshi neutral at left
@@ -50,8 +50,9 @@ label scene10:
     sanders "And I go back home every chance I get because."
     ### page 17 ###
     takeshi "Because what?"
+
     show bg lunar tarmac:
-        xpos -0.05
+        xalign 0.9
     show kelisha neutral at left, flip
     show takeshi at left2
     show sanders at right2
@@ -78,38 +79,33 @@ label scene10:
     # pause dur  # breaks lint
     pause 2.0
 
+    # zoom to the shuttle (now that the graphic is ready)...
+    show shuttle:
+        zoom 1.0
+        anchor (0.5, 1.0)
+        pos (-0.8, 0.2)
+        ease 1.5 zoom 0.35 pos (0.5, 1.0)
+    show bg lunar tarmac:
+        ease 1.5 zoom 1.0 xalign 0.5 yalign 0.5
+    pause 2.0
+
     # ...and back onscreen
     scene black
-    call scene11.space_background(flip_=True)
+    call scene11.space_background
+    show scene10_bg_takeoff as bg1:
+        zoom 1.5
+        xalign 1.0
+        yalign 1.0
     show bg spaceship window transparent
-    $ zz = 2.0
-    $ dx = zz - 0.5 # 0.5 is anchor
-    # $ zright2 = (0.5)/z
-    # $ zleft1 = 1 - zright2
-    # $ zright1 = zleft1 + dx
-    # $ zleft2 = zright2 - dx
-    $ zleft1 = (0.5)/zz
-    $ zright2 = 1 - zleft1
-    $ zleft2 = zright2 + dx
-    $ zright1 = zleft1 - dx
-    show bg lunar tarmac as bg1 behind bg:
-        zoom zz
-        anchor (0.5, 1.0)
-        pos (zleft1, 1.0)
-    show bg lunar tarmac as bg2 behind bg:
-        flip
-        zoom zz
-        anchor (0.5, 1.0)
-        pos (zleft2, 1.0)
     with fade
     window show
 
     $ dur = 1.5
     # $ dur = 0
-    $ dx = -1500
-    show takeshi neutral at right2, flip, fx.ease_xoffset(dur=dur, x0=dx)
-    show usagi neutral at left2, flip, fx.ease_xoffset(dur=dur, x0=dx)
-    show sanders neutral at center, flip, fx.ease_xoffset(dur=dur, x0=dx)
+    $ dx = 1500
+    show takeshi neutral at right2, fx.ease_xoffset(dur=dur, x0=dx)
+    show usagi neutral at left2, fx.ease_xoffset(dur=dur, x0=dx)
+    show sanders neutral at center, fx.ease_xoffset(dur=dur, x0=dx)
     # pause dur   # breaks lint
     pause 1.5
 
@@ -117,22 +113,14 @@ label scene10:
     # > EARTH.
     # no lengthy wait for blastoff, just go
     pause 1
-    show bg lunar tarmac as bg1:
-        xpos zleft1
-        ypos 1.0
+    show scene10_bg_takeoff as bg1:
+        xalign 1.0
+        yalign 1.0
         parallel:
-            easeout 3.0 xpos zright1
-        parallel:
-            pause 1.5
-            easeout 1.5 ypos 1.5
-    show bg lunar tarmac as bg2:
-        xpos zleft2
-        ypos 1.0
-        parallel:
-            easeout 3.0 xpos zright2
+            easeout 3.0 xalign 0.0
         parallel:
             pause 1.5
-            easeout 1.5 ypos 1.5
+            easeout 1.5 yalign 0.25
     show bg white as bgfx behind bg:
         alpha 0.0
         pause 1.0
@@ -151,3 +139,9 @@ label scene10:
     pause 4.0
     show bg black with dissolve
     return
+
+image scene10_bg_takeoff = Composite(
+    (1440 * 2, 1080),
+    (0, 0), Transform('bg lunar tarmac', xzoom=-1.0),
+    (1440, 0), 'bg lunar tarmac',
+)

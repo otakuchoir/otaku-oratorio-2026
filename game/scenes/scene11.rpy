@@ -1,11 +1,14 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=sanders&t=takeshi&t=usagi&t=kelisha
 label scene11: 
     scene black
-    call scene11.space_background(flip_=True)
-    show bg kelisha office transparent windows
-    with dissolve
+    call scene11.space_background(flip_=False)
+    show shuttle at truecenter:
+        zoom 0.35
+    pause 2.0
 
+    show bg kelisha office transparent windows
     call fx.play_music_if_changed_in_dev("bgm_010_ready_set_go__kirby_and_the_forgotten_land.opus")
+    hide shuttle
     show kelisha neutral at left, flip
     show takeshi neutral at center:
         xoffset 500
@@ -16,6 +19,7 @@ label scene11:
     show usagi neutral at right:
         xoffset 500
         easein 1 xoffset 0
+    with dissolve
 
     # > 11       INT. - SPACE SHUTTLE - KELISHA’S OFFICE THE ENVOY IS                     11
     # > TRAVELING TO EARTH.
@@ -91,7 +95,19 @@ label scene11:
     kelisha "Takeshi, whatever happens today, remember: the arc of the moral universe is long but it bends towards justice..."
     kelisha "Don’t be too loud and don’t move too fast. If you get caught, I will not be there to help you."
     stop music fadeout 2
-    scene bg black with dissolve
+    # scene bg black with dissolve
+
+    window hide
+    window auto
+    hide bg
+    hide kelisha
+    hide takeshi
+    show shuttle at truecenter:
+        zoom 0.35
+    with dissolve
+    pause 2.0
+    show shuttle at fx.ease_xyoffset(dur=3.0, xy1=(-400, 1000))
+    pause 3.0
     return
 
 label scene11.space_background_hide:

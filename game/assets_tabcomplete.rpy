@@ -321,6 +321,7 @@ image wellington = 'officer'
 image destroyer = 'assets/Character Designs/planet_destroyer_adult.png'
 # the child's "mech" is its body, because it's weird for the child to be the only disembodied head in mech scenes
 image child rawmech = Crop((0, 258, 337, 500), 'assets/Character Designs/planet_destroyer.png')
+image shuttle = 'assets/mechs/kelisha-shuttle.png'
 
 # mech sprites. until real sprites are ready, use a silhouette of the pilot as a placeholder.
 transform mech_placeholder:

@@ -1,6 +1,7 @@
 ## 2026/09/06
 - Remove audio from dev, to reduce file size. Sorry for the outage
 - Test for itch.io's file size limit during build, so I'll know if we hit the limit again
+- Add shuttle to the takeoff/landing sequence in scene 10-12
 
 ## 2026/09/04
 - Add ending credits car
