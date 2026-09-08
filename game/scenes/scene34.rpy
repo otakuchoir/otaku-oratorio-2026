@@ -2,19 +2,26 @@
 label scene34:
     # TODO scaling is weird here, it's the only scene that shows both non-mechs and mechs.
     # but making child super-tiny looks bad, so let's not worry about it...?
+    pause
     scene bg black hole:
         zoom 1.1
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
-    show child mech sad at center:
+    show child mech sad at fx.hover(dur=1.9), center:
         ypos ypos_textbox-0.2
         parallel:
             fx.ease_xoffset(dur=1, x0=-400)
         parallel:
             fx.ease_yoffset(dur=1, y0=800)
-        fx.hover(dur=1.9)
     with fade
-    "PLACEHOLDER manga panels: kagu's memories"
+    pause 1.0
+    show bg black as mangabg
+    show bg scene34 as manga:
+        anchor (0.5, 0.5)
+        pos (0.5, 0.5)
+        zoom 0.8
+        linear 10 zoom 1.0
+    with dissolve
     # > 34       EXT. SPACE                                                               34
     # > Kagu searches their memory and sees a crystal floating
     # > through the cosmos, then various scenes of Kagu destroying
@@ -22,10 +29,14 @@ label scene34:
     # > and then again Earth in 2100, the great cataclysm.
     kagu "I’m responsible for this. I... What AM I really. Past lives? Regeneration..."
     kagu "I’m a monster..."
+    hide mangabg
+    hide manga
+    with dissolve
     show bg black hole:
         zoom 1.1
         linear 0.5 zoom 1.0
-    show child:
+    show child at fx.hover(1.9):
+        ypos ypos_textbox-0.2
         zoom 1.0
         linear 0.5 zoom 0.7
     show usagi mech postgrad worried at right behind child:
@@ -37,15 +48,15 @@ label scene34:
         fx.hover(dur=2.3)
     # > She has followed Kagu in her own mech.
     usagi "Kagu!"
-    show child:
+    show child at fx.hover(1.9):
+        ypos ypos_textbox-0.2
         flip
-        fx.hover(dur=1.9)
     kagu "Usagi, I-"
     usagi "It’s like I said, you can always change who you were born to be. I have always believed that, trust me."
     usagi "I know how it feels to be labeled. DON’T label yourself. YOU are not a monster."
-    show child:
+    show child at fx.hover(dur=1.9):
+        ypos ypos_textbox-0.2
         noflip
-        fx.hover(dur=1.9)
     kagu "I only exist for one purpose."
     show usagi mech postgrad cry 1:
         parallel:
