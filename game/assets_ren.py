@@ -130,6 +130,7 @@ for i in range(1, 4+1):
 for i in range(1, 9+1):
     load_image(f'bg scene40 judgement {i}', f'assets/manga/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
 load_image(f'bg scene34', f'assets/manga/Scene_34.png')
+load_image(f'kaguya', f'images/Japanese_Fairy_Book_-_Ozaki_-_P118.png')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')

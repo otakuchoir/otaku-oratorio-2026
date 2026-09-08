@@ -109,32 +109,62 @@ label scene27:
     # > NoName sits still.
     ### page 54 ###
     usagi "No, that’s not what I- ... NoName... just listen. Today I’m going to tell you the story of Princess Kaguya."
-    show child neutral
+
+    show usagi focus at left, fx.ease_xpos(dur=1.0, x0=0.33, x1=-0.15)
+    show child neutral focus at right, fx.ease_xpos(dur=1.0, x0=0.67, x1=1.15)
     # > Time lapse
-    "TODO show panels of the kaguya story above the characters here? or fullscreen?"
+    show kaguya behind usagi, child:
+        xsize 1440
+        xalign 0.5
+        yalign 1.30
+        alpha 0.0
+        parallel:
+            linear 1.0 alpha 1.0
+        parallel:
+            pause 2.0
+            linear 30.0 yalign 0.0
+    show bg black as kaguyabg behind kaguya:
+        alpha 0.0
+        linear 1.0 alpha 1.0
     usagi "Once, an old bamboo cutter found a tiny princess glowing inside a stalk of bamboo."
+
     # > Time lapse
-    show child: 
-        parallel:
-            fx.hopN(n=1, dur=(0.1, 0.2), stretch=(0.05, 0.1))
-        parallel:
-            fx.ease_xpos(dur=0.3, x0=0.67, x1=0.62)
+    show kaguya:
+        linear 24.0 yalign 0.0
+    #show child: 
+    #    parallel:
+    #        fx.hopN(n=1, dur=(0.1, 0.2), stretch=(0.05, 0.1))
+    #    parallel:
+    #        fx.ease_xpos(dur=0.3, x0=0.67, x1=0.62)
     usagi "He and his wife raised her as their own. She grew into someone beautiful and strange, and everyone wanted something from her."
-    show child: 
-        parallel:
-            fx.hopN(n=1, dur=(0.1, 0.2), stretch=(0.05, 0.1))
-        parallel:
-            fx.ease_xpos(dur=0.3, x0=0.62, x1=0.56)
+
+    show kaguya:
+        linear 16.0 yalign 0.0
+    #show child: 
+    #    parallel:
+    #        fx.hopN(n=1, dur=(0.1, 0.2), stretch=(0.05, 0.1))
+    #    parallel:
+    #        fx.ease_xpos(dur=0.3, x0=0.62, x1=0.56)
     usagi "But Princess Kaguya was not from Earth. She had come from the Moon, and one day, the Moon people came to take her home."
-    show child: 
-        parallel:
-            fx.hopN(n=1, dur=(0.1, 0.2), stretch=(0.05, 0.1))
-        parallel:
-            fx.ease_xpos(dur=0.3, x0=0.56, x1=0.50)
+
+    show kaguya:
+        linear 8.0 yalign 0.0
+    #show child: 
+    #    parallel:
+    #        fx.hopN(n=1, dur=(0.1, 0.2), stretch=(0.05, 0.1))
+    #    parallel:
+    #        fx.ease_xpos(dur=0.3, x0=0.56, x1=0.50)
     usagi "And even though the people who loved her begged her to stay, she could not. She belonged to the sky before she ever belonged to them."
 
+    show usagi at left2, fx.ease_xpos(dur=1.0, x0=-0.15, x1=0.33)
+    show child neutral at center, fx.ease_xpos(dur=1.0, x0=1.15, x1=0.50)
+    hide kaguyabg
+    show kaguya:
+        alpha 1.0
+        linear 1.0 alpha 0.0
     noname "Wooooowwwww.... So where is Princess Kaguya now?"
     usagi "It’s just a story but... Well you know, we found you here on the moon."
+    hide kaguya
     show child at center, fx.hopN(n=1, dur=(0, 0.3), y=75, stretch=(0.1, 0.15))
     noname "Me? So I’m like Princess Kaguya?"
     usagi "In a way, I guess so. Only... well, where do you come from? Do you have a mom?"
