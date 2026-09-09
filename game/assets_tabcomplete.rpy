@@ -335,8 +335,9 @@ image usagi rawmech:
     zoom 0.8
     mech_setup
 image takeshi rawmech:
-    "takeshi postgrad neutral focus"
-    mech_placeholder
+    'assets/mechs/takeshi-mech.png'
+    zoom 0.8
+    mech_setup
 image sanders rawmech:
     "assets/mechs/sanders-mech.png"
     # 800x1200
@@ -369,8 +370,9 @@ image jojo rawmech:
     # 1413x2427, no cropping
     mech_setup
 image huxtable rawmech:
-    "huxtable neutral focus"
-    mech_placeholder
+    "assets/mechs/huxtable-mech.png"
+    zoom 0.2
+    mech_setup
 image kelisha rawmech:
     "assets/mechs/kelisha-mech.png"
     zoom 0.75
@@ -425,8 +427,8 @@ init 501 python:
         MechTemplate('linda',   _xy=(1000*0.6,1200*0.6), anchor=(0.50, 0.80), _pilot=(260, -50), pilot_under=True),
         MechTemplate('kohei',   _xy=(1100*0.6,1200*0.6), anchor=(0.50, 0.80), _pilot=(210, -10), pilot_under=True),
         MechTemplate('jojo',    _xy=(1413*0.35, 2427*0.35), anchor=(0.50, 0.70), _pilot=(135, -105), pilot_under=True),
-        MechTemplate('huxtable',_xy=(498*1.5, 381 *1.5), anchor=(0.50, 1.00), _pilot=(250, -60), pilot_under=True),
-        MechTemplate('takeshi', _xy=(507*1.5, 400 *1.5), anchor=(0.50, 1.00), _pilot=(250, -130), pilot_under=True),
+        MechTemplate('huxtable',_xy=(3634*0.2, 5202*0.2), anchor=(0.50, 0.70), _pilot=(180, -75), pilot_under=True, pilot_zoom=0.45),
+        MechTemplate('takeshi', _xy=(726*0.8, 1317*0.8), anchor=(0.50, 0.70), _pilot=(260, -5), pilot_under=True, pilot_zoom=0.42, pilot_rotate=20.0),
         MechTemplate('sanders', _xy=(800*0.8, 1200*0.8), anchor=(0.50, 0.70), _pilot=(240, -130), pilot_under=True),
         MechTemplate('queen',   _xy=(2941*0.2,4769*0.2), anchor=(0.50, 0.70), _pilot=(340, -30), pilot_under=True, alias=['princess'], pilot_zoom=0.35, pilot_rotate=60.0),
         MechTemplate('kelisha', _xy=(700*0.75, 1200*0.75), anchor=(0.50, 0.70), _pilot=(170, -50), pilot_under=True),
