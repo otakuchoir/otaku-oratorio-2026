@@ -178,7 +178,7 @@ label scene13:
         zoom 0.8
         linear 10 zoom 1.0
     with dissolve
-    "PLACEHOLDER Song: Lilium"
+    "PLACEHOLDER song: lilium. show keeps going with no visible lyrics, right?"
     window hide
     window auto
     pause

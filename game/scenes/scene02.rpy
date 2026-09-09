@@ -17,7 +17,7 @@ label scene02:
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
     # > 
     # >          SONG: Fumetsu no Hero    # > 
-    "PLACEHOLDER Song: Fumetsu no Hero"
+    "PLACEHOLDER song: Fumetsu no Hero. show keeps going with no visible lyrics, right?"
     kitadani "LET’S GO! CROWN BLASTER!"
     pause 0
     with vpunch

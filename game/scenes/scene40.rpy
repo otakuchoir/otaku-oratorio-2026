@@ -54,9 +54,11 @@ label scene40:
     show jojo at right2, fx.hover(1.9), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.66)
     show sanders at center, fx.hover(2.3), fx.ease_xpos(dur=1.0, x0=0.66, x1=0.50)
     show usagi at left2, fx.hover(1.7), fx.ease_xpos(dur=1.0, x0=0.50, x1=0.33)
-    call fx.play_music_in_dev("bgm_036_weight_of_the_world_prelude.opus")
+    stop music fadeout 1
+    # call fx.play_music_in_dev("bgm_036_weight_of_the_world_prelude.opus")
     pause 1.0
     jojo mech serious "There it is... The Alexander... and just beyond, the Ultima Cannon."
+    "PLACEHOLDER song: super smash brothers brawl opening. show keeps going with no visible lyrics, right?"
 
     $ dur = 2.0
     show jojo at fx.hover(1.9), fx.ease_xoffset(dur=dur, x1=-2000)

@@ -2,7 +2,6 @@
 label scene34:
     # TODO scaling is weird here, it's the only scene that shows both non-mechs and mechs.
     # but making child super-tiny looks bad, so let's not worry about it...?
-    pause
     scene bg black hole:
         zoom 1.1
         anchor (0.5, 0.5)
@@ -44,8 +43,9 @@ label scene34:
         parallel:
             fx.ease_xoffset(dur=2, x0=-400)
         parallel:
-            fx.ease_yoffset(dur=2, y0=800)
+            fx.ease_yoffset(dur=2, y0=1200)
         fx.hover(dur=2.3)
+
     # > She has followed Kagu in her own mech.
     usagi "Kagu!"
     show child at fx.hover(1.9):
