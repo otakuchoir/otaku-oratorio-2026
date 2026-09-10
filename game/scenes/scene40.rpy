@@ -58,7 +58,7 @@ label scene40:
     # call fx.play_music_in_dev("bgm_036_weight_of_the_world_prelude.opus")
     pause 1.0
     jojo mech serious "There it is... The Alexander... and just beyond, the Ultima Cannon."
-    "PLACEHOLDER song: super smash brothers brawl opening. show keeps going with no visible lyrics, right?"
+    call fx.log("SONG: Super Smash Bros Brawl Opening. show keeps going with no visible lyrics")
 
     $ dur = 2.0
     show jojo at fx.hover(1.9), fx.ease_xoffset(dur=dur, x1=-2000)

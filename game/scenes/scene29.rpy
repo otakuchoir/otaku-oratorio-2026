@@ -40,9 +40,9 @@ label scene29:
     bart "An angel... No, a Weapon, on the cosmic scale. When the planet cries out, the heavens answer."
     bart "God sends the only one who can stop us from reaching out to them, to strike us down time and again..."
     bart @ happy "They send the Great Resetter... Sabik."
+    call fx.log("\"A long silence...\"")
     pause
 
-    # > A long silence...
     show kohei serious 1
     kohei "Well... we fight."
     show bart shock

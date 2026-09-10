@@ -20,7 +20,7 @@ label scene33:
     usagi "You’ve been staying here at my place for like... 2 weeks now. What’s next?"
     show usagi postgrad smug
     kagu "Oh, have I overstayed my welcome? Sorry about that. I should have seen this coming earlier but I just evolved to understand social cues."
-    # > Holo-time rings
+    call fx.log("\"Holo-time rings\"")
     pause
     show linda smile holo at right2, flip
     with dissolve

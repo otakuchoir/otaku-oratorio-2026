@@ -221,7 +221,8 @@ label scene27:
         parallel:
             fx.ease_xoffset(dur=0.3, x0=70)
         "usagi postgrad happy 1"
-    kagu "I like that name! Kagu. I am Kagu. Thanks mom!"
+    call fx.log("don't click through too fast here. Let them finish their hug!")
+    kagu "I like that name! Kagu. I am Kagu. Thanks Mom!"
 
     # > BARTHANDELUS AND JOJO EMERGE FROM THEIR OBSERVATION ROOM
     show bart angry 1 at right, fx.ease_xoffset(dur=1, x0=800) behind usagi

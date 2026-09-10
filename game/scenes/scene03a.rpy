@@ -8,7 +8,7 @@ label scene03a:
     window auto
 
     call op.logo
-    "TODO opening is work in progress. eventually everyone will have a short sprite animation, instead of an image. (or maybe we should keep the VN simple and focus on the IRL actor intros?) character order is very easy to change, except those with scenes together like the trio"
+    call fx.log("TODO opening is work in progress. eventually everyone will have a short sprite animation, instead of an image. (or maybe we should keep the VN simple and focus on the IRL actor intros?) character order is very easy to change, except those with scenes together like the trio")
     window hide
     window auto
     call op.trio

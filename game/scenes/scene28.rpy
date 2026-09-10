@@ -52,15 +52,17 @@ label scene28:
     show kohei confused
     show bart peaceful
     show jojo neutral
+    call fx.log("sfx: \"Everyone’s holo-device goes off, an alarm similar to an amber alert or an earthquake warning\"")
     pause
     linda "What the?"
     kohei "What is it?"
     jojo "The Crown is calling us in? Right now?"
     bart @ eyebrow raised "Even me? Why are they sending for me? I’m with the church now."
     kohei "Must be something big if that’s the case. Linda, can you stay with Usagi-"
+    # > 
+    call fx.log("sfx: \"A knock at the door.\"")
     pause
 
-    # > A knock at the door.
     linda "I’ll get that."
     # > The guys are uneasy.
     show linda at noflip, fx.ease_xoffset(dur=1, x1=-1000)

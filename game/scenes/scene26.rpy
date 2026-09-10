@@ -31,6 +31,7 @@ label scene26:
     hide linda with dissolve
 
     # > USAGI HANGS UP ANOTHER CALL IS COMING IN.
+    call fx.log("pause for takeshi's ring sfx")
     pause
     ### page 50 ###
     # https://otaku-oratorio-2026-gallery.netlify.app/?t=usagi+postgrad&t=sanders+postgrad&t=takeshi+postgrad

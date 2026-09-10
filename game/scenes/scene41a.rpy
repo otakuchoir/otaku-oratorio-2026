@@ -1,11 +1,18 @@
-define credits_size = 11.5
+define credits_size = 6.5
+define driving_scrolls_size = 5.5
+define driving_leaves_size = 6.0
 # TODO: we're singing "welcome to the new world" here, so duration should be a bit longer than that.
 # but... that's so slow during dev.
-# define credits_dur = credits_size * 4.0
-define credits_dur = credits_size * 8.0
-define driving_scrolls_at = 5.5
-define driving_dur = (driving_scrolls_at / credits_size) * credits_dur
-define roxbury_scrolls_at = 8.5
+# define driving_scrolls_dur = driving_scrolls_size * 4.0
+# define driving_scrolls_dur = driving_scrolls_size * 8.0
+#
+# Welcome To the New World is 3:31 = 180 + 31 = 211 seconds. driving should start scrolling right at the end of that
+# https://drive.google.com/drive/folders/1Qku19Yo1G2XxDiu4NmdUiW_spwPMx6mh
+define driving_scrolls_dur = 211
+define driving_leaves_dur = int(driving_leaves_size / driving_scrolls_size * driving_scrolls_dur)
+define credits_dur = int(credits_size / driving_scrolls_size * driving_scrolls_dur)
+define roxbury_pause_dur = 5
+define roxbury_dur = 15
 
 label scene41a:
     scene bg black
@@ -20,8 +27,10 @@ label scene41a:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
     with dissolve
+    call fx.log("paused - start the credits once Welcome to the New World starts")
     pause
 
+    call fx.log("you're done! awesome work! now, hands off during the credits. wait for the post-credits scene")
     call ed.driving(delay=0)
     # hide/reshow logo so it's on top of the driving animation. easier to do this than to specify 'behind' for all the driving images
     hide bglogo
@@ -48,10 +57,13 @@ label scene41a:
     
     call roxbury
     show layer roxbury:
+        alpha 0.0
         anchor (0.5, 0.5)
         zoom 0.5
-        pos (0.5, 6.5)
-        linear credits_dur ypos (roxbury_scrolls_at-credits_size)
+        pos (0.5, 1.5)
+        pause credits_dur + roxbury_pause_dur
+        alpha 1.0
+        linear roxbury_dur ypos -0.5
 
     pause 10
     call fx.bgloop_x('bg jersey city cityscape', dur=4.0, transform_=ed.driving_scroll(-10.0, ypos_=0.0))
@@ -81,8 +93,8 @@ image ed_text = ParameterizedText(style='ed_text_s')
 
 transform ed.driving_scroll(delay, ypos_):
     ypos ypos_
-    pause (driving_dur + delay)
-    linear (credits_dur - driving_dur) ypos (ypos_+driving_scrolls_at-credits_size)
+    pause (driving_scrolls_dur + delay)
+    linear (credits_dur - driving_scrolls_dur) ypos (ypos_+driving_scrolls_size-credits_size)
 
 transform ed.car(delay, ypos_, zoom_=0.3):
     zoom zoom_
@@ -94,11 +106,12 @@ transform ed.car(delay, ypos_, zoom_=0.3):
     # creep forward slowly during the credits
     parallel:
         pause (delay + 2.0 + 2.0)
-        linear (credits_dur - driving_dur + 10) xpos 0.4
+        linear (driving_leaves_dur+1) xpos 0.4
     # drive off the screen quickly
     parallel:
-        pause (credits_dur - driving_dur + 9)
-        linear 3.0 xpos -0.3
+        pause driving_leaves_dur
+        linear 3.0 xpos -0.6
+        alpha 0.0
     # scroll up matching the terrain
     parallel:
         ed.driving_scroll(delay, ypos_)

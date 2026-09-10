@@ -150,7 +150,7 @@ label scene16:
 
     # > They have happened upon a large crystal structure.
     usagi "What is that..."
-    "PLACEHOLDER song: ragnarok. show keeps going with no visible lyrics"
+    call fx.log("SONG: Ragnarok. show keeps going with no visible lyrics")
 
     # everyone walks toward the crystal. first usagi, then the rest of the trio...
     $ x0 = -0.3

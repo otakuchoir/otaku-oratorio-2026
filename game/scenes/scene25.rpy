@@ -5,15 +5,16 @@ label scene25:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
     show layer master at fx.flashback
+    with fade
     # "TODO is this where we use the moba training map? If so, do I want character sprites (like most scenes), or animated dots on the map (like a game minimap), or both? Until I answer those fundamentals, this scene is deliberately barebones"
     # PUSH TEAM
-    show bart mech young neutral     at left2,  fx.xoffset(-1000), flip
-    show kohei mech young serious 1  at center, fx.xoffset(-1000), flip
-    show jojo mech young neutral     at left,   fx.xoffset(-1000), flip
+    show bart mech young neutral     at left2,  fx.xoffset(-1200), flip
+    show kohei mech young serious 1  at center, fx.xoffset(-1200), flip
+    show jojo mech young neutral     at left,   fx.xoffset(-1200), flip
     # DEFENDERS
-    show princess mech neutral       at right,  fx.xoffset(1000), noflip
-    show huxtable mech young neutral at right2, fx.xoffset(1000), noflip 
-    show linda mech young neutral    at center, fx.xoffset(1000), noflip 
+    show princess mech neutral       at right,  fx.xoffset(1200), noflip
+    show huxtable mech young neutral at right2, fx.xoffset(1200), noflip 
+    show linda mech young neutral    at center, fx.xoffset(1200), noflip 
     # "TODO add emotes for this scene, at least"
 
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
@@ -21,9 +22,9 @@ label scene25:
     
     # manually from the center camera
     show bg at fx.ease_xpos(1, 0.5, 0.55)
-    show jojo at fx.ease_xoffset(1, -1000, 0)
-    show bart at fx.ease_xoffset(1, -1000, 0)
-    show kohei at fx.ease_xoffset(1, -1000, 0)
+    show jojo at fx.ease_xoffset(1, -1200, 0)
+    show bart at fx.ease_xoffset(1, -1200, 0)
+    show kohei at fx.ease_xoffset(1, -1200, 0)
     wellington "Push team: Joseph Chen, you’re on auxiliary. Bartholemew Barthandelus... Support. Kohei Kitadani Ace."
 
     call scene25.camera_defense_team
@@ -32,10 +33,10 @@ label scene25:
     princess "That’s Princess Elizabeth Newark, thank you."
     wellington "......... Princess Elizabeth Newark, you’re on Auxiliary, Robert Huxtable, you’re on support and Ace is Linda Hudson."
     princess "Okay cousin!!"
-    linda "Hey gurl hey."
+    linda_young "Hey gurl hey."
     huxtable "Ladies... maybe we should pay attention."
     princess "Robert, if you don’t shut yo-.... You know what? Nevermind."
-    linda "Let’s push these losers BACK!"
+    linda_young "Let’s push these losers BACK!"
 
     # > TAINTED LOVERS (GITAROO MAN OST)
     computer "COMMENCE BATTLE SIMULATION"
@@ -46,7 +47,7 @@ label scene25:
 
     call scene25.camera_defense_team
     princess "Diabolos here... Shiva, your boyfriend is coming in hot."
-    linda "A mistake on his part. Ace unit Shiva here, let’s get in formation!"
+    linda_young "A mistake on his part. Ace unit Shiva here, let’s get in formation!"
 
     call scene25.camera_push_team
     jojo "JAMMING COMMUNICATIONS!"
@@ -57,12 +58,12 @@ label scene25:
 
     call scene25.camera_defense_team
     huxtable "Support unit Garuda here: the enemy team is pushing lane... maybe we should get into defensive positions..."
-    linda "You guys know me. I never back down from a fight."
+    linda_young "You guys know me. I never back down from a fight."
     princess "And I enable her so it’s no use looking at me like that - LET’S GOOO~!"
     computer "REMOTE SHIELDS ACTIVATED"
     princess "How about a nice buff from my personal stash. 35%% should help you fend off yo manz."
     computer "NANO BOTS ACTIVATED, 35%% ATTACK BUFF INSTALLED."
-    linda "Oh, thank you! Time to CHARGE!"
+    linda_young "Oh, thank you! Time to CHARGE!"
 
     call scene25.camera_push_team
     bart "Looks like their ace is meeting us on the battlefield-"
@@ -75,20 +76,20 @@ label scene25:
 
 label scene25.camera_push_team:
     show bg at fx.ease_xpos(1, 0.45, 0.55)
-    show jojo at fx.ease_xoffset(1, -1000, 0)
-    show bart at fx.ease_xoffset(1, -1000, 0)
-    show kohei at fx.ease_xoffset(1, -1000, 0)
-    show princess at fx.ease_xoffset(1, 0, 1000)
-    show huxtable at fx.ease_xoffset(1, 0, 1000)
-    show linda at fx.ease_xoffset(1, 0, 1000)
+    show jojo at fx.ease_xoffset(1, -1200, 0)
+    show bart at fx.ease_xoffset(1, -1200, 0)
+    show kohei at fx.ease_xoffset(1, -1200, 0)
+    show princess at fx.ease_xoffset(1, 0, 1200)
+    show huxtable at fx.ease_xoffset(1, 0, 1200)
+    show linda at fx.ease_xoffset(1, 0, 1200)
     return
 
 label scene25.camera_defense_team:
     show bg at fx.ease_xpos(1, 0.55, 0.45)
-    show jojo at fx.ease_xoffset(1, 0, -1000)
-    show bart at fx.ease_xoffset(1, 0, -1000)
-    show kohei at fx.ease_xoffset(1, 0, -1000)
-    show princess at fx.ease_xoffset(1, 1000, 0)
-    show huxtable at fx.ease_xoffset(1, 1000, 0)
-    show linda at fx.ease_xoffset(1, 1000, 0)
+    show jojo at fx.ease_xoffset(1, 0, -1200)
+    show bart at fx.ease_xoffset(1, 0, -1200)
+    show kohei at fx.ease_xoffset(1, 0, -1200)
+    show princess at fx.ease_xoffset(1, 1200, 0)
+    show huxtable at fx.ease_xoffset(1, 1200, 0)
+    show linda at fx.ease_xoffset(1, 1200, 0)
     return

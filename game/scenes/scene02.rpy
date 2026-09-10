@@ -2,7 +2,7 @@
 label scene02:
     scene bg jersey city cityscape
     call fx.play_music_in_dev("bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus")
-    "PLACEHOLDER manga panels: postcard memories (temporary background)"
+    "PLACEHOLDER manga panels"
     # play music "bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus"
     # > 2        EXT. CITY MONSTER ATTACK                                                  2
     # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
@@ -17,7 +17,8 @@ label scene02:
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
     # > 
     # >          SONG: Fumetsu no Hero    # > 
-    "PLACEHOLDER song: Fumetsu no Hero. show keeps going with no visible lyrics, right?"
+    call fx.log("SONG: Fumetsu no Hero. show keeps going with no visible lyrics (right?)")
+    pause
     kitadani "LET’S GO! CROWN BLASTER!"
     pause 0
     with vpunch

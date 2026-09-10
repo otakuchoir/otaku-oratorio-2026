@@ -27,6 +27,7 @@ label scene18:
     with dissolve
     pause 1.0
     hide bg2
+    with dissolve
     # > 18       VARIOUS SCREENS SHOWING THE NEWS OF THE SPACESHIP EDEN AS IT 18
     # > EMBARKS ON A MISSION TO DESTROY THE SPACE CRYSTAL.
     reporter1 "Breaking news, The Earth Crown Military is now moving on the Crystal."

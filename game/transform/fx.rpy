@@ -21,9 +21,9 @@ transform yflip:
 transform noyflip:
     yzoom 1.0
 
-label pause_msg(msg):
+label fx.log(msg):
+    # Print a comment for the VN operator
     $ print(msg)
-    pause
     return
 
 transform yshake(size, n, dur):
