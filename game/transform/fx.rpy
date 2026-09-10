@@ -21,6 +21,11 @@ transform yflip:
 transform noyflip:
     yzoom 1.0
 
+label pause_msg(msg):
+    $ print(msg)
+    pause
+    return
+
 transform yshake(size, n, dur):
     yoffset 0
     ease dur yoffset size

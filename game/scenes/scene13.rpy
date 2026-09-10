@@ -178,10 +178,9 @@ label scene13:
         zoom 0.8
         linear 10 zoom 1.0
     with dissolve
-    "PLACEHOLDER song: lilium. show keeps going with no visible lyrics, right?"
     window hide
     window auto
-    pause
+    call pause_msg("SONG: lilium. show keeps going with no visible lyrics (right?)")
     show bg scene13 2 with dissolve:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
@@ -235,6 +234,7 @@ label scene13:
     show linda neutral holo focus at center with dissolve
     linda "Usagi... there’s something I need to tell you. Call me back."
     hide linda with dissolve
+    call pause_msg("nathan: \"Basically there's a downward arpeggio and then when the piano goes \"DUUUN\" at the end of the arpeggio, it goes to black screen, and then when piano lets go of pedal and becomes silent, Takeshi's line appears\"")
     show takeshi neutral focus at center with dissolve
     takeshi "Everyone processed that moment in their own way."
     hide takeshi with dissolve
@@ -255,6 +255,7 @@ label scene13:
     usagi "After that mid term, none of us really spoke much. Finals came and went, and then graduation..."
     hide usagi with dissolve
     show bg black with dissolve
+    call pause_msg("nathan: \"same idea, let the piano finish echoing before opening scene 14\"")
     return
 
 label trio_say(words):

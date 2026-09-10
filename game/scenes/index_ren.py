@@ -37,6 +37,7 @@ scenes = [
     S('scene12a',  'SONG: Shanghai Tan'),
     S('scene12b',  'New Jersey News Report'),
     S('scene13',  'New Jersey Negotiations. SONG: Lilium; MANGA: Destruction of New Jersey'),
+    S('eyecatch06', 'Eyecatch: Ultima Cannon'),
     S('scene14',  'Graduation Day'),
     S('scene15',  'Mission Briefing'),
     S('scene15a', 'SONG: Weight of the World'),

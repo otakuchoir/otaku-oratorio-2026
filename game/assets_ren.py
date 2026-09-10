@@ -125,10 +125,14 @@ for i in range(1, 4+1):
     load_image(f'bg scene13 {i}', f'assets/manga/Scene 13 - NJ blows up/scene13-{i}.png')
 for i in range(1, 4+1):
     load_image(f'bg scene19 {i}', f'assets/manga/Scene 19/scene19_{i:03d}.png')
+for i in range(1, 3+1):
+    load_image(f'bg scene40 evacuation {i}', f'assets/manga/Scene 40 /scene-40-evacuation-{i}.png') # type: ignore
 for i in range(1, 4+1):
     load_image(f'bg scene40 explosion {i}', f'assets/manga/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
 for i in range(1, 9+1):
     load_image(f'bg scene40 judgement {i}', f'assets/manga/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
+# for i in [6]:
+    # load_image(f'eyecatch {i:03d}', f'assets/Eyecatches/Eyecatcher {i}.png') # type: ignore
 load_image(f'bg scene34', f'assets/manga/Scene_34.png')
 load_image(f'kaguya', f'images/Japanese_Fairy_Book_-_Ozaki_-_P118.png')
 

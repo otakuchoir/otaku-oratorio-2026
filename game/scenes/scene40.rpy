@@ -600,6 +600,15 @@ label scene40:
     # > Usagi, Takeshi and Sanders rush away back to Linda, Kelisha
     # > and Elizabeth. Kagu floats near the Ultima Cannon and then
     # > a huge explosion.
+    show bg scene40 evacuation 1 at screen_size
+    with Dissolve(0.5)
+    pause 1.0
+    show bg scene40 evacuation 2 at screen_size
+    with Dissolve(0.5)
+    pause 1.0
+    show bg scene40 evacuation 3 at screen_size
+    with Dissolve(0.5)
+    pause 1.0
     show bg scene40 explosion 1 at screen_size
     with Dissolve(0.5)
     pause 1.0
