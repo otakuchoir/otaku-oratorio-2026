@@ -1,7 +1,8 @@
 {
     "files.exclude": {
-        "**/*.rpyc": true,
+        "**/*.bak": true,
         "**/*.rpa": true,
+        "**/*.rpyc": true,
         "**/*.rpymc": true,
         "**/cache/": true
     },
