@@ -5,7 +5,8 @@ cd "`dirname "$0"`/.."
 V=8.5.3
 
 rm -rf ./build/desktop
-mkdir -p ./build
+pwd
+ls -l ./build
 mkdir -p ./build/desktop
 
 docker run --rm \
