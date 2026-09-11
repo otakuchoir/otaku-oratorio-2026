@@ -1,0 +1,16 @@
+#!/bin/bash
+set -eu
+cd "`dirname "$0"`/.."
+# avoid using "latest", for future-proofing
+
+# Sadly, tests fail to run headlessly. they open a window which require a GUI
+#V=8.5.3
+#docker run --rm \
+#  -v "./game:/app/game" \
+#  -e SDL_VIDEODRIVER=dummy \
+#  -e SDL_AUDIODRIVER=dummy \
+#  dinaki/renpy:$V \
+#  sh renpy.sh /app test "$@"
+
+# TODO generalize this, only works on my computer
+../../renpy/renpy-8.5.3-sdk/renpy.sh . test "$@"

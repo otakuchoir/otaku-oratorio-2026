@@ -3,6 +3,7 @@
 - Fix itch.io web build again. Another filesize problem, but different than last time.
 - Add progressive downloads for the web build. This should make it start faster, and solve all future filesize outages.
 - Fix desktop builds, they should actually work now
+- Add an automated test that runs through the entire show. This should prevent crashes like the one we saw today. Can't get it running headlessly for CI, so it's in a pre-push script for just my computer instead.
 
 ## 2026/09/10 (pre-rehearsal)
 - Update to the latest mechs
