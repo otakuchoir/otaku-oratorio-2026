@@ -10,12 +10,13 @@
 set -eu
 cd "`dirname "$0"`/.."
 #rclone lsd --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2
-#rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 ./game/assets -v
+rclone sync --drive-shared-with-me otaku-oratorio-gdrive:2026_OO2 ./game/assets -v
 
 # resize large images - itch.io has disk space limits
-mogrify -resize "1440x1080>" game/assets/manga/*.png
-mogrify -resize "1440x1080>" game/assets/manga/*/*.png
-mogrify -resize "1440x1080>" game/assets/mechs/*.png
+# actually, no need - found a better solution
+#mogrify -resize "1440x1080>" game/assets/manga/*.png
+#mogrify -resize "1440x1080>" game/assets/manga/*/*.png
+#mogrify -resize "1440x1080>" game/assets/mechs/*.png
 
 # yes, git logs track this information, but I don't trust that everyone knows how to git blame
 F=./game/assets/_updated.txt

@@ -4,13 +4,14 @@ cd "`dirname "$0"`/.."
 # avoid using "latest", for future-proofing
 V=8.5.3
 
-mkdir -p ./build
+rm -rf ./build/desktop
+mkdir -p ./build/desktop
 
 docker run --rm \
-  -v "./game:/game" \
+  -v "./game:/app/game" \
   -v "./build:/build" \
-  -v "./assets:/assets" \
   dinaki/renpy:$V \
-  sh renpy.sh launcher distribute --dest /build --no-update --package pc --package mac --package linux /game
+  sh renpy.sh launcher distribute --dest /build/desktop --no-update --package pc --package mac --package linux /app
+  # sh renpy.sh launcher distribute --dest /build/desktop --no-update --package linux /app
 # TODO this really shouldn't require sudo. I haven't figured out docker permissions yet, it creates all files as root. `--user` breaks
-sudo chown $(id -u):$(id -g) -R build/*.zip build/*.bz2
+sudo chown $(id -u):$(id -g) -R build/desktop/*.zip build/desktop/*.bz2

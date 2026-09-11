@@ -1,6 +1,6 @@
 define jump_to_scene_n = 0
 label jump_to_scene:
-    call start(i=jump_to_scene_n)
+    call start_at(jump_to_scene_n)
 
 screen jump_to():
     frame:
