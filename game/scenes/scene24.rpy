@@ -55,7 +55,7 @@ label scene24:
     kohei "Right, but if we’re thinking LOGICALLY, which one are you going with? Humans humaning or an angelic terror from on high? Come on now..."
     # > Holo-time ringtone
     # play sound sfx_pururin_ringtone
-    $ fx.log('pause - wait for phone sfx')
+    call fx.log('pause - wait for phone sfx')
     pause
     show kohei young kyaa
     show jojo young sad
