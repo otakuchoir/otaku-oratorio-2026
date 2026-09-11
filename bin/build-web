@@ -4,27 +4,26 @@ cd "`dirname "$0"`/.."
 # avoid using "latest", for future-proofing
 V=8.5.3
 
+rm -rf ./build/web*
 mkdir -p ./build
 
 docker run --rm \
-  -v "./game:/game/game" \
-  -v "./build:/build" \
-  -v "./game/assets:/game/assets" \
-  -v "./game/assets/Logo/OO2 Logo V3.png:/game/web-presplash.png" \
+  -v "./game:/app/game" \
+  -v "./build:/app/build" \
+  -v "./progressive_download.txt:/app/progressive_download.txt" \
+  -v "./game/assets/Logo/OO2 Logo V3.png:/app/web-presplash.png" \
   dinaki/renpy:$V-web \
-  sh -c 'sh renpy.sh launcher set_project /game && sh renpy.sh launcher web_build /game --dest /build/web'
-  #-v "./web-presplash.png:/game/web-presplash.png" \
+  sh -c 'sh renpy.sh launcher set_project /app && sh renpy.sh launcher web_build /app --dest /app/build/web'
 # TODO this really shouldn't require sudo. I haven't figured out docker permissions yet, it creates all files as root. `--user` breaks
 sudo chown $(id -u):$(id -g) -R build/web*
 
-ls build/web.zip
+ls -lh build/web.zip
 if find build/web.zip -size +499M | grep -q .; then
   echo "web build too big. itch.io's web size limit is 500M" >&2
-  ls -lh build/web.zip
   exit 1
 fi
+ls -lh build/web/game.zip
 if find build/web/game.zip -size +199M | grep -q .; then
-  echo "web build's game.zip too big. itch.io's single file size limit is 200M" >&2
-  ls -lh build/web/game.zip
+  echo "web build's game.zip too big. itch.io's single file limit is 200M" >&2
   exit 1
 fi
