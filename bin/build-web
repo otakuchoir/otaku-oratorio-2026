@@ -23,3 +23,8 @@ if find build/web.zip -size +499M | grep -q .; then
   ls -lh build/web.zip
   exit 1
 fi
+if find build/web/game.zip -size +199M | grep -q .; then
+  echo "web build's game.zip too big. itch.io's single file size limit is 200M" >&2
+  ls -lh build/web/game.zip
+  exit 1
+fi

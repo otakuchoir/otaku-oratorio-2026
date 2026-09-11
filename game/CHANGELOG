@@ -1,5 +1,6 @@
 ## 2026/09/10 (post-rehearsal)
 - Fix scene 24 crash. This is why we don't make code changes the day of the show...! Sorry!
+- Fix itch.io web build: reduce web file size, and test for it when building again so this doesn't reoccur. It was a different file size limit than last time!
 
 ## 2026/09/10 (pre-rehearsal)
 - Update to the latest mechs
