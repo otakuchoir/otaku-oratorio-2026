@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu
 cd "`dirname "$0"`/.."
-# avoid using "latest", for future-proofing
+
+./bin/ci
 
 # Sadly, tests fail to run headlessly. they open a window which require a GUI
 #V=8.5.3
