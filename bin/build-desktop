@@ -1,10 +1,11 @@
 #!/bin/bash
-set -eu
+set -eux
 cd "`dirname "$0"`/.."
 # avoid using "latest", for future-proofing
 V=8.5.3
 
 rm -rf ./build/desktop
+mkdir -p ./build
 mkdir -p ./build/desktop
 
 docker run --rm \
