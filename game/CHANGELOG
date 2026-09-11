@@ -2,6 +2,7 @@
 - Fix scene 24 crash. This is why we don't make code changes the day of the show...! Sorry!
 - Fix itch.io web build again. Another filesize problem, but different than last time.
 - Add progressive downloads for the web build. This should make it start faster, and solve all future filesize outages.
+- Fix desktop builds, they should actually work now
 
 ## 2026/09/10 (pre-rehearsal)
 - Update to the latest mechs
