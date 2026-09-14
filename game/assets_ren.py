@@ -134,7 +134,9 @@ for i in range(1, 9+1):
 # for i in [6]:
     # load_image(f'eyecatch {i:03d}', f'assets/Eyecatches/Eyecatcher {i}.png') # type: ignore
 load_image(f'bg scene34', f'assets/manga/Scene_34.png')
+renpy.image(f'bg scene29', Movie(play=f'assets/manga/scene29.webm')) # type: ignore
 load_image(f'kaguya', f'images/Japanese_Fairy_Book_-_Ozaki_-_P118.png')
+load_image(f'moba', f'images/moba.jpg')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')

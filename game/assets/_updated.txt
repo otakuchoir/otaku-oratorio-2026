@@ -1,5 +1,5 @@
 Do not edit this directory by hand! It's only updated automatically, using the `./bin/pull-assets` script to copy from the gdrive
 
-Updated at: Fri Sep 11 01:06:03 AM EDT 2026
+Updated at: Sun Sep 13 10:26:17 PM EDT 2026
 Updated by: Evan Rosson
 Updated using `./bin/pull-assets`

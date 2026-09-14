@@ -1,13 +1,11 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=bart&t=jojo&t=kelisha&t=kohei&t=linda
 label scene29:
-    scene bg black hole
-    show destroyer:
+    scene black
+    show bg scene29:
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
-        ysize 1080
-        fit "contain"
+        screen_size
     with fade
-    "PLACEHOLDER manga panels: destroyer's monologue"
     # > 29       INT. NIGHT; CROWN FACILITY                                               29
     # > Everyone is gathered to review footage captured of the Planet
     # > Destroyer from earlier in the evening:
