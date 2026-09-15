@@ -3,6 +3,7 @@
 /old-game
 __pycache__
 /game/oo2_scriptgen.rpy
+/TODO.md
 
 # Directories that Ren'Py changes files in.
 /game/saves

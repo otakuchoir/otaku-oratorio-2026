@@ -68,7 +68,7 @@ init python:
     
     def moba_profile(name, color, crop, offset=(0, 0)):
         circle = Circle(radius=100, color=color)
-        print(crop, offset)
+        # print(crop, offset)
         face = Transform(renpy.get_registered_image(name), crop=crop)
         profile = AlphaMask(child=face, mask=circle)
         return Composite((200, 200), (0, 0), circle, offset, profile)

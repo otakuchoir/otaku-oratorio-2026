@@ -130,7 +130,7 @@ label scene06:
     # usagi steps to the front to defend her friend
     show usagi at right2
     with ease
-    usagi "Sir! Miss... Officer Ruckus, we’re on our way to Rush Crater and we’re about to miss our train, we REALLY have to get going."
+    usagi "Miss... Officer Ruckus, we’re on our way to Rush Crater and we’re about to miss our train, we REALLY have to get going."
     usagi "Williamson here did not fare evade. I swiped him in because he forgot his transit card at the dorms."
 
     # > TRAIN ANNOUNCEMENT, THEY HAVE MISSED THE TRAIN
