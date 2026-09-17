@@ -62,81 +62,37 @@ label scene16a:
     # show
     show bg scene16 3 nofg
     show usagi mech postgrad neutral at left, flip, fx.yoffset(300)
+    call scene16.credits
     with dissolve
 
     bart scheming "At last!"
     # dim versions of these on purpose. focus on the crystal!
-    show takeshi mech postgrad neutral:
+    show takeshi mech postgrad neutral behind scene16_credits00:
         flip
         zoom 0.2
         pos (0.20, 0.26)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
-    show sanders mech postgrad neutral:
+    show sanders mech postgrad neutral behind scene16_credits00:
         flip
         zoom 0.2
         pos (0.30, 0.23)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
     # alias these so we see their side images - they're too small and far away to emote here
-    show jojo mech neutral as j:
+    show jojo mech neutral as j behind scene16_credits00:
         zoom 0.2
         pos (0.7, 0.23)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    show bart mech neutral as b:
+    show bart mech neutral as b behind scene16_credits00:
         zoom 0.2
         pos (0.8, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    show kelisha mech neutral:
+    show kelisha mech neutral behind scene16_credits00:
         zoom 0.2
         pos (0.9, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
     jojo grin 1 "Move in and secure the specimen."
-
-
-
-    call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
-    show op_text "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}" at top
-    with dissolve
-    pause
-    call fx.log("10 more clicks until the end of these credits.")
-    show op_text "\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}" at top
-    with dissolve
-    pause
-    call fx.log("5 more clicks until the end of these credits.")
-    show op_text "\n\n{=ed_role}Logo Design{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Rogers Lopez{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}" at top
-    with dissolve
-    pause
-    show op_text "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}" at top
-    with dissolve
-    pause
-
-
+    window hide
+    window auto
 
     ### page 32 ###
     # > FADE TO DARK as the Usagi, Takeshi, and Sanders stand still
@@ -159,8 +115,9 @@ label scene16a:
     #    zoom 0.5
     #    xoffset -1440/2
 
-    hide op_text
-    call fx.log("Next click is the end of act 1! Pause here until choir finishes singing")
+    call fx.log("Next click is the end of act 1! Pause here until choir finishes singing.")
+    call fx.log("Clicking will skip the credits, if they're not done.")
+    call fx.log("Credits last about 2 minutes. ragnarok is 3:30 and credits should start around 1:15ish")
     pause
 
     scene bg black with dissolve
@@ -170,3 +127,123 @@ style ed_role:
     size 30
 style ed_who:
     size 60
+
+init python:
+    scene16_credits_txt = [
+        "",
+        "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}",
+        "\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}",
+        "\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}",
+        "\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}",
+        "\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}",
+        "\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}",
+        "\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}",
+        "\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}",
+        "\n\n{=ed_role}Logo Design{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}",
+        "\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}",
+        "\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Rogers Lopez{/}",
+        "\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}",
+        "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}",
+    ]
+    for i, t in enumerate(scene16_credits_txt):
+        renpy.image(f"scene16_credits{i:02d}", Text(t, style="op_text_s"))
+    # credits should be about 2 minutes. ragnarok is 3:30ish, and credits start around 1:30
+    scene16_credits_dur = 120.0 / len(scene16_credits_txt)
+
+label scene16.credits:
+    # call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
+    show scene16_credits01:
+        xalign 0.5
+        yalign 0.0
+        # there must be a better way to do this, but hell if I know what it is. DynamicImage, I think - but where's the sleep() go?
+        alpha 1.0
+        "scene16_credits01"
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits02"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits03"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits04"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits05"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits06"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits07"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits08"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits09"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits10"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits11"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits12"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16_credits13"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    ## call fx.log("10 more clicks until the end of these credits.")
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    ## call fx.log("5 more clicks until the end of these credits.")
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+    #show op_text  at top
+    #with dissolve
+    #pause
+
+
