@@ -33,6 +33,7 @@ transform nodim:
 transform anchor_sprite:
     anchor (0.5, 1.0)
 transform screen_size:
+    fit "contain"
     size screen_dim
 
 init python:
