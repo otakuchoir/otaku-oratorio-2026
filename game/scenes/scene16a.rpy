@@ -4,8 +4,7 @@ label scene16a:
     # we have to show at least the speaker, though!
     # renpy has a nice solution to that: side images
     scene bg scene16 1 nofg with dissolve
-    pause
-    show bg scene16 1 with dissolve
+    # show bg scene16 1 with dissolve
 
     # no characters are showing - the attributes here control the side images
     takeshi postgrad neutral "The readings align... This is the wave pattern... I’m pinging the squad."
@@ -24,7 +23,7 @@ label scene16a:
     # > until right now.
     # > The crystal’s glowing intensifies and reveals the shaped of a
     # > human inside.
-    show bg scene16 2 with dissolve
+    show bg scene16 2 nofg with dissolve
     sanders postgrad panic "Is that... A person???"
     # > Usagi moves forward.
     takeshi postgrad worried 2 "The planet destroyer."
@@ -34,9 +33,14 @@ label scene16a:
     window hide 
     window auto
     pause 0
-    show bg scene16 3 with dissolve
-    pause 1
+    show bg scene16 3 nofg with dissolve
+    pause
+    show usagi mech postgrad neutral at left, flip, fx.ease_xoffset(2.0, x0=-800), fx.yoffset(300)
+        # zoom 0.10
+        # pos (0.1, -0.3)
+        # ease 3.0 zoom 0.4 pos (0.2, 0.26)
     takeshi postgrad panic 2 "No! Usagi, don’t!"
+    hide usagi
     show bg black # deliberately no transition
     pause 0.5
     # show the sprites over the textbox
@@ -56,8 +60,38 @@ label scene16a:
     hide child
     pause 0.5
     # show
-    show bg scene16 3 with dissolve
+    show bg scene16 3 nofg
+    show usagi mech postgrad neutral at left, flip, fx.yoffset(300)
+    with dissolve
+
     bart scheming "At last!"
+    # dim versions of these on purpose. focus on the crystal!
+    show takeshi mech postgrad neutral:
+        flip
+        zoom 0.2
+        pos (0.20, 0.26)
+        fx.ease_xyoffset(5.0, xy0=(-800, -100))
+    show sanders mech postgrad neutral:
+        flip
+        zoom 0.2
+        pos (0.30, 0.23)
+        fx.ease_xyoffset(5.0, xy0=(-800, -100))
+    # alias these so we see their side images - they're too small and far away to emote here
+    show jojo mech neutral as j:
+        zoom 0.2
+        pos (0.7, 0.23)
+        fx.ease_xyoffset(5.0, xy0=(800, -100))
+    show bart mech neutral as b:
+        zoom 0.2
+        pos (0.8, 0.29)
+        fx.ease_xyoffset(5.0, xy0=(800, -100))
+    show kelisha mech neutral:
+        zoom 0.2
+        pos (0.9, 0.29)
+        fx.ease_xyoffset(5.0, xy0=(800, -100))
+    with dissolve
+    jojo grin 1 "Move in and secure the specimen."
+
 
     ### page 32 ###
     # > FADE TO DARK as the Usagi, Takeshi, and Sanders stand still
@@ -67,7 +101,21 @@ label scene16a:
     # > END OF ACT 1
     ### page 33 ###
     # > ACT 2
-    jojo grin 1 "Move in and secure the specimen."
+
+    # my usual trick of mirroring the background to get more space doesn't work well here...!
+    #show bg scene16 1 nofg at truecenter:
+    #    zoom 0.5
+    #show bg scene16 1 nofg as bgright at truecenter:
+    #    flip
+    #    zoom 0.5
+    #    xoffset 1440/2
+    #show bg scene16 1 nofg as bgleft at truecenter:
+    #    flip
+    #    zoom 0.5
+    #    xoffset -1440/2
+
+    call fx.log("pause here until the choir song finishes. Next click is the end of act 1")
+    pause
 
     show bg black with dissolve
     return
