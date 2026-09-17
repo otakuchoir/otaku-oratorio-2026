@@ -15,6 +15,7 @@ label scene16a:
     # > The ringing stops. The crystal stucture is glowing.
     takeshi postgrad panic 1 "It wasn’t me... I don’t know what..."
     # > 
+    call scene16.credits
     # > SONG: RAGNAROK    # > 
     # > We start hearing sounds, but they do not make sense. It’s all
     # > dialogue from when Planet Destroyer announced that the Earth
@@ -35,7 +36,7 @@ label scene16a:
     pause 0
     show bg scene16 3 nofg with dissolve
     pause
-    show usagi mech postgrad neutral at left, flip, fx.ease_xoffset(2.0, x0=-800), fx.yoffset(300)
+    show usagi mech postgrad neutral at left, flip, fx.ease_xoffset(2.0, x0=-800), fx.yoffset(300) behind scene16_credits01
         # zoom 0.10
         # pos (0.1, -0.3)
         # ease 3.0 zoom 0.4 pos (0.2, 0.26)
@@ -45,9 +46,9 @@ label scene16a:
     pause 0.5
     # show the sprites over the textbox
     define z = 1.3
-    show usagi postgrad worried focus at flip, left2:
+    show usagi postgrad worried focus at flip, left2 behind scene16_credits01:
         zoom z
-    show child unamused focus at right2:
+    show child unamused focus at right2 behind scene16_credits01:
         zoom z
     # with deliberately no transition
     pause 1
@@ -61,32 +62,31 @@ label scene16a:
     pause 0.5
     # show
     show bg scene16 3 nofg
-    show usagi mech postgrad neutral at left, flip, fx.yoffset(300)
-    call scene16.credits
+    show usagi mech postgrad neutral at left, flip, fx.yoffset(300) behind scene16_credits01
     with dissolve
 
     bart scheming "At last!"
     # dim versions of these on purpose. focus on the crystal!
-    show takeshi mech postgrad neutral behind scene16_credits00:
+    show takeshi mech postgrad neutral behind scene16_credits01:
         flip
         zoom 0.2
         pos (0.20, 0.26)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
-    show sanders mech postgrad neutral behind scene16_credits00:
+    show sanders mech postgrad neutral behind scene16_credits01:
         flip
         zoom 0.2
         pos (0.30, 0.23)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
     # alias these so we see their side images - they're too small and far away to emote here
-    show jojo mech neutral as j behind scene16_credits00:
+    show jojo mech neutral as j behind scene16_credits01:
         zoom 0.2
         pos (0.7, 0.23)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    show bart mech neutral as b behind scene16_credits00:
+    show bart mech neutral as b behind scene16_credits01:
         zoom 0.2
         pos (0.8, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    show kelisha mech neutral behind scene16_credits00:
+    show kelisha mech neutral behind scene16_credits01:
         zoom 0.2
         pos (0.9, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
@@ -117,7 +117,7 @@ label scene16a:
 
     call fx.log("Next click is the end of act 1! Pause here until choir finishes singing.")
     call fx.log("Clicking will skip the credits, if they're not done.")
-    call fx.log("Credits last about 2 minutes. ragnarok is 3:30 and credits should start around 1:15ish")
+    call fx.log("ragnarok is 3:30, credits are about 3 minutes and start shortly after ragnarok")
     pause
 
     scene bg black with dissolve
@@ -148,7 +148,7 @@ init python:
     for i, t in enumerate(scene16_credits_txt):
         renpy.image(f"scene16_credits{i:02d}", Text(t, style="op_text_s"))
     # credits should be about 2 minutes. ragnarok is 3:30ish, and credits start around 1:30
-    scene16_credits_dur = 120.0 / len(scene16_credits_txt)
+    scene16_credits_dur = 180.0 / len(scene16_credits_txt)
 
 label scene16.credits:
     # call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
