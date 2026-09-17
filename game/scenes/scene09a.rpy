@@ -1,5 +1,5 @@
 label scene09a: 
-    scene bg black
+    scene bg black with fade
     # https://genius.com/Genius-english-translations-dali-moonlight-legend-english-translation-lyrics
     # https://drive.google.com/drive/folders/1DN1PKkUOmgE0XtfsA1OPBGLHYPE2UE14
     nvl clear

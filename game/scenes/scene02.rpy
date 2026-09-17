@@ -1,52 +1,55 @@
 
 label scene02:
-    scene bg jersey city cityscape
+    scene bg black
     call fx.play_music_in_dev("bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus")
-    "PLACEHOLDER manga panels"
+    show bg scene02 1 with dissolve
+    pause 4.0
+    show bg scene02 2 with dissolve
+    pause 2.0
+    show bg scene02 3 with dissolve
+    with vpunch
+    pause 1.0
+    show bg scene02 4 with dissolve
+    with vpunch
+    pause 1.0
+    show bg scene02 1 with dissolve
     # play music "bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus"
     # > 2        EXT. CITY MONSTER ATTACK                                                  2
     # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
     # > THROUGH MODEL CITY, BURNING BUILDINGS WITH ATOMIC BREATH
-    # > A HERO DRESSED IN RED RUNS IN, DRAMATICALLY SKIDDING ON TO
-    # > THE SCENE AS THEIR SCARF BLOWS IN THE WIND DRAMATICALLY.
     announcer "Oh no! The monster is destroying the city! Can anybody stop this?"
 
+    show bg scene02 5 with dissolve
+    # > A HERO DRESSED IN RED RUNS IN, DRAMATICALLY SKIDDING ON TO
+    # > THE SCENE AS THEIR SCARF BLOWS IN THE WIND DRAMATICALLY.
     stop music fadeout 1
     call fx.play_music_in_dev("bgm_002_seajetter_kaito.opus")
     kitadani "Fear not, announcer! Courageous Kaito! Reporting for Duty!"
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
+
     # > 
     # >          SONG: Fumetsu no Hero    # > 
-    call fx.log("SONG: Fumetsu no Hero. show keeps going with no visible lyrics (right?)")
-    pause
+    call scene02a
+
+    show bg scene02 5 with dissolve
     kitadani "LET’S GO! CROWN BLASTER!"
     pause 0
     with vpunch
+
     # > THE MONSTER DOES NOT FLINCH.
+    show bg scene02 1 with dissolve
     monster "Your precious Earth is mine to devour!"
-    # > MONSTER EATS MINIATURE BUILDING COOKIE MONSTER STYLE
-    show bg jersey city cityscape as eat1:
-        xpos 450
-        ypos 100
-        crop (0, 100, 150, 200)
-    with hpunch
-    show bg jersey city cityscape as eat2:
-        xpos 450
-        ypos 300
-        crop (0, 300, 150, 200)
-    with vpunch
-    show bg jersey city cityscape as eat3:
-        xpos 450
-        ypos 500
-        crop (0, 400, 150, 150)
-    with hpunch
+
+    show bg scene02 5 with dissolve
     kitadani "DAMN!"
     computer "Ultima Cannon ready to dispense justice. Survival rate… 1%%."
     # > KITADANI GLANCES AT THE FAMILY PHOTO ON HIS DASHBOARD
     ### page 3 ###
     kitadani "This is the only way. Justice requires swift action. Citizens of Earth: Lend me your strength! For every human, on this beautiful Earth!"
+    show bg scene02 1 with dissolve
     monster "WHAT!?"
     # > Monster reels back to charge it’s atomic breath
+    # actually I'm gonna skip this direction because it looks too much like the monster is firing, not the ultima cannon
     kitadani "Ultima Cannon: fire!"
     show bg white as boom:
         alpha 0
@@ -71,4 +74,17 @@ label scene02:
     show text "{color=#fff}{size=160}IN MEMORY OF\nKOHEI KITADANI{/size}{/color}" at truecenter with dissolve
     pause
     hide text with dissolve
+    return
+
+label scene02a: 
+    # https://drive.google.com/drive/folders/13OOlvv-BOTt1b4r9VxmytgVwE475gNtl
+    # https://animelyricsaz.com/artist/masaaki-endou/fumetsu-no-hero-seajetter-kaito/971-39227
+    # https://www.uta-net.com/song/320519/
+    # finally, one where I can't find an english translation! could use machine translation, but that'll be bad...
+    scene bg black with fade
+    nvl clear
+    title "Fumestu no Hero"
+    lyrics "TODO lyrics. surprisingly hard to find an english translation online...!"
+    nvl clear
+    scene bg black with fade
     return

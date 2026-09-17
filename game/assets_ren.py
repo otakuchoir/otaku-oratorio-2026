@@ -118,26 +118,26 @@ for f in fs:
 # Load a list of other assets with less predictible naming patterns
 load_image('logo', 'assets/Logo/OO2 Logo V3.png')
 load_image('logo choir', 'images/OtakuChoir-LogoMark_Full+Color.png')
+for i in range(1, 5+1):
+    load_image(f'bg scene02 {i}', f'assets/manga/scene 02/{i}.png')
+for i in range(1, 4+1):
+    load_image(f'bg scene13 {i}', f'assets/manga/Scene 13 - NJ blows up/scene13-{i}.png')
 for i, c in enumerate('ABC'):
     i += 1
     load_image(f'bg scene16 {i}', f'assets/manga/Scene 16/Scene16{c}.png')
     load_image(f'bg scene16 {i} nofg', f'assets/manga/Scene 16/Scene 16 - no foreground/Scene16{c}-noforeground.png')
 for i in range(1, 4+1):
-    load_image(f'bg scene13 {i}', f'assets/manga/Scene 13 - NJ blows up/scene13-{i}.png')
-for i in range(1, 4+1):
     load_image(f'bg scene19 {i}', f'assets/manga/Scene 19/scene19_{i:03d}.png')
+load_image(f'moba', f'images/moba.jpg')
+load_image(f'kaguya', f'images/Japanese_Fairy_Book_-_Ozaki_-_P118.png')
+renpy.image(f'bg scene29', Movie(play=f'assets/manga/scene29.webm')) # type: ignore
+load_image(f'bg scene34', f'assets/manga/Scene_34.png')
 for i in range(1, 3+1):
     load_image(f'bg scene40 evacuation {i}', f'assets/manga/Scene 40 /scene-40-evacuation-{i}.png') # type: ignore
 for i in range(1, 4+1):
     load_image(f'bg scene40 explosion {i}', f'assets/manga/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
 for i in range(1, 9+1):
     load_image(f'bg scene40 judgement {i}', f'assets/manga/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
-# for i in [6]:
-    # load_image(f'eyecatch {i:03d}', f'assets/Eyecatches/Eyecatcher {i}.png') # type: ignore
-load_image(f'bg scene34', f'assets/manga/Scene_34.png')
-renpy.image(f'bg scene29', Movie(play=f'assets/manga/scene29.webm')) # type: ignore
-load_image(f'kaguya', f'images/Japanese_Fairy_Book_-_Ozaki_-_P118.png')
-load_image(f'moba', f'images/moba.jpg')
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')
