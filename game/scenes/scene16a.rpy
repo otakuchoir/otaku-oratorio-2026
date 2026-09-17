@@ -89,8 +89,53 @@ label scene16a:
         zoom 0.2
         pos (0.9, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    with dissolve
     jojo grin 1 "Move in and secure the specimen."
+
+
+
+    call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
+    show op_text "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}" at top
+    with dissolve
+    pause
+    call fx.log("10 more clicks until the end of these credits.")
+    show op_text "\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}" at top
+    with dissolve
+    pause
+    call fx.log("5 more clicks until the end of these credits.")
+    show op_text "\n\n{=ed_role}Logo Design{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Rogers Lopez{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}" at top
+    with dissolve
+    pause
+    show op_text "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}" at top
+    with dissolve
+    pause
+
 
 
     ### page 32 ###
@@ -114,8 +159,14 @@ label scene16a:
     #    zoom 0.5
     #    xoffset -1440/2
 
-    call fx.log("pause here until the choir song finishes. Next click is the end of act 1")
+    hide op_text
+    call fx.log("Next click is the end of act 1! Pause here until choir finishes singing")
     pause
 
-    show bg black with dissolve
+    scene bg black with dissolve
     return
+
+style ed_role:
+    size 30
+style ed_who:
+    size 60
