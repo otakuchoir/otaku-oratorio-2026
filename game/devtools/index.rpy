@@ -18,3 +18,5 @@ screen devtools():
                 action Start('animation_test_bgloop')
             textbutton "roxbury test":
                 action Start('animation_test_roxbury')
+            textbutton "timer test":
+                action Start('timer_test')
