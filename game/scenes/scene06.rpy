@@ -207,7 +207,6 @@ label scene06:
     # > SONG: HANA NI NATTE    # > 
     # > 2 WEEKS LATER
     ### page 12 ###
-    show black with dissolve
     return
 
 transform scene06_gate_jump:

@@ -29,6 +29,7 @@ scenes = [
     S('scene05',  'School Grounds, Meet Barthandelus'),
     S('scene06',  'Train Station'),
     S('scene06a', 'SONG: Hana Ni Natte'),
+    S('scene06b', 'Two weeks later...'),
     S('eyecatch03', 'The Moon'),
     S('scene07',  'Classroom scene 1'),
     S('scene08',  'Classroom scene 2'),

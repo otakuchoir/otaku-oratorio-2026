@@ -125,5 +125,5 @@ label scene31:
     # > SONG: SOTO    # > 
     # > BLACKOUT
     ### page 65 ###
-    scene bg black with fade
+    # scene bg black with fade
     return

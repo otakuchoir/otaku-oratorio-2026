@@ -182,7 +182,7 @@ label scene23:
     jojo serious "I have. But experience is the best teacher. We’re not children anymore Bart."
     # > 
     # >          SONG: SILHOUETTE    # > 
-    scene bg black with dissolve
+    # scene bg black with dissolve
     return
 
 label scene23.child_mirroring:

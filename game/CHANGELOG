@@ -1,3 +1,7 @@
+## 2026/09/22
+- Add an extra at the end of each scene, to allow waiting for actor transitions and to warn the operator of the upcoming scene transition
+- Redesign lyrics displayed throughout the show. They now look more like dialogue/like the 2025 show, instead of taking over the whole screen
+
 ## 2026/09/21
 - Remove Usagi's scene 19 line
 - Redesign scene 16 credits. Start later, advance faster, smaller font, shown in the margins instead of the top
