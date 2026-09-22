@@ -20,9 +20,11 @@ label scene19:
     navigator "We’re holding steady Captain. Go take your call."
 
     # > GUIDE US OH MIGHTY FURY...
-    # side images: usagi's not visible on screen, so this shows her side image in the textbox
-    usagi postgrad neutral focus "On that day, I remember my mom holding for him, our bags were packed and we were ready to go..."
-    usagi postgrad neutral focus "Our society had decided that it was going to defy nature itself. We were about to learn a great lesson."
+    #
+    # Removed this dialogue: https://discord.com/channels/1307031043915911278/1308533742209335336/1551602844627378280
+    # "cc @Evan Rosson thanks to Illy I remembered that we didn't have this written down anywhere. My bad: so the Usagi line during Final Day should be gone."
+    #usagi postgrad neutral focus "On that day, I remember my mom holding for him, our bags were packed and we were ready to go..."
+    #usagi postgrad neutral focus "Our society had decided that it was going to defy nature itself. We were about to learn a great lesson."
 
     gunner "80 percent! We’re closing in on the window."
     ### page 35 ###

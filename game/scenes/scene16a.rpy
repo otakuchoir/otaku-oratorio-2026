@@ -15,7 +15,6 @@ label scene16a:
     # > The ringing stops. The crystal stucture is glowing.
     takeshi postgrad panic 1 "It wasn’t me... I don’t know what..."
     # > 
-    call scene16.credits
     # > SONG: RAGNAROK    # > 
     # > We start hearing sounds, but they do not make sense. It’s all
     # > dialogue from when Planet Destroyer announced that the Earth
@@ -36,7 +35,7 @@ label scene16a:
     pause 0
     show bg scene16 3 nofg with dissolve
     pause
-    show usagi mech postgrad neutral at left, flip, fx.ease_xoffset(2.0, x0=-800), fx.yoffset(300) behind scene16_credits01
+    show usagi mech postgrad neutral at left, flip, fx.ease_xoffset(2.0, x0=-600), fx.yoffset(300) behind credits_left, credits_right
         # zoom 0.10
         # pos (0.1, -0.3)
         # ease 3.0 zoom 0.4 pos (0.2, 0.26)
@@ -46,9 +45,9 @@ label scene16a:
     pause 0.5
     # show the sprites over the textbox
     define z = 1.3
-    show usagi postgrad worried focus at flip, left2 behind scene16_credits01:
+    show usagi postgrad worried focus at flip, left2 behind credits_left, credits_right:
         zoom z
-    show child unamused focus at right2 behind scene16_credits01:
+    show child unamused focus at right2 behind credits_left, credits_right:
         zoom z
     # with deliberately no transition
     pause 1
@@ -62,31 +61,32 @@ label scene16a:
     pause 0.5
     # show
     show bg scene16 3 nofg
-    show usagi mech postgrad neutral at left, flip, fx.yoffset(300) behind scene16_credits01
+    show usagi mech postgrad neutral at left, flip, fx.yoffset(300) behind credits_left, credits_right
     with dissolve
 
+    call scene16.credits
     bart scheming "At last!"
     # dim versions of these on purpose. focus on the crystal!
-    show takeshi mech postgrad neutral behind scene16_credits01:
+    show takeshi mech postgrad neutral behind credits_left, credits_right:
         flip
         zoom 0.2
         pos (0.20, 0.26)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
-    show sanders mech postgrad neutral behind scene16_credits01:
+    show sanders mech postgrad neutral behind credits_left, credits_right:
         flip
         zoom 0.2
         pos (0.30, 0.23)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
     # alias these so we see their side images - they're too small and far away to emote here
-    show jojo mech neutral as j behind scene16_credits01:
+    show jojo mech neutral as j behind credits_left, credits_right:
         zoom 0.2
         pos (0.7, 0.23)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    show bart mech neutral as b behind scene16_credits01:
+    show bart mech neutral as b behind credits_left, credits_right:
         zoom 0.2
         pos (0.8, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
-    show kelisha mech neutral behind scene16_credits01:
+    show kelisha mech neutral behind credits_left, credits_right:
         zoom 0.2
         pos (0.9, 0.29)
         fx.ease_xyoffset(5.0, xy0=(800, -100))
@@ -115,96 +115,113 @@ label scene16a:
     #    zoom 0.5
     #    xoffset -1440/2
 
-    call fx.log("Next click is the end of act 1! Pause here until choir finishes singing.")
-    call fx.log("Clicking will skip the credits, if they're not done.")
-    call fx.log("ragnarok is 3:30, credits are about 3 minutes and start shortly after ragnarok")
+    call fx.log("Next click is the end of act 1! Pause here until choir finishes singing")
+    call fx.log("Clicking will skip the credits, if they're not done")
+    call fx.log("ragnarok is 3:30, credits are about 1 minute and start somewhere in the middle-ish of ragnarok")
     pause
 
     scene bg black with dissolve
     return
 
 style ed_role:
-    size 30
+    size 25
 style ed_who:
-    size 60
+    size 45
 
 init python:
     scene16_credits_txt = [
-        "",
-        "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}",
-        "\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}",
-        "\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}",
-        "\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}",
-        "\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}",
-        "\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}",
-        "\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}",
-        "\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}",
-        "\n\n{=ed_role}Logo Design{/}\n{=ed_who}Abraham \"AJ\" Rogers Lopez{/}",
-        "\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}",
-        "\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Rogers Lopez{/}",
-        "\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}",
-        "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}",
+        ("\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}", "\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}"),
+        ("\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}", "\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Lopez{/}"),
+        ("\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}", ""),
+        ("", "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}"),
+        ("\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}", "\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}"),
+        ("\n\n{=ed_role}Logo Design{/}\n{=ed_who}Abraham \"AJ\" Lopez{/}", ""),
+        ("\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Lopez{/}", "\n\n\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}"),
+        ("\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}", "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}"),
     ]
-    for i, t in enumerate(scene16_credits_txt):
-        renpy.image(f"scene16_credits{i:02d}", Text(t, style="op_text_s"))
-    # credits should be about 2 minutes. ragnarok is 3:30ish, and credits start around 1:30
-    scene16_credits_dur = 180.0 / len(scene16_credits_txt)
+    for i, (tl, tr) in enumerate(scene16_credits_txt):
+        renpy.image(f"scene16 credits{i+1:02d} left", Text(tl, style="op_text_s"))
+        renpy.image(f"scene16 credits{i+1:02d} right", Text(tr, style="op_text_s"))
+    # length each line of credits is on screen = total length of credits / number of lines
+    scene16_credits_dur = 60.0 / len(scene16_credits_txt)
 
 label scene16.credits:
     # call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
-    show scene16_credits01:
-        xalign 0.5
-        yalign 0.0
+    show scene16 credits01 left as credits_left:
+        anchor (0.5, 0.5)
+        pos (0.18, 0.35)
         # there must be a better way to do this, but hell if I know what it is. DynamicImage, I think - but where's the sleep() go?
-        alpha 1.0
-        "scene16_credits01"
-        pause scene16_credits_dur
+        alpha 0.0
+        # pause 3.0
         linear 0.5 alpha 0.0
-        "scene16_credits02"
+        "scene16 credits01 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits03"
+        "scene16 credits02 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits04"
+        "scene16 credits03 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits05"
+        "scene16 credits04 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits06"
+        "scene16 credits05 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits07"
+        "scene16 credits06 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits08"
+        "scene16 credits07 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits09"
+        "scene16 credits08 left"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits10"
+    show scene16 credits01 right as credits_right:
+        anchor (0.5, 0.5)
+        pos (0.82, 0.35)
+        # there must be a better way to do this, but hell if I know what it is. DynamicImage, I think - but where's the sleep() go?
+        alpha 0.0
+        # pause 3.0
+        linear 0.5 alpha 0.0
+        "scene16 credits01 right"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits11"
+        "scene16 credits02 right"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits12"
+        "scene16 credits03 right"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0
-        "scene16_credits13"
+        "scene16 credits04 right"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16 credits05 right"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16 credits06 right"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16 credits07 right"
+        linear 0.5 alpha 1.0
+        pause scene16_credits_dur
+        linear 0.5 alpha 0.0
+        "scene16 credits08 right"
         linear 0.5 alpha 1.0
         pause scene16_credits_dur
         linear 0.5 alpha 0.0

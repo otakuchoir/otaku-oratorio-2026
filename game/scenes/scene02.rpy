@@ -1,5 +1,14 @@
 
 label scene02:
+    call fx.log("# Hello, VN operator! These messages are to help you during the show.")
+    call fx.log("# They won't be visible to the audience if you're running a desktop version of the show.")
+    call fx.log("# They're visible in the web version, but you shouldn't use that on the day of the show, because wifi can fail.")
+    call fx.log("# Instead, run this from a terminal/command line (ask Evan to demonstrate).")
+    call fx.log("# Terminal goes on your laptop screen and shows these messages. Show goes on the projector screen.")
+    call fx.log("# F11 to fullscreen the show. Move your mouse offscreen, then advance with the spacebar - not with mouse clicks, so the audience won't see the cursor.")
+    call fx.log("# Thanks for stepping up to do this!")
+    call fx.log("#")
+
     scene bg black
     call fx.play_music_in_dev("bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus")
     show bg scene02 1 with dissolve
