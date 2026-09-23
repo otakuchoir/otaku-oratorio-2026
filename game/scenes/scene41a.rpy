@@ -1,8 +1,8 @@
-define credits_size = 6.5
-define driving_scrolls_size = 5.5
-define driving_leaves_size = 6.0
+define credits_size = 8.0
+define driving_scrolls_size = credits_size - 1.0
+define driving_leaves_size = driving_scrolls_size + 0.5
 # TODO: we're singing "welcome to the new world" here, so duration should be a bit longer than that.
-# but... that's so slow during dev.
+# but... that's so slow during dev. lines below speed things up for dev
 # define driving_scrolls_dur = driving_scrolls_size * 4.0
 # define driving_scrolls_dur = driving_scrolls_size * 8.0
 #
@@ -11,8 +11,11 @@ define driving_leaves_size = 6.0
 define driving_scrolls_dur = 211
 define driving_leaves_dur = int(driving_leaves_size / driving_scrolls_size * driving_scrolls_dur)
 define credits_dur = int(credits_size / driving_scrolls_size * driving_scrolls_dur)
-define roxbury_pause_dur = 5
-define roxbury_dur = 15
+define dur_per_screen = driving_scrolls_dur / driving_scrolls_size
+define owari_pause_dur = -dur_per_screen * 0.5
+define owari_dur = dur_per_screen
+define roxbury_pause_dur = owari_pause_dur + dur_per_screen + 2.5
+define roxbury_dur = dur_per_screen / 2.0
 
 label scene41a:
     scene bg black
@@ -54,7 +57,24 @@ label scene41a:
         # pos (0.5, -2.0)
         pos (0.25, 1.0)
         linear credits_dur ypos (1.0-credits_size)
-    
+        # c = c+'\n\n'
+    show bg_credits_qrcode:
+        anchor (0.5, 0.0)
+        pos (0.25, 1.0)
+        size (1440.0/4, 1440.0/4)
+        pause dur_per_screen * 1.39
+        linear dur_per_screen * 2.0 ypos -1.0
+    show github_qrcode:
+        anchor (0.5, 0.0)
+        pos (0.25, 1.0)
+        size (1440.0/4, 1440.0/4)
+        pause dur_per_screen * 5.731
+        linear dur_per_screen * 2.0 ypos -1.0
+    show ed_text "{font=[jpfont]}{color=#fff}{size=160}おわり{/size}{/color}{/font}" as owari at truecenter:
+        pos (0.5, 1.5)
+        anchor (0.5, 0.5)
+        pause credits_dur + owari_pause_dur
+        linear owari_dur ypos 0.5
     call roxbury
     show layer roxbury:
         alpha 0.0
@@ -65,13 +85,28 @@ label scene41a:
         alpha 1.0
         linear roxbury_dur ypos -0.5
 
-    pause 10
-    call fx.bgloop_x('bg jersey city cityscape', dur=4.0, transform_=ed.driving_scroll(-10.0, ypos_=0.0))
+    pause 30
+    call fx.bgloop_x('bg jersey city cityscape', dur=4.0, transform_=ed.bg_scroll(-30.0, ypos_=0.0))
     with dissolve # +0.5 sec
-    pause 9.5
+    pause 29.5
+    call fx.bgloop_x('bg alpine landscape', dur=4.0, transform_=ed.bg_scroll(-60.0, ypos_=0.0))
+    with dissolve # +0.5 sec
+    pause 29.5
+    call fx.bgloop_x('bg countryside landscape', dur=4.0, transform_=ed.bg_scroll(-90.0, ypos_=0.0))
+    with dissolve # +0.5 sec
+    pause 29.5
+    call fx.bgloop_x('bg forest landscape', dur=4.0, transform_=ed.bg_scroll(-120.0, ypos_=0.0))
+    with dissolve # +0.5 sec
+    pause 29.5
+    call fx.bgloop_x('bg desert landscape', dur=4.0, transform_=ed.bg_scroll(-150.0, ypos_=0.0))
+    with dissolve # +0.5 sec
+    pause 29.5
+    call fx.bgloop_x('bg countryside sunset', dur=4.0, transform_=ed.bg_scroll(-180.2, ypos_=0.0))
+    with dissolve # +0.5 sec
     # not sure where the extra 0.1 comes from, but it needs to be in the last background change for correct timing
-    call fx.bgloop_x('bg countryside', dur=4.0, transform_=ed.driving_scroll(-20.1, ypos_=0.0))
-    with dissolve
+    #pause 24.5
+    #call fx.bgloop_x('bg countryside', dur=4.0, transform_=ed.bg_scroll(-20.1, ypos_=0.0))
+    #with dissolve
     pause
     pause
     pause
@@ -91,12 +126,17 @@ image ed_text = ParameterizedText(style='ed_text_s')
 #     (1440, 0), Transform('bg countryside', xzoom=-1),
 # ), zoom=0.5)
 
+transform ed.bg_scroll(delay, ypos_):
+    screen_size
+    ed.driving_scroll(delay, ypos_)
+
 transform ed.driving_scroll(delay, ypos_):
     ypos ypos_
     pause (driving_scrolls_dur + delay)
     linear (credits_dur - driving_scrolls_dur) ypos (ypos_+driving_scrolls_size-credits_size)
 
 transform ed.car(delay, ypos_, zoom_=0.3):
+    subpixel True
     zoom zoom_
     xpos 1.3
     # drive on to the screen quickly
@@ -124,7 +164,7 @@ image ed_car = "images/automobile-1300464_1280.png"
 
 label ed.driving(delay):
     # call fx.bgloop_x('ed_bg_driving', dur=4.0, transform_=ed.driving_scroll(delay, ypos_=0.5))
-    call fx.bgloop_x('bg countryside', dur=4.0, transform_=ed.driving_scroll(delay, ypos_=0.0))
+    call fx.bgloop_x('bg countryside', dur=4.0, transform_=ed.bg_scroll(delay, ypos_=0.0))
     show linda smile              at fx.xoffset(-50), ed.car(delay, ypos_=0.84)
     show usagi postgrad happy 1   at fx.xoffset(10), ed.car(delay, ypos_=0.84)
     show takeshi postgrad happy 1 at fx.xoffset(140), ed.car(delay, ypos_=0.86)
@@ -144,9 +184,9 @@ init python:
         # skip the first few lines describing the file to humans
         c ='\n'.join(c.splitlines()[5:])
         c = markdown_to_renpy(c)
-        c = "TODO: credits work in progress. final ones will be much slower, same duration as Welcome to the New World, and hopefully have more backgrounds\n\n"+c
-        # NOPE renpy's default font does not support japanese, gotta find and use one that does for this
-        # c = c+'\n\nおわり'
+        c = c.replace('[Background Image Credits](https://docs.google.com/spreadsheets/d/1Fh0YKSAyx_duHP-MNdtIQqkaKUC9Tv9ZExgeEPl63Ww/edit?usp=drive_link)', '\n'*15+'Background Image Credits')
+        c = c.replace('{b}No generative AI was used to create this show.{/b}', '{b}Visual novel source code{/b}' + '\n'*15 + 'https://github.com/otakuchoir/otaku-oratorio-2026\n(TODO: currently private, make it public closer to show day)\n\n' + '{b}No generative AI was used to create this show.{/b}')
+        # c = "TODO: credits work in progress. final ones will be much slower, same duration as Welcome to the New World, and hopefully have more backgrounds\n\n"+c
         # return Text(c, text_align=0.5)
         return c
 
@@ -160,4 +200,7 @@ init python:
         t = re.sub(r'\\<[Yy]our [Nn]ame [Hh]ere\\>\n', r'', t)
         return t
 
-define ed_credits_text = credits_text(renpy.open_file('images/credits-20260902.md').read().decode('utf-8'))
+# thanks, https://scanqr.org/qr-code-generator/#link
+image bg_credits_qrcode = 'images/bg_credits_qrcode.png'
+image github_qrcode = 'images/github_qrcode.png'
+define ed_credits_text = credits_text(renpy.open_file('images/credits-20260923.md').read().decode('utf-8'))
