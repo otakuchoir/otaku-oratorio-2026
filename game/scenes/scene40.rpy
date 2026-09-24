@@ -116,6 +116,7 @@ label scene40:
     bart "That’s right. I don’t need you getting any closer. Just sit still while-"
     show bart mech as bartglow
     show bart mech shock
+    call fx.log("sound effects sync - missiles are about to hit")
     computer "INCOMING MISSILES"
     # > Missiles bombard the Alexander.
     show bg linda hits as lindahits behind linda, sanders, usagi, jojo:

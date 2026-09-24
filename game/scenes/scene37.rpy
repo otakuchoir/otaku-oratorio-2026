@@ -27,6 +27,7 @@ label scene37:
     jojo "The Ultima Cannon is charging, it’s about to fire."
     show linda mech serious
     linda "Shiva, moving in."
+    call fx.log("sound effects sync - wait 3 seconds; ultima cannon is about to fire")
     queen "Diabolos, right behind you."
 
     # TODO narrating this is a little boring, but I don't have a better way to show who's firing.
