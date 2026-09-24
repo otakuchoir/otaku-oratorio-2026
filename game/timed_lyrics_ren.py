@@ -94,23 +94,23 @@ class LyricsLine:
         return self.next if self.next else LyricsLine(timestamp=self.timestamp, lyric='', subtitle='', timer=self.timer)
 
     @property
-    def lyric_firstline(self):
-        return self.lyric.split('\n')[0] if self.lyric else None
+    def lyric_oneline(self):
+        return self.lyric.replace('\n', ' \\ ') if self.lyric else None
 
     @property
-    def subtitle_firstline(self):
-        return self.subtitle.split('\n')[0]
+    def subtitle_oneline(self):
+        return self.subtitle.replace('\n', ' \\ ')
 
     def render(self, next_line_in=None) -> str:
         next_line_in = next_line_in if next_line_in else datetime.timedelta(seconds=int(self.next_or_empty.timestamp - self.timestamp))
         return f"""
 ### CURRENT LINE - {self.timer.render(elapsed_seconds=self.timestamp)}
-{self.lyric_firstline or '-'}
-{self.subtitle_firstline}
+{self.lyric_oneline or '-'}
+{self.subtitle_oneline}
 
 ### NEXT LINE - IN {str(next_line_in)[2:]}
-{self.next_or_empty.lyric_firstline or '-'}
-{self.next_or_empty.subtitle_firstline}"""
+{self.next_or_empty.lyric_oneline or '-'}
+{self.next_or_empty.subtitle_oneline}"""
 
     def __lt__(self, other: typing.Self) -> bool:
         return self.timestamp < other.timestamp
@@ -128,7 +128,7 @@ class LyricsTimer:
         t = Timer(float(dur))
         if not len(s.strip()):
             raise ValueError('empty lyrics')
-        ls = [LyricsLine.parse(l, t) for l in s.strip().split("\n")]
+        ls = [LyricsLine.parse(l, t) for l in s.strip().split("\n\n")]
 
         n = None
         for l in reversed(ls):

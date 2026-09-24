@@ -10,10 +10,15 @@ class TimedLyricsTest(unittest.TestCase):
     def test_parse(self):
         lt = timed_lyrics_ren.LyricsTimer.parse(18, """
         1.0 the timer has started
+
         3.5 some song lyrics we're hearing...|translated lyrics the audience sees...
+
         6.0 some more song lyrics...
+
         8.5 even more song lyrics...
+
         12.0 almost done with the song...
+
         15.5 last lyric of the song
         """)
         self.assertEqual(len(lt.lyrics), 7)
