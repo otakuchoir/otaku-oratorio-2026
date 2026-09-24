@@ -1,5 +1,5 @@
 #!/bin/bash
 set -eu
 cd "`dirname "$0"`/.."
-# no other tests for now, just linting
 ./bin/lint
+python3 -m unittest discover -p "*_test.py"

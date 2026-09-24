@@ -1,9 +1,8 @@
 """renpy
 
-label timed_lyrics(who, lt, first_line=""):
+label timed_lyrics(who, lt):
     call start_timer(lt)
     call fx.log("\n\nChoir song starting. Lyrics are shown here to help the VN operator, but their timing may be wrong. Listen to the choir!\n\n\n\n\n\n\n")
-    # $ renpy.say(who=who, what=first_line)
     $ lt.say(who=who)
     call clear_timer
     return
@@ -28,8 +27,6 @@ import dataclasses
 import datetime
 import time
 import typing
-CURSOR_UP = """\033[F"""
-CLEAR_LINE = """\033[K"""
 
 @dataclasses.dataclass
 class Timer:
@@ -48,9 +45,8 @@ class Timer:
     def elapsed_seconds(self) -> float:
         return min(self.end_seconds, self.now - self.start_at)
 
-    @property
-    def elapsed_percent(self) -> float:
-        return max(0.0, min(1.0, float(int(self.elapsed_seconds)) / self.end_seconds))
+    def elapsed_percent(self, elapsed_seconds: float = None) -> float:
+        return max(0.0, min(1.0, float(int(elapsed_seconds if elapsed_seconds is not None else self.elapsed_seconds)) / self.end_seconds))
         
     @property
     def elapsed_td(self) -> datetime.timedelta:
@@ -59,32 +55,24 @@ class Timer:
     @property
     def end_td(self) -> datetime.timedelta:
         return datetime.timedelta(seconds=int(self.end_seconds))
+
+    def render(self, elapsed_seconds=None):
+        elapsed_td = datetime.timedelta(seconds=int(elapsed_seconds)) if elapsed_seconds is not None else self.elapsed_td
+        return f"{str(elapsed_td)[2:]} / {str(self.end_td)[2:]} ({self.elapsed_percent(elapsed_seconds):3,.0%})"
     
     def __str__(self):
-        return f"{str(self.elapsed_td)[2:]} / {str(self.end_td)[2:]} ({self.elapsed_percent:3,.0%})"
-
-@dataclasses.dataclass
-class LogTimer:
-    timer: Timer
-    last_printed = None
-
-    def tick(self):
-        self.timer.tick()
-        s = str(self.timer)
-        if self.last_printed != s:
-            # print(f"{CURSOR_UP}\r{CLEAR_LINE}{s}", flush=True)
-            print(f"{CLEAR_LINE}{s}", end="\r", flush=True)
-            self.last_printed = s
+        return self.render()
 
 @dataclasses.dataclass
 class LyricsLine:
     timestamp: float
     lyric: str | None
     subtitle: str
+    timer: Timer
     next: typing.Self | None = None
 
     @staticmethod
-    def parse(s: str) -> "LyricsLine":
+    def parse(s: str, t: Timer) -> "LyricsLine":
         """
         format: `timestamp sound[|subtitles]`
 
@@ -99,11 +87,11 @@ class LyricsLine:
             lyric, subtitle = l.split('|', 1)
         except ValueError:
             lyric, subtitle = None, l
-        return LyricsLine(float(dur), lyric.strip() if lyric else lyric, subtitle.strip())
+        return LyricsLine(float(dur), lyric.strip() if lyric else lyric, subtitle.strip(), t)
 
     @property
     def next_or_empty(self):
-        return self.next if self.next else LyricsLine(timestamp=self.timestamp, lyric='', subtitle='')
+        return self.next if self.next else LyricsLine(timestamp=self.timestamp, lyric='', subtitle='', timer=self.timer)
 
     @property
     def lyric_firstline(self):
@@ -115,34 +103,38 @@ class LyricsLine:
 
     def render(self, next_line_in=None) -> str:
         next_line_in = next_line_in if next_line_in else datetime.timedelta(seconds=int(self.next_or_empty.timestamp - self.timestamp))
-        return f"""{self.lyric_firstline or '-'}
+        return f"""
+### CURRENT LINE - {self.timer.render(elapsed_seconds=self.timestamp)}
+{self.lyric_firstline or '-'}
 {self.subtitle_firstline}
 
-next line in {str(next_line_in)[2:]}:
+### NEXT LINE - IN {str(next_line_in)[2:]}
 {self.next_or_empty.lyric_firstline or '-'}
 {self.next_or_empty.subtitle_firstline}"""
 
     def __lt__(self, other: typing.Self) -> bool:
         return self.timestamp < other.timestamp
 
+    def __str__(self):
+        return self.render()
+
 @dataclasses.dataclass
 class LyricsTimer:
     timer: Timer
     lyrics: list[LyricsLine]
-    last_printed = None
 
     @staticmethod
     def parse(dur: float, s: str) -> "LyricsTimer":
         t = Timer(float(dur))
-        ls = [LyricsLine.parse(l) for l in s.strip().split("\n")]
-        if not len(ls):
+        if not len(s.strip()):
             raise ValueError('empty lyrics')
+        ls = [LyricsLine.parse(l, t) for l in s.strip().split("\n")]
 
         n = None
         for l in reversed(ls):
             l.next = n
             n = l
-        ls = [LyricsLine(timestamp=0.0, lyric='', subtitle='', next=ls[0])] + ls
+        ls = [LyricsLine(timestamp=0.0, lyric='', subtitle='', next=ls[0], timer=t)] + ls
         sort = sorted(ls)
         if (str(ls) != str(sort)):
             raise ValueError('timed lyrics must be in order')
@@ -150,34 +142,10 @@ class LyricsTimer:
             raise ValueError(f"song duration ({dur}) is less than last lyric's timestamp ({ls[-1].timestamp})")
         return LyricsTimer(t, ls)
 
-    @property
-    def subs_list(self) -> list[str]:
-        return [l.subtitle for l in self.lyrics]
-
-    @property
-    def subs_block(self) -> str:
-        return "\n\n".join(self.subs_list)
-
     def say(self, who) -> None:
         for l in self.lyrics:
+            print(l)
             renpy.say(who=who, what=l.subtitle) # type: ignore
-
-    def __str__(self):
-        l = self.get_at(self.timer.elapsed_seconds, LyricsLine(0.0, '', '', next=self.lyrics[0]))
-        # elapsed = l.timestamp if True else self.timer.elapsed_seconds # type: ignore
-        # The web build prints less because we can't draw over the old timer
-        elapsed = l.timestamp if renpy.variant('web') else self.timer.elapsed_seconds # type: ignore
-        n = datetime.timedelta(seconds=int(l.next.timestamp - elapsed)) if l.next else datetime.timedelta(seconds=0)
-        t = f"{str(datetime.timedelta(seconds=int(elapsed)))[2:]} / {str(self.timer.end_td)[2:]}"
-        return f"""{t}\n{l.render(next_line_in=n)}"""
-
-    def get_at(self, t: float, default_=None) -> LyricsLine | None:
-        return next((l for l in reversed(self.lyrics) if t > l.timestamp), default_)
 
     def tick(self):
         self.timer.tick()
-        s = str(self)
-        if self.last_printed != s:
-            # print(f"{CURSOR_UP}\r{CLEAR_LINE}{s}", flush=True)
-            print(f"{CURSOR_UP}\r{CLEAR_LINE}"*7 + s, flush=True)
-            self.last_printed = s
