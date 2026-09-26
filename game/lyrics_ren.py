@@ -82,7 +82,7 @@ class SongLine:
 
 @dataclasses.dataclass
 class Song:
-    who: renpy.character # type: ignore
+    who: 'Character' # type: ignore
     raw_lyrics: list[Line]
     num_measures: int | None = None
     num_seconds: float | None = None
