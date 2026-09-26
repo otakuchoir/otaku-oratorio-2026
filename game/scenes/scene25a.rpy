@@ -1,4 +1,3 @@
-define lyrics_baka = "Baka Mitai (I've Been a Fool)"
 define baka_slide_dur = 30.0
 label scene25a: 
     #scene bg training room
@@ -8,56 +7,36 @@ label scene25a:
     # https://yakuza.fandom.com/wiki/Baka_Mitai_(I've_Been_a_Fool)#Literal_English_Lyrics
     # https://drive.google.com/drive/folders/12Prt24uo9QsDzge6yTZqS_DSEirzdUoB
     call scene25a.slide01
-    lyrics_baka ""
-    lyrics_baka """
-    I've been a fool; how childish\nWent chasing a dream and got hurt\nPoorly disguised behind a joyless smile
-
-    \"I love you\" is hardly ever said\nTongue-tied and downright self-conscious
-
-    But even so, even so, why is it\n\"Goodbye\" came so naturally?
-    """
+    call say_song_line(song_baka, 0)
+    call say_song_line(song_baka, 1)
+    call say_song_line(song_baka, 2)
+    call say_song_line(song_baka, 3)
+    
 
     call scene25a.slide02
-    lyrics_baka """
-    It's no use, no use, no use at all\nI love you, I love you far too much
-
-    No matter how strong the drink\nThe memories don't fade—what a fool
-
-    I've been a fool; honestly, what a fool\nFilled to the brim with faith in you
-    """
+    call say_song_line(song_baka, 4)
+    call say_song_line(song_baka, 5)
+    call say_song_line(song_baka, 6)
 
     call scene25a.slide03
-    lyrics_baka """
-    I play the part of the strong woman\nand bathe in the suffocating night air
-    
-    Since I've been alone, three years have passed\nEven the city streets have changed
-    
-    But even so, even so, why is it\nI'm still left behind in the past?
-    """
+    call say_song_line(song_baka, 7)
+    call say_song_line(song_baka, 8)
+    call say_song_line(song_baka, 9)
 
     call scene25a.slide04a
-    lyrics_baka """
-    Really, you're a no-good man, no good at all\nMy matching ring, I take it off
-    
-    Serves you right! I'm relieved\nYet naively I still wait—what a fool
-    """
+    call say_song_line(song_baka, 10)
+    call say_song_line(song_baka, 11)
+    call say_song_line(song_baka, 12)
 
     call scene25a.slide04b
-    lyrics_baka """
-    It's no use, no use, no use at all\nI love you, I love you far too much
-
-    No matter how strong the drink\nThe memories don't fade—what a fool
-    """
+    call say_song_line(song_baka, 13)
+    call say_song_line(song_baka, 14)
 
     call scene25a.slide05a
-    lyrics_baka """
-    Really, you're a no-good man, no good at all\nMy matching ring, I take it off
-    """
+    call say_song_line(song_baka, 15)
     
     call scene25a.slide05b
-    lyrics_baka """
-    Serves you right! I'm relieved\nSo then what are they, these tears—what a fool
-    """
+    call say_song_line(song_baka, 16, last=True)
     #scene bg training room with dissolve
     #show moba:
     #    zoom 0.3
@@ -90,21 +69,56 @@ label scene25a:
     #    # xalign 0.5
     #    # yalign 0.0
     #pause
-
-    #title "Baka Mitai (I've been a fool)"
-    #verse1 "I've been a fool; how childish\nWent chasing a dream and got hurt\nPoorly disguised behind a joyless smile"
-    #prechorus "\"I love you\" is hardly ever said\nTongue-tied and downright self-conscious\nBut even so, even so, why is it\n\"Goodbye\" came so naturally?"
-    #chorus "It's no use, no use, no use at all\nI love you, I love you far too much\nNo matter how strong the drink\nThe memories don't fade—what a fool"
-
-    #nvl clear
-    #verse2 "I've been a fool; honestly, what a fool\nFilled to the brim with faith in you\nI play the part of the strong woman and bathe in the suffocating night air"
-    #prechorus "Since I've been alone, three years have passed\nEven the city streets have changed\nBut even so, even so, why is it\nI'm still left behind in the past?"
-    #chorus "Really, you're a no-good man, no good at all\nMy matching ring, I take it off\nServes you right! I'm relieved\nYet naively I still wait—what a fool"
-
-    #nvl clear
-    #chorus "It's no use, no use, no use at all\nI love you, I love you far too much\nNo matter how strong the drink\nThe memories don't fade—what a fool"
-    #chorus "Really, you're a no-good man, no good at all\nMy matching ring, I take it off\nServes you right! I'm relieved\nSo then what are they, these tears—what a fool"
     return
+
+define song_baka = Song(Character("Baka Mitai (I've Been a Fool)"), [
+    Line("I've been a fool; how childish\nWent chasing a dream and got hurt\nPoorly disguised behind a joyless smile",
+        "Baka mitai kodomo na no ne\nYume wo otte kizutsuite\nUso ga heta na kuse ni waraenai egao miseta",
+        at_measure=5),
+    Line("\"I love you\" is hardly ever said\nTongue-tied and downright self-conscious",
+        "\"I love you\" mo roku ni iwanai\nKuchi beta de honma ni bukiyou",
+        at_measure=14),
+    Line("But even so, even so, why is it\n\"Goodbye\" came so naturally?",
+        "Na no ni na no ni doushite\nSayonara wa ieta no",
+        at_measure=18),
+    Line("It's no use, no use, no use at all\nI love you, I love you far too much",
+        "Dame dane dame yo dame na no yo\nanta ga suki de suki sugite",
+        at_measure=22),
+    Line("No matter how strong the drink\nThe memories don't fade—what a fool",
+        "Dore dake tsuyoi o sa kedemo\nYugamanai omoide ga - baka mitai",
+        at_measure=26),
+    Line("I've been a fool; honestly, what a fool\nFilled to the brim with faith in you",
+        "Baka mitai honto baka ne\nAnta shinjiru bakari de",
+        at_measure=35),
+    Line("I play the part of the strong woman\nand bathe in the suffocating night air",
+        "Tsuyoi onna no furi setsunasa no yo kaze abiru",
+        at_measure=39),
+    Line("Since I've been alone, three years have passed\nEven the city streets have changed",
+        "hitori ni natte san nen ga sugi\nmachinami sae mo kawarimashita",
+        at_measure=43),
+    Line("But even so, even so, why is it\nI'm still left behind in the past?",
+        "Nanoni nanoni doushite\nMiren dake okizari",
+        at_measure=47),
+    Line("Really, you're a no-good man, no good at all\nMy matching ring, I take it off",
+        "Honma ni roku na otoko ya nai\nSoroi no yubiwa hazushimasu",
+        at_measure=51),
+    Line("Serves you right! I'm relieved\nYet naively I still wait—what a fool",
+        "Zamaa miro seisei suru wa\nIi kagen mattete mo baka mitai",
+        at_measure=55),
+    Line("", "(bridge)", at_measure=59),
+    Line("It's no use, no use, no use at all\nI love you, I love you far too much",
+        "Dame da ne dame yo dame na no yo\nAnta ga suki de suki sugite",
+        at_measure=66),
+    Line("No matter how strong the drink\nThe memories don't fade—what a fool",
+        "Dore dake tsuyoi osake demo\nYugamanai omoide ga baka mitai",
+        at_measure=70),
+    Line("Really, you're a no-good man, no good at all\nMy matching ring, I take it off",
+        "Honma ni roku na otoko ya nai\nSoroi no yubiwa hazushimasu",
+        at_measure=75),
+    Line("Serves you right! I'm relieved\nSo then what are they, these tears—what a fool",
+        "Zamaa miro seisei suru wa\nNanna no yo kono namida baka mitai",
+        at_measure=79),
+], num_measures=88)
 
 init python:
     import dataclasses

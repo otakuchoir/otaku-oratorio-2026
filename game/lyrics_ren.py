@@ -55,6 +55,13 @@ class SongLine:
                 ats.append(f"??:?? / {str(datetime.timedelta(seconds=int(self.song.num_seconds)))[2:]}")
             case (_, _):
                 ats.append(f"{str(datetime.timedelta(seconds=int(self.line.at_seconds)))[2:]} / {str(datetime.timedelta(seconds=int(self.song.num_seconds)))[2:]}")
+        try:
+            n = self.song.lyrics.index(self) 
+            # zero-index line numbers, even though they're for human viewing, because the first line is blank
+            ats.append(f"L.{n} / {len(self.song.lyrics)-1}")
+        except ValueError:
+            # the last line's "next" won't be in the list of lyrics, that's fine, ignore it
+            pass
         return ', '.join(a for a in ats if a is not None)
 
     @property
