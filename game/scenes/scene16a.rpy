@@ -6,6 +6,7 @@ label scene16a:
     scene bg scene16 1 nofg with dissolve
     # show bg scene16 1 with dissolve
 
+    call scene16.credits
     # no characters are showing - the attributes here control the side images
     takeshi postgrad neutral "The readings align... This is the wave pattern... I’m pinging the squad."
     # > A deafening sound rings over comms, this isn’t a ping. It’s
@@ -64,7 +65,6 @@ label scene16a:
     show usagi mech postgrad neutral at left, flip, fx.yoffset(300) behind credits_left, credits_right
     with dissolve
 
-    call scene16.credits
     bart scheming "At last!"
     # dim versions of these on purpose. focus on the crystal!
     show takeshi mech postgrad neutral behind credits_left, credits_right:
@@ -130,14 +130,10 @@ style ed_who:
 
 init python:
     scene16_credits_txt = [
-        ("\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}", "\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}"),
-        ("\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}", "\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Lopez{/}"),
-        ("\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}", ""),
-        ("", "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}"),
-        ("\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}", "\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}"),
-        ("\n\n{=ed_role}Logo Design{/}\n{=ed_who}Abraham \"AJ\" Lopez{/}", ""),
-        ("\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Lopez{/}", "\n\n\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}"),
-        ("\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}", "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}"),
+        ("\n\n{=ed_role}Director{/}\n{=ed_who}Danny{/}\n\n{=ed_role}Assistant Director{/}\n{=ed_who}Silvia{/}", "\n\n{=ed_role}Writer{/}\n{=ed_who}Johnathan Gibbs{/}"),
+        ("\n\n{=ed_role}BGM Music Supervisor{/}\n{=ed_who}Nathan Li{/}\n\n{=ed_role}BGM Assistant Supervisor{/}\n{=ed_who}Abraham \"AJ\" Lopez{/}", "\n\n{=ed_role}Sound Effects Supervisors{/}\n{=ed_who}Ko Tanaka\nNathan Li{/}"),
+        ("\n\n{=ed_role}Visual Novel Operator{/}\n{=ed_who}Kyle Navarro{/}\n\n{=ed_role}Visual Novel Engineer/Animator{/}\n{=ed_who}Evan Rosson{/}", "\n\n{=ed_role}Sprite Artist{/}\n{=ed_who}Pierce{/}"),
+        ("\n\n{=ed_role}Eyecatches{/}\n{=ed_who}Miffy\nAbraham \"AJ\" Lopez{/}\n\n{=ed_role}Manga Panelist{/}\n{=ed_who}Alice{/}", "\n\n{=ed_role}Scene Artists{/}\n{=ed_who}Shiana\nElaine\nConnor \"Bear\" Barre\nMiffy{/}"),
     ]
     for i, (tl, tr) in enumerate(scene16_credits_txt):
         renpy.image(f"scene16 credits{i+1:02d} left", Text(tl, style="op_text_s"))
@@ -148,83 +144,51 @@ init python:
 label scene16.credits:
     # call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
     show scene16 credits01 left as credits_left:
-        anchor (0.5, 0.5)
-        pos (0.18, 0.35)
+        anchor (0.5, 0.0)
+        pos (0.18, 0.22)
         # there must be a better way to do this, but hell if I know what it is. DynamicImage, I think - but where's the sleep() go?
         alpha 0.0
         # pause 3.0
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits01 left"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits02 left"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits03 left"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits04 left"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits05 left"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits06 left"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits07 left"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits08 left"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
     show scene16 credits01 right as credits_right:
-        anchor (0.5, 0.5)
-        pos (0.82, 0.35)
+        anchor (0.5, 0.0)
+        pos (0.82, 0.22)
         # there must be a better way to do this, but hell if I know what it is. DynamicImage, I think - but where's the sleep() go?
         alpha 0.0
         # pause 3.0
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits01 right"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits02 right"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits03 right"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
         "scene16 credits04 right"
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
         pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits05 right"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits06 right"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits07 right"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
-        "scene16 credits08 right"
-        linear 0.5 alpha 1.0
-        pause scene16_credits_dur
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
     #with dissolve
     #pause
     #show op_text  at top
