@@ -1,6 +1,6 @@
 # scene 05 sprites: https://otaku-oratorio-2026-gallery.netlify.app/?t=takeshi&t=sanders&t=usagi&t=jojo&t=bart
 label scene05:
-    scene bg campus
+    scene bg campus with fade
     call fx.play_music_in_dev("bgm_008_innocent_boy__free_iwatobi_swim_club.opus")
 
     # slide onto the screen from the right
