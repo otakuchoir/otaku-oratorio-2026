@@ -1,7 +1,7 @@
 # eyecatch direction: https://discord.com/channels/1307031043915911278/1308533742209335336/1544806536621064283
 # copied into the comments/placeholders below
 init python:
-    for i in [6, 11]:
+    for i in [2, 5, 6, 11]:
         load_image(f'eyecatch {i:02d}', f'assets/Eyecatches/eyecatch{i:02d}.png') # type: ignore
 
 label eyecatch01:
@@ -11,7 +11,9 @@ label eyecatch01:
     return
 label eyecatch02:
     scene black with fade
-    "PLACEHOLDER eyecatch02. Between 4/5 - what ultima ore is, what happens when you mine it/ strike it (it makes a ringing sound that nobody can explain), the people of NJ refuse to go to work"
+    show eyecatch 02 at truecenter, screen_size
+    with fade
+    pause
     scene black with fade
     return
 label eyecatch03:
@@ -26,7 +28,9 @@ label eyecatch04:
     return
 label eyecatch05:
     scene black with fade
-    "PLACEHOLDER eyecatch05. Between 11/12 - Kelisha centric eyecatch, hint at the existence of a resistance, but make it more about her.... and the fact that she works for the Crown and is an officer............. "
+    show eyecatch 05 at truecenter, screen_size
+    with fade
+    pause
     scene black with fade
     return
 
