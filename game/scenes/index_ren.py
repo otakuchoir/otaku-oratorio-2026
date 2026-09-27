@@ -20,7 +20,9 @@ class S:
 scenes = [
     ### Act 1
     # S('gen_scene01', 'Preshow'),
-    S('scene02',  'Memorial Monster Commercial; SONG: Fumetsu no Hero'),
+    S('scene02',  'Memorial Monster Commercial 1'),
+    S('scene02a',  'SONG: Fumetsu no Hero'),
+    S('scene02b',  'Memorial Monster Commercial 2'),
     S('eyecatch01', 'Kohei Propaganda'),
     S('scene03',  'Initial Training Battle'),
     S('scene03a', 'IRL: Opening Transition; SONG: Butter-Fly'),
@@ -42,7 +44,9 @@ scenes = [
     S('scene12',  'Arriving on Earth'),
     S('scene12a',  'SONG: Shanghai Tan'),
     S('scene12b',  'New Jersey News Report'),
-    S('scene13',  'New Jersey Negotiations. SONG: Lilium; MANGA: Destruction of New Jersey'),
+    S('scene13',  'New Jersey Negotiations'),
+    S('scene13a', 'SONG: Lilium; MANGA: Destruction of New Jersey'),
+    S('scene13b', 'After the Destruction of New Jersey'),
     S('eyecatch06', 'Ultima Cannon'),
     S('scene14',  'Graduation Day'),
     S('scene15',  'Mission Briefing'),

@@ -35,6 +35,9 @@ transform anchor_sprite:
 transform screen_size:
     fit "contain"
     size screen_dim
+transform textbox_screen_size:
+    fit "contain"
+    size textbox_screen_dim
 
 init python:
 """
@@ -157,6 +160,7 @@ if not last_updated: raise Exception("couldn't find latest version number from c
 #    but they break if used for the main screen background for whatever reason
 logo_dim = (2804, 1558)
 screen_dim = (1440, 1080)
+textbox_screen_dim = (1440, 880)
 renpy.image('bg mainmenu', Flatten(Transform(Composite( # type: ignore
     (int(screen_dim[0]*2.5), int(screen_dim[1]*2.5)),
     (0,0), Solid('#e7dbc7'), # type: ignore

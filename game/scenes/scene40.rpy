@@ -164,6 +164,7 @@ label scene40:
     hide sanders
     hide jojo
 
+    call fx.log("choir starts singing smash bros here (I think - currently uncertain)")
     show bart mech angry 1 at flip, fx.hover(3.7)
     show linda mech serious at center, fx.hover(1.3), fx.ease_xoffset(dur=1.0, x0=1000), fx.ease_yoffset(dur=1.0, y0=500)
     show kelisha mech happy
