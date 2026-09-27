@@ -139,7 +139,7 @@ init python:
         renpy.image(f"scene16 credits{i+1:02d} left", Text(tl, style="op_text_s"))
         renpy.image(f"scene16 credits{i+1:02d} right", Text(tr, style="op_text_s"))
     # length each line of credits is on screen = total length of credits / number of lines
-    scene16_credits_dur = 60.0 / len(scene16_credits_txt)
+    scene16_credits_dur = 5.0
 
 label scene16.credits:
     # call fx.log("Ragnarok is playing. Try to match the end of the credits to the end of the song. 13 more clicks until the end of these credits.")
