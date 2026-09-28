@@ -45,9 +45,7 @@ define song_floatingmoon = Song(Character("Floating Moon on the Water"), [
     Line("The moon and the stars\nhave gone to darkness,\nAnd the floating moon on the water has gone away.",
         "tshinn-kun sit kong-bing gueh-niu\nbih jip-khi tsah thinn e hun\ntsui-bin gueh-iann bo te sun",
         at_measure=39),
-    Line("",
-        "",
-        at_measure=43),
+    Line("", "", at_measure=43),
     Line("Floating moon on the water;\nSparkling was the moon shadow",
         "phu ti tsui-bin e gueh-iann\nsiam-siam-sih-sih in gua sim-thiann",
         at_measure=52),
@@ -78,4 +76,8 @@ define song_floatingmoon = Song(Character("Floating Moon on the Water"), [
     Line("The moon and the stars\nhave gone to darkness,\nAnd the floating moon on the water has gone away.",
         "tshinn-kun sit kong-bing gueh-niu\nbih jip-khi tsah thinn e hun\ntsui-bin gueh-iann bo te sun",
         at_measure=98),
-    ], num_measures=102)
+    ], """
+Lyrics/Music: Wei-Pin Chen
+Arrangement: Eric Liu
+Taiwanese
+""", num_measures=102)

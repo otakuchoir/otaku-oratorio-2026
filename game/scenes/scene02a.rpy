@@ -79,4 +79,10 @@ define song_fumetsu = Song(Character("Fumetsu no Hero (Immortal Hero)"), [
     Line("K.A.I.T.O, rise up!\nSEAJETTER... SEAJETTER KAITO!",
         "K.A.I.T.O tachiagare!\nSEAJETTER... SEAJETTER KAITO!",
         at_measure=165),
-], num_measures=181)
+], """
+From: SeaJetter KAITO
+Music, Lyrics: Masaaki Endo
+Original Arrangement: Kenji Yamamoto
+Arrangement: Ko Tanaka (NYC Otaku Choir)
+Translation from Japanese: Google Translate
+""", num_measures=181)

@@ -118,7 +118,13 @@ define song_baka = Song(Character("Baka Mitai (I've Been a Fool)"), [
     Line("Serves you right! I'm relieved\nSo then what are they, these tears—what a fool",
         "Zamaa miro seisei suru wa\nNanna no yo kono namida baka mitai",
         at_measure=79),
-], num_measures=88)
+], """
+From: Yakuza: Like a Dragon
+Composition: Mitsuharu Fukuyama
+Lyrics: Ryosuke Horii
+Arrangement: Yulin Ni (NYC Otaku Choir)
+Translation: https://yakuza.fandom.com/wiki/Baka_Mitai
+""", num_measures=88)
 
 init python:
     import dataclasses

@@ -47,4 +47,9 @@ define song_weight = Song(Character("Weight of the World"), [
         at_measure=65),
     Line("Maybe if I keep believing\nMy dreams will come to life\nCome to life",
         at_measure=69),
-], num_measures=77)
+], """
+From: Nier: Automata
+Composer: Keiichi Okabe
+Lyrics: Keiichi Okabe and J'Nique Nicole
+Arrangement: Sophia Chan (NYC Otaku Choir)
+""", num_measures=77)

@@ -69,4 +69,9 @@ define song_destati = Song(Character("Destati (Awaken)"), [
     Line("What you have lost\nWill become one!",
         "Ciò che hai perduto\nDiventerà uno solo!",
         at_measure=93),
-], num_measures=101)
+], """
+From: Kingdom Hearts
+Music: Yoko Shimomura
+Arrangement: Joel Scianna
+Translation from Italian: https://www.khwiki.com/Destati
+""", num_measures=101)

@@ -14,10 +14,9 @@ define credits_text_size = float(credits_text_lines) / lines_per_screen
 define credits_size = credits_text_size + 2.0
 define driving_scrolls_size = credits_size - 1.0
 define driving_leaves_size = driving_scrolls_size + 0.5
-# TODO: we're singing "welcome to the new world" here, so duration should be a bit longer than that.
+# we're singing "welcome to the new world" here, so duration should be a bit longer than that.
 # but... that's so slow during dev. lines below speed things up for dev
-# define driving_scrolls_dur = driving_scrolls_size * 4.0
-# define driving_scrolls_dur = driving_scrolls_size * 8.0
+# define driving_scrolls_dur = 10
 #
 # Welcome To the New World is 3:31 = 180 + 31 = 211 seconds. driving should start scrolling right at the end of that
 # https://drive.google.com/drive/folders/1Qku19Yo1G2XxDiu4NmdUiW_spwPMx6mh
@@ -202,7 +201,6 @@ init -1 python:
         c = markdown_to_renpy(c)
         # c = c.replace('[Background Image Credits](https://docs.google.com/spreadsheets/d/1Fh0YKSAyx_duHP-MNdtIQqkaKUC9Tv9ZExgeEPl63Ww/edit?usp=drive_link)', '\n'*15+'Background Image Credits')
         c = c.replace('{b}No generative AI was used to create this show.{/b}', '{b}Visual novel source code{/b}\nhttps://github.com/otakuchoir/otaku-oratorio-2026\n(TODO: currently private, make it public closer to show day)\n\n' + '{b}No generative AI was used to create this show.{/b}')
-        # c = "TODO: credits work in progress. final ones will be much slower, same duration as Welcome to the New World, and hopefully have more backgrounds\n\n"+c
         # return Text(c, text_align=0.5)
         return c
 

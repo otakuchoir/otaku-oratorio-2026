@@ -56,4 +56,10 @@ define song_shanghai = Song(Character("Shanghai Tan (Shanghai Beach)"), [
         "jing jyun faan baak cin long zoi ngo sam zung hei fuk gau",
         at_measure=51),
     # repeats once more at 55, but no need to display that
-], num_measures=60)
+], """
+From: The Bund (TV series)
+Music: Joseph Koo  
+Arrangement: Cherie Chai
+Translation from Cantonese:
+https://lyricstranslate.com/en/shang-hai-tan-shanghai-beach.html
+""", num_measures=60)

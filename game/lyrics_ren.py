@@ -84,12 +84,17 @@ class SongLine:
 class Song:
     who: 'Character' # type: ignore
     raw_lyrics: list[Line]
+    _credits: str | None = None
     num_measures: int | None = None
     num_seconds: float | None = None
 
     @property
+    def credits(self) -> str | None:
+        return f"{{i}}{self._credits.strip()}{{/i}}" if self._credits is not None else None
+
+    @property
     def lyrics(self):
-        cur = SongLine(self, Line('', '',
+        cur = SongLine(self, Line(self.credits or '', '',
             at_measure=0 if self.num_measures is not None else None,
             at_seconds=0 if self.num_seconds is not None else None,
         ))

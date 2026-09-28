@@ -87,4 +87,10 @@ define song_lilium = Song(Character("Lilium"), [
     Line("O how saintly, how serene, how benign, how amene\nO chastity's Lily",
         "O quam sancta, quam serena, quam benigma, quam amoena\nO castitatis lilium",
         at_measure=51),
-], num_measures=56, num_seconds=4*60+20)
+], """
+From: Elfen Lied
+Kayo Konishi & Yukio Kondo
+Arrangement: Anthony Merolla (NYC Otaku Choir)
+Translation from Japanese:
+https://genius.com/Kumiko-noma-lilium-lyrics
+""", num_measures=56, num_seconds=4*60+20)

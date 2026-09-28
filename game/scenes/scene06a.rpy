@@ -74,4 +74,10 @@ define song_hana = Song(Character("Hana ni Natte (Like a Flower)"), [
     Line("Take it easy - your darkness is my light\nI’ll give you love, so smile",
         "Raku ni shite kimi no yami wa watashi no hikari tte\nAishite ageru kara waratte",
         at_measure=142),
-], num_measures=157)
+], """
+From: The Apothecary Diaries (Opening)
+Lyrics: Haruko Nagaya
+Music: Shingo Anami
+Arrangement: Kosuke Negishi
+Translation from Japanese: Yulin Ni (NYC Otaku Choir)
+""", num_measures=157)

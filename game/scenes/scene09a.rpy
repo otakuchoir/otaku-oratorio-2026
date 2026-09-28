@@ -68,4 +68,10 @@ define song_sailormoon = Song(Character("Moonlight Densetsu (Moonlight Legend)")
     Line("We were born on the same planet\nThis is the miracle of romance\nI believe in it, this is the miracle of romance",
         "Onaji kuni ni umaretano\nMirakuru romansu\nShinjite iruno mirakuru romansu",
         at_measure=91),
-], num_measures=99)
+], """
+From: Sailor Moon (Opening)
+Original: DALI
+Choral Arrangement: Yulin Ni (NYC Otaku Choir)
+Translation from Japanese:
+https://genius.com/Dali-jpn-moonlight-legend-lyrics
+""", num_measures=99)

@@ -76,4 +76,10 @@ define song_silhouette = Song(Character("Silhouette"), [
         "Hirari to hirari to matteru\nKonoha ga tonde yuku",
         at_measure=149),
     Line("", "", at_measure=155),
-], num_measures=174)
+], """
+From: Naruto: Shippuden
+Music by: KANA-BOON
+Arrangement by: Ko Tanaka (NYC Otaku Choir)
+Translation from Japanese:
+https://genius.com/Kana-boon-silhouette-lyrics
+""", num_measures=174)

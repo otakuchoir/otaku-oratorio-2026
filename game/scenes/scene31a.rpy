@@ -44,4 +44,9 @@ define song_soto = Song(Character("Soto (Outside)"), [
     Line("I love the outdoors\nI want to go outside\nThe colors change outside and I love it",
         "Soto ga daisukida soto ni detai soto wa iro ga kawatte daisukida",
         at_measure=69),
-], num_measures=73)
+], """
+Music: Hakushi Hasegawa
+Arrangement: Ko Tanaka (NYC Otaku Choir)
+Translation from Japanese:
+https://genius.com/Hakushi-hasegawa-outside-soto-lyrics
+""", num_measures=73)
