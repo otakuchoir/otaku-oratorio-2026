@@ -56,10 +56,10 @@ label scene37:
     linda "NO!"
     jojo "ABORT ABORT! THE BLAST RADIUS IT-"
 
-    show linda at flip, fx.ease_ypos(dur=2, y1=0.0), fx.ease_xoffset(dur=2, x1=1000)
-    show queen at flip, fx.ease_ypos(dur=4, y1=2.0), fx.ease_xoffset(dur=2, x1=1300)
-    show bart at flip, fx.ease_ypos(dur=5, y1=0.0), fx.ease_xoffset(dur=2, x1=1000)
-    show jojo at flip, fx.ease_ypos(dur=3, y1=2.0), fx.ease_xoffset(dur=2, x1=1000)
+    show linda flip at fx.ease_ypos(dur=2, y1=0.0), fx.ease_xoffset(dur=2, x1=1000)
+    show queen flip at fx.ease_ypos(dur=4, y1=2.0), fx.ease_xoffset(dur=2, x1=1300)
+    show bart flip at fx.ease_ypos(dur=5, y1=0.0), fx.ease_xoffset(dur=2, x1=1000)
+    show jojo flip at fx.ease_ypos(dur=3, y1=2.0), fx.ease_xoffset(dur=2, x1=1000)
     queen "Everyone get the hell outta dodge RIGHT NOW!"
     scene bg black with dissolve
     hide bg2 onlayer screens

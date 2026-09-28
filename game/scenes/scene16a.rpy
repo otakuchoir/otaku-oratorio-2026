@@ -36,7 +36,7 @@ label scene16a:
     pause 0
     show bg scene16 3 nofg with dissolve
     pause
-    show usagi mech postgrad neutral at left, flip, fx.ease_xoffset(2.0, x0=-600), fx.yoffset(300) behind credits_left, credits_right
+    show usagi mech postgrad neutral flip at left, fx.ease_xoffset(2.0, x0=-600), fx.yoffset(300) behind credits_left, credits_right
         # zoom 0.10
         # pos (0.1, -0.3)
         # ease 3.0 zoom 0.4 pos (0.2, 0.26)
@@ -62,18 +62,16 @@ label scene16a:
     pause 0.5
     # show
     show bg scene16 3 nofg
-    show usagi mech postgrad neutral at left, flip, fx.yoffset(300) behind credits_left, credits_right
+    show usagi mech postgrad neutral flip at left, noflip, fx.yoffset(300) behind credits_left, credits_right
     with dissolve
 
     bart scheming "At last!"
     # dim versions of these on purpose. focus on the crystal!
-    show takeshi mech postgrad neutral behind credits_left, credits_right:
-        flip
+    show takeshi mech postgrad neutral flip behind credits_left, credits_right:
         zoom 0.2
         pos (0.20, 0.26)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))
-    show sanders mech postgrad neutral behind credits_left, credits_right:
-        flip
+    show sanders mech postgrad neutral flip behind credits_left, credits_right:
         zoom 0.2
         pos (0.30, 0.23)
         fx.ease_xyoffset(5.0, xy0=(-800, -100))

@@ -16,10 +16,10 @@ label scene03:
     # sanders steps forward, ready to engage...
     show sanders mech happy at center with ease
     # ...then turns around for a moment to talk to takeshi
-    show sanders at center, flip
+    show sanders flip
     sanders "Takeshi, watch my six, I’m going in."
 
-    show sanders at center, noflip
+    show sanders -flip
     takeshi "We lost sight of their third... their support-"
     sanders mech eyeroll "The hell can a support do in this situation? I’m going in."
 
@@ -61,7 +61,7 @@ label scene03:
 
     # takeshi faces sanders to argue, while usagi's slowly getting pissed
     show usagi mech exasperated
-    show takeshi mech neutral at noflip
+    show takeshi mech neutral -flip
     sanders mech angry 1 "What were you THINKING Takeshi??"
     takeshi mech angry 1 "I was saving YOU. If I HADN’T gone in, you would have been whining about me not doing my role as support!"
     sanders mech angry 2 "If you knew HOW to support, then you wouldn’t have gone IN..."
@@ -81,7 +81,7 @@ label scene03:
     pause 0.5
     show usagi happy 1 at center
     hide takeshi
-    hide sanders
+    hide sanderR
     with dissolve
     # show usagi happy 1 at center
     # show sanders neutral at offscreenleft, flip
@@ -125,32 +125,32 @@ label scene03:
 label scene03_usagi_swoops_in:
     # pause after each animation for the length of that animation.
     # renpy's default (without any dialogue) is to show them for an instant and move on
-    show sanders mech neutral at flip
-    show takeshi mech neutral at flip
+    show sanders mech neutral flip
+    show takeshi mech neutral flip
     show usagi mech shock focus at usagi_swoops_in_swoop1 behind takeshi, sanders
     with vpunch
     pause 0.8
 
-    show sanders at noflip
-    show takeshi at noflip
+    show sanders mech neutral
+    show takeshi mech neutral
     show usagi mech happy 1 focus at usagi_swoops_in_swoop2
     with hpunch
     pause 0.8
 
-    show sanders at flip
-    show takeshi at flip
+    show sanders mech neutral flip
+    show takeshi mech neutral flip
     show usagi mech shock focus at usagi_swoops_in_swoop3
     with vpunch
     pause 0.8
 
-    show sanders mech happy at noflip
-    show takeshi mech neutral at noflip
+    show sanders mech happy
+    show takeshi mech neutral
     show usagi mech happy 2 focus at usagi_swoops_in_landing
     # landing is 1.4 seconds total. sanders and takeshi both watch her land
     pause 0.4
-    show sanders at flip
+    show sanders mech happy flip
     pause 0.4
-    show takeshi at flip
+    show takeshi mech neutral flip
     pause 0.6  # landing is done here, 1.4 seconds
 
     # a small delay after the animation feels nice

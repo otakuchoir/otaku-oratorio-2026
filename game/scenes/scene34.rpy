@@ -48,15 +48,13 @@ label scene34:
 
     # > She has followed Kagu in her own mech.
     usagi "Kagu!"
-    show child at fx.hover(1.9):
+    show child flip at fx.hover(1.9):
         ypos ypos_textbox-0.2
-        flip
     kagu "Usagi, I-"
     usagi "It’s like I said, you can always change who you were born to be. I have always believed that, trust me."
     usagi "I know how it feels to be labeled. DON’T label yourself. YOU are not a monster."
-    show child at fx.hover(dur=1.9):
+    show child -flip at fx.hover(dur=1.9):
         ypos ypos_textbox-0.2
-        noflip
     kagu "I only exist for one purpose."
     show usagi mech postgrad cry 1:
         parallel:
@@ -64,6 +62,10 @@ label scene34:
         parallel:
             fx.ease_xpos(dur=1.5, x0=0.83, x1=0.16)
         parallel:
+            # in general, we should not use the flip transforms for mechs, instead using flip attributes -
+            # because mechs have different flipped images.
+            # but renpy chokes on the image change here and I don't know why. 
+            # usagi specifically has no special flipped mech image, so this is fine. What a pain, renpy...
             noflip
             pause 0.75
             flip

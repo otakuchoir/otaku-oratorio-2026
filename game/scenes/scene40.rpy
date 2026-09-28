@@ -31,7 +31,7 @@ label scene40:
     sanders "We’ll get you through, right Usagi?"
     jojo @ mech sad "If we don’t make it through... That’s it. Luckily, the moon hasn’t crossed the gravitational threshold yet, but we were cutting it close."
 
-    show kelisha mech neutral at left, flip, fx.hover(2.1), fx.ease_xoffset(dur=0.5, x0=-500)
+    show kelisha mech neutral flip at left, fx.hover(2.1), fx.ease_xoffset(dur=0.5, x0=-500)
     kelisha "This is Crown Officer Kelisha Alvarez. Pilots, identify yourself."
     usagi "Professor Kelisha?"
     show kelisha mech happy
@@ -44,8 +44,7 @@ label scene40:
     kelisha mech worried "What!?"
     sanders "We’re on an escort mission, we’ve got to get Professor Chen here to the Ultima Cannon."
     kelisha mech serious "Then you’ll have my support from the Bahamut. Godspeed."
-    show kelisha mech serious at left2, noflip, fx.hover(2.1), fx.ease_xpos(dur=1.0, x0=0.15, x1=0.85) behind usagi, sanders, jojo:
-        noflip
+    show kelisha mech serious at left2, fx.hover(2.1), fx.ease_xpos(dur=1.0, x0=0.15, x1=0.85) behind usagi, sanders, jojo:
         pause 0.8
         flip
     show bg space battlefield:
@@ -57,6 +56,7 @@ label scene40:
     stop music fadeout 1
     # call fx.play_music_in_dev("bgm_036_weight_of_the_world_prelude.opus")
     pause 1.0
+    show kelisha mech serious flip # stupid flipped-mech-image shenanigans
     jojo mech serious "There it is... The Alexander... and just beyond, the Ultima Cannon."
     call fx.log("SONG: Super Smash Bros Brawl Opening. show keeps going with no visible lyrics")
 
@@ -64,11 +64,10 @@ label scene40:
     show jojo at fx.hover(1.9), fx.ease_xoffset(dur=dur, x1=-2000)
     show sanders at fx.hover(2.3), fx.ease_xoffset(dur=dur, x1=-2000)
     show usagi at fx.hover(1.7), fx.ease_xoffset(dur=dur, x1=-2000)
-    # show kelisha at noflip, fx.hover(2.1), fx.ease_xpos(dur=dur, x0=0.15, x1=0.85)
     pause 2.0
 
     kelisha "Barthandelus pilots the Alexander as a high level defensive heal class. I’m debuffing his systems now."
-    show bart mech neutral at left2, flip, fx.hover(3.7), fx.ease_xoffset(dur=2.5, x0=-1000)
+    show bart mech neutral flip at left2, fx.hover(3.7), fx.ease_xoffset(dur=2.5, x0=-1000)
     bart "So... you have come to challenge the will of God..."
     kelisha mech worried "Barthandelus! Stand down and let’s stop this insanity."
     ### page 77 ###
@@ -80,10 +79,10 @@ label scene40:
     show bg space battlefield:
         pos (0.55, 0.45)
         linear 1.0 pos (0.45, 0.45)
-    show bart mech eyebrow raised at right, noflip, fx.hover(3.7), fx.ease_xpos(dur=dur, x0=0.15, x1=0.85)
-    show sanders mech postgrad angry 1 at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=dur, x0=-2000)
-    show usagi mech postgrad serious 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=dur, x0=-2000)
-    show jojo mech serious at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=dur, x0=-2000)
+    show bart mech eyebrow raised -flip at right, fx.hover(3.7), fx.ease_xpos(dur=dur, x0=0.15, x1=0.85)
+    show sanders mech postgrad angry 1 -flip at left2, fx.hover(2.3), fx.ease_xoffset(dur=dur, x0=-2000)
+    show usagi mech postgrad serious 1 -flip at left, fx.hover(1.7), fx.ease_xoffset(dur=dur, x0=-2000)
+    show jojo mech serious -flip at center, fx.hover(1.9), fx.ease_xoffset(dur=dur, x0=-2000)
     show kelisha mech serious at right, fx.hover(2.1), fx.ease_xoffset(dur=dur, x1=1000)
     sanders "We’re approaching the Alexander now. We’ll rush past it and put Jojo in position. Follow me everyone-"
     # since we're teleporting abruptly anyway, hide/show to reset his position. the glow position is finicky...!
@@ -92,7 +91,7 @@ label scene40:
         # TODO I want this to transition from wherever the hover puts him, but it seems to teleport abruptly instead...?
         linear 0.25 yoffset 0
     pause 0.25
-    show bart mech as bartglow at right, noflip behind bart:
+    show bart mech as bartglow at right behind bart:
         # offsets make the glow match bart's silhouette. guess and check - I couldn't/didn't figure out the exact math!
         xoffset -20
         yoffset -35
@@ -101,13 +100,13 @@ label scene40:
         alpha 0.0
         linear 0.5 alpha 1.0
     pause 0.5
-    show sanders mech postgrad anxious at left2, noflip, fx.hover(4 * 2.3):
+    show sanders mech postgrad anxious -flip at left2, fx.hover(4 * 2.3):
         matrixcolor TintMatrix('#fff')
         linear 0.5 matrixcolor TintMatrix(color_bart)
-    show usagi mech postgrad anxious at left, noflip, fx.hover(4 * 1.7):
+    show usagi mech postgrad anxious -flip at left, fx.hover(4 * 1.7):
         matrixcolor TintMatrix('#fff')
         linear 0.5 matrixcolor TintMatrix(color_bart)
-    show jojo mech sad at center, noflip, fx.hover(4 * 1.9):
+    show jojo mech sad -flip at center, fx.hover(4 * 1.9):
         matrixcolor TintMatrix('#fff')
         linear 0.5 matrixcolor TintMatrix(color_bart)
     usagi "Guys... I’m losing power... We’re slowing down?"
@@ -134,13 +133,13 @@ label scene40:
             linear 0.5 alpha 0.0
         # parallel:
             # yshake(5, 10, 0.02)
-    show sanders mech postgrad neutral at left2, noflip, fx.hover(2.3):
+    show sanders mech postgrad neutral -flip at left2, fx.hover(2.3):
         matrixcolor TintMatrix(color_bart)
         linear 0.5 matrixcolor TintMatrix('#fff')
-    show usagi at left, noflip, fx.hover(1.7):
+    show usagi -flip at left, fx.hover(1.7):
         matrixcolor TintMatrix(color_bart)
         linear 0.5 matrixcolor TintMatrix('#fff')
-    show jojo mech neutral at center, noflip, fx.hover(1.9):
+    show jojo mech neutral -flip at center, fx.hover(1.9):
         matrixcolor TintMatrix(color_bart)
         linear 0.5 matrixcolor TintMatrix('#fff')
     bart "What!?"
@@ -157,15 +156,15 @@ label scene40:
         pos (0.45, 0.45)
         linear 1.0 pos (0.55, 0.45)
     hide kelisha
-    show kelisha mech worried at right, noflip, fx.hover(2.1), fx.ease_xoffset(dur=1.0, x0=1000)
-    show bart mech neutral at left, noflip, fx.hover(3.7), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.15)
+    show kelisha mech worried -flip at right, fx.hover(2.1), fx.ease_xoffset(dur=1.0, x0=1000)
+    show bart mech neutral -flip at left, fx.hover(3.7), fx.ease_xpos(dur=1.0, x0=0.85, x1=0.15)
     kelisha "That wasn’t me."
     hide usagi
     hide sanders
     hide jojo
 
     call fx.log("choir starts singing smash bros here (I think - currently uncertain)")
-    show bart mech angry 1 at flip, fx.hover(3.7)
+    show bart mech angry 1 flip at fx.hover(3.7)
     show linda mech serious at center, fx.hover(1.3), fx.ease_xoffset(dur=1.0, x0=1000), fx.ease_yoffset(dur=1.0, y0=500)
     show kelisha mech happy
     linda "Ace Unit Shiva here, Carbunkle, Sanders, Usagi, you should be good to go again."
@@ -175,7 +174,7 @@ label scene40:
     linda "I came as soon as I saw the news. No time for shock and surprise. You already knew I was the best Ace there was."
     linda @ mech happy "Now go, little rabbit! I’ll keep The Alexander busy."
     usagi postgrad neutral "Thanks mom!"
-    show bart mech angry 1 at noflip, fx.hover(3.7)
+    show bart mech angry 1 -flip at fx.hover(3.7)
     pause 0.3
 
     ###################################
@@ -243,12 +242,12 @@ label scene40:
 
     # > Linda slices the primary weapon barrel, disabling The
     # > Alexander’s main weapon.
-    $ dur = 0.8
-    show linda mech serious at center, flip:
+    $ dur = 0.7
+    show linda mech serious flip at center:
         rotate -15
-        fx.ease_pos(dur=dur, xy0=(0.5, 1.5), xy1=(1.0, 0.0))
+        fx.ease_pos(dur=dur, xy0=(0.5, 1.6), xy1=(1.0, 0.0))
         rotate 15
-        fx.ease_pos(dur=dur, xy0=(0.5, 0.0), xy1=(1.0, 1.5))
+        fx.ease_pos(dur=dur, xy0=(0.5, 0.0), xy1=(1.0, 1.6))
     show bg bart hits as barthits behind bart:
         pause 0.4
         linear 0.1 alpha 0.0
@@ -277,26 +276,17 @@ label scene40:
     # > Barthandelus activates the tractor
     # > beam again, catching Linda.
     hide lindahits
-    show bart mech angry 2:
-        flip
+    show bart mech angry 2 flip:
         linear 0.2 yoffset 0
-        pause 0.5
-        noflip
-    show bart mech as bartglow at right behind bart:
+    show bart mech flip as bartglow at right behind bart:
         # offsets make the glow match bart's silhouette. guess and check - I couldn't/didn't figure out the exact math!
-        xoffset 20
+        xoffset -20
         yoffset -35
-        flip
         blur 20
         matrixcolor ColorizeMatrix(color_bart, color_bart)
         alpha 0.0
         linear 0.2 alpha 1.0
-        pause 0.5
-        noflip
-        xoffset -20
-        yoffset -35
-    show linda mech scared:
-        noflip
+    show linda mech scared -flip:
         xoffset 0
         yoffset 0
         matrixcolor TintMatrix(color_bart)
@@ -304,7 +294,12 @@ label scene40:
         ease 1.0 pos (0.67, ypos_textbox)
         pause 0.5
         yshake(5, None, 0.025)
-    pause 1.0
+    pause 0.5
+    show bart mech angry 2 -flip
+    show bart mech -flip as bartglow:
+        xoffset -20
+        yoffset -35
+    pause 0.5
     show bart mech grin 2
 
     show bart mech focus as bartglow
@@ -318,7 +313,7 @@ label scene40:
     bart "What?"
     show bart mech as bartglow
     show bart mech shock
-    show queen mech serious 1 at left2, flip, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
+    show queen mech serious 1 flip at left2, fx.hover(3.1), fx.ease_xoffset(dur=1.0, x0=-1000), fx.ease_yoffset(dur=1.0, y0=-500) behind linda
     show bg queen hits as queenhits behind linda, queen:
         alpha 0.0
         linear 0.08 alpha 0.6
@@ -350,7 +345,7 @@ label scene40:
             fx.ease_yoffset(dur=0.7, y0=200, y1=-1200)
     show queen mech smug 1
     queen "The one and only ;) Back away from his tractor beam. Kelisha, break his defenses!"
-    show kelisha mech neutral at center, flip, fx.hover(2.1):
+    show kelisha mech neutral flip at center, fx.hover(2.1):
         parallel:
             fx.ease_xoffset(dur=1.3, x0=-500)
         parallel:
@@ -377,8 +372,8 @@ label scene40:
     show bg space battlefield:
         pos (0.55, 0.45)
         ease 2.0 pos (0.50, 0.45)
-    show queen at flip, fx.hover(3.1), fx.ease_xoffset(dur=2.0, x1=-1000)
-    show kelisha at flip, fx.hover(2.1), fx.ease_xoffset(dur=2.0, x1=-1000)
+    show queen flip at fx.hover(3.1), fx.ease_xoffset(dur=2.0, x1=-1000)
+    show kelisha flip at fx.hover(2.1), fx.ease_xoffset(dur=2.0, x1=-1000)
     $ dur = 0.6
     show bart mech anxious:
         parallel:
@@ -403,6 +398,8 @@ label scene40:
         repeat 8
     hide linda
     show linda mech doom:
+        # in general we should avoid the flip-transform with mechs...
+        # but image changes during animations are so finicky, and this is fast enough that no one will notice
         flip
         rotate -15
         fx.ease_pos(dur=dur, xy0=(0.5, 1.7), xy1=(1.0, 0.0))
@@ -431,9 +428,9 @@ label scene40:
         anchor (0.5, 0.5)
         pos (0.50, 0.45)
         ease 1.0 pos (0.55, 0.45)
-    show sanders mech postgrad happy at left2, noflip, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=-1000)
-    show usagi mech postgrad happy 1 at left, noflip, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=-1000)
-    show jojo mech grin 2 at center, noflip, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=-1000)
+    show sanders mech postgrad happy -flip at left2, fx.hover(2.3), fx.ease_xoffset(dur=1.0, x0=-1000)
+    show usagi mech postgrad happy 1 -flip at left, fx.hover(1.7), fx.ease_xoffset(dur=1.0, x0=-1000)
+    show jojo mech grin 2 -flip at center, fx.hover(1.9), fx.ease_xoffset(dur=1.0, x0=-1000)
     jojo "We’re in range, let’s park it right here."
     jojo mech serious 2 "I’m taking control of the system now...."
 
@@ -457,6 +454,7 @@ label scene40:
     bart "I may be defeated here... but I WILL NOT LOSE! JUDGEMENT LANCE!"
 
     # > The Alexander launches a golden lance toward Professor Jojo.
+    # screw that, a melee attack needs no new assets and gets the point across just fine
     call fx.play_music_in_dev("bgm_037_escape__xenosaga_episode_1.opus")
     show bg space battlefield:
         pos (0.50, 0.55)
@@ -475,8 +473,8 @@ label scene40:
             easeout 0.5 fx.yoffset(200)
         # impact
         ease 0.2 fx.stretch(1.0, 1.0)
-    show sanders mech postgrad panic at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
-    show usagi mech postgrad shock at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
+    show sanders mech postgrad panic flip at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
+    show usagi mech postgrad shock flip at fx.ease_xyoffset(dur=1.0, xy0=(-500, 1500), xy1=(500, -2500))
     hide jojo
     # overlay half of jojo's sprite so bart's lance is impaling him
     show jojo mech crying as jojo_left behind bart:
@@ -517,8 +515,8 @@ label scene40:
     show bg space battlefield:
         pos (0.55, 0.45)
         ease 1.0 pos (0.50, 0.50)
-    show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy0=(500, -1500))
-    show usagi mech postgrad cry 1 at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy0=(500, -1500))
+    show sanders flip at fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy0=(500, -1500))
+    show usagi mech postgrad cry 1 flip at fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy0=(500, -1500))
     pause 0.5
     sanders "Shit. What do we do now??"
     show sanders mech postgrad shock
@@ -532,14 +530,8 @@ label scene40:
     sanders "... Well can you stop this thing or not?"
     # > Takeshi begins hacking the Ultima Cannon.
     show takeshi mech postgrad happy 2 at left, fx.hover(2.5), fx.ease_xpos(dur=1.0, x0=0.66, x1=0.15)
-    show usagi at right2, fx.hover(1.7), fx.ease_xpos(dur=1.0, x0=0.15, x1=0.66):
-        noflip
-        pause 0.5
-        flip
-    show sanders at center, fx.hover(2.3), fx.ease_xpos(dur=1.0, x0=0.33, x1=0.50):
-        noflip
-        pause 0.5
-        flip
+    show usagi mech postgrad happy 1 -flip at right2, fx.hover(1.7), fx.ease_xpos(dur=1.0, x0=0.15, x1=0.66)
+    show sanders mech postgrad happy -flip at center, fx.hover(2.3), fx.ease_xpos(dur=1.0, x0=0.33, x1=0.50)
     takeshi "Can I stop this thing, ha!"
     pause 1.0
     show takeshi mech postgrad shock
@@ -563,15 +555,15 @@ label scene40:
     show sanders mech postgrad angry 1
     sanders "Well we only have a few minutes. We need to make a decision now. I’ll do it."
     show usagi mech postgrad worried
-    show takeshi mech postgrad worried 1 at flip, fx.hover(2.5)
+    show takeshi mech postgrad worried 1 flip at fx.hover(2.5)
     show sanders mech postgrad angry 2
     sanders "Save me the shock ok? I know you both hate me."
     show sanders mech postgrad angry 1
     sanders "The things I’ve done in the name of the Crown... I realized too late what I had become. Let me redeem myself with this-"
 
-    show takeshi mech postgrad neutral at flip, fx.hover(2.5)
-    show usagi mech postgrad neutral at noflip, fx.hover(1.7)
-    show sanders mech postgrad neutral at noflip, fx.hover(2.3)
+    show takeshi mech postgrad neutral flip at fx.hover(2.5)
+    show usagi mech postgrad neutral flip at fx.hover(1.7)
+    show sanders mech postgrad neutral flip at fx.hover(2.3)
     show child mech neutral at right, fx.hover(1.3), fx.ypos(ypos_textbox - 0.1), fx.ease_xyoffset(dur=1.0, xy0=(500, 1000)):
         # a little smaller to match the mech scale. but 0.5 is too small!
         anchor (0.5, 0.5)
@@ -590,9 +582,9 @@ label scene40:
     kagu "Actually, my name is Kagu. Short for Kaguya, but we don’t have time. Go, now! I’ll see you in a bit."
     stop music
 
-    show sanders at flip, fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
-    show usagi at flip, fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
-    show takeshi at flip, fx.hover(2.5), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show sanders -flip at fx.hover(2.3), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show usagi -flip at fx.hover(1.7), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
+    show takeshi -flip at fx.hover(2.5), fx.ease_xyoffset(dur=1.0, xy1=(-1500, -500))
     show child mech serious at fx.hover(1.3), fx.ease_xpos(dur=1.5, x0=0.85, x1=0.50)
     pause 1.0
     scene bg black with dissolve

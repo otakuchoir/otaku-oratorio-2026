@@ -39,9 +39,8 @@ label scene16:
     show sanders mech postgrad neutral:
         ypos y0 xpos x0
         easein 3 ytextbox xpos 0.65
-    show takeshi mech postgrad neutral:
+    show takeshi mech postgrad neutral flip:
         ypos y0 xpos x0
-        flip
         pause 0.3
         easein 3 ytextbox xpos 0.15
     show jojo mech neutral:
@@ -52,9 +51,8 @@ label scene16:
         ypos y0 xpos x0
         pause 1
         easein 3 ytextbox xpos 0.35
-    show bart mech neutral:
+    show bart mech neutral flip:
         ypos y0 xpos x0
-        flip
         pause 1.4
         easein 3 ytextbox xpos -0.3
     show kelisha mech neutral:
@@ -70,7 +68,7 @@ label scene16:
     #show jojo at offscreenleft, flip
     #with MoveTransition(3, time_warp=_warper.easein)
     usagi "Internal loop comms activated. Proximity mode activated. We’re free to speak..."
-    show usagi mech postgrad serious 1 at left2, flip
+    show usagi mech postgrad serious 1 flip at left2
     usagi "That doesn’t mean get on my nerves."
 
     show sanders mech postgrad angry 2
@@ -80,25 +78,24 @@ label scene16:
     # > Professor Jojo approaches.
     show jojo mech neutral at offscreenright
     pause 0
-    show jojo at right, noflip
-    with ease
+    show jojo at right with ease
     takeshi "It has been months... we haven’t talked about it."
 
     # > Jojo walks off. Kelisha passes.
-    show sanders mech postgrad angry 1 at flip
+    show sanders mech postgrad angry 1 flip
     jojo @ serious "We’re moving out. Do not lag behind. If you find the source of the pattern, ping your location to the rest of the squad."
     show kelisha mech worried at offscreenright
     pause 0
-    show jojo at offscreenright, flip
+    show jojo flip at offscreenright
     show kelisha at right
     with ease
 
     # > Kelisha moves on.
     show usagi mech postgrad neutral
     kelisha "Now is not the time. Remember what I told you during the New Jersey mission."
-    show kelisha at offscreenright, flip
+    show kelisha flip at offscreenright
     with ease
-    show sanders at noflip
+    show sanders -flip
     show takeshi mech postgrad annoyed
     show usagi mech postgrad serious 1
     sanders "That’s what this is about? That’s why we’ve barely spoken since midterms? Because you suddenly want to care about social justice or something?"
@@ -116,7 +113,7 @@ label scene16:
     sanders "And sometimes, to keep the peace, we’ve got to get our hands dirty."
 
     takeshi @ angry 2 "For the greater good?"
-    show sanders at right, flip, fx.hop with ease
+    show sanders flip at right, fx.hop with ease
     sanders "For the greater good, dammit. I don’t know why you act like you don’t understand this."
 
     show usagi at center with ease
@@ -126,7 +123,7 @@ label scene16:
     show usagi mech postgrad angry
     usagi "I don’t know how you can look people in the face and just LIE."
 
-    show sanders mech postgrad angry 2 at noflip
+    show sanders mech postgrad angry 2 -flip
     sanders "Because we all know the alternative, Kitadani. And you know that if Williamson here ever behaved with even a FRACTION of the way you do..."
     sanders "He’s not the child of a legend. If you weren’t you, you would have been dealt with a long time ago."
     sanders @ postgrad angry 3 "You’re just as bad as The Queen of New Jersey... Only you don’t even take a stand. You just go with it, sulk and pretend like you’re not benefiting."
@@ -134,15 +131,15 @@ label scene16:
     # > Silence.
     # disable the speaker spotlight for this moment of silence
     # (jeez, this is way harder than it should be)
-    show usagi mech postgrad serious 2 focus
-    show takeshi mech postgrad angry 1 focus
-    show sanders mech postgrad angry 2 focus
+    show usagi focus
+    show takeshi focus
+    show sanders focus
     pause
     # show sanders at right2
     # with ease
-    show usagi mech postgrad serious 2
-    show takeshi mech postgrad angry 1
-    show sanders mech postgrad angry 2
+    show usagi -focus
+    show takeshi -focus
+    show sanders -focus
     show usagi mech postgrad shock at fx.hop
     sanders "No quippy comeback? What? Cat got your tongue?"
     show takeshi mech postgrad shock at fx.hop
@@ -160,30 +157,26 @@ label scene16:
     show takeshi mech postgrad worried 1:
         pause 1
         ease 3 xpos x1
-    show sanders mech postgrad shock:
-        flip
+    show sanders mech postgrad shock flip:
         fx.hop
         pause 1.5
         ease 3 xpos x1
     # next kelisha, worried for what happens next...
-    show kelisha mech worried:
+    show kelisha mech worried flip:
         xpos x0
-        flip
         pause 1.5
         ease 5 xpos x1
     # finally bart and jojo, giddy about finding it at last
-    show jojo mech grin 2:
+    show jojo mech grin 2 flip:
         xpos x0
-        flip
         pause 3
         parallel:
             fx.hop
             repeat
         parallel:
             ease 4.5 xpos x1
-    show bart mech grin 2:
+    show bart mech grin 2 flip:
         xpos x0
-        flip
         pause 3.7
         ease 4.5 xpos x1
     pause 6

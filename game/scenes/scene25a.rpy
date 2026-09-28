@@ -159,7 +159,7 @@ label scene25a.slide01:
         anchor (0.5, 0.5)
         pos (0.5, 0.60)
         fx.ease_yoffset(baka_slide_dur, y1=-200)
-    show kohei young mech worried focus at left, flip, fx.ease_yoffset(baka_slide_dur, y1=-200)
+    show kohei young mech worried flip focus at left, fx.ease_yoffset(baka_slide_dur, y1=-200)
     show linda young mech serious focus at right, fx.ease_yoffset(baka_slide_dur, y1=-200):
         rotate -15
     with dissolve
@@ -175,14 +175,12 @@ label scene25a.slide02:
         anchor (0.5, 0.5)
         pos (0.4, 0.50)
         fx.ease_xoffset(baka_slide_dur, x1=200)
-    show bart young mech anxious behind kohei:
+    show bart young mech anxious flip behind kohei:
         zoom 0.5
-        flip
         pos (-0.1, 0.7)
         rotate 0
         fx.ease_xoffset(baka_slide_dur, x1=200)
-    show kohei young mech panic 2 focus:
-        flip
+    show kohei young mech panic 2 flip focus:
         pos (0.35, ypos_textbox+0.05)
         rotate -45
         fx.ease_xoffset(baka_slide_dur, x1=200)
@@ -202,24 +200,21 @@ label scene25a.slide03:
         anchor (0.5, 0.5)
         pos (0.6, 0.50)
         fx.ease_xoffset(baka_slide_dur, x1=-200)
-    show kohei young mech panic 1:
-        flip
+    show kohei young mech panic 1 flip:
         pos (1.15, ypos_textbox+0.25)
         rotate -105
         fx.ease_xoffset(baka_slide_dur, x1=-200)
-    show linda young mech serious focus:
-        flip
+    show linda young mech serious flip focus:
         pos (0.40, 0.6)
         rotate -15
         fx.ease_xoffset(baka_slide_dur, x1=-200)
     # show bart young mech shock focus as b2:
     show bart young shock focus as bart_pilot:
         zoom 0.5
-        pos (0.635, 0.355)
+        pos (0.666, 0.333)
         rotate 15
         fx.ease_xoffset(baka_slide_dur, x1=-200)
-    show bart mech focus:
-        flip
+    show bart mech flip focus:
         pos (0.6, ypos_textbox+0.15)
         rotate 15
         fx.ease_xoffset(baka_slide_dur, x1=-200)
@@ -241,9 +236,8 @@ label scene25a.slide04a:
         fx.ease_xoffset(baka_slide_dur, x1=200)
         # the slice!
         # fx.ease_xoffset(0.10, x1=-800)
-    show jojo young mech crying focus:
+    show jojo young mech crying flip focus:
         anchor (0.5, 1.0)
-        flip
         pos (0.30, ypos_textbox+0.3)
         fx.ease_xoffset(baka_slide_dur, x1=200)
     with dissolve
@@ -268,28 +262,25 @@ label scene25a.slide04b:
         alpha 0.0
         pause 2.0
         alpha 1.0
-    show jojo young mech crying focus:
+    show jojo young mech crying flip focus:
         anchor (0.5, 1.0)
-        flip
         pos (0.30, ypos_textbox+0.3)
         xoffset 200
         alpha 1.0
         pause 2.0
         linear 0.5 alpha 0.0
-    show jojo young mech crying focus as jojo_head:
+    show jojo young mech crying flip focus as jojo_head:
         crop (0, -0.5, 1.0, 1.0)
         anchor (0.5, 1.0)
-        flip
         rotate 90
         pos (0.68, ypos_textbox+0.5)
         xoffset 200
         alpha 0.0
         pause 2.0
         linear 0.5 alpha 1.0
-    show jojo young mech crying focus as jojo_legs:
+    show jojo young mech crying flip focus as jojo_legs:
         crop (0, 0.5, 1.0, 0.5)
         anchor (0.5, 1.0)
-        flip
         pos (0.30, ypos_textbox+0.3)
         xoffset 200
         alpha 0.0
@@ -307,11 +298,9 @@ label scene25a.slide05a:
         pos (0.4, 0.50)
     show princess mech smug 2 focus:
         pos (0.80, ypos_textbox+0.1)
-    show huxtable young mech wink focus:
-        flip
+    show huxtable young mech wink flip focus:
         pos (0.15, ypos_textbox+0.1)
-    show linda young mech happy 2 focus:
-        flip
+    show linda young mech happy 2 flip focus:
         pos (0.50, ypos_textbox+0.1)
     with dissolve
     return
@@ -326,11 +315,9 @@ label scene25a.slide05b:
         pos (0.6, 0.50)
     show jojo mech crying focus:
         pos (0.80, ypos_textbox+0.1)
-    show bart young mech angry 2 focus:
-        flip
+    show bart young mech angry 2 flip focus:
         pos (0.15, ypos_textbox+0.1)
-    show kohei young mech worried focus:
-        flip
+    show kohei young mech worried flip focus:
         pos (0.50, ypos_textbox+0.1)
     with dissolve
     return

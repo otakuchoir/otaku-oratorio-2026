@@ -8,13 +8,13 @@ label scene25:
     with fade
     # "TODO is this where we use the moba training map? If so, do I want character sprites (like most scenes), or animated dots on the map (like a game minimap), or both? Until I answer those fundamentals, this scene is deliberately barebones"
     # PUSH TEAM
-    show bart mech young neutral     at left2,  fx.xoffset(-1200), flip
-    show kohei mech young serious 1  at center, fx.xoffset(-1200), flip
-    show jojo mech young neutral     at left,   fx.xoffset(-1200), flip
+    show bart mech young neutral flip    at left2,  fx.xoffset(-1200)
+    show kohei mech young serious 1 flip at center, fx.xoffset(-1200)
+    show jojo mech young neutral flip    at left,   fx.xoffset(-1200)
     # DEFENDERS
-    show princess mech neutral       at right,  fx.xoffset(1200), noflip
-    show huxtable mech young neutral at right2, fx.xoffset(1200), noflip 
-    show linda mech young neutral    at center, fx.xoffset(1200), noflip 
+    show princess mech neutral           at right,  fx.xoffset(1200)
+    show huxtable mech young neutral     at right2, fx.xoffset(1200)
+    show linda mech young neutral        at center, fx.xoffset(1200)
     # "TODO add emotes for this scene, at least"
 
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
