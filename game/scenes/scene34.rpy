@@ -1,7 +1,5 @@
 # https://otaku-oratorio-2026-gallery.netlify.app/?t=child&t=usagi+postgrad
 label scene34:
-    # TODO scaling is weird here, it's the only scene that shows both non-mechs and mechs.
-    # but making child super-tiny looks bad, so let's not worry about it...?
     scene bg black hole:
         zoom 1.1
         anchor (0.5, 0.5)

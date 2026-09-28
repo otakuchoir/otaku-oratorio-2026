@@ -27,7 +27,6 @@ label scene28:
     kohei "How was the ten thousandth reading of the legend of Princess Kaguya?"
     linda "Just as thrilling as the last."
     show jojo grin 1
-    # "TODO jojo hop here?"
     jojo "So the little one is finally asleep? Let’s get this party started!"
     linda "A small, quiet gathering these days, Joe. It’s always a great time hanging out with you all."
     kohei "It’s just too bad the life of the party couldn’t be here."

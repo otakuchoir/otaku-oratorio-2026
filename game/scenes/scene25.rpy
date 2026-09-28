@@ -6,7 +6,6 @@ label scene25:
         pos (0.5, 0.5)
     show layer master at fx.flashback
     with fade
-    # "TODO is this where we use the moba training map? If so, do I want character sprites (like most scenes), or animated dots on the map (like a game minimap), or both? Until I answer those fundamentals, this scene is deliberately barebones"
     # PUSH TEAM
     show bart mech young neutral flip    at left2,  fx.xoffset(-1200)
     show kohei mech young serious 1 flip at center, fx.xoffset(-1200)
@@ -15,7 +14,6 @@ label scene25:
     show princess mech neutral           at right,  fx.xoffset(1200)
     show huxtable mech young neutral     at right2, fx.xoffset(1200)
     show linda mech young neutral        at center, fx.xoffset(1200)
-    # "TODO add emotes for this scene, at least"
 
     # > 25       INT. TRAINING ZONE, INSIDE MECH                                          25
     wellington "Today’s training is a final lane push on the enemy base."

@@ -189,7 +189,6 @@ label op.queen:
     return
 
 label op.huxtable:
-    # TODO
     scene bg great hall inside
     show huxtable angry 2 focus at bottom:
         zoom 2.0

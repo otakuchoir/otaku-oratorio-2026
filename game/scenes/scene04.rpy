@@ -82,7 +82,7 @@ label scene04:
 
     # literally falls silent.
     stop music fadeout 1
-    # TODO: remove this narration and just pause the music instead?
+    # remove this narration and just pause the music instead? NOPE we don't control the music anymore
     "The classroom falls silent."
 
     kelisha "Take your seats you three. And for the rest of you, we prefer the term colony-born. Lunars sounds so... alien."

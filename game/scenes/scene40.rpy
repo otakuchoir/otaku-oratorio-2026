@@ -88,7 +88,7 @@ label scene40:
     # since we're teleporting abruptly anyway, hide/show to reset his position. the glow position is finicky...!
     hide bart
     show bart mech grin 1 at right:
-        # TODO I want this to transition from wherever the hover puts him, but it seems to teleport abruptly instead...?
+        # I want this to transition from wherever the hover puts him, but it seems to teleport abruptly instead...?
         linear 0.25 yoffset 0
     pause 0.25
     show bart mech as bartglow at right behind bart:

@@ -9,6 +9,8 @@
 - Update eyecatches to use scene numbers, instead of their own incrementing number
 - Update mechs to use correctly flipped images throughout the show. Mechs should never have mirrored text written on them now, among other changes
 - Add operator notes to the opening (scene 3) saying how many actor intros we've done
+- Update end credits to adjust their speed based on the length of the text
+- Remove the animation after the end credits (my memes are too old)
 
 ## 2026/09/26
 - Add lyric notes to Silhouette (scene 23), Baka Mitai (scene 25), Floating Moon on the Water (scene 29)

@@ -153,7 +153,6 @@ label scene19:
     pause
 
     show bg scene19 4 with dissolve:
-        # TODO different bg on this one
         anchor (0.5, 0.5)
         pos (0.5, 0.5)
         zoom 1.0
@@ -295,4 +294,8 @@ define song_finalday = Song(Character("The Final Day"), [
     Line("Yet ever we still stand tall\nNever we fall\nInvincible",
         "(Speech overlap ends, then...)",
         at_measure=119),
-], num_measures=145)
+], """
+From: Final Fantasy XIV: Endwalker
+Music: Masayoshi Soken
+Arrangement: Geoffrey Shlapak and Andrew McGowan (NYC Otaku Choir)
+""", num_measures=145)

@@ -85,7 +85,6 @@ label scene05:
     # > prelate of the Church, a pope-like figure. She is lost for
     # > words.
     # > RAGNAROK
-    # TODO: pending for ragnarok clip
     sanders @ angry 1 "Usagi!"
 
     # usagi recognizes bart now!

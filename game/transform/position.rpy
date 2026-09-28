@@ -36,7 +36,7 @@ transform bottomleft:
 transform bottomright:
     pos (1.0, 1.0)
 
-# TODO: avoid changing sprite anchors, special effects rely on it
+# avoid changing sprite anchors, special effects rely on it
 transform ytop:
     yanchor 0.0
 

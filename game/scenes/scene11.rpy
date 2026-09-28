@@ -60,7 +60,6 @@ label scene11:
     ### page 19 ###
 
     sanders @ angry 1 "... I feel like I should be offended?"
-    # TODO zoom in on kelisha all dramatic-like
     show kelisha doom focus with dissolve
     kelisha "The negotiations will fail, and we will bear witness to the repercussions of defiance."
     kelisha "Today’s test is not one skill or merit, but of compliance and obedience."
