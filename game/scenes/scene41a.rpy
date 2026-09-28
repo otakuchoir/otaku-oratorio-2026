@@ -1,4 +1,17 @@
-define credits_size = 8.0
+define ed_credits_text = credits_text(renpy.open_file('images/credits-20260928.md').read().decode('utf-8'))
+define lines_per_screen = 35.0
+# estimate length of the credits, to determine scroll speed
+define credits_text_wrap = 60.0  # approximate word wrap line size. actual word wrap is handled by renpy
+define credits_text_lines_nowrap = len([l for l in ed_credits_text.split('\n')])
+define credits_text_lines = sum([
+    max(1, math.ceil(len(str(l)) / credits_text_wrap))
+    for l in ed_credits_text.split('\n')
+    ])
+define credits_text_size = float(credits_text_lines) / lines_per_screen
+
+# define credits_size = 8.0
+# empty starting screen, empty ending screen
+define credits_size = credits_text_size + 2.0
 define driving_scrolls_size = credits_size - 1.0
 define driving_leaves_size = driving_scrolls_size + 0.5
 # TODO: we're singing "welcome to the new world" here, so duration should be a bit longer than that.
@@ -33,7 +46,9 @@ label scene41a:
     call fx.log("paused - start the credits once Welcome to the New World starts")
     pause
 
-    call fx.log("you're done! awesome work! now, hands off during the credits. wait for the post-credits scene")
+    call fx.log("you're done! awesome work! now, hands off during the credits.")
+    call fx.log(f"credits lines: {credits_text_lines}, screens: {credits_size}, nowrap: {credits_text_lines_nowrap}")
+    
     call ed.driving(delay=0)
     # hide/reshow logo so it's on top of the driving animation. easier to do this than to specify 'behind' for all the driving images
     hide bglogo
@@ -58,32 +73,32 @@ label scene41a:
         pos (0.25, 1.0)
         linear credits_dur ypos (1.0-credits_size)
         # c = c+'\n\n'
-    show bg_credits_qrcode:
-        anchor (0.5, 0.0)
-        pos (0.25, 1.0)
-        size (1440.0/4, 1440.0/4)
-        pause dur_per_screen * 1.39
-        linear dur_per_screen * 2.0 ypos -1.0
-    show github_qrcode:
-        anchor (0.5, 0.0)
-        pos (0.25, 1.0)
-        size (1440.0/4, 1440.0/4)
-        pause dur_per_screen * 5.731
-        linear dur_per_screen * 2.0 ypos -1.0
-    show ed_text "{font=[jpfont]}{color=#fff}{size=160}おわり{/size}{/color}{/font}" as owari at truecenter:
+    #show bg_credits_qrcode:
+    #    anchor (0.5, 0.0)
+    #    pos (0.25, 1.0)
+    #    size (1440.0/4, 1440.0/4)
+    #    pause dur_per_screen * 1.39
+    #    linear dur_per_screen * 2.0 ypos -1.0
+    #show github_qrcode:
+    #    anchor (0.5, 0.0)
+    #    pos (0.25, 1.0)
+    #    size (1440.0/4, 1440.0/4)
+    #    pause dur_per_screen * 5.731
+    #    linear dur_per_screen * 2.0 ypos -1.0
+    show ed_text "{font=[jpfont]}{color=#fff}{size=160}おわり{/size}\n{size=60}The end{/size}{/color}{/font}" as owari at truecenter:
         pos (0.5, 1.5)
         anchor (0.5, 0.5)
         pause credits_dur + owari_pause_dur
         linear owari_dur ypos 0.5
-    call roxbury
-    show layer roxbury:
-        alpha 0.0
-        anchor (0.5, 0.5)
-        zoom 0.5
-        pos (0.5, 1.5)
-        pause credits_dur + roxbury_pause_dur
-        alpha 1.0
-        linear roxbury_dur ypos -0.5
+    #call roxbury
+    #show layer roxbury:
+    #    alpha 0.0
+    #    anchor (0.5, 0.5)
+    #    zoom 0.5
+    #    pos (0.5, 1.5)
+    #    pause credits_dur + roxbury_pause_dur
+    #    alpha 1.0
+    #    linear roxbury_dur ypos -0.5
 
     pause 30
     call fx.bgloop_x('bg jersey city cityscape', dur=4.0, transform_=ed.bg_scroll(-30.0, ypos_=0.0))
@@ -178,14 +193,15 @@ label ed.driving(delay):
         # anchor (0.5, 1.0)
     return
 
-init python:
+init -1 python:
+    import math
     import re
     def credits_text(c: str) -> Text:
         # skip the first few lines describing the file to humans
         c ='\n'.join(c.splitlines()[5:])
         c = markdown_to_renpy(c)
-        c = c.replace('[Background Image Credits](https://docs.google.com/spreadsheets/d/1Fh0YKSAyx_duHP-MNdtIQqkaKUC9Tv9ZExgeEPl63Ww/edit?usp=drive_link)', '\n'*15+'Background Image Credits')
-        c = c.replace('{b}No generative AI was used to create this show.{/b}', '{b}Visual novel source code{/b}' + '\n'*15 + 'https://github.com/otakuchoir/otaku-oratorio-2026\n(TODO: currently private, make it public closer to show day)\n\n' + '{b}No generative AI was used to create this show.{/b}')
+        # c = c.replace('[Background Image Credits](https://docs.google.com/spreadsheets/d/1Fh0YKSAyx_duHP-MNdtIQqkaKUC9Tv9ZExgeEPl63Ww/edit?usp=drive_link)', '\n'*15+'Background Image Credits')
+        c = c.replace('{b}No generative AI was used to create this show.{/b}', '{b}Visual novel source code{/b}\nhttps://github.com/otakuchoir/otaku-oratorio-2026\n(TODO: currently private, make it public closer to show day)\n\n' + '{b}No generative AI was used to create this show.{/b}')
         # c = "TODO: credits work in progress. final ones will be much slower, same duration as Welcome to the New World, and hopefully have more backgrounds\n\n"+c
         # return Text(c, text_align=0.5)
         return c
@@ -197,10 +213,11 @@ init python:
         t = re.sub(r'~~(?P<body>[^\~]*)~~', r'{s}\g<body>{/s}', t)
         t = re.sub(r'\\-', r'-', t)
         t = re.sub(r'\\#', r'#', t)
+        t = re.sub(r'\\!', r'!', t)
+        t = re.sub(r'\\\)', r'\)', t)
         t = re.sub(r'\\<[Yy]our [Nn]ame [Hh]ere\\>\n', r'', t)
         return t
 
 # thanks, https://scanqr.org/qr-code-generator/#link
 image bg_credits_qrcode = 'images/bg_credits_qrcode.png'
 image github_qrcode = 'images/github_qrcode.png'
-define ed_credits_text = credits_text(renpy.open_file('images/credits-20260923.md').read().decode('utf-8'))
