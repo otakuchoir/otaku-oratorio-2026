@@ -87,11 +87,12 @@ label scene40:
     sanders "We’re approaching the Alexander now. We’ll rush past it and put Jojo in position. Follow me everyone-"
     # since we're teleporting abruptly anyway, hide/show to reset his position. the glow position is finicky...!
     hide bart
-    show bart mech grin 1 at right:
+    show bart mech grin 1 at right, fx.hovering(3.7):
         # I want this to transition from wherever the hover puts him, but it seems to teleport abruptly instead...?
         linear 0.25 yoffset 0
-    pause 0.25
-    show bart mech as bartglow at right behind bart:
+    # pause 0.25
+    show bart mech as bartglow at right, fx.hovering(3.7) behind bart:
+        mesh_pad (50, 50, 50, 50)
         # offsets make the glow match bart's silhouette. guess and check - I couldn't/didn't figure out the exact math!
         xoffset -20
         yoffset -35
@@ -276,9 +277,11 @@ label scene40:
     # > Barthandelus activates the tractor
     # > beam again, catching Linda.
     hide lindahits
-    show bart mech angry 2 flip:
-        linear 0.2 yoffset 0
-    show bart mech flip as bartglow at right behind bart:
+    hide bart
+    hide bartglow
+    show bart mech angry 2 flip at right, fx.hovering(3.7) behind linda
+    show bart mech flip as bartglow at right, fx.hovering(3.7) behind bart:
+        mesh_pad (50, 50, 50, 50)
         # offsets make the glow match bart's silhouette. guess and check - I couldn't/didn't figure out the exact math!
         xoffset -20
         yoffset -35
@@ -296,9 +299,7 @@ label scene40:
         yshake(5, None, 0.025)
     pause 0.5
     show bart mech angry 2 -flip
-    show bart mech -flip as bartglow:
-        xoffset -20
-        yoffset -35
+    show bart mech -flip as bartglow
     pause 0.5
     show bart mech grin 2
 
@@ -332,7 +333,9 @@ label scene40:
     show bart mech as bartglow:
         alpha 1.0
         linear 0.5 alpha 0.0
-    show bart at yshake(5, 10, 0.02) behind queenhits
+    show bart behind queenhits:
+        yshake(5, 10, 0.02)
+        fx.hover(3.7)
 
     queen "Diabolos Dark Laser Charge, Attack!"
     show linda mech happy 2

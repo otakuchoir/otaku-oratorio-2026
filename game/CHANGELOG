@@ -2,6 +2,7 @@
 - Update end credits to adjust their speed based on the length of the text
 - Remove the animation after the end credits (my memes are too old)
 - Add song and translation credits before lyrics throughout the show
+- Fix Bart's tractor beam glowing effect in scene 40 - it now works while hovering up and down. Bart no longer freezes in place while using his tractor beam.
 
 ## 2026/09/27
 - Add lyric notes to all remaining songs
