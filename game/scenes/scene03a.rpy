@@ -1,7 +1,7 @@
-# actors blocking doc:
-# https://docs.google.com/document/d/1TY9hcwGGRmYvBaMOoS-97qJit_nVjHjjL2uWjPJ6IAI/edit?tab=t.0
+# actors blocking doc: https://docs.google.com/document/d/1TY9hcwGGRmYvBaMOoS-97qJit_nVjHjjL2uWjPJ6IAI/edit?tab=t.0
+# VN intros must match this doc, because we're coordinating with IRL actor intros on stage
 #
-# VN intros must match this, because we're coordinating with IRL actor intros on stage
+# butterfly (opening song): https://drive.google.com/drive/folders/1evUgNs8aIYA3xyqH5VKsJsvkrswmVLGP
 
 label scene03a: 
     window hide
@@ -10,23 +10,39 @@ label scene03a:
     call op.logo
     window hide
     window auto
+    call fx.log("Butter-fly is 5 minutes long. We have 17 actor intros = 16-ish seconds per intro")
+    call fx.log("0/17 intros")
     call op.trio
+    call fx.log("3/17 intros")
     # call op.usagi
     # call op.sanders
     # call op.takeshi
     call op.kagu
+    call fx.log("4/17 intros")
     call op.kohei
+    call fx.log("5/17 intros")
     call op.linda
+    call fx.log("6/17 intros")
     call op.jojo
+    call fx.log("7/17 intros")
     call op.bart
+    call fx.log("8/17 intros")
     call op.kelisha
+    call fx.log("9/17 intros")
     call op.queen
+    call fx.log("10/17 intros")
     call op.huxtable
+    call fx.log("11/17 intros")
     call op.destroyer
+    call fx.log("11/17 intros")
     call op.gunner
+    call fx.log("12/17 intros")
     call op.wellington
+    call fx.log("13/17 intros")
     call op.reporters
+    call fx.log("14/17 intros")
     call op.choir
+    call fx.log("17/17 intros")
     return
 
 style op_text_s:
@@ -36,7 +52,7 @@ style op_text_s:
     # so we must apply this separately.
     size 20
     textalign 0.5
-    outlines [(3, '#000', 0, 0)]
+    outlines [(5, '#000', 0, 0)]
 image op_text = ParameterizedText(style='op_text_s')
 style op_starring:
     size 50
@@ -87,6 +103,7 @@ label op.trio:
     show op_text "\n\n{=op_actor}Sophia Chan{/}\n{=op_as}as{/}\n{=op_char}Usagi Kitadani{/}" at top
     with dissolve
     pause op.intro_dur
+    call fx.log("1/17 intros")
     show usagi at op.trio_run_2
     pause 0.0
 
@@ -95,6 +112,7 @@ label op.trio:
     show op_text "\n\n{=op_actor}Chomp Yamile Martine Cuevas{/}\n{=op_as}as{/}\n{=op_char}George Sanders{/}" at top
     with dissolve
     pause op.intro_dur
+    call fx.log("2/17 intros")
     show sanders at op.trio_run_2
     pause 0.0
 
@@ -111,7 +129,7 @@ label op.kagu:
     scene bg lunar surface
     show child happy focus at bottom:
         zoom 2.0
-    show op_text "\n\n{=op_actor}Jalisha Paz{/}\n{=op_as}as{/}\n{=op_char}The Child{/}\nTODO: wait, isn't this a spoiler?" at top
+    show op_text "\n\n{=op_actor}Jalisha Paz{/}\n{=op_as}as{/}\n{=op_char}The Child{/}" at top
     with dissolve
     pause op.intro_dur
     return
@@ -247,6 +265,7 @@ label op.reporters:
         pos (0.25, 0.8)
     # with dissolve
     pause op.intro_dur
+    call fx.log("15/17 intros")
 
     show reporter1
     show reporter2 focus
@@ -255,6 +274,7 @@ label op.reporters:
         pos (0.50, 0.8)
     # with dissolve
     pause op.intro_dur
+    call fx.log("16/17 intros")
 
     show reporter2
     show reporter3 focus

@@ -81,7 +81,7 @@ label scene03:
     pause 0.5
     show usagi happy 1 at center
     hide takeshi
-    hide sanderR
+    hide sanders
     with dissolve
     # show usagi happy 1 at center
     # show sanders neutral at offscreenleft, flip
