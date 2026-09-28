@@ -3,37 +3,81 @@ label mech_test:
     show usagi postgrad mech neutral at left, fx.hover()
     show bart mech neutral at right2, fx.hover()
     "mechs 1"
-    show usagi postgrad mech neutral focus
-    show bart mech neutral focus
+    scene bg beige
+    show usagi postgrad mech neutral flip at left, fx.hover()
+    show bart mech neutral flip at right2, fx.hover()
+    "mechs 1 flip"
+    scene bg beige
+    show usagi postgrad mech neutral focus at left, fx.hover()
+    show bart mech neutral focus at right2, fx.hover()
     "mechs 1 focus"
-
-    scene bg beige with fade
-    show linda mech neutral at left, fx.hover()
-    show kohei mech neutral at center, fx.hover()
-    show jojo mech neutral at right, fx.hover()
-    "mechs 2"
-    show linda mech neutral focus
-    show kohei mech neutral focus
-    show jojo mech neutral focus
-    "mechs 2 focus"
+    scene bg beige
+    show usagi postgrad mech neutral flip focus at left, fx.hover()
+    show bart mech neutral flip focus at right2, fx.hover()
+    "mechs 1 flip focus"
 
     scene bg beige
-    show huxtable mech neutral at left , fx.hover()
+    show linda mech neutral at left, fx.hover()
+    show kohei mech neutral at center, fx.hover()
+    show jojo mech neutral at right2, fx.hover()
+    "mechs 2"
+    scene bg beige
+    show linda mech neutral flip at left, fx.hover()
+    show kohei mech neutral flip at center, fx.hover()
+    show jojo mech neutral flip at right2, fx.hover()
+    "mechs 2 flip"
+    scene bg beige
+    show linda mech neutral focus at left, fx.hover()
+    show kohei mech neutral focus at center, fx.hover()
+    show jojo mech neutral focus at right2, fx.hover()
+    "mechs 2 focus"
+    scene bg beige
+    show linda mech neutral flip focus at left, fx.hover()
+    show kohei mech neutral flip focus at center, fx.hover()
+    show jojo mech neutral flip focus at right2, fx.hover()
+    "mechs 2 flip focus"
+
+    scene bg beige
+    show huxtable mech neutral at left, fx.hover()
     show sanders mech postgrad neutral at center, fx.hover()
     show takeshi mech postgrad neutral at right, fx.hover()
     "mechs 3"
-    show huxtable mech neutral focus
-    show sanders mech postgrad neutral focus
-    show takeshi mech postgrad neutral focus
+    scene bg beige
+    show huxtable mech neutral flip at left, fx.hover()
+    show sanders mech postgrad neutral flip at center, fx.hover()
+    show takeshi mech postgrad neutral flip at right, fx.hover()
+    "mechs 3 flip"
+    scene bg beige
+    show huxtable mech neutral focus at left, fx.hover()
+    show sanders mech postgrad neutral focus at center, fx.hover()
+    show takeshi mech postgrad neutral focus at right, fx.hover()
     "mechs 3 focus"
+    scene bg beige
+    show huxtable mech neutral flip focus at left, fx.hover()
+    show sanders mech postgrad neutral flip focus at center, fx.hover()
+    show takeshi mech postgrad neutral flip focus at right, fx.hover()
+    "mechs 3 flip focus"
 
     scene bg beige
-    show queen mech neutral at left2, fx.hover()
-    show kelisha mech neutral at right2, fx.hover()
+    show queen mech neutral at left, fx.hover()
+    show kelisha mech neutral at center, fx.hover()
+    show child mech neutral at right, fx.hover()
     "mechs 4"
-    show queen mech neutral focus
-    show kelisha mech neutral focus
+    scene bg beige
+    show queen mech neutral flip at left2, fx.hover()
+    show kelisha mech neutral flip at center, fx.hover()
+    show child mech neutral flip at right, fx.hover()
+    "mechs 4 flip"
+    scene bg beige
+    show queen mech neutral focus at left, fx.hover()
+    show kelisha mech neutral focus at center, fx.hover()
+    show child mech neutral focus at right, fx.hover()
     "mechs 4 focus"
+    scene bg beige
+    show queen mech neutral flip focus at left2, fx.hover()
+    show kelisha mech neutral flip focus at center, fx.hover()
+    show child mech neutral flip focus at right, fx.hover()
+    "mechs 4 flip focus"
 
     scene bg beige
     show usagi mech focus as usagimech at left, fx.hover()
