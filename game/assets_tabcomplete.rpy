@@ -487,7 +487,7 @@ init 501 python:
         MechTemplate('kohei',   _xy=(1100*0.6,1200*0.6), anchor=(0.50, 0.80), _pilot=(210, -10), pilot_width=503, pilot_under=True),
         MechTemplate('jojo',    _xy=(1315*0.35, 2427*0.35), anchor=(0.50, 0.70), _pilot=(115, -105), _pilot_flip=(120, -105), pilot_under=True), # pilot_width=520
         MechTemplate('huxtable',_xy=(3417*0.2, 5066*0.2), anchor=(0.50, 0.70), _pilot=(137, -102), _pilot_flip=(307, -102), pilot_under=True, pilot_zoom=0.45), # pilot_width=498
-        MechTemplate('takeshi', _xy=(800*0.8, 1400*0.8), anchor=(0.50, 0.70), _pilot=(290, 25), _pilot_flip=(78, 25), pilot_under=True, pilot_zoom=0.42, pilot_rotate=20.0), # pilot_width: 507
+        MechTemplate('takeshi', _xy=(800*0.8, 1400*0.8), anchor=(0.50, 0.70), _pilot=(290, 37), _pilot_flip=(78, 37), pilot_under=True, pilot_zoom=0.42, pilot_rotate=20.0), # pilot_width: 507
         MechTemplate('sanders', _xy=(800*0.8, 1200*0.8), anchor=(0.50, 0.70), _pilot=(240, -130), pilot_width=450, pilot_under=True),
         MechTemplate('queen',   _xy=(2410*0.2,4689*0.2), anchor=(0.50, 0.70), _pilot=(340, -30), pilot_width=717, pilot_under=True, alias=['princess'], pilot_zoom=0.35, pilot_rotate=60.0),
         MechTemplate('kelisha', _xy=(700*0.75, 1200*0.75), anchor=(0.50, 0.70), _pilot=(170, -50), pilot_width=350, pilot_under=True),

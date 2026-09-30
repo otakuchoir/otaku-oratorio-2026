@@ -1,7 +1,7 @@
 # eyecatch direction: https://discord.com/channels/1307031043915911278/1308533742209335336/1544806536621064283
 # copied into the comments/placeholders below
 init python:
-    for i in [4, 11, 13, 29]:
+    for i in [4, 9, 11, 13, 23, 29]:
         load_image(f'eyecatch scene{i:02d}', f'assets/Eyecatches/eyecatch-scene{i:02d}-{i+1:02d}.png') # type: ignore
 
 label eyecatch_scene02:
@@ -23,7 +23,9 @@ label eyecatch_scene06:
     return
 label eyecatch_scene09:
     scene black with fade
-    "PLACEHOLDER 9/10 - more information on the \"domes\" and the information from the previous classroom scene. interpret how you want. Basically info graphic on the history of the \"domes\" and the \"cataclysm\" "
+    show eyecatch scene09 at truecenter, screen_size
+    with fade
+    pause
     scene black with fade
     return
 label eyecatch_scene11:
@@ -52,7 +54,9 @@ label eyecatch_scene15:
 
 label eyecatch_scene23:
     scene black with fade
-    "PLACEHOLDER 23/24 after Silhouette - Jojo has invented fast travel, it works on the same technology that the ultima cannon works on so this eyecatch needs to be something about jojo, his \"friend\" barthandelus, mainly Jojo's genius/ smarts, fast travel etc. "
+    show eyecatch scene23 at truecenter, screen_size
+    with fade
+    pause
     scene black with fade
     return
 label eyecatch_scene25:

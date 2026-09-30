@@ -4,7 +4,7 @@ label scene02a:
     # https://www.uta-net.com/song/320519/
     # finally, one where I can't find an english translation! not thrilled about using machine translation, but no other options
     # translation credit: https://translate.google.com , based on https://animelyricsaz.com/artist/masaaki-endou/fumetsu-no-hero-seajetter-kaito/971-39227
-    scene bg scene02 5 with dissolve
+    scene bg scene02 08 with dissolve
     call say_song_line(song_fumetsu, 0)
     call say_song_line(song_fumetsu, 1)
     call say_song_line(song_fumetsu, 2)

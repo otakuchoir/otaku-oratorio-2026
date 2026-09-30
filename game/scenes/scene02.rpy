@@ -10,28 +10,37 @@ label scene02:
 
     scene bg black
     call fx.play_music_in_dev("bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus")
-    show bg scene02 1 with dissolve
+    show bg scene02 01 with dissolve
     pause 4.0
-    show bg scene02 2 with dissolve
+    show bg scene02 02 with dissolve
     pause 2.0
-    show bg scene02 3 with dissolve
+    show bg scene02 03 with dissolve
     with vpunch
     pause 1.0
-    show bg scene02 4 with dissolve
+    show bg scene02 04 with dissolve
     with vpunch
     pause 1.0
-    show bg scene02 1 with dissolve
+    show bg scene02 01 with dissolve
     # play music "bgm_001_godzilla_1_0_godzilla_suite_ii__godzilla_minus_one.opus"
     # > 2        EXT. CITY MONSTER ATTACK                                                  2
     # > A RUBBER-SUITED GODZILLA-STYLE PLANET DESTROYER STOMPS
     # > THROUGH MODEL CITY, BURNING BUILDINGS WITH ATOMIC BREATH
     announcer "Oh no! The monster is destroying the city! Can anybody stop this?"
 
-    show bg scene02 5 with dissolve
+    window hide
+    window auto
     # > A HERO DRESSED IN RED RUNS IN, DRAMATICALLY SKIDDING ON TO
     # > THE SCENE AS THEIR SCARF BLOWS IN THE WIND DRAMATICALLY.
     stop music fadeout 1
     call fx.play_music_in_dev("bgm_002_seajetter_kaito.opus")
+    show bg scene02 05 with dissolve
+    pause 2.0
+    show bg scene02 06 with dissolve
+    pause 2.0
+    show bg scene02 07 with dissolve
     kitadani "Fear not, announcer! Courageous Kaito! Reporting for Duty!"
+    show bg scene02 08 with dissolve
     announcer "When chaos calls, the Crown answers swiftly with its bravest warrior: Sea Jetter Kai!"
+    window hide
+    window auto
     return
