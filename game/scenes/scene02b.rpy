@@ -35,15 +35,28 @@ label scene02b:
     show bg scene02 19 with dissolve
     pause 2.0
     show bg scene02 20 with dissolve
+    pause 2.0
+    show bg scene02 21 with dissolve
     # > KITADANI GLANCES AT THE FAMILY PHOTO ON HIS DASHBOARD
     ### page 3 ###
-    kitadani "This is the only way. Justice requires swift action. Citizens of Earth: Lend me your strength! For every human, on this beautiful Earth!"
-    show bg scene02 21 with dissolve
+    kitadani "This is the only way. Justice requires swift action."
+    show bg scene02 22 with dissolve
+    kitadani "Citizens of Earth: Lend me your strength! For every human, on this beautiful Earth!"
+    show bg scene02 23 with dissolve
     monster "WHAT!?"
+
+    window hide
+    window auto
+    show bg scene02 24 with dissolve
+    pause 2.0
+    show bg scene02 25 with dissolve
     # > Monster reels back to charge it’s atomic breath
     # actually I'm gonna skip this direction because it looks too much like the monster is firing, not the ultima cannon
-    show bg scene02 22 with dissolve
     kitadani "Ultima Cannon: {b}FIRE!{/b}"
+
+    window hide
+    window auto
+    show bg scene02 26 with Dissolve(2.0)
     show bg white as boom:
         alpha 0
         linear 1.5 alpha 1
