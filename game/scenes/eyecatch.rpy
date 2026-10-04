@@ -1,12 +1,14 @@
 # eyecatch direction: https://discord.com/channels/1307031043915911278/1308533742209335336/1544806536621064283
 # copied into the comments/placeholders below
 init python:
-    for i in [4, 9, 11, 13, 23, 29]:
+    for i in [2, 4, 6, 9, 11, 13, 15, 23, 26, 29, 38]:
         load_image(f'eyecatch scene{i:02d}', f'assets/Eyecatches/eyecatch-scene{i:02d}-{i+1:02d}.png') # type: ignore
 
 label eyecatch_scene02:
     scene black with fade
-    "PLACEHOLDER 2/3 - immortalized, propaganda of Kohei Kitadani with historical \"facts\""
+    show eyecatch scene02 at truecenter, screen_size
+    with fade
+    pause
     scene black with fade
     return
 label eyecatch_scene04:
@@ -18,7 +20,8 @@ label eyecatch_scene04:
     return
 label eyecatch_scene06:
     scene black with fade
-    "PLACEHOLDER 6/7 - Moon infographic, different mini cities/ towns that you can travel to by train, Lunar vs Earth Transplatant discrimination, strawberry parfaits, a bowl of pho. "
+    show eyecatch scene06 at truecenter, screen_size
+    with fade
     scene black with fade
     return
 label eyecatch_scene09:
@@ -48,7 +51,8 @@ label eyecatch_scene13:
     
 label eyecatch_scene15:
     scene black with fade
-    "PLACEHOLDER 15/16 - something around the wave pattern, the \"truth\" about the planet destroyer.... the moon (?) something..."
+    show eyecatch scene15 at truecenter, screen_size
+    with fade
     scene black with fade
     return
 
@@ -66,7 +70,8 @@ label eyecatch_scene25:
     return
 label eyecatch_scene26:
     scene black with fade
-    "PLACEHOLDER 26/27 - Something about the fact that there's a resistance, one that Kelisha is a leader of and that Takeshi has recently joined since graduating. "
+    show eyecatch scene26 at truecenter, screen_size
+    with fade
     scene black with fade
     return
 label eyecatch_scene29:
@@ -78,7 +83,8 @@ label eyecatch_scene29:
 
 label eyecatch_scene38:
     scene black with fade
-    "PLACEHOLDER 38/39- about the tech of the ultima canon and the tech of fast travel. ..... if someone were to mess with the orbits of the moon and the earth..... it could be a disaster........"
+    show eyecatch scene38 at truecenter, screen_size
+    with fade
     scene black with fade
     return
 
