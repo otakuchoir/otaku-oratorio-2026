@@ -20,3 +20,5 @@ screen devtools():
                 action Start('animation_test_roxbury')
             textbutton "lyric test":
                 action Start('lyric_test')
+            textbutton "eyecatch test":
+                action Start('eyecatch_test')
