@@ -1,10 +1,22 @@
 # Otaku Oratorio 2026
 
+![Otaku Oratorio 2026 promo image](./OO2+Social+Post.webp)
+
+Otaku Oratorio 2 is an original sci-fi story told through live choral music, fully voice-acted characters, visual novel-style storytelling and projected artwork.
+
+Follow Usagi Kitadani, a young soldier living in the shadow of a legendary father, as a mysterious discovery on the Moon forces her to confront the truth behind humanity’s past... and a cosmic being powerful enough to decide its future.
+
+Featuring music from Final Fantasy XIV, NieR: Automata, Sailor Moon, Naruto, Digimon and more, Otaku Oratorio 2 blends anime, video games, visual novels and live choral performance into one original concert experience.
+
+Part concert. Part visual novel. Part anime. Entirely Otaku Choir.
+
+Tickets for the show: https://www.otakuchoir.org/upcoming-concerts
+
+---
+
 This is the visual novel that powers the Otaku Oratorio 2026 performance on Friday October 9. Created by the [Otaku Choir](https://www.otakuchoir.org/). Powered by [Ren'py](https://www.renpy.org/).
 
 **Try the latest version: https://erosson.itch.io/otaku-oratorio-2026?secret=Ej4ArGlmXwr1HcR3SCoDkI4UyL8**
-
-Tickets for the show: https://www.otakuchoir.org/upcoming-concerts
 
 The 2025 show's code: https://github.com/mienaikoe/otaku-oratorio
 
