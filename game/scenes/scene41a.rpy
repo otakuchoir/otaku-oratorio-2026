@@ -200,7 +200,7 @@ init -1 python:
         c ='\n'.join(c.splitlines()[5:])
         c = markdown_to_renpy(c)
         # c = c.replace('[Background Image Credits](https://docs.google.com/spreadsheets/d/1Fh0YKSAyx_duHP-MNdtIQqkaKUC9Tv9ZExgeEPl63Ww/edit?usp=drive_link)', '\n'*15+'Background Image Credits')
-        c = c.replace('{b}No generative AI was used to create this show.{/b}', '{b}Visual novel source code{/b}\nhttps://github.com/otakuchoir/otaku-oratorio-2026\n(TODO: currently private, make it public closer to show day)\n\n' + '{b}No generative AI was used to create this show.{/b}')
+        c = c.replace('{b}No generative AI was used to create this show.{/b}', '{b}Visual novel source code{/b}\nhttps://github.com/otakuchoir/otaku-oratorio-2026\n\n' + '{b}No generative AI was used to create this show.{/b}')
         # return Text(c, text_align=0.5)
         return c
 
