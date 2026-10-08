@@ -9,6 +9,7 @@ mkdir -p ./build/desktop
 
 docker run --rm \
   -v "./game:/app/game" \
+  -v "./otakuoratorio2026-windows-with-logs.bat:/app/otakuoratorio2026-windows-with-logs.bat" \
   -v "./build:/build" \
   dinaki/renpy:$V \
   sh renpy.sh launcher distribute --dest /build/desktop --no-update --package pc --package mac --package linux /app

@@ -1,0 +1,1 @@
+otakuoratorio2026.exe | find /v ""
