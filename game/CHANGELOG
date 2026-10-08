@@ -1,6 +1,7 @@
 ## 2026/10/07
 - Fix Windows downloadable version of the show (it does not like filenames that end with a space)
 - Move scene 2 dialogue into the middle of the song, instead of after it
+- Small credits change
 
 ## 2026/10/05
 - Fix scene 2 eyecatch vs. two-weeks-later order

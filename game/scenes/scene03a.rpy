@@ -100,7 +100,7 @@ label op.trio:
 
     # scene bg countryside
     show sanders angry 1 focus at bottom, op.trio_run_1
-    show op_text "\n\n{=op_actor}Chomp Yamile Martine Cuevas{/}\n{=op_as}as{/}\n{=op_char}George Sanders{/}" at top
+    show op_text "\n\n{=op_actor}Chomp{/}\n{=op_as}as{/}\n{=op_char}George Sanders{/}" at top
     with dissolve
     pause op.intro_dur
     call fx.log("2/17 intros (sanders)")
