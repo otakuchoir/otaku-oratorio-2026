@@ -136,11 +136,11 @@ load_image(f'kaguya', f'images/Japanese_Fairy_Book_-_Ozaki_-_P118.png')
 renpy.image(f'bg scene29', Movie(play=f'assets/manga/scene29.webm')) # type: ignore
 load_image(f'bg scene34', f'assets/manga/Scene_34.png')
 for i in range(1, 3+1):
-    load_image(f'bg scene40 evacuation {i}', f'assets/manga/Scene 40 /scene-40-evacuation-{i}.png') # type: ignore
+    load_image(f'bg scene40 evacuation {i}', f'assets/manga/Scene 40/scene-40-evacuation-{i}.png') # type: ignore
 for i in range(1, 4+1):
-    load_image(f'bg scene40 explosion {i}', f'assets/manga/Scene 40 /scene-40-explosion-{i}.png') # type: ignore
+    load_image(f'bg scene40 explosion {i}', f'assets/manga/Scene 40/scene-40-explosion-{i}.png') # type: ignore
 for i in range(1, 9+1):
-    load_image(f'bg scene40 judgement {i}', f'assets/manga/Scene 40 /scene-40-judgement-{i}.png') # type: ignore
+    load_image(f'bg scene40 judgement {i}', f'assets/manga/Scene 40/scene-40-judgement-{i}.png') # type: ignore
 
 # Uncomment to prove that missing images throw an error, and can't sneak into our project
 # load_image('missing_image', 'assets/missing-image-uroiepwreowpqrueopiqwueriowq.png')
