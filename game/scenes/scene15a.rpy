@@ -16,16 +16,19 @@ label scene15a:
     call say_song_line(song_weight, 11)
     call say_song_line(song_weight, 12)
     call say_song_line(song_weight, 13)
-    call say_song_line(song_weight, 14, last=True)
+    call say_song_line(song_weight, 14)
+    call say_song_line(song_weight, 15)
+    call say_song_line(song_weight, 16)
+    call say_song_line(song_weight, 17)
+    call say_song_line(song_weight, 18)
+    call say_song_line(song_weight, 19, last=True)
     return
 
 define song_weight = Song(Character("Weight of the World"), [
-    Line("I feel like I'm losing hope\nIn my body and my soul",
+    Line("I feel like I'm losing hope\nIn my body and my soul\nAnd the sky, it looks so ominous",
         at_measure=9),
-    Line("And the sky, it looks so ominous\nAnd as time comes to a halt",
-        at_measure=11),
-    Line("Silence starts to overflow\nMy cries are inconspicuous",
-        at_measure=14),
+    Line("And as time comes to a halt\nSilence starts to overflow\nMy cries are inconspicuous",
+        at_measure=13),
     Line("Tell me God, are you punishing me?\nIs this the price I'm paying for my past mistakes?",
         at_measure=17),
     Line("This is my redemption song\nI need you more than ever right now\nCan you hear me now?",
@@ -36,8 +39,23 @@ define song_weight = Song(Character("Weight of the World"), [
         at_measure=30),
     Line("Maybe if I keep believing\nMy dreams will come to life\nCome to life",
         at_measure=34),
-    Line("", at_measure=38),
+    Line("After all the laughter fades\nSigns of life all washed away\nI can still, still feel a gentle breeze",
+        "(Repeat from m.9, DS al Coda)",
+        at_measure=9),
+    Line("No matter how hard I pray,\nSigns of warning still remain\nAnd life has become my enemy",
+        at_measure=13),
+    Line("Tell me God, are you punishing me?\nIs this the price I'm paying for my past mistakes?",
+        at_measure=17),
+    Line("This is my redemption song\nI need you more than ever right now\nCan you hear me now?",
+        at_measure=21),
     Line("Cause we're gonna shout it loud\nEven if our words seem meaningless\nIt's like I'm carrying the weight of the world",
+        at_measure=26),
+    Line("I wish that someway, somehow\nThat I could save every one of us\nBut the truth is that I'm only one girl",
+        at_measure=30),
+    Line("Maybe if I keep believing\nMy dreams will come to life\nCome to life",
+        at_measure=34),
+    Line("Cause we're gonna shout it loud\nEven if our words seem meaningless\nIt's like I'm carrying the weight of the world",
+        "(Skip from m.36 to m.42, Coda)",
         at_measure=53),
     Line("I wish that someway, somehow\nThat I could save every one of us\nBut the truth is that I'm only one girl",
         at_measure=57),
